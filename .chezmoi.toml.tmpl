@@ -6,9 +6,23 @@
 
 sourceDir = {{ .chezmoi.sourceDir | quote }}
 
+# Automatically get converted to lower case!
+# See https://www.chezmoi.io/user-guide/frequently-asked-questions/design/#why-does-chezmoi-convert-all-my-template-variables-to-lowercase
 [data]
 	name = "{{ $name }}"
     email = "{{ $email }}"
 	gpgPath = "{{ $gpgPath }}"
 	envDir = "{{ $envDir }}"
 	pkgDir = "{{ $pkgDir }}"
+[cd]
+	command = "pwsh"
+[completion]
+	custom = true
+[diff]
+  pager = "less -rFX"
+[edit]
+	command  = 'C:/Program Files/Notepad++/Notepad++.exe'
+	args = ['-multiInst', '-notabbar', '-nosession', '-noPlugin']
+[merge]
+  command = 'WinMergeU'
+  args =  ['-u', '-e', '-x', '-fm', '-wl', '-wr', '-dl', '"Local"', '-dr', '"Remote"']
