@@ -1,0 +1,5 @@
+# Aliases
+alias g='git'
+alias gst='git status'
+alias gd='git diff'
+alias gdc='git diff --cached'
