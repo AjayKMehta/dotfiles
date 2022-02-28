@@ -1,0 +1,14 @@
+{{- $email := promptString "Git email address for the author/committer" -}}
+{{- $name := promptString "Git username for the author/committer" -}}
+{{- $gpgPath := promptString "Path of gpg.exe" -}}
+{{- $envPath := promptString "Path for conda environments" -}}
+{{- $pkgPath := promptString "Path for conda packages" -}}
+
+sourceDir = {{ .chezmoi.sourceDir | quote }}
+
+[data]
+	name = "{{ $name }}"
+    email = "{{ $email }}"
+	gpgPath = "{{ $gpgPath }}"
+	envPath = "{{ $envPath }}"
+	pkgPath = "{{ $pkgPath }}"
