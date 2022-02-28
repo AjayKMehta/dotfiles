@@ -1,0 +1,17 @@
+---
+
+extends: default
+
+rules:
+  # 80 chars should be enough, but don't fail if a line is longer
+  line-length:
+    max: 80
+    level: warning
+  empty-values: enable
+  new-lines:
+    level: warning
+  quoted-strings:
+    quote-type: any
+    required: only-when-needed
+    extra-allowed: []
+    extra-required: [^http://, ^ftp://]
