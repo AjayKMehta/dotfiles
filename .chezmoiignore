@@ -1,0 +1,9 @@
+/Gemfile
+/Gemfile.lock
+/LICENSE
+/README.md
+/Terminal/
+/install.sh
+/package.json
+/requirements.txt
+*.log
