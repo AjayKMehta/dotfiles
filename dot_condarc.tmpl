@@ -1,0 +1,22 @@
+channels:
+  - defaults
+  - conda-forge
+ssl_verify: true
+
+# Show channel URLs when displaying what is going to be downloaded
+# and in 'conda list'. The default is False.
+show_channel_urls: true
+
+create_default_packages:
+  - pip
+  - ipython
+  - scipy
+pip_interop_enabled: true
+channel_priority: flexible
+unsatisfiable_hints: true
+
+envs_dirs:
+  - {{ .envdir }}
+
+pkgs_dirs:
+  - {{ .pkgdir }}

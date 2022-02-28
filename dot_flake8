@@ -1,0 +1,30 @@
+[flake8]
+# D100: Missing docstring in public module
+# D101: Missing docstring in public class
+# D102: Missing docstring in public method
+# D103: Missing docstring in public function
+# D105: Missing docstring in magic method
+# D107: Missing docstring in __init__
+# D204: 1 blank line required after class docstring
+# E266: too many leading '#' for block comment
+# H101: Use TODO(NAME)
+# H202: assertRaises Exception too broad
+# H233: Python 3.x incompatible use of print operator
+# H301: one import per line
+# H306: imports not in alphabetical order (time, os)
+# H401: docstring should not start with a space
+# H403: multi line docstrings should end on a new line
+# H404: multi line docstring should start without a leading new line
+# H405: multi line docstring summary not separated with an empty line
+# H501: Do not use self.__dict__ for string formatting
+# N803: argument name should be lowercase
+# N804: first argument of a classmethod should be named 'cls'
+# N806: variable in function should be lowercase
+# W503: line break before binary operator
+# W504: line break after binary operator
+ignore = D100,D101,D102,D103,D105,D107,D204,E266,F812,H101,H202,H233,H301,H306,H401,H403,H404,H405,H501,N803,N804,N806,W503,W504
+# https://flake8.pycqa.org/en/latest/user/options.html#cmdoption-flake8-hang-closing
+hang_closing = False
+max-complexity = 10
+max-line-length = 120
+statistics = True
