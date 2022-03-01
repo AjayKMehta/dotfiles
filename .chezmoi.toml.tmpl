@@ -1,8 +1,33 @@
+# https://www.chezmoi.io/user-guide/setup/#re-create-your-config-file
+{{- $email := get . "email" }}
+{{- if eq $email "" -}}
 {{- $email := promptString "Git email address for the author/committer" -}}
+{{- end -}}
+
+{{- $name:= get . "name" }}
+{{- if eq $name "" -}}
 {{- $name := promptString "Git username for the author/committer" -}}
-{{- $gpgPath := promptString "Path of gpg.exe" -}}
-{{- $envDir := promptString "Directory for conda environments" -}}
-{{- $pkgPDir := promptString "Directory for conda packages" -}}
+{{- end -}}
+
+{{- $gpgpath:= get . "gpgpath" }}
+{{- if eq $gpgpath "" -}}
+{{- $gpgpath := promptString "Path of gpg.exe" -}}
+{{- end -}}
+
+{{- $envdir:= get . "envdir" }}
+{{- if eq $envdir "" -}}
+{{- $envdir := promptString "Directory for conda environments" -}}
+{{- end -}}
+
+{{- $pkgdir:= get . "pkgdir" }}
+{{- if eq $pkgdir "" -}}
+{{- $pkgdir := promptString "Directory for conda packages" -}}
+{{- end -}}
+
+{{- $npmcache:= get . "npmcache" }}
+{{- if eq $npmcache "" -}}
+{{- $npmcache := promptString "Directory for NPM cache" -}}
+{{- end -}}
 
 sourceDir = {{ .chezmoi.sourceDir | quote }}
 
@@ -11,18 +36,31 @@ sourceDir = {{ .chezmoi.sourceDir | quote }}
 [data]
 	name = "{{ $name }}"
     email = "{{ $email }}"
-	gpgPath = "{{ $gpgPath }}"
-	envDir = "{{ $envDir }}"
-	pkgDir = "{{ $pkgDir }}"
+	gpgpath = "{{ $gpgpath }}"
+	envdir = "{{ $envdir }}"
+	pkgdir = "{{ $pkgdir }}"
+	npmcache = "{{ $npmcache }}"
 [cd]
 	command = "pwsh"
 [completion]
 	custom = true
 [diff]
-  pager = "less -rFX"
+	pager = "less -rFX"
+  	command = 'delta'
 [edit]
 	command  = 'C:/Program Files/Notepad++/Notepad++.exe'
 	args = ['-multiInst', '-notabbar', '-nosession', '-noPlugin']
 [merge]
   command = 'WinMergeU'
-  args =  ['-u', '-e', '-x', '-fm', '-wl', '-wr', '-dl', '"Local"', '-dr', '"Remote"']
+	args = [
+		'-u',
+		'-e',
+		'-x',
+		'-fm',
+		'-wl',
+		'-wr',
+		'-dl',
+		'"Local"',
+		'-dr',
+		'"Remote"'
+	]
