@@ -1,0 +1,10 @@
+# https://docs.npmjs.com/cli/v8/using-npm/config
+{{ if .npmcache }}
+cache = {{ .npmcache }}
+{{ end }}
+msvs_version = 2017
+{{ if .npmprefix }}
+prefix = {{ .npmprefix }}
+{{ end }}
+shell = "pwsh.exe"
+unicode = true
