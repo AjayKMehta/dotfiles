@@ -1,24 +1,24 @@
 {
+    "FormattingOptions": {
+        "EnableEditorConfigSupport": true
+    },
+    "ImplementTypeOptions": {
+        "InsertionBehavior": "WithOtherMembersOfTheSameKind",
+        "PropertyGenerationBehavior": "PreferAutoProperties"
+    },
+    "RenameOptions": {
+        "RenameInComments": true,
+        "RenameInStrings": false,
+        "RenameOverloads": true
+    },
     "RoslynExtensionsOptions": {
-        "EnableDecompilationSupport": true,
         "EnableAnalyzersSupport": true,
+        "EnableDecompilationSupport": true,
         "LocationPaths": [
             "c:/Users/Ajay/.vscode/extensions/josefpihrt-vscode.roslynator-4.0.3/roslyn/common",
             "c:/Users/Ajay/.vscode/extensions/josefpihrt-vscode.roslynator-4.0.3/roslyn/analyzers",
             "c:/Users/Ajay/.vscode/extensions/josefpihrt-vscode.roslynator-4.0.3/roslyn/refactorings",
             "c:/Users/Ajay/.vscode/extensions/josefpihrt-vscode.roslynator-4.0.3/roslyn/fixes"
-        ],
-        "FormattingOptions": {
-            "enableEditorConfigSupport": true
-        },
-        "ImplementTypeOptions": {
-            "PropertyGenerationBehavior": "PreferAutoProperties|PreferThrowingProperties",
-            "InsertionBehavior": "AtTheEnd|WithOtherMembersOfTheSameKind"
-        },
-        "RenameOptions": {
-            "RenameInComments": true,
-            "RenameOverloads": true,
-            "RenameInStrings": false
-        }
+        ]
     }
 }
