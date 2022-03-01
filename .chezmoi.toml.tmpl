@@ -1,20 +1,20 @@
 # https://www.chezmoi.io/user-guide/setup/#re-create-your-config-file
-{{- $email := get . "email" }}
+{{- $email := get . "email" -}}
 {{- if eq $email "" -}}
 {{- $email := promptString "Git email address for the author/committer" -}}
 {{- end -}}
 
-{{- $name:= get . "name" }}
+{{- $name:= get . "name" -}}
 {{- if eq $name "" -}}
 {{- $name := promptString "Git username for the author/committer" -}}
 {{- end -}}
 
-{{- $gpgpath:= get . "gpgpath" }}
+{{- $gpgpath:= get . "gpgpath" -}}
 {{- if eq $gpgpath "" -}}
 {{- $gpgpath := promptString "Path of gpg.exe" -}}
 {{- end -}}
 
-{{- $envdir:= get . "envdir" }}
+{{- $envdir:= get . "envdir" -}}
 {{- if eq $envdir "" -}}
 {{- $envdir := promptString "Directory for conda environments" -}}
 {{- end -}}
@@ -24,9 +24,14 @@
 {{- $pkgdir := promptString "Directory for conda packages" -}}
 {{- end -}}
 
-{{- $npmcache:= get . "npmcache" }}
+{{- $npmcache:= get . "npmcache" -}}
 {{- if eq $npmcache "" -}}
 {{- $npmcache := promptString "Directory for NPM cache" -}}
+{{- end -}}
+
+{{- $npmprefix:= get . "npmprefix" -}}
+{{- if eq $npmprefix "" -}}
+{{- $npmprefix := promptString "Directory where the node executable is installed" -}}
 {{- end -}}
 
 sourceDir = {{ .chezmoi.sourceDir | quote }}
@@ -40,6 +45,7 @@ sourceDir = {{ .chezmoi.sourceDir | quote }}
 	envdir = "{{ $envdir }}"
 	pkgdir = "{{ $pkgdir }}"
 	npmcache = "{{ $npmcache }}"
+	npmprefix = "{{ $npmprefix }}"
 [cd]
 	command = "pwsh"
 [completion]
@@ -51,7 +57,7 @@ sourceDir = {{ .chezmoi.sourceDir | quote }}
 	command  = 'C:/Program Files/Notepad++/Notepad++.exe'
 	args = ['-multiInst', '-notabbar', '-nosession', '-noPlugin']
 [merge]
-  command = 'WinMergeU'
+  	command = 'WinMergeU'
 	args = [
 		'-u',
 		'-e',
