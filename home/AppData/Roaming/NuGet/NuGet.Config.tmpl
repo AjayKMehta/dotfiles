@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- https://docs.microsoft.com/en-us/nuget/reference/nuget-config-file -->
+<configuration>
+	<packageRestore>
+		<!-- Allow NuGet to download missing packages -->
+		<add key="enabled" value="true" />
+		<!-- Automatically check for missing packages during build in Visual Studio -->
+		<add key="automatic" value="true" />
+	</packageRestore>
+	<config>
+		<!-- https://docs.microsoft.com/en-us/nuget/consume-packages/managing-the-global-packages-and-cache-folders -->
+		{{ if .nugetpkgs }}{{"		<add key=\"repositoryPath\" value=\"{{.nugetpkgs}}\" />"}}{{ end }}
+		<!-- Override using the NUGET_PACKAGES environment variable -->
+		{{ if .nugetpkgs }}{{"		<add key=\"globalPackagesFolder\" value=\"{{.nugetpkgs}}\" />"}}{{ end }}
+		<add key="dependencyVersion" value="Highest" />
+	</config>
+	<packageSources>
+		<add key="nuget.org" value="https://api.nuget.org/v3/index.json" protocolVersion="3" />
+	</packageSources>
+	<packageSourceCredentials />
+	<packageManagement>
+		<add key="format" value="1" />
+	</packageManagement>
+</configuration>
