@@ -1,0 +1,4 @@
+[wsl2]
+#https://medium.com/@lewwybogus/how-to-stop-wsl2-from-hogging-all-your-ram-with-docker-d7846b9c5b37
+memory=4GB
+processors=5
