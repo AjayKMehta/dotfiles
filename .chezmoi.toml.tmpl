@@ -34,6 +34,16 @@
 {{- $npmprefix := promptString "Directory where the node executable is installed" -}}
 {{- end -}}
 
+{{- $nugetpkgs:= get . "nugetpkgs" -}}
+{{- if eq $nugetpkgs "" -}}
+{{- $nugetpkgs := promptString "Directory where NuGet packages are installed." -}}
+{{- end -}}
+
+{{- $rworkingdir:= get . "rworkingdir" -}}
+{{- if eq $rworkingdir "" -}}
+{{- $rworkingdir := promptString "Working directory for R." -}}
+{{- end -}}
+
 sourceDir = {{ .chezmoi.sourceDir | quote }}
 
 # Automatically get converted to lower case!
@@ -46,6 +56,8 @@ sourceDir = {{ .chezmoi.sourceDir | quote }}
 	pkgdir = "{{ $pkgdir }}"
 	npmcache = "{{ $npmcache }}"
 	npmprefix = "{{ $npmprefix }}"
+	nugetpkgs = "{{ $nugetpkgs }}"
+	rworkingdir = "{{ $rworkingdir }}"
 [cd]
 	command = "pwsh"
 [completion]
