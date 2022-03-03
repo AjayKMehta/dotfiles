@@ -1,0 +1,78 @@
+# h/t: http://www.onthelambda.com/2014/09/17/fun-with-rprofile-and-customizing-r-startup/
+
+local({
+  r <- getOption("repos")
+  r["RSTUDIO"] <- "https://packagemanager.rstudio.com/all/latest"
+  r["ropensci"] <- "https://ropensci.r-universe.dev"
+  r["CRAN"] <- "https://cran.r-project.org/"
+  r["INLA"] <- "https://inla.r-inla-download.org/R/stable"
+  options(repos = r)
+
+  options(
+    # Enable script file names and line numbers for tryCatchLog
+    keep.source = TRUE,
+    Ncpus = parallel::detectCores(),
+    {{ if .mavendir}}    maven.home = "{{.mavendir}}",{{ end }}}}
+    {{ if .sparkdir}}    spark.install.dir = "{{.sparkdir}}",{{end}}
+    warnPartialMatchAttr = TRUE,
+    warnPartialMatchDollar = TRUE,
+    warnPartialMatchArgs = TRUE,
+    RCurlOptions = list(cainfo = system.file("CurlSSL", "cacert.pem", package = "RCurl")),
+    download.file.method = "libcurl",
+    # https://github.com/Ikuyadeu/vscode-R/wiki/RStudio-addin-support
+    vsc.rstudioapi = TRUE,
+    # https://www.tidyverse.org/blog/2021/03/clock-0-1-0/#production
+    clock.strict = TRUE,
+    rlang_backtrace_on_error_report = "collapse",
+    rlang_backtrace_on_error = "branch"
+  )
+
+  if (interactive()) {
+    auto.loads <- c("magrittr")
+
+    invisible(sapply(auto.loads, library, character.only = TRUE, warn.conflicts = FALSE, quietly = TRUE))
+
+    # Don't change working directory if project or calling from VS Code.
+    if (length(dir(getwd(), pattern = "[Rr]proj$")) == 0 &&
+      Sys.getenv("TERM_PROGRAM") != "vscode") {
+      setwd("D:/git/R")
+    }
+
+    if (Sys.getenv("TERM_PROGRAM") == "vscode") {
+      # activate RStudio Addins on command pallet
+      options(vsc.rstudioapi = TRUE)
+
+      if ("httpgd" %in% .packages(all.available = TRUE)) {
+        # https://github.com/Ikuyadeu/vscode-R/wiki/R-Session-watcher
+        options(
+          vsc.plot = FALSE,
+          device = function(...) {
+            httpgd::hgd()
+            .vsc.browser(httpgd::hgd_url(), viewer = "Beside")
+          }
+        )
+
+        # How much of the object to show on hover and autocomplete detail?
+        # As controlled by max.level arg of str().
+        # Use 0 (or 1) is the default - literal value or object type and dimensions
+        # Use 2 to show list contents, data frame columns, and example values.
+        options(vsc.str.max.level = 2)
+      }
+    }
+
+    # https://www.tidyverse.org/articles/2019/01/rlang-0-3-1/
+    if (requireNamespace("rlang", quietly = TRUE)) {
+      options(error = rlang::entrace)
+    }
+
+    # https://github.com/kiendang/rdocsyntax
+    if (requireNamespace("rdocsyntax", quietly = TRUE)) {
+      rdocsyntax::highlight_html_docs()
+      if (Sys.getenv("RSTUDIO") != "1") {
+        options(rdocsyntax.theme = "dracula")
+      }
+    }
+
+    cat("Working Directory =", getwd())
+  }
+})
