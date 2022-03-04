@@ -44,6 +44,21 @@
 {{- $rworkingdir := promptString "Working directory for R." -}}
 {{- end -}}
 
+{{- $mavendir:= get . "mavendir" -}}
+{{- if eq $mavendir "" -}}
+{{- $mavendir := promptString "Directory where maven is installed." -}}
+{{- end -}}
+
+{{- $sparkdir:= get . "sparkdir" -}}
+{{- if eq $sparkdir "" -}}
+{{- $sparkdir := promptString "Directory where Spark is installed." -}}
+{{- end -}}
+
+{{- $cmdstandir:= get . "cmdstandir" -}}
+{{- if eq $cmdstandir "" -}}
+{{- $cmdstandir := promptString "Directory where cmdstan is installed." -}}
+{{- end -}}
+
 sourceDir = {{ .chezmoi.sourceDir | quote }}
 
 # Automatically get converted to lower case!
@@ -58,6 +73,9 @@ sourceDir = {{ .chezmoi.sourceDir | quote }}
 	npmprefix = "{{ $npmprefix }}"
 	nugetpkgs = "{{ $nugetpkgs }}"
 	rworkingdir = "{{ $rworkingdir }}"
+	mavendir = "{{ $mavendir }}"
+	sparkdir = "{{ $sparkdir }}"
+	cmdstandir = "{{ $cmdstandir }}"
 [cd]
 	command = "pwsh"
 [completion]
