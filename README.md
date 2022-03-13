@@ -1,4 +1,3 @@
-
 ![Latest commit](https://img.shields.io/github/last-commit/AjayKMehta/dotfiles?style=plastic)
 
 My dotfiles managed by [chezmoi](https://github.com/twpayne/chezmoi/).
