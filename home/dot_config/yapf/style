@@ -210,7 +210,7 @@ spaces_around_dict_delimiters=False
 spaces_around_list_delimiters=False
 
 # Use spaces around the power operator.
-spaces_around_power_operator=False
+spaces_around_power_operator=True
 
 # Use spaces around the subscript / slice operator.  For example:
 #
