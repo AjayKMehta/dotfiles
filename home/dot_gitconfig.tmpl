@@ -31,6 +31,7 @@
 	it = !git init && git commit -m root --allow-empty
 	st = status --short --branch
 	so = show --pretty='parent %C(red)%p %C(reset)commit %C(red)%h%C(yellow)%d%C(reset)%n%n%w(72,2,2)%s%n%n%w(72,0,0)%C(cyan)%an %C(green)%ar'
+	show-rd = show --remerge-diff
 	# Doesn't work.
 	batdiff = "!git diff --name-only --diff-filter=d | xargs bat --diff"
 	delta = -c core.pager=delta diff
