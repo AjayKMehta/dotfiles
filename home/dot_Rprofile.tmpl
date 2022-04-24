@@ -18,7 +18,6 @@ local({
     warnPartialMatchDollar = TRUE,
     warnPartialMatchArgs = TRUE,
     RCurlOptions = list(cainfo = system.file("CurlSSL", "cacert.pem", package = "RCurl")),
-    download.file.method = "libcurl",
     # https://github.com/Ikuyadeu/vscode-R/wiki/RStudio-addin-support
     vsc.rstudioapi = TRUE,
     # https://www.tidyverse.org/blog/2021/03/clock-0-1-0/#production
@@ -35,7 +34,7 @@ local({
     # Don't change working directory if project or calling from VS Code.
     if (length(dir(getwd(), pattern = "[Rr]proj$")) == 0 &&
       Sys.getenv("TERM_PROGRAM") != "vscode") {
-      setwd("D:/git/R")
+      setwd("{{ .rworkingdir }}")
     }
 
     if (Sys.getenv("TERM_PROGRAM") == "vscode") {
