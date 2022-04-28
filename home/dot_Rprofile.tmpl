@@ -64,14 +64,6 @@ local({
       options(error = rlang::entrace)
     }
 
-    # https://github.com/kiendang/rdocsyntax
-    if (requireNamespace("rdocsyntax", quietly = TRUE)) {
-      rdocsyntax::highlight_html_docs()
-      if (Sys.getenv("RSTUDIO") != "1") {
-        options(rdocsyntax.theme = "dracula")
-      }
-    }
-
     cat("Working Directory =", getwd())
   }
 })
