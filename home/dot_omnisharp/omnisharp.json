@@ -15,10 +15,10 @@
         "EnableAnalyzersSupport": true,
         "EnableDecompilationSupport": true,
         "LocationPaths": [
-            "c:/Users/Ajay/.vscode/extensions/josefpihrt-vscode.roslynator-4.1.0/roslyn/common",
-            "c:/Users/Ajay/.vscode/extensions/josefpihrt-vscode.roslynator-4.1.0/roslyn/analyzers",
-            "c:/Users/Ajay/.vscode/extensions/josefpihrt-vscode.roslynator-4.1.0/roslyn/refactorings",
-            "c:/Users/Ajay/.vscode/extensions/josefpihrt-vscode.roslynator-4.1.0/roslyn/fixes"
+            "c:/Users/Ajay/.vscode/extensions/josefpihrt-vscode.roslynator-4.1.1/roslyn/common",
+            "c:/Users/Ajay/.vscode/extensions/josefpihrt-vscode.roslynator-4.1.1/roslyn/analyzers",
+            "c:/Users/Ajay/.vscode/extensions/josefpihrt-vscode.roslynator-4.1.1/roslyn/refactorings",
+            "c:/Users/Ajay/.vscode/extensions/josefpihrt-vscode.roslynator-4.1.1/roslyn/fixes"
         ]
     }
 }
