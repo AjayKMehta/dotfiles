@@ -11,6 +11,9 @@
 	untrackedCache = true
 	longpaths = true
 	symlinks = true
+	fsmonitor = true
+	fsync = committed,added,commit-graph
+	fsyncMethod = batch
 [include]
 	path = themes.gitconfig
 	path = maintenance.gitconfig
@@ -232,3 +235,5 @@
 	version = 4
 [help]
 	autoCorrect = prompt
+[transfer]
+	credentialsInUrl = warn
