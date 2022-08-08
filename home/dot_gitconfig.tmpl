@@ -30,19 +30,21 @@
 	unpushed = log --branches --not --remotes=origin
 	compare = difftool -d -g @ @{u}
 
+	## Diff
+	delta = -c core.pager=delta diff
+	delta-s = -c core.pager=delta -c 'delta.features=sideways decorations my-line-numbers emph' diff
+	compare2 = difftool -d -g @
+	difft = -c diff.externa=difft diff
+	difftd = -c core.pager=delta -c diff.externa=difft diff
+
 	## Misc
 	it = !git init && git commit -m root --allow-empty
 	st = status --short --branch
 	so = show --pretty='parent %C(red)%p %C(reset)commit %C(red)%h%C(yellow)%d%C(reset)%n%n%w(72,2,2)%s%n%n%w(72,0,0)%C(cyan)%an %C(green)%ar'
 	show-rd = show --remerge-diff
-	# Doesn't work.
-	batdiff = "!git diff --name-only --diff-filter=d | xargs bat --diff"
-	delta = -c core.pager=delta diff
-	delta-side = -c core.pager=delta -c 'delta.features=sideways decorations my-line-numbers emph' diff
-	compare2 = difftool -d -g @
 	ss = stash --staged
 
-	# Push to remote
+	## Push to remote
 	please = push --force-with-lease
 	pu = !git push origin `git branch --show-current`
 	push-origin = push --set-upstream origin
