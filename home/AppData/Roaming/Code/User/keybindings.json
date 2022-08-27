@@ -1,0 +1,435 @@
+[
+    {
+        "command": "workbench.debug.viewlet.action.addFunctionBreakpointAction",
+        "key": "ctrl+k b"
+    },
+    {
+        "command": "PowerShell.ShowAdditionalCommands",
+        "key": "shift+alt+s",
+        "when": "editorTextFocus && editorLangId == 'powershell'"
+    },
+    {
+        "command": "editor.action.insertLineBefore",
+        "key": "ctrl+enter",
+        "when": "editorTextFocus && !editorReadonly && editorLangId != 'r' && editorLangId != 'rmd'"
+    },
+    {
+        "command": "editor.action.insertLineAfter",
+        "key": "ctrl+shift+down",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "command": "editor.action.insertLineAfter",
+        "key": "shift+enter",
+        "when": "editorTextFocus && !editorReadonly && editorLangId != 'python' && editorLangId != 'julia'"
+    },
+    {
+        "command": "editor.action.transformToUppercase",
+        "key": "ctrl+shift+u",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "command": "editor.action.transformToLowercase",
+        "key": "ctrl+u",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "command": "cursorUndo",
+        "key": "ctrl+u",
+        "when": "textInputFocus"
+    },
+    {
+        "command": "workbench.action.output.toggleOutput",
+        "key": "ctrl+shift+u"
+    },
+    {
+        "command": "md-shortcut.toggleLink",
+        "key": "ctrl+m ctrl+l",
+        "when": "editorTextFocus && editorLangId == 'markdown'"
+    },
+    {
+        "command": "md-shortcut.toggleLink",
+        "key": "ctrl+l",
+        "when": "editorTextFocus && editorLangId == 'markdown'"
+    },
+    {
+        "command": "-editor.action.insertLineAfter",
+        "key": "shift+enter",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "command": "workbench.action.toggleSidebarVisibility",
+        "key": "ctrl+b",
+        "when": "editorLangId != 'markdown' || !editorTextFocus "
+    },
+    {
+        "command": "md-shortcut.toggleBold",
+        "key": "ctrl+b",
+        "when": "editorTextFocus && markdownShortcuts:enabled && editorLangId=='markdown'"
+    },
+    {
+        "command": "editor.action.inspectTMScopes",
+        "key": "ctrl+shift+alt+i"
+    },
+    {
+        "command": "-editor.action.insertLineBefore",
+        "key": "ctrl+enter",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "command": "-workbench.action.tasks.test",
+        "key": "f8",
+        "when": "!inDebugMode"
+    },
+    {
+        "command": "editor.action.marker.nextInFiles",
+        "key": "f8",
+        "when": "editorFocus && !editorReadonly && editorLangId != 'powershell'"
+    },
+    {
+        "command": "-editor.action.marker.nextInFiles",
+        "key": "f8",
+        "when": "editorFocus && !editorReadonly"
+    },
+    {
+        "command": "-sortLines.sortLines",
+        "key": "f9",
+        "when": "editorTextFocus"
+    },
+    {
+        "command": "editor.action.smartSelect.grow",
+        "key": "ctrl+alt+1"
+    },
+    {
+        "command": "duplicate.execute",
+        "key": "ctrl+shift+d",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+    {
+        "command": "-extension.wipeCommon",
+        "key": "ctrl+shift+w"
+    },
+    {
+        "command": "workbench.files.action.showActiveFileInExplorer",
+        "key": "ctrl+[ s"
+    },
+    {
+        "command": "workbench.action.quickOpenPreviousRecentlyUsedEditor",
+        "key": "ctrl+tab",
+        "when": "!inEditorsPicker"
+    },
+    {
+        "command": "workbench.action.quickOpenLeastRecentlyUsedEditor",
+        "key": "ctrl+shift+tab",
+        "when": "!inEditorsPicker"
+    },
+    {
+        "command": "-editor.action.deleteLines",
+        "key": "ctrl+shift+k",
+        "when": "textInputFocus && !editorReadonly"
+    },
+    {
+        "command": "workbench.extensions.action.checkForUpdates",
+        "key": "ctrl+alt+f5"
+    },
+    {
+        "command": "workbench.actions.view.problems",
+        "key": "ctrl+shift+m",
+        "when": "editorLangId != r && editorLangId != rmd"
+    },
+    {
+        "command": "workbench.action.zoomOut",
+        "key": "ctrl+shift+-",
+        "when": "!editorTextFocus"
+    },
+    {
+        "command": "-workbench.action.zoomOut",
+        "key": "ctrl+shift+-"
+    },
+    {
+        "command": "workbench.action.zoomOut",
+        "key": "ctrl+-",
+        "when": "!editorTextFocus"
+    },
+    {
+        "command": "-workbench.action.zoomOut",
+        "key": "ctrl+-"
+    },
+    {
+        "args": ".vsc.browser(httpgd::httpgdURL(), viewer = \"Beside\")",
+        "command": "r.runCommand",
+        "key": "ctrl+alt+p",
+        "when": "editorTextFocus && editorLangId == 'r'"
+    },
+    {
+        "command": "git.stageSelectedRanges",
+        "key": "ctrl+k ctrl+s",
+        "when": "isInDiffEditor"
+    },
+    {
+        "command": "jupyter.notebookeditor.restartkernel",
+        "key": "ctrl+shift+f10",
+        "when": "jupyter.featureenabled && !findInputFocussed && !replaceInputFocussed && editorLangId == 'python'"
+    },
+    {
+        "command": "git.stage",
+        "key": "ctrl+alt+s"
+    },
+    {
+        "command": "-hediet-power-tools.apply-rename",
+        "key": "shift+enter",
+        "when": "hediet-power-tools.apply-rename.applicable"
+    },
+    {
+        "command": "-editor.action.addSelectionToNextFindMatch",
+        "key": "ctrl+w"
+    },
+    {
+        "command": "rewrap.rewrapComment",
+        "key": "ctrl+shift+/",
+        "when": "editorTextFocus"
+    },
+    {
+        "command": "-rewrap.rewrapComment",
+        "key": "alt+q",
+        "when": "editorTextFocus"
+    },
+    {
+        "command": "-editor.action.marker.nextInFiles",
+        "key": "f8",
+        "when": "editorFocus"
+    },
+    {
+        "command": "-cursorColumnSelectLeft",
+        "key": "shift+alt+left",
+        "when": "editorTextFocus"
+    },
+    {
+        "command": "-cursorColumnSelectRight",
+        "key": "shift+alt+right",
+        "when": "editorTextFocus"
+    },
+    {
+        "command": "extension.aceJump",
+        "key": "ctrl+shift+j",
+        "when": "editorTextFocus"
+    },
+    {
+        "command": "undo",
+        "key": "alt+space"
+    },
+    {
+        "command": "workbench.action.openGlobalKeybindings",
+        "key": "ctrl+k ctrl+s",
+        "when": "!isInDiffEditor"
+    },
+    {
+        "command": "-workbench.action.openGlobalKeybindings",
+        "key": "ctrl+k ctrl+s"
+    },
+    {
+        "command": "PowerShell.RunSelection",
+        "key": "f8",
+        "when": "editorFocus && editorLangId == 'powershell'"
+    },
+    {
+        "command": "-PowerShell.RunSelection",
+        "key": "f8",
+        "when": "editorTextFocus && editorLangId == 'powershell'"
+    },
+    {
+        "command": "workbench.action.tasks.build",
+        "key": "f7",
+        "when": "!inDebugMode && !isInDiffEditor"
+    },
+    {
+        "command": "-workbench.action.tasks.build",
+        "key": "f7",
+        "when": "!inDebugMode"
+    },
+    {
+        "command": "-editor.action.smartSelect.expand",
+        "key": "ctrl+w",
+        "when": "editorTextFocus"
+    },
+    {
+        "command": "emojisense.quickEmoji",
+        "key": "ctrl+alt+i",
+        "when": "editorTextFocus"
+    },
+    {
+        "command": "-emojisense.quickEmoji",
+        "key": "ctrl+i",
+        "when": "editorTextFocus"
+    },
+    {
+        "command": "emojisense.quickEmojiTerminal",
+        "key": "ctrl+alt+i",
+        "when": "terminalFocus"
+    },
+    {
+        "command": "-emojisense.quickEmojiTerminal",
+        "key": "ctrl+i",
+        "when": "terminalFocus"
+    },
+    {
+        "command": "extension.Gitmoji",
+        "key": "ctrl+g e"
+    },
+    {
+        "command": "workbench.view.debug",
+        "key": "ctrl+shift+d",
+        "when": "viewContainer.workbench.view.debug.enabled && !terminalfocus"
+    },
+    {
+        "command": "-workbench.view.debug",
+        "key": "ctrl+shift+d",
+        "when": "viewContainer.workbench.view.debug.enabled"
+    },
+    {
+        "args": {
+            "text": "${file}"
+        },
+        "command": "workbench.action.terminal.sendSequence",
+        "key": "ctrl+shift+t",
+        "when": "terminalFocus"
+    },
+    {
+        "args": {
+            "text": "${fileDirname}/"
+        },
+        "command": "workbench.action.terminal.sendSequence",
+        "key": "ctrl+shift+d",
+        "when": "terminalFocus"
+    },
+    {
+        "command": "workbench.action.reopenClosedEditor",
+        "key": "ctrl+shift+t",
+        "when": "!terminalFocus"
+    },
+    {
+        "command": "-workbench.action.reopenClosedEditor",
+        "key": "ctrl+shift+t"
+    },
+    {
+        "command": "-editor.action.selectFromAnchorToCursor",
+        "key": "ctrl+k ctrl+k",
+        "when": "editorTextFocus && selectionAnchorSet"
+    },
+    {
+        "command": "editor.action.formatSelection.multiple",
+        "key": "ctrl+k alt+f"
+    },
+    {
+        "command": "clever.blockSelect.cleverSelect",
+        "key": "ctrl+[ ctrl+]"
+    },
+    {
+        "command": "clever.maximize.toggleWithoutSidebar",
+        "key": "ctrl+alt+0",
+        "when": "editorTextFocus"
+    },
+    {
+        "command": "clever.string.nextQuotes",
+        "key": "ctrl+'"
+    },
+    {
+        "command": "workbench.action.gotoLine",
+        "key": "ctrl+g"
+    },
+    {
+        "command": "-workbench.action.gotoLine",
+        "key": "ctrl+g"
+    },
+    // assignment
+    {
+        "args": {
+            "text": " <- "
+        },
+        "command": "type",
+        "key": "alt+-",
+        "when": "editorLangId == r && editorTextFocus || editorLangId == rmd && editorTextFocus"
+    },
+    // Pipe
+    {
+        "args": {
+            "text": " |> "
+        },
+        "command": "type",
+        "key": "ctrl+shift+m",
+        "when": "editorLangId == r && editorTextFocus || editorLangId == rmd && editorTextFocus:grinning:"
+    },
+    // input indicative of r markdown code chunk
+    {
+        "args": {
+            "snippet": "```{r}\n${TM_SELECTED_TEXT}$0\n```"
+        },
+        "command": "editor.action.insertSnippet",
+        "key": "ctrl+shift+i",
+        "label": "input indicative of r markdown code chunk",
+        "when": "editorTextFocus && editorLangId == 'rmd'"
+    },
+    // open help panel for selection
+    {
+        "command": "r.helpPanel.openForSelection",
+        "key": "f1",
+        "when": "editorTextFocus && editorLangId == 'r' || editorTextFocus && editorLangId == 'rmd'"
+    },
+    // Roxygen skeleton
+    {
+        "args": {
+            "text": "#' Title\n#'\n#'Description\n#'\n#'@param $$\n#'\n#'@export\n#'\n#'@example\n#'"
+        },
+        "command": "type",
+        "key": "ctrl+alt+shift+r",
+        "when": "editorTextFocus && editorLangId == r || editorTextFocus && editorLangId == rmd"
+    },
+    {
+        "command": "-workbench.debug.viewlet.action.addFunctionBreakpointAction",
+        "key": "ctrl+b"
+    },
+    {
+        "command": "workbench.action.terminal.runRecentCommand",
+        "key": "ctrl+r",
+        "when": "terminalFocus"
+    },
+    // Fallback to the shell's native ctrl+r
+    {
+        "args": {
+            "text": "\u0012" /*^R*/
+        },
+        "command": "workbench.action.terminal.sendSequence",
+        "key": "ctrl+alt+r",
+        "when": "terminalFocus"
+    },
+    {
+        "command": "focusPreviousCodeAction",
+        "key": "ctrl+k",
+        "when": "CodeActionMenuVisible"
+    },
+    {
+        "command": "focusNextCodeAction",
+        "key": "ctrl+j",
+        "when": "CodeActionMenuVisible"
+    },
+    {
+        "command": "workbench.action.unpinEditor",
+        "key": "ctrl+k ctrl+shift+p",
+        "when": "activeEditorIsPinned"
+    },
+    {
+        "command": "-workbench.action.unpinEditor",
+        "key": "ctrl+k shift+enter",
+        "when": "activeEditorIsPinned"
+    },
+    {
+        "command": "workbench.action.pinEditor",
+        "key": "ctrl+k ctrl+shift+p",
+        "when": "!activeEditorIsPinned"
+    },
+    {
+        "command": "-workbench.action.pinEditor",
+        "key": "ctrl+k shift+enter",
+        "when": "!activeEditorIsPinned"
+    }
+]
