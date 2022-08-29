@@ -1,63 +1,27 @@
 # https://www.chezmoi.io/user-guide/setup/#re-create-your-config-file
-{{- $email := get . "email" -}}
-{{- if eq $email "" -}}
-{{- $email := promptString "Git email address for the author/committer" -}}
-{{- end -}}
+{{- $email := promptStringOnce . "email" "Email address" -}}
 
-{{- $name:= get . "name" -}}
-{{- if eq $name "" -}}
-{{- $name := promptString "Git username for the author/committer" -}}
-{{- end -}}
+{{- $name := promptStringOnce . "name" "Git username for the author/committer" -}}
 
-{{- $gpgpath:= get . "gpgpath" -}}
-{{- if eq $gpgpath "" -}}
-{{- $gpgpath := promptString "Path of gpg.exe" -}}
-{{- end -}}
+{{- $gpgpath := promptStringOnce . "gpgpath" "Path of gpg.exe" -}}
 
-{{- $envdir:= get . "envdir" -}}
-{{- if eq $envdir "" -}}
-{{- $envdir := promptString "Directory for conda environments" -}}
-{{- end -}}
+{{- $envdir := promptStringOnce . "envdir" "Directory for conda environments" -}}
 
-{{- $pkgdir:= get . "pkgdir" }}
-{{- if eq $pkgdir "" -}}
-{{- $pkgdir := promptString "Directory for conda packages" -}}
-{{- end -}}
+{{- $pkgdir := promptStringOnce . "pkgdir" "Directory for conda packages" -}}
 
-{{- $npmcache:= get . "npmcache" -}}
-{{- if eq $npmcache "" -}}
-{{- $npmcache := promptString "Directory for NPM cache" -}}
-{{- end -}}
+{{- $npmcache := promptStringOnce . "npmcache" "Directory for NPM cache" -}}
 
-{{- $npmprefix:= get . "npmprefix" -}}
-{{- if eq $npmprefix "" -}}
-{{- $npmprefix := promptString "Directory where the node executable is installed" -}}
-{{- end -}}
+{{- $npmprefix := promptStringOnce . "npmprefix" "Directory where the node executable is installed" -}}
 
-{{- $nugetpkgs:= get . "nugetpkgs" -}}
-{{- if eq $nugetpkgs "" -}}
-{{- $nugetpkgs := promptString "Directory where NuGet packages are installed." -}}
-{{- end -}}
+{{- $nugetpkgs := promptStringOnce . "nugetpkgs" "Directory where NuGet packages are installed." -}}
 
-{{- $rworkingdir:= get . "rworkingdir" -}}
-{{- if eq $rworkingdir "" -}}
-{{- $rworkingdir := promptString "Working directory for R." -}}
-{{- end -}}
+{{- $rworkingdir := promptStringOnce . "rworkingdir" "Working directory for R." -}}
 
-{{- $mavendir:= get . "mavendir" -}}
-{{- if eq $mavendir "" -}}
-{{- $mavendir := promptString "Directory where maven is installed." -}}
-{{- end -}}
+{{- $mavendir := promptStringOnce . "mavendir" "Directory where maven is installed." -}}
 
-{{- $sparkdir:= get . "sparkdir" -}}
-{{- if eq $sparkdir "" -}}
-{{- $sparkdir := promptString "Directory where Spark is installed." -}}
-{{- end -}}
+{{- $sparkdir := promptStringOnce . "sparkdir" "Directory where Spark is installed." -}}
 
-{{- $cmdstandir:= get . "cmdstandir" -}}
-{{- if eq $cmdstandir "" -}}
-{{- $cmdstandir := promptString "Directory where cmdstan is installed." -}}
-{{- end -}}
+{{- $cmdstandir := promptStringOnce . "cmdstandir" "Directory where cmdstan is installed." -}}
 
 sourceDir = {{ .chezmoi.sourceDir | quote }}
 
