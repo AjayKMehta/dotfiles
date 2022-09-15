@@ -43,6 +43,7 @@
 	so = show --pretty='parent %C(red)%p %C(reset)commit %C(red)%h%C(yellow)%d%C(reset)%n%n%w(72,2,2)%s%n%n%w(72,0,0)%C(cyan)%an %C(green)%ar'
 	show-rd = show --remerge-diff
 	ss = stash --staged
+	alias = config --get-regexp ^alias\\.
 
 	## Push to remote
 	please = push --force-with-lease
@@ -242,3 +243,5 @@
 	autoCorrect = prompt
 [transfer]
 	credentialsInUrl = warn
+[gc]
+	cruftPacks = true
