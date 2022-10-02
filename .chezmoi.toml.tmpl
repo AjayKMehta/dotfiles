@@ -5,6 +5,8 @@
 
 {{- $gpgpath := promptStringOnce . "gpgpath" "Path of gpg.exe" -}}
 
+{{- $gpgkey := promptStringOnce . "gpgkey" "GPG key" -}}
+
 {{- $envdir := promptStringOnce . "envdir" "Directory for conda environments" -}}
 
 {{- $pkgdir := promptStringOnce . "pkgdir" "Directory for conda packages" -}}
@@ -23,6 +25,8 @@
 
 {{- $cmdstandir := promptStringOnce . "cmdstandir" "Directory where cmdstan is installed." -}}
 
+{{- $quartopath := promptStringOnce . "quartopath" "Installation path for quarto." -}}
+
 sourceDir = {{ .chezmoi.sourceDir | quote }}
 
 # Automatically get converted to lower case!
@@ -30,6 +34,7 @@ sourceDir = {{ .chezmoi.sourceDir | quote }}
 [data]
 	name = "{{ $name }}"
     email = "{{ $email }}"
+	gpgkey = "{{ $gpgkey }}"
 	gpgpath = "{{ $gpgpath }}"
 	envdir = "{{ $envdir }}"
 	pkgdir = "{{ $pkgdir }}"
@@ -40,6 +45,7 @@ sourceDir = {{ .chezmoi.sourceDir | quote }}
 	mavendir = "{{ $mavendir }}"
 	sparkdir = "{{ $sparkdir }}"
 	cmdstandir = "{{ $cmdstandir }}"
+	quartopath = "{{ quartopath }}"
 [cd]
 	command = "pwsh"
 [completion]
