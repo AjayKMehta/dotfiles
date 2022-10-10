@@ -1,6 +1,6 @@
 [user]
 	name = {{ .name }}
-	email = 11180071+AjayKMehta@users.noreply.github.com
+	email = {{ .email }}
 	signingkey = {{ .gpgkey }}
 [core]
 	excludesFile = C:/Users/Ajay/.gitignore
@@ -144,6 +144,7 @@
 	autoSquash = true
 	autoStash = false
 	missingCommitsCheck = error
+	updateRefs = true
 [submodule]
 	fetchJobs = 0
 	recurse = true
