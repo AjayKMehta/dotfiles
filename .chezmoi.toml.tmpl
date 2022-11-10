@@ -27,6 +27,7 @@
 
 {{- $quartopath := promptStringOnce . "quartopath" "Installation path for quarto." -}}
 
+{{- $kdbxpath := promptStringOnce . "kdbxpath" "Path for Keepass database" -}}
 sourceDir = {{ .chezmoi.sourceDir | quote }}
 
 # Automatically get converted to lower case!
@@ -56,6 +57,9 @@ sourceDir = {{ .chezmoi.sourceDir | quote }}
 [edit]
 	command  = 'C:/Program Files/Notepad++/Notepad++.exe'
 	args = ['-multiInst', '-notabbar', '-nosession', '-noPlugin']
+[interpreters.ps1]
+    command = "pwsh"
+    args = ["-NoLogo"]
 [merge]
   	command = 'WinMergeU'
 	args = [
@@ -70,3 +74,5 @@ sourceDir = {{ .chezmoi.sourceDir | quote }}
 		'-dr',
 		'"Remote"'
 	]
+[keepassxc]
+    database = "{{ $kdbxpath }}"
