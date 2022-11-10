@@ -14,11 +14,7 @@ create_default_packages:
 pip_interop_enabled: true
 channel_priority: flexible
 unsatisfiable_hints: true
-{{if .envdir}}
 envs_dirs:
-  - {{ .envdir }}
-{{end}}
-{{if .pkgdir}}
+  - {{ .condadir }}\envs
 pkgs_dirs:
-  - {{ .pkgdir }}
-{{end}}
+  - {{ .condadir }}\pkgs

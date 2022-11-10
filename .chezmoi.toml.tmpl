@@ -7,9 +7,7 @@
 
 {{- $gpgkey := promptStringOnce . "gpgkey" "GPG key" -}}
 
-{{- $envdir := promptStringOnce . "envdir" "Directory for conda environments" -}}
-
-{{- $pkgdir := promptStringOnce . "pkgdir" "Directory for conda packages" -}}
+{{- $condadir := promptStringOnce . "condadir" "Conda directory" -}}
 
 {{- $npmcache := promptStringOnce . "npmcache" "Directory for NPM cache" -}}
 
@@ -28,6 +26,7 @@
 {{- $quartopath := promptStringOnce . "quartopath" "Installation path for quarto." -}}
 
 {{- $kdbxpath := promptStringOnce . "kdbxpath" "Path for Keepass database" -}}
+
 sourceDir = {{ .chezmoi.sourceDir | quote }}
 
 # Automatically get converted to lower case!
@@ -37,8 +36,7 @@ sourceDir = {{ .chezmoi.sourceDir | quote }}
     email = "{{ $email }}"
 	gpgkey = "{{ $gpgkey }}"
 	gpgpath = "{{ $gpgpath }}"
-	envdir = "{{ $envdir }}"
-	pkgdir = "{{ $pkgdir }}"
+	condadir = "{{ $condadir }}"
 	npmcache = "{{ $npmcache }}"
 	npmprefix = "{{ $npmprefix }}"
 	nugetpkgs = "{{ $nugetpkgs }}"
@@ -46,7 +44,7 @@ sourceDir = {{ .chezmoi.sourceDir | quote }}
 	mavendir = "{{ $mavendir }}"
 	sparkdir = "{{ $sparkdir }}"
 	cmdstandir = "{{ $cmdstandir }}"
-	quartopath = "{{ quartopath }}"
+	quartopath = "{{ $quartopath }}"
 [cd]
 	command = "pwsh"
 [completion]
@@ -57,6 +55,8 @@ sourceDir = {{ .chezmoi.sourceDir | quote }}
 [edit]
 	command  = 'C:/Program Files/Notepad++/Notepad++.exe'
 	args = ['-multiInst', '-notabbar', '-nosession', '-noPlugin']
+[interpreters.py]
+	command = "{{ $condadir }}/python.exe"
 [interpreters.ps1]
     command = "pwsh"
     args = ["-NoLogo"]
