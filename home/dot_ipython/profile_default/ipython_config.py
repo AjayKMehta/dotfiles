@@ -18,9 +18,9 @@ c.TerminalInteractiveShell.logstart = True
 c.InteractiveShellApp.extensions = ['autoreload']
 c.InteractiveShellApp.exec_lines = ['%autoreload 2']
 
+c.PrefilterManager.multi_line_specials = True
 
 # c.InteractiveShellApp.gui = 'asyncio'
 # c.InteractiveShellApp.matplotlib = 'agg'
 
 c.Application.log_level = 'WARN'
-    
