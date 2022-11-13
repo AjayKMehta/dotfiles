@@ -1,17 +1,17 @@
 PATH="${RTOOLS42_HOME}\usr\bin;${RTOOLS42_HOME}\ucrt64\bin;${RTOOLS42_HOME}\mingw64\bin;{{if .cmdstandir }}{{ .cmdstandir }}/stan/lib/stan_math/lib/tbb;{{end}}${PATH}"
 
-plotly_username={{ .name }}
-plotly_api_key={{ .apikey.plotly }}
+plotly_username={{ (keepassxc "PLOTLY").UserName }}
+plotly_api_key={{ (keepassxc "PLOTLY").Password }}
 
-QUANDL_API_KEY={{ .apikey.quandl }}
-GOOGLE_MAPS_API_KEY={{ .apikey.googlemaps }}
-TIINGO_API_KEY={{ .apikey.tiingo }}
-GGMAP_GOOGLE_API_KEY={{ .apikey.ggmap }}
+QUANDL_API_KEY={{ (keepassxc "QUANDL").Password }}
+GOOGLE_MAPS_API_KEY={{ (keepassxc "GOOGLE MAPS API").Password }}
+RIINGO_TOKEN={{ (keepassxc "RIINGO").Password }}
+GGMAP_GOOGLE_API_KEY={{ (keepassxc "GOOGLE MAPS API").Password }}
 
 # https://github.com/sonatype-nexus-community/oysteR
-OSSINDEX_USER={{.email | lower | quote}}
-OSSINDEX_TOKEN={{ .apikey.ossindex }}
+OSSINDEX_USER={{(keepassxc "OSSINDEX").UserName | quote}}
+OSSINDEX_TOKEN={{ (keepassxc "OSSINDEX").Password }}
 
 {{if .cmdstandir }}CMDSTAN="{{ .cmdstandir }}"{{end}}
 {{if .quartopath }}QUARTO_PATH="{{ .quartopath }}"{{end}}
-{{if .condapath}}RETICULATE_MINICONDA_PATH="{{ .condapath }}"{{end}}
+{{if .condapath }}RETICULATE_MINICONDA_PATH="{{ .condapath }}"{{end}}
