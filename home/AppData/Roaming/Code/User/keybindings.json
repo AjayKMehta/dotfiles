@@ -431,5 +431,9 @@
         "command": "-workbench.action.pinEditor",
         "key": "ctrl+k shift+enter",
         "when": "!activeEditorIsPinned"
+    },
+    {
+        "key": "ctrl+r ctrl+g",
+        "command": "csharpsortusings.sortUsings"
     }
 ]
