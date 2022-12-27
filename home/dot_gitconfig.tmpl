@@ -120,7 +120,7 @@
 	prompt = false
 	trustExitCode = true
 [difftool "bc4"]
-	cmd = 'C:/Program Files/Beyond Compare 4/bcomp.exe' \"$LOCAL\" \"$REMOTE\"
+	cmd = 'C:/Program Files/Beyond Compare 4/bcomp.exe' -ro -title1=Local -title2=Remote \"$LOCAL\" \"$REMOTE\"
 [difftool "winmerge"]
 	cmd = WinMergeU -u -e -x -fl -wl -wr -dl \"$LOCAL\" -dr \"$REMOTE\" \"$LOCAL\" \"$REMOTE\"
 [difftool "difftastic"]
@@ -156,8 +156,6 @@
 	smudge = git-lfs smudge -- %f
 [interactive]
 	diffFilter = delta --color-only
-[add.interactive]
-    useBuiltin = false # required for git 2.37.0
 [delta]
 	features = decorations my-line-numbers emph
 	light = false    # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
