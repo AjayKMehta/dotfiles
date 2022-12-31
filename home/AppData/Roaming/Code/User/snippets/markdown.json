@@ -1,0 +1,36 @@
+{
+    "Insert Fraction": {
+        "body": [
+            "$\\frac{$1}{$2}$$0",
+        ],
+        "description": "Insert fraction (math)",
+        "prefix": "frac"
+    },
+	"Insert inline math": {
+		"body": [
+			"$$1$$0",
+		],
+		"description": "Insert in-line math",
+		"prefix": "math"
+	},
+        "Insert multiline math": {
+            "body": [
+                "$$",
+                "$1",
+                "$$",
+                "$0"
+            ],
+            "description": "Insert multiline math",
+            "prefix": "math-multi"
+        },
+    "Insert R code chunk": {
+        "body": [
+            "```r",
+            "$1",
+            "```",
+            "$0"
+        ],
+        "description": "Insert R code chunk",
+        "prefix": "rcc"
+    }
+}
