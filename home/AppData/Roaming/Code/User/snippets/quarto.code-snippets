@@ -1,0 +1,56 @@
+// https: //gist.github.com/jthomasmock/11acebd4448f171f786e01397df34116?permalink_comment_id=4269591#gistcomment-4269591
+{
+	"column": {
+		"prefix": "column",
+		"body": [
+			":::: {.columns}",
+			"",
+			"::: {.column width=\"40%\"}",
+			"Left column",
+			":::",
+			"",
+			"::: {.column width=\"60%\"}",
+			"Right column",
+			":::",
+			"",
+			"::::"
+		],
+		"description": "quarto columns"
+	},
+	"panel": {
+		"prefix": "panel",
+		"body": [
+			"::: {.panel-tabset}",
+			"${1:body}",
+			":::"
+		],
+		"description": "quarto panel"
+	},
+	"fence": {
+		"prefix": "fence",
+		"body": [
+			":::{.${1:type}}",
+			"${2:body}",
+			":::"
+		],
+		"description": "quarto fence"
+	},
+	"aside": {
+		"prefix": "",
+		"body": [
+			"::: aside",
+			"${1:body}",
+			":::"
+		],
+		"description": "quarto aside"
+	},
+	"fragment": {
+		"prefix": "",
+		"body": [
+			"::: {.fragment .${1:type}}",
+			"${2:body}",
+			":::"
+		],
+		"description": "quarto fragment"
+	},
+}
