@@ -27,9 +27,19 @@
 		"body": "#Requires -RunAsAdministrator",
 		"description": "Require script to be started with elevated user rights."
 	},
-	"Require Module": {
-		"prefix": "req-mod",
+	"Require Module (min version)": {
+		"prefix": "req mod min",
 		"body": "#Requires -Modules @{ModuleName = '$1'; ModuleVersion = '$2'}",
 		"description": "Specify a minimum acceptable version of a module that the script requires."
+	},
+	"Require Module (any version)": {
+		"prefix": "req mod any",
+		"body": "#Requires -Modules $1",
+		"description": "Specify a module that the script requires."
+	},
+	"Require version": {
+		"prefix": "req version",
+		"body": "#Requires -Version $1",
+		"description": "Specify a version of PowerShell that the script requires."
 	}
 }
