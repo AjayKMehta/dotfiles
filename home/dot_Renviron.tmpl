@@ -15,3 +15,10 @@ OSSINDEX_TOKEN={{- (keepassxc "OSSINDEX").Password }}
 {{if .cmdstandir }}CMDSTAN="{{- .cmdstandir }}"{{end}}
 {{if .quartopath }}QUARTO_PATH="{{- .quartopath }}"{{end}}
 {{if .condapath }}RETICULATE_MINICONDA_PATH="{{- .condapath }}"{{end}}
+
+LC_COLLATE=English_United States.utf8
+LC_CTYPE=English_United States.utf8
+LC_MONETARY=English_United States.utf8
+# LC_NUMERIC=C
+LC_NUMERIC=English_United States.utf8
+LC_TIME=English_United States.utf8
