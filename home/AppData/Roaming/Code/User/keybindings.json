@@ -435,5 +435,9 @@
     {
         "key": "ctrl+r ctrl+g",
         "command": "csharpsortusings.sortUsings"
+    },
+    {
+        "key": "ctrl+g ctrl+g",
+        "command": "git-graph.view"
     }
 ]
