@@ -23,7 +23,9 @@ local({
     # https://www.tidyverse.org/blog/2021/03/clock-0-1-0/#production
     clock.strict = TRUE,
     rlang_backtrace_on_error_report = "collapse",
-    rlang_backtrace_on_error = "branch"
+    rlang_backtrace_on_error = "branch",
+    # 5 min timeout for downloading files
+    timeout = 300
   )
 
   if (interactive()) {
