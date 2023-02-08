@@ -133,8 +133,9 @@
 	renameLimit = 99999
 [mergetool]
 	prompt = false
+	keepBackup = false
 [mergetool "bc4"]
-	cmd = 'C:/Program Files/Beyond Compare 4/bcomp.exe' \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
+	path = 'C:/Program Files/Beyond Compare 4/bcomp.exe'
 	trustExitCode = true
 [mergetool "winmerge"]
 	cmd = WinMergeU -u -e -x -fm -wl -wr -dl \"Local\" -dr \"Remote\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\"
