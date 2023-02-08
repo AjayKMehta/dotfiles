@@ -341,7 +341,6 @@
         "command": "-workbench.action.gotoLine",
         "key": "ctrl+g"
     },
-    // assignment
     {
         "args": {
             "text": " <- "
@@ -350,7 +349,6 @@
         "key": "alt+-",
         "when": "editorLangId == r && editorTextFocus || editorLangId == rmd && editorTextFocus"
     },
-    // Pipe
     {
         "args": {
             "text": " |> "
@@ -359,7 +357,6 @@
         "key": "ctrl+shift+m",
         "when": "editorLangId == r && editorTextFocus || editorLangId == rmd && editorTextFocus:grinning:"
     },
-    // input indicative of r markdown code chunk
     {
         "args": {
             "snippet": "```{r}\n${TM_SELECTED_TEXT}$0\n```"
@@ -369,13 +366,20 @@
         "label": "input indicative of r markdown code chunk",
         "when": "editorTextFocus && editorLangId == 'rmd'"
     },
-    // open help panel for selection
+    {
+        "args": {
+            "snippet": "$LINE_COMMENT %% "
+        },
+        "command": "editor.action.insertSnippet",
+        "key": "ctrl+shift+i",
+        "label": "input indicative of code chunk",
+        "when": "editorTextFocus && editorLangId == 'r'"
+    },
     {
         "command": "r.helpPanel.openForSelection",
         "key": "f1",
         "when": "editorTextFocus && editorLangId == 'r' || editorTextFocus && editorLangId == 'rmd'"
     },
-    // Roxygen skeleton
     {
         "args": {
             "text": "#' Title\n#'\n#'Description\n#'\n#'@param $$\n#'\n#'@export\n#'\n#'@example\n#'"
@@ -393,7 +397,6 @@
         "key": "ctrl+r",
         "when": "terminalFocus"
     },
-    // Fallback to the shell's native ctrl+r
     {
         "args": {
             "text": "\u0012" /*^R*/
@@ -433,11 +436,11 @@
         "when": "!activeEditorIsPinned"
     },
     {
-        "key": "ctrl+r ctrl+g",
-        "command": "csharpsortusings.sortUsings"
+        "command": "csharpsortusings.sortUsings",
+        "key": "ctrl+r ctrl+g"
     },
     {
-        "key": "ctrl+g ctrl+g",
-        "command": "git-graph.view"
+        "command": "git-graph.view",
+        "key": "alt+g"
     }
 ]
