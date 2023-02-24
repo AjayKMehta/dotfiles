@@ -82,16 +82,6 @@
         "when": "!inDebugMode"
     },
     {
-        "command": "editor.action.marker.nextInFiles",
-        "key": "f8",
-        "when": "editorFocus && !editorReadonly && editorLangId != 'powershell'"
-    },
-    {
-        "command": "-editor.action.marker.nextInFiles",
-        "key": "f8",
-        "when": "editorFocus && !editorReadonly"
-    },
-    {
         "command": "-sortLines.sortLines",
         "key": "f9",
         "when": "editorTextFocus"
@@ -104,10 +94,6 @@
         "command": "duplicate.execute",
         "key": "ctrl+shift+d",
         "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
-    },
-    {
-        "command": "-extension.wipeCommon",
-        "key": "ctrl+shift+w"
     },
     {
         "command": "workbench.files.action.showActiveFileInExplorer",
@@ -195,11 +181,6 @@
         "when": "editorTextFocus"
     },
     {
-        "command": "-editor.action.marker.nextInFiles",
-        "key": "f8",
-        "when": "editorFocus"
-    },
-    {
         "command": "-cursorColumnSelectLeft",
         "key": "shift+alt+left",
         "when": "editorTextFocus"
@@ -210,11 +191,6 @@
         "when": "editorTextFocus"
     },
     {
-        "command": "extension.aceJump",
-        "key": "ctrl+shift+j",
-        "when": "editorTextFocus"
-    },
-    {
         "command": "undo",
         "key": "alt+space"
     },
@@ -222,20 +198,6 @@
         "command": "workbench.action.openGlobalKeybindings",
         "key": "ctrl+k ctrl+s",
         "when": "!isInDiffEditor"
-    },
-    {
-        "command": "-workbench.action.openGlobalKeybindings",
-        "key": "ctrl+k ctrl+s"
-    },
-    {
-        "command": "PowerShell.RunSelection",
-        "key": "f8",
-        "when": "editorFocus && editorLangId == 'powershell'"
-    },
-    {
-        "command": "-PowerShell.RunSelection",
-        "key": "f8",
-        "when": "editorTextFocus && editorLangId == 'powershell'"
     },
     {
         "command": "workbench.action.tasks.build",
@@ -296,7 +258,7 @@
     },
     {
         "args": {
-            "text": "${fileDirname}/"
+            "text": "${fileDirname}"
         },
         "command": "workbench.action.terminal.sendSequence",
         "key": "ctrl+shift+d",
@@ -332,14 +294,6 @@
     {
         "command": "clever.string.nextQuotes",
         "key": "ctrl+'"
-    },
-    {
-        "command": "workbench.action.gotoLine",
-        "key": "ctrl+g"
-    },
-    {
-        "command": "-workbench.action.gotoLine",
-        "key": "ctrl+g"
     },
     {
         "args": {
