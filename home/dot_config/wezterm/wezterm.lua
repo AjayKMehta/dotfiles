@@ -29,6 +29,16 @@ if wezterm.target_triple == "x86_64-pc-windows-msvc" then
 
 end
 
+wezterm.on('update-status', function(window, pane)
+  local overrides = window:get_config_overrides() or {}
+  if window:is_focused() then
+    overrides.color_scheme = 'nordfox'
+  else
+    overrides.color_scheme = 'nightfox'
+  end
+  window:set_config_overrides(overrides)
+end)
+
 return {
   color_scheme = "Aurora",
   default_prog = { "pwsh" },
