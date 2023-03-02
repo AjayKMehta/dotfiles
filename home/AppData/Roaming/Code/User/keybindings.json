@@ -396,5 +396,9 @@
     {
         "command": "git-graph.view",
         "key": "alt+g"
+    },
+    {
+        "key": "ctrl+alt+/",
+        "command": "workbench.profiles.actions.switchProfile"
     }
 ]
