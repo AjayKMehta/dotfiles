@@ -22,3 +22,6 @@ LC_MONETARY=English_United States.utf8
 # LC_NUMERIC=C
 LC_NUMERIC=English_United States.utf8
 LC_TIME=English_United States.utf8
+
+{{if .sparkdir }}SPARK_HOME="{{.sparkdir}}/{{.sparkversion}}"{{ end}}
+OPENAI_API_KEY="{{- (keepassxc "OPENAI_API_KEY").Password }}"
