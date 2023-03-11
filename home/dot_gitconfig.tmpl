@@ -201,3 +201,7 @@
 	credentialsInUrl = warn
 [gc]
 	cruftPacks = true
+[safe]
+	{{- $safe := split "\n" (output "git" "config" "--get-all" "safe.directory" | trim) }}
+	{{range $x := $safe}}{{ if gt (len (trim $x)) 0}}directory = {{$x}}{{end}}
+	{{end -}}
