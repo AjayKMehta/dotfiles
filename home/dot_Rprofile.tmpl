@@ -22,8 +22,10 @@ local({
     vsc.rstudioapi = TRUE,
     # https://www.tidyverse.org/blog/2021/03/clock-0-1-0/#production
     clock.strict = TRUE,
-    rlang_backtrace_on_error_report = "collapse",
-    rlang_backtrace_on_error = "branch",
+    rlang_backtrace_on_error = "full",
+    rlang_backtrace_on_error_report = "branch",
+    rlang_backtrace_on_warning = "full",
+    rlang_backtrace_on_warning_report = "branch",
     # 5 min timeout for downloading files
     timeout = 300
   )
@@ -31,7 +33,8 @@ local({
   if (interactive()) {
     auto.loads <- c("magrittr")
 
-    invisible(sapply(auto.loads, library, character.only = TRUE, warn.conflicts = FALSE, quietly = TRUE))
+    invisible(sapply(auto.loads, library, character.only = TRUE,
+                     warn.conflicts = FALSE, quietly = TRUE))
 
     # Don't change working directory if project or calling from VS Code.
     if (length(dir(getwd(), pattern = "[Rr]proj$")) == 0 &&
@@ -40,7 +43,7 @@ local({
     }
 
     if (Sys.getenv("TERM_PROGRAM") == "vscode") {
-      # activate RStudio Addins on command pallet
+      # activate RStudio Addins on command pallete
       options(vsc.rstudioapi = TRUE)
 
       if ("httpgd" %in% .packages(all.available = TRUE)) {
@@ -82,9 +85,12 @@ local({
       }
     }
 
-    # https://www.tidyverse.org/articles/2019/01/rlang-0-3-1/
     if (requireNamespace("rlang", quietly = TRUE)) {
+      # Promote base errors to rlang errors
       options(error = rlang::entrace)
+      # Cause errors and warnings to be promoted to rlang conditions that
+      # include a backtrace.
+      rlang::global_entrace()
     }
 
     cat("Working Directory =", getwd())
