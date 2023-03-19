@@ -1,16 +1,5 @@
 local launch_menu = {}
 local wezterm = require 'wezterm';
-
-launch_menu = {
-  {
-    args = { "ctop" },
-  },
-  {
-    label = "Git Bash",
-    args = { "git-bash.exe", "--cd-to-home" },
-  },
-}
-
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
   table.insert(launch_menu, {
     label = "PowerShell",
@@ -26,7 +15,6 @@ if wezterm.target_triple == "x86_64-pc-windows-msvc" then
     args = { "pwsh.exe", "-NoLogo" }
   }
   )
-
 end
 
 wezterm.on('update-status', function(window, pane)
