@@ -20,5 +20,17 @@
             {{ joinPath (env "homedrive") (env "homepath") ".vscode/extensions/josefpihrt-vscode.roslynator-4.2.0/roslyn/refactorings" | replaceAllRegex "\\\\" "/" | quote}},
             {{ joinPath (env "homedrive") (env "homepath") ".vscode/extensions/josefpihrt-vscode.roslynator-4.2.0/roslyn/fixes" | replaceAllRegex "\\\\" "/" | quote }}
         ]
+    },
+    "fileOptions": {
+        "systemExcludeSearchPatterns": [
+            "**/node_modules/**/*",
+            "**/bin/**/*",
+            "**/obj/**/*"
+        ],
+        "excludeSearchPatterns": [
+            "**/libs/**/*",
+            "**/bin/**/*",
+            "**/obj/**/*"
+        ]
     }
 }
