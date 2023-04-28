@@ -1,0 +1,11 @@
+[[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path bash)"
+
+# https://levelup.gitconnected.com/5-inbuilt-bash-variables-that-every-developer-should-know-a2d60721a472
+function __handle_cmd_err() {
+    exit_code=$?
+    echo "--------------"
+    echo "ERR: '$BASH_COMMAND' command was terminated with error code $exit_code"
+
+}
+
+trap __handle_cmd_err ERR
