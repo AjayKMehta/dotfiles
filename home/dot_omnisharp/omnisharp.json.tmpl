@@ -15,10 +15,10 @@
         "EnableAnalyzersSupport": true,
         "EnableDecompilationSupport": true,
         "LocationPaths": [
-            {{ joinPath (env "homedrive") (env "homepath") ".vscode/extensions/josefpihrt-vscode.roslynator-4.2.0/roslyn/common" | replaceAllRegex "\\\\" "/" | quote}},
-            {{ joinPath (env "homedrive") (env "homepath") ".vscode/extensions/josefpihrt-vscode.roslynator-4.2.0/roslyn/analyzers" | replaceAllRegex "\\\\" "/" | quote}},
-            {{ joinPath (env "homedrive") (env "homepath") ".vscode/extensions/josefpihrt-vscode.roslynator-4.2.0/roslyn/refactorings" | replaceAllRegex "\\\\" "/" | quote}},
-            {{ joinPath (env "homedrive") (env "homepath") ".vscode/extensions/josefpihrt-vscode.roslynator-4.2.0/roslyn/fixes" | replaceAllRegex "\\\\" "/" | quote }}
+            {{ joinPath (env "userprofile") ".vscode/extensions/josefpihrt-vscode.roslynator-4.3.0/roslyn/common" | replaceAllRegex "\\\\" "/" | replace "C:" "c:" | quote}},
+            {{ joinPath (env "userprofile") ".vscode/extensions/josefpihrt-vscode.roslynator-4.3.0/roslyn/analyzers" | replaceAllRegex "\\\\" "/" | replace "C:" "c:" | quote}},
+            {{ joinPath (env "userprofile") ".vscode/extensions/josefpihrt-vscode.roslynator-4.3.0/roslyn/refactorings" | replaceAllRegex "\\\\" "/" | replace "C:" "c:" | quote}},
+            {{ joinPath (env "userprofile") ".vscode/extensions/josefpihrt-vscode.roslynator-4.3.0/roslyn/fixes" | replaceAllRegex "\\\\" "/" | replace "C:" "c:" | quote }}
         ]
     },
     "fileOptions": {
