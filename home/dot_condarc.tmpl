@@ -2,6 +2,7 @@ channels:
   - defaults
   - conda-forge
 ssl_verify: true
+auto_update_conda: true
 
 # Show channel URLs when displaying what is going to be downloaded
 # and in 'conda list'. The default is False.
@@ -18,3 +19,6 @@ envs_dirs:
   - {{ .condadir }}\envs
 pkgs_dirs:
   - {{ .condadir }}\pkgs
+repodata_threads: 4
+variables:
+  CRYPTOGRAPHY_OPENSSL_NO_LEGACY: 1
