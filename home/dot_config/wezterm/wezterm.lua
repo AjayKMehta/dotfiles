@@ -16,18 +16,20 @@ config.font = wezterm.font_with_fallback({
   'DejaVuSansM Nerd Font Mono',
   -- <built-in>, BuiltIn
   "JetBrains Mono",
-
   -- <built-in>, BuiltIn
   -- Assumed to have Emoji Presentation
   -- Pixel sizes: [128]
   "Noto Color Emoji",
-
+  "JuliaMono",
   -- <built-in>, BuiltIn
   "Symbols Nerd Font Mono",
 })
 -- By default, SHIFT-PageUp and SHIFT-PageDown will adjust the viewport
 -- scrollback position by one full screen for each press.
 config.enable_scroll_bar = true
+config.font_size = 12.0
+config.initial_rows = 30
+config.initial_cols = 100
 config.scrollback_lines = 3500
 config.window_frame = {
   border_left_width = '0.5cell',
@@ -57,7 +59,7 @@ if wezterm.target_triple == "x86_64-pc-windows-msvc" then
         prompt = '$E]7;file://localhost/$P$E\\$E[32m$T$E[0m $E[35m$P$E[36m$_$G$E[0m ',
         DIRCMD = '/d'
       },
-      args = { 'cmd.exe' }
+      args = { 'cmd.exe', '/s', '/k', 'C:/Program Files (x86)/clink/clink_x64.exe', 'inject', '-q' }
     }
   )
   table.insert(
@@ -70,6 +72,7 @@ if wezterm.target_triple == "x86_64-pc-windows-msvc" then
 end
 
 config.launch_menu = launch_menu
+
 wezterm.on('update-status', function(window, pane)
   local overrides = window:get_config_overrides() or {}
   if window:is_focused() then
@@ -80,4 +83,23 @@ wezterm.on('update-status', function(window, pane)
   window:set_config_overrides(overrides)
 end)
 
+-- https://wezfurlong.org/wezterm/config/lua/window-events/augment-command-palette.html#adding-a-rename-tab-entry-to-the-palette
+local act = wezterm.action
+wezterm.on('augment-command-palette', function(window, pane)
+  return {
+    {
+      brief = 'Rename tab',
+      icon = 'md_rename_box',
+
+      action = act.PromptInputLine {
+        description = 'Enter new name for tab',
+        action = wezterm.action_callback(function(window, pane, line)
+          if line then
+            window:active_tab():set_title(line)
+          end
+        end),
+      },
+    },
+  }
+end)
 return config
