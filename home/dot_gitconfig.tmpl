@@ -1,210 +1,210 @@
 [user]
-	name = {{ .name }}
-	email = {{ .email }}
-	signingkey = {{ .gpgkey }}
+    name = {{ .name }}
+    email = {{ .email }}
+    signingkey = {{ .gpgkey }}
 [core]
-	excludesFile = {{ .chezmoi.homeDir }}/.gitignore
-	editor = 'C:/Program Files/Notepad++/Notepad++.exe' -multiInst -notabbar -nosession -noPlugin
-	pager = less -RFX
-	splitIndex = true
-	untrackedCache = true
-	longpaths = true
-	symlinks = true
-	fsmonitor = true
-	fsync = committed,added,commit-graph
-	fsyncMethod = batch
-	sshCommand = ssh -q
+    excludesFile = {{ .chezmoi.homeDir }}/.gitignore
+    editor = 'C:/Program Files/Notepad++/Notepad++.exe' -multiInst -notabbar -nosession -noPlugin
+    pager = less -RFX
+    splitIndex = true
+    untrackedCache = true
+    longpaths = true
+    symlinks = true
+    fsmonitor = true
+    fsync = committed,added,commit-graph
+    fsyncMethod = batch
+    sshCommand = ssh -q
 [include]
-	path = themes.gitconfig
-	path = delta.gitconfig
-	path = maintenance.gitconfig
+    path = themes.gitconfig
+    path = delta.gitconfig
+    path = maintenance.gitconfig
 [pretty]
-	extended = format:%C(bold blue)%h% C(dim white)- %an %C(bold green)%ad%C(auto)%d%n %C(bold white)%s
-	alt      = format:%C(yellow)%h %C(green)%ad %C(cyan)[%an] %C(reset)%s %C(auto)%d
-	alt-rel  = format:%C(yellow)%h %C(green)%ar %C(cyan)[%an] %C(reset)%s %C(auto)%d
-	sub-auth = format:%C(red)%h %C(reset)| %s %C(bold blue)[%an] %C(green)(%cd)%C(auto)%d
-	twolines = "format:%C(green)%h% C(#00FFE3)%ad %C(bold yellow)%an%C(auto)%d%n%C(#AA75D0)%s%n"
+    extended = format:%C(bold blue)%h% C(dim white)- %an %C(bold green)%ad%C(auto)%d%n %C(bold white)%s
+    alt      = format:%C(yellow)%h %C(green)%ad %C(cyan)[%an] %C(reset)%s %C(auto)%d
+    alt-rel  = format:%C(yellow)%h %C(green)%ar %C(cyan)[%an] %C(reset)%s %C(auto)%d
+    sub-auth = format:%C(red)%h %C(reset)| %s %C(bold blue)[%an] %C(green)(%cd)%C(auto)%d
+    twolines = "format:%C(green)%h% C(#00FFE3)%ad %C(bold yellow)%an%C(auto)%d%n%C(#AA75D0)%s%n"
 [alias]
-	## Compare with remote
-	incoming = log ..@{u}
-	outgoing = log @{u}..
-	unpushed = log --branches --not --remotes=origin
-	compare = difftool -d -g @ @{u}
+    ## Compare with remote
+    incoming = log ..@{u}
+    outgoing = log @{u}..
+    unpushed = log --branches --not --remotes=origin
+    compare = difftool -d -g @ @{u}
 
-	## Diff
-	delta = -c core.pager=delta diff
-	delta-s = -c core.pager=delta -c 'delta.features=sideways decorations my-line-numbers emph' diff
-	compare2 = difftool -d -g @
-	difft = -c diff.externa=difft diff
-	difftd = -c core.pager=delta -c diff.externa=difft diff
+    ## Diff
+    delta = -c core.pager=delta diff
+    delta-s = -c core.pager=delta -c 'delta.features=sideways decorations my-line-numbers emph' diff
+    compare2 = difftool -d -g @
+    difft = -c diff.externa=difft diff
+    difftd = -c core.pager=delta -c diff.externa=difft diff
 
-	## Misc
-	it = !git init && git commit -m root --allow-empty
-	st = status --short --branch
-	so = show --pretty='parent %C(red)%p %C(reset)commit %C(red)%h%C(yellow)%d%C(reset)%n%n%w(72,2,2)%s%n%n%w(72,0,0)%C(cyan)%an %C(green)%ar'
-	show-rd = show --remerge-diff
-	ss = stash --staged
-	alias = config --get-regexp ^alias\\.
-	untracked = ls-files --others --exclude-standard
-	unstage = restore --staged
+    ## Misc
+    it = !git init && git commit -m root --allow-empty
+    st = status --short --branch
+    so = show --pretty='parent %C(red)%p %C(reset)commit %C(red)%h%C(yellow)%d%C(reset)%n%n%w(72,2,2)%s%n%n%w(72,0,0)%C(cyan)%an %C(green)%ar'
+    show-rd = show --remerge-diff
+    ss = stash --staged
+    alias = config --get-regexp ^alias\\.
+    untracked = ls-files --others --exclude-standard
+    unstage = restore --staged
 
-	## Push to remote
-	please = push --force-with-lease
-	pu = !git push origin `git branch --show-current`
-	push-origin = push --set-upstream origin
+    ## Push to remote
+    please = push --force-with-lease
+    pu = !git push origin `git branch --show-current`
+    push-origin = push --set-upstream origin
 
-	## Log
-	grog = log --graph --decorate --pretty=extended
-	l = log --pretty=alt --date=relative
-	lg = l --graph
-	lgb = lg --branches
-	ld = -c core.pager=delta log -p
-	lds = -c 'delta.features=sideways decorations my-line-numbers emph' -c core.pager=delta log -p
-	graph = lg --decorate --simplify-by-decoration
-	hist = log --graph --oneline --all --decorate --simplify-by-decoration
+    ## Log
+    grog = log --graph --decorate --pretty=extended
+    l = log --pretty=alt --date=relative
+    lg = l --graph
+    lgb = lg --branches
+    ld = -c core.pager=delta log -p
+    lds = -c 'delta.features=sideways decorations my-line-numbers emph' -c core.pager=delta log -p
+    graph = lg --decorate --simplify-by-decoration
+    hist = log --graph --oneline --all --decorate --simplify-by-decoration
 
-	## Refs
-	refs = for-each-ref --sort=-committerdate --format='%(color:red bold)%(refname:short)%(color:reset) %(color:yellow)%(committerdate:relative) %(color:magenta bold)%(authorname) %(color:green)%(objectname:short)%(color:reset) %(contents:subject)'
-	lbs = refs refs/heads
-	rbs = refs refs/remotes
+    ## Refs
+    refs = for-each-ref --sort=-committerdate --format='%(color:red bold)%(refname:short)%(color:reset) %(color:yellow)%(committerdate:relative) %(color:magenta bold)%(authorname) %(color:green)%(objectname:short)%(color:reset) %(contents:subject)'
+    lbs = refs refs/heads
+    rbs = refs refs/remotes
 
-	## Ignoring files
-	ignore = update-index --assume-unchanged
-	unignore = update-index --no-assume-unchanged
-	ignored = !git ls-files -v | grep ^[a-z]
-	hide = update-index --skip-worktree
-	unhide = update-index --no-skip-worktree
+    ## Ignoring files
+    ignore = update-index --assume-unchanged
+    unignore = update-index --no-assume-unchanged
+    ignored = !git ls-files -v | grep ^[a-z]
+    hide = update-index --skip-worktree
+    unhide = update-index --no-skip-worktree
 
-	## Rewrite hisory
-	rbi = rebase --autosquash -i HEAD@{upstream}
-	append = !git cherry-pick $(git merge-base HEAD $1)..$1
-	pop = reset HEAD^
+    ## Rewrite hisory
+    rbi = rebase --autosquash -i HEAD@{upstream}
+    append = !git cherry-pick $(git merge-base HEAD $1)..$1
+    pop = reset HEAD^
 
-	## Fetch commits
-	fa = fetch --all
-	fc = !git fetch origin $(git branch --show-current)
-	up = !git fetch && git rebase --autostash FETCH_HEAD
-	su = submodule update --recursive --remote
+    ## Fetch commits
+    fa = fetch --all
+    fc = !git fetch origin $(git branch --show-current)
+    up = !git fetch && git rebase --autostash FETCH_HEAD
+    su = submodule update --recursive --remote
 
-	## Merge
-	mnf = merge --no-ff
-	mffo = merge --ff-only
-	mnc = merge --no-commit
+    ## Merge
+    mnf = merge --no-ff
+    mffo = merge --ff-only
+    mnc = merge --no-commit
 [blame]
-	coloring = highlightRecent
-	markIgnoredLines = true
-	markUnblamableLines = true
+    coloring = highlightRecent
+    markIgnoredLines = true
+    markUnblamableLines = true
 [rerere]
-	enabled = true
-	autoupdate = true
+    enabled = true
+    autoupdate = true
 [push]
-	followTags = true
+    followTags = true
 [fetch]
-	prune = true
-	parallel = 0
-	writeCommitGraph = true
+    prune = true
+    parallel = 0
+    writeCommitGraph = true
 [pull]
-	rebase = true
-	twohead = ort
+    rebase = true
+    twohead = ort
 [status]
-	showUntrackedFiles = all
-	showStash = true
+    showUntrackedFiles = all
+    showStash = true
 [diff]
-	tool = winmerge
-	guitool = winmerge
-	colorMoved = default
-	colorMovedWS = ignore-space-at-eol
-	mnemonicPrefix = true
-	renames = copies
-	renameLimit = 10000
-	wsErrorHighlight = all
+    tool = winmerge
+    guitool = winmerge
+    colorMoved = default
+    colorMovedWS = ignore-space-at-eol
+    mnemonicPrefix = true
+    renames = copies
+    renameLimit = 10000
+    wsErrorHighlight = all
 [difftool]
-	prompt = false
-	trustExitCode = true
+    prompt = false
+    trustExitCode = true
 [difftool "bc4"]
-	cmd = 'C:/Program Files/Beyond Compare 4/bcomp.exe' -ro -title1=Local -title2=Remote \"$LOCAL\" \"$REMOTE\"
+    cmd = 'C:/Program Files/Beyond Compare 4/bcomp.exe' -ro -title1=Local -title2=Remote \"$LOCAL\" \"$REMOTE\"
 [difftool "winmerge"]
-	cmd = WinMergeU -u -e -x -fl -wl -wr -dl \"$LOCAL\" -dr \"$REMOTE\" \"$LOCAL\" \"$REMOTE\"
+    cmd = WinMergeU -u -e -x -fl -wl -wr -dl \"$LOCAL\" -dr \"$REMOTE\" \"$LOCAL\" \"$REMOTE\"
 [difftool "difftastic"]
     cmd = difft "$LOCAL" "$REMOTE"
 [merge]
-	tool = winmerge
-	guitool = winmerge
-	log = true
-	conflictStyle = zdiff3
-	renameLimit = 99999
+    tool = winmerge
+    guitool = winmerge
+    log = true
+    conflictStyle = zdiff3
+    renameLimit = 99999
 [mergetool]
-	prompt = false
-	keepBackup = false
+    prompt = false
+    keepBackup = false
 [mergetool "bc4"]
-	path = 'C:/Program Files/Beyond Compare 4/bcomp.exe'
-	trustExitCode = true
+    path = 'C:/Program Files/Beyond Compare 4/bcomp.exe'
+    trustExitCode = true
 [mergetool "winmerge"]
-	cmd = WinMergeU -u -e -x -fm -wl -wr -dl \"Local\" -dr \"Remote\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\"
-	trustExitCode = true
+    cmd = WinMergeU -u -e -x -fm -wl -wr -dl \"Local\" -dr \"Remote\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\"
+    trustExitCode = true
 [diff "rstats"]
-	xfuncname = "^[[:space:]]*([a-zA-z._]+)[[:space:]]*<-[[:space:]]*function"
+    xfuncname = "^[[:space:]]*([a-zA-z._]+)[[:space:]]*<-[[:space:]]*function"
 [rebase]
-	autoSquash = true
-	autoStash = false
-	missingCommitsCheck = error
-	updateRefs = true
+    autoSquash = true
+    autoStash = false
+    missingCommitsCheck = error
+    updateRefs = true
 [submodule]
-	fetchJobs = 0
-	recurse = true
+    fetchJobs = 0
+    recurse = true
 [filter "lfs"]
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
 [interactive]
-	diffFilter = delta --color-only
+    diffFilter = delta --color-only
 [delta]
-	features = decorations my-line-numbers emph
-	light = false    # set to true if you're in a terminal w/ a light background color
-	navigate = true
-	hyperlinks = true
-	whitespace-error-style = magenta reverse
-	inspect-raw-lines = true
-	max-line-distance = 1.0
-	plus-style = "syntax #003800"
-	minus-style = "syntax #3f0001"
-	syntax-theme = TwoDark
-	map-styles = bold purple => syntax magenta, bold cyan => syntax blue
+    features = decorations my-line-numbers emph
+    light = false    # set to true if you're in a terminal w/ a light background color
+    navigate = true
+    hyperlinks = true
+    whitespace-error-style = magenta reverse
+    inspect-raw-lines = true
+    max-line-distance = 1.0
+    plus-style = "syntax #003800"
+    minus-style = "syntax #3f0001"
+    syntax-theme = TwoDark
+    map-styles = bold purple => syntax magenta, bold cyan => syntax blue
 [tag]
-	sort = version:refname
+    sort = version:refname
 [commit]
-	gpgsign = true
+    gpgsign = true
 [gpg]
-	program = {{ .gpgpath }}
+    program = {{ .gpgpath }}
 [color]
-	ui = true
+    ui = true
 [color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
+    oldNormal = red bold
+    oldHighlight = red bold 52
+    newNormal = green bold
+    newHighlight = green bold 22
 [color "diff"]
-	meta = 11
-	frag = magenta bold
-	func = 146 bold
-	commit = yellow bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
+    meta = 11
+    frag = magenta bold
+    func = 146 bold
+    commit = yellow bold
+    old = red bold
+    new = green bold
+    whitespace = red reverse
 [checkout]
-	workers = 0
+    workers = 0
 [index]
-	version = 4
+    version = 4
 [help]
-	autoCorrect = prompt
+    autoCorrect = prompt
 [transfer]
-	credentialsInUrl = warn
+    credentialsInUrl = warn
 [gc]
-	cruftPacks = true
+    cruftPacks = true
 [log]
-	date = rfc
+    date = rfc
 [safe]
-	{{- $safe := split "\n" (output "git" "config" "--get-all" "safe.directory" | trim) }}
-	{{range $x := $safe}}{{ if gt (len (trim $x)) 0}}directory = {{$x}}{{end}}
-	{{end -}}
+    {{- $safe := split "\n" (output "git" "config" "--get-all" "safe.directory" | trim) }}
+    {{range $x := $safe}}{{ if gt (len (trim $x)) 0}}directory = {{$x}}{{end}}
+    {{end -}}
