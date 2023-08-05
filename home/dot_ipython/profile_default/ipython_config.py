@@ -167,13 +167,13 @@ c.TerminalInteractiveShell.xmode = 'Context'
 c.TerminalInteractiveShell.highlighting_style = 'monokai'
 c.TerminalInteractiveShell.logstart = True
 c.TerminalInteractiveShell.separate_in = ''
+c.TerminalInteractiveShell.auto_match = True
 
 c.InteractiveShell.automagic = False
 c.InteractiveShell.confirm_exit = False
-c.InteractiveShell.deep_reload = True
 c.InteractiveShell.xmode = 'Context'
 
-c.InteractiveShellApp.extensions = ['autoreload', 'memory_profiler']
+c.InteractiveShellApp.extensions = ['autoreload']
 # Always import some modules
 c.InteractiveShellApp.exec_lines = ['import numpy as np', 'from rich import print', '%autoreload 2']
 
@@ -186,3 +186,5 @@ c.Application.log_level = 'WARN'
 c.AliasManager.user_aliases = [
  ('la', 'ls -al')
 ]
+
+c.Completer.auto_close_dict_keys = True
