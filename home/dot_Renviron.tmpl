@@ -15,7 +15,8 @@ OSSINDEX_TOKEN={{- (keepassxc "OSSINDEX").Password }}
 {{if .cmdstandir }}CMDSTAN="{{- .cmdstandir }}"{{end}}
 {{if .quartopath }}QUARTO_PATH="{{- .quartopath -}}/quarto.cmd"{{end}}
 {{if .quartopath }}RSTUDIO_PANDOC="{{- .quartopath -}}/tools"{{end}}
-{{if .condapath }}RETICULATE_MINICONDA_PATH="{{- .condapath }}"{{end}}
+#{{if .condapath }}RETICULATE_MINICONDA_PATH="{{- .condapath }}"{{end}}
+RETICULATE_PYTHON_ENV="r-reticulate"
 
 LC_COLLATE=English_United States.utf8
 LC_CTYPE=English_United States.utf8

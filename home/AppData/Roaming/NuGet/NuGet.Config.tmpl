@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- https://docs.microsoft.com/en-us/nuget/reference/nuget-config-file -->
 <configuration>
     <packageRestore>
@@ -9,7 +9,8 @@
     </packageRestore>
     <config>
         <!-- https://docs.microsoft.com/en-us/nuget/consume-packages/managing-the-global-packages-and-cache-folders -->
-{{if .nugetpkgs }}{{.nugetpkgs | printf "        <add key=\"repositoryPath\" value=%[1]q />\n        <add key=\"globalPackagesFolder\" value=%[1]q />"}}{{ end }}
+        <add key="repositoryPath" value="D:/NuGet/packages" />
+        <add key="globalPackagesFolder" value="D:/NuGet/packages" />
         <add key="dependencyVersion" value="Highest" />
     </config>
     <packageSources>
@@ -19,4 +20,9 @@
     <packageManagement>
         <add key="format" value="1" />
     </packageManagement>
+  <packageSourceMapping>
+    <packageSource key="nuget.org">
+        <package pattern="*" />
+      </packageSource>
+  </packageSourceMapping>
 </configuration>
