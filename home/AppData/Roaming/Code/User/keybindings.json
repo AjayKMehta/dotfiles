@@ -402,10 +402,6 @@
         "command": "workbench.profiles.actions.switchProfile"
     },
     {
-        "key": "ctrl+k ctrl+s",
-        "command": "git.stageChange"
-    },
-    {
         "key": "ctrl+w",
         "command": "git.close",
         "when": "view.workbench.scm.visible"
