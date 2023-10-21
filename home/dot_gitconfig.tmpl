@@ -209,3 +209,5 @@
     {{- $safe := split "\n" (output "git" "config" "--get-all" "safe.directory" | trim) }}
     {{range $x := $safe}}{{ if gt (len (trim $x)) 0}}directory = {{$x}}{{end}}
     {{end -}}
+[credential "https://huggingface.co"]
+	provider = generic
