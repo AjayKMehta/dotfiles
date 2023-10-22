@@ -1,13 +1,14 @@
 # https://www.chezmoi.io/user-guide/setup/#re-create-your-config-file
-{{- $email := promptStringOnce . "email" "Email address" -}}
 
 {{- $name := promptStringOnce . "name" "Git username for the author/committer" -}}
 
-{{- $gpgpath := promptStringOnce . "gpgpath" "Path of gpg.exe" -}}
+{{- $email := promptStringOnce . "email" "Email address" -}}
 
 {{- $gpgkey := promptStringOnce . "gpgkey" "GPG key" -}}
 
-{{- $condadir := promptStringOnce . "condadir" "Conda directory" -}}
+{{- $gpgpath := promptStringOnce . "gpgpath" "Path of gpg.exe" -}}
+
+{{- $condapath := promptStringOnce . "condapath" "Conda directory" -}}
 
 {{- $npmcache := promptStringOnce . "npmcache" "Directory for NPM cache" -}}
 
@@ -27,16 +28,19 @@
 
 {{- $kdbxpath := promptStringOnce . "kdbxpath" "Path for Keepass database" -}}
 
+{{- $gpgrecipient := promptStringOnce . "gpgrecipient" "GPG recipient" -}}
+
 sourceDir = {{ .chezmoi.sourceDir | quote }}
+encryption = "gpg"
 
 # Automatically get converted to lower case!
 # See https://www.chezmoi.io/user-guide/frequently-asked-questions/design/#why-does-chezmoi-convert-all-my-template-variables-to-lowercase
 [data]
 	name = "{{ $name }}"
-    email = "{{ $email }}"
+	email = "{{ $email }}"
 	gpgkey = "{{ $gpgkey }}"
 	gpgpath = "{{ $gpgpath }}"
-	condadir = "{{ $condadir }}"
+	condapath = "{{ $condapath }}"
 	npmcache = "{{ $npmcache }}"
 	npmprefix = "{{ $npmprefix }}"
 	nugetpkgs = "{{ $nugetpkgs }}"
@@ -51,17 +55,19 @@ sourceDir = {{ .chezmoi.sourceDir | quote }}
 	custom = true
 [diff]
 	pager = "less -rFX"
-  	command = 'delta'
+	command = 'delta'
 [edit]
 	command  = 'C:/Program Files/Notepad++/Notepad++.exe'
 	args = ['-multiInst', '-notabbar', '-nosession', '-noPlugin']
+[gpg]
+	recipient = "{{ $gpgrecipient }}"
 [interpreters.py]
-	command = "{{ $condadir }}/python.exe"
+	command = "{{ $condapath }}/python.exe"
 [interpreters.ps1]
     command = "pwsh"
     args = ["-NoLogo"]
 [merge]
-  	command = 'WinMergeU'
+	command = 'WinMergeU'
 	args = [
 		'-u',
 		'-e',
