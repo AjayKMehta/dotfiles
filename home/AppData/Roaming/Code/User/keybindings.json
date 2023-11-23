@@ -235,10 +235,6 @@
         "when": "terminalFocus"
     },
     {
-        "command": "extension.Gitmoji",
-        "key": "ctrl+g e"
-    },
-    {
         "command": "workbench.view.debug",
         "key": "ctrl+shift+d",
         "when": "viewContainer.workbench.view.debug.enabled && !terminalfocus"
