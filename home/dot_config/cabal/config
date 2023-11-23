@@ -57,13 +57,14 @@ remote-repo-cache: D:\Apps\cabal\packages
 -- user-install: True
 -- package-db:
 -- flags:
--- extra-include-dirs:
+extra-include-dirs: D:\msys64\mingw64\include
 -- deterministic:
 -- cid:
--- extra-lib-dirs:
+extra-lib-dirs: D:\msys64\mingw64\lib
 -- extra-lib-dirs-static:
 -- extra-framework-dirs:
--- extra-prog-path:
+-- Would also need install folder if cabal installed in stand-alone folder: D:\cabal\bin
+extra-prog-path: D:\ghcup\bin, D:\msys64\mingw64\bin, D:\msys64\usr\bin
 -- instantiate-with:
 -- tests: False
 -- coverage: False
