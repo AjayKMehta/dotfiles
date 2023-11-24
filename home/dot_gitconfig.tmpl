@@ -56,6 +56,7 @@
 
     ## Log
     grog = log --graph --decorate --pretty=extended
+    ldec = log --format='%cr%(decorate) (%h) %s'
     l = log --pretty=alt --date=relative
     lg = l --graph
     lgb = lg --branches
@@ -203,11 +204,14 @@
     credentialsInUrl = warn
 [gc]
     cruftPacks = true
+    maxCruftSize = 10M
+    rerereResolved = "6.months.ago"
+    rerereUnresolved = "2.months.ago"
 [log]
     date = rfc
 [safe]
     {{- $safe := split "\n" (output "git" "config" "--get-all" "safe.directory" | trim) }}
     {{range $x := $safe}}{{ if gt (len (trim $x)) 0}}directory = {{$x}}{{end}}
     {{end -}}
-[credential "https://huggingface.co"]
-	provider = generic
+    [credential "https://huggingface.co"]
+    provider = generic
