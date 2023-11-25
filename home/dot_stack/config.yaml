@@ -8,7 +8,7 @@
 # See https://docs.haskellstack.org/en/stable/yaml_configuration/#templates
 templates:
   params:
-#    author-name:
+    author-name: Ajay Mehta
 #    author-email:
 #    copyright:
 #    github-username:
@@ -21,3 +21,6 @@ templates:
 # stack-colors: STYLES
 
 local-bin-path: d:/stack
+skip-msys: true
+# https://www.haskell.org/ghcup/install/#vscode-integration
+system-ghc: true
