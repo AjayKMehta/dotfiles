@@ -1,3 +1,12 @@
+-- https://wiki.haskell.org/GHC/GHCi
+
+-- Turn off output for resource usage and types.  This is to reduce verbosity when reloading this file.
+:unset +s +t
+
+-- Turn off all compiler warnings and turn on OverloadedStrings for interactive input.
+:seti -w -XOverloadedStrings
+
+
 -- -*- mode: haskell; -*-
 -- Begin copied material.
 -- <http://www.cs.kent.ac.uk/people/staff/cr3/toolbox/haskell/dot-squashed.ghci641>
@@ -30,3 +39,11 @@
         ,":set +t +s -Wall"
         ]
 :}
+
+
+:def! ls \s -> return $ ":!ls " ++ s
+
+-- Use :rr to reload this file.
+:def! rr \_ -> return ":script ~/.ghci"
+-- Turn on output of types.  This line should be last.
+:set +t
