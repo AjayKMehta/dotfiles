@@ -211,6 +211,6 @@
     date = rfc
 [credential "https://huggingface.co"]
     provider = generic
-/* This has to be at the end of the file due to hacky logic to construct it. */
+# This has to be at the end of the file due to hacky logic to construct it.
 {{- $safe := splitList "\n" (output "git" "config" "--get-all" "safe.directory") | sortAlpha}}{{if gt (len $safe) 0}}
 {{printf "[safe]\n"}}{{range $x := $safe}}{{ if gt (len (trim $x)) 0}}{{printf "    directory = %s\n" $x}}{{end}}{{end}}{{end -}}
