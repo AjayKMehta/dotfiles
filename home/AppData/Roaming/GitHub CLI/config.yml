@@ -3,3 +3,4 @@ aliases:
     pv: pr view
     igrep: '!gh issue list --label=$1 | grep $2'
 pager: delta -s
+version: "1"
