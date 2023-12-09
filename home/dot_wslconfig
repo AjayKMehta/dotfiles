@@ -1,5 +1,7 @@
 [wsl2]
 #https://medium.com/@lewwybogus/how-to-stop-wsl2-from-hogging-all-your-ram-with-docker-d7846b9c5b37
 #https://learn.microsoft.com/en-us/windows/wsl/wsl-config#configure-global-options-with-wslconfig
-memory=4GB
+# https://github.com/microsoft/vscode-remote-release/issues/4536
+memory=8GB
 processors=5
+swap=1GB
