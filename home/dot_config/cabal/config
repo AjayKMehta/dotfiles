@@ -64,7 +64,7 @@ extra-lib-dirs: D:\msys64\mingw64\lib
 -- extra-lib-dirs-static:
 -- extra-framework-dirs:
 -- Would also need install folder if cabal installed in stand-alone folder: D:\cabal\bin
-extra-prog-path: D:\ghcup\bin, D:\msys64\mingw64\bin, D:\msys64\usr\bin
+extra-prog-path: D:\ghcup\bin;D:\msys64\mingw64\bin;D:\msys64\usr\bin
 -- instantiate-with:
 -- tests: False
 -- coverage: False
