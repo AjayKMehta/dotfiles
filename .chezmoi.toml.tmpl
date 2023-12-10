@@ -30,6 +30,8 @@
 
 {{- $gpgrecipient := promptStringOnce . "gpgrecipient" "GPG recipient" -}}
 
+{{- $sparkversion := promptStringOnce . "sparkversion" "Spark version" -}}
+
 sourceDir = {{ .chezmoi.sourceDir | quote }}
 encryption = "gpg"
 
@@ -43,12 +45,14 @@ encryption = "gpg"
 	condapath = "{{ $condapath }}"
 	npmcache = "{{ $npmcache }}"
 	npmprefix = "{{ $npmprefix }}"
+	# Must use '/' to avoid Go doubling '\'
 	nugetpkgs = "{{ $nugetpkgs }}"
 	rworkingdir = "{{ $rworkingdir }}"
 	mavendir = "{{ $mavendir }}"
 	sparkdir = "{{ $sparkdir }}"
 	cmdstandir = "{{ $cmdstandir }}"
 	quartopath = "{{ $quartopath }}"
+	sparkversion = "{{ $sparkversion }}"
 [cd]
 	command = "pwsh"
 [completion]
