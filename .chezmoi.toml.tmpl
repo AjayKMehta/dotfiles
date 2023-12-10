@@ -32,57 +32,66 @@
 
 {{- $sparkversion := promptStringOnce . "sparkversion" "Spark version" -}}
 
+{{- $stackpath := promptStringOnce . "stackpath" "Path where `stack install` saves binaries" -}}
+
+{{- $msyspath := env "GHCUP_MSYS2" -}}{{- if $msyspath | not}}{{$msyspath = promptStringOnce . "C:\\mys64" "Path for msys2" }}{{- end}}
+
+{{- $cabalpath := env "CABAL_DIR" -}}{{- if $cabalpath | not}}{{$cabalpath = promptStringOnce . "cabalpath" "Path for cabal" }}{{- end}}
+
 sourceDir = {{ .chezmoi.sourceDir | quote }}
 encryption = "gpg"
 
 # Automatically get converted to lower case!
 # See https://www.chezmoi.io/user-guide/frequently-asked-questions/design/#why-does-chezmoi-convert-all-my-template-variables-to-lowercase
 [data]
-	name = "{{ $name }}"
-	email = "{{ $email }}"
-	gpgkey = "{{ $gpgkey }}"
-	gpgpath = "{{ $gpgpath }}"
-	condapath = "{{ $condapath }}"
-	npmcache = "{{ $npmcache }}"
-	npmprefix = "{{ $npmprefix }}"
-	# Must use '/' to avoid Go doubling '\'
-	nugetpkgs = "{{ $nugetpkgs }}"
-	rworkingdir = "{{ $rworkingdir }}"
-	mavendir = "{{ $mavendir }}"
-	sparkdir = "{{ $sparkdir }}"
-	cmdstandir = "{{ $cmdstandir }}"
-	quartopath = "{{ $quartopath }}"
-	sparkversion = "{{ $sparkversion }}"
+    name = "{{ $name }}"
+    email = "{{ $email }}"
+    gpgkey = "{{ $gpgkey }}"
+    gpgpath = "{{ $gpgpath }}"
+    condapath = "{{ $condapath }}"
+    npmcache = "{{ $npmcache }}"
+    npmprefix = "{{ $npmprefix }}"
+    # Must use '/' to avoid Go doubling '\'
+    nugetpkgs = "{{ $nugetpkgs }}"
+    rworkingdir = "{{ $rworkingdir }}"
+    mavendir = "{{ $mavendir }}"
+    sparkdir = "{{ $sparkdir }}"
+    cmdstandir = "{{ $cmdstandir }}"
+    quartopath = "{{ $quartopath }}"
+    sparkversion = "{{ $sparkversion }}"
+    stackpath = "{{ $stackpath }}"
+    cabalpath = 'D:\Apps\cabal'
+    msyspath = "{{ $msyspath}}"
 [cd]
-	command = "pwsh"
+    command = "pwsh"
 [completion]
-	custom = true
+    custom = true
 [diff]
-	pager = "less -rFX"
-	command = 'delta'
+    pager = "less -rFX"
+    command = 'delta'
 [edit]
-	command  = 'C:/Program Files/Notepad++/Notepad++.exe'
-	args = ['-multiInst', '-notabbar', '-nosession', '-noPlugin']
+    command  = 'C:/Program Files/Notepad++/Notepad++.exe'
+    args = ['-multiInst', '-notabbar', '-nosession', '-noPlugin']
 [gpg]
-	recipient = "{{ $gpgrecipient }}"
+    recipient = "{{ $gpgrecipient }}"
 [interpreters.py]
-	command = "{{ $condapath }}/python.exe"
+    command = "{{ $condapath }}/python.exe"
 [interpreters.ps1]
     command = "pwsh"
     args = ["-NoLogo"]
 [merge]
-	command = 'WinMergeU'
-	args = [
-		'-u',
-		'-e',
-		'-x',
-		'-fm',
-		'-wl',
-		'-wr',
-		'-dl',
-		'"Local"',
-		'-dr',
-		'"Remote"'
-	]
+    command = 'WinMergeU'
+    args = [
+        '-u',
+        '-e',
+        '-x',
+        '-fm',
+        '-wl',
+        '-wr',
+        '-dl',
+        '"Local"',
+        '-dr',
+        '"Remote"'
+    ]
 [keepassxc]
     database = "{{ $kdbxpath }}"
