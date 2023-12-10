@@ -26,4 +26,10 @@ If the changes are OK, you can then:
 chezmoi apply
 ```
 
+Check config:
+
+```shell
+chezmoi dump-config
+```
+
 [chezmoi]: https://github.com/twpayne/chezmoi
