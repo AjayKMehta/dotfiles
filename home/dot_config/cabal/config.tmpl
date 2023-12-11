@@ -25,8 +25,8 @@ repository hackage.haskell.org
 -- store-dir:
 -- active-repositories:
 -- local-no-index-repo:
-remote-repo-cache: {{$cabalpath}}\packages
--- logs-dir: D:\Apps\cabal\logs
+remote-repo-cache: {{ .cabalpath }}\packages
+-- logs-dir: {{ .cabalpath }}\logs
 -- default-user-config:
 -- verbose: 1
 -- compiler: ghc
@@ -57,14 +57,14 @@ remote-repo-cache: {{$cabalpath}}\packages
 -- user-install: True
 -- package-db:
 -- flags:
-extra-include-dirs: {{$msyspath}}\mingw64\include
+extra-include-dirs: {{ .msyspath }}\mingw64\include
 -- deterministic:
 -- cid:
-extra-lib-dirs: {{$msyspath}}\mingw64\lib
+extra-lib-dirs: {{ .msyspath }}\mingw64\lib
 -- extra-lib-dirs-static:
 -- extra-framework-dirs:
 -- Would also need install folder if cabal installed in stand-alone folder: D:\cabal\bin
-extra-prog-path: D:\ghcup\bin;{{$msyspath}}\mingw64\bin;{{$msyspath}}\usr\bin
+extra-prog-path: D:\ghcup\bin;{{ .msyspath }}\mingw64\bin;{{ .msyspath }}\usr\bin
 -- instantiate-with:
 -- tests: False
 -- coverage: False
@@ -105,7 +105,7 @@ extra-prog-path: D:\ghcup\bin;{{$msyspath}}\mingw64\bin;{{$msyspath}}\usr\bin
 -- index-state:
 -- root-cmd:
 -- symlink-bindir:
-build-summary: D:\Apps\cabal\logs\build.log
+build-summary: {{ .cabalpath }}\logs\build.log
 -- build-log:
 remote-build-reporting: none
 -- report-planning-failure: False
@@ -118,7 +118,7 @@ jobs: $ncpus
 -- package-env:
 -- overwrite-policy:
 -- install-method:
-installdir: D:\Apps\cabal\bin
+installdir: {{ .cabalpath }}\bin
 -- username:
 -- password:
 -- password-command:
@@ -156,7 +156,7 @@ init
   -- source-dir: src
 
 install-dirs user
-  -- prefix: D:\Apps\cabal
+  -- prefix: {{ .cabalpath }}
   -- bindir: $prefix\bin
   -- libdir: $prefix
   -- libsubdir: $abi\$libname
