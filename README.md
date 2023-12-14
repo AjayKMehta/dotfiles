@@ -60,3 +60,12 @@ chezmoi data
 ```
 
 [chezmoi]: https://github.com/twpayne/chezmoi
+
+## Misc
+
+:point_right: Stack config file is not in `~/` but I created a link.
+
+```powershell
+New-Item -Path ~\.stack\config.yaml -Value D:\sr\config.yaml -ItemType SymbolicLink
+chezmoi add --template --follow ~\.stack\config.yaml
+```

@@ -11,7 +11,7 @@ templates:
     author-name: Ajay Mehta
 #    author-email:
 #    copyright:
-#    github-username:
+    github-username: {{ .name }}
 
 # The following parameter specifies stack's output styles; STYLES is a
 # colon-delimited sequence of key=value, where 'key' is a style name and
@@ -20,7 +20,19 @@ templates:
 # to see the current sequence.
 # stack-colors: STYLES
 
-local-bin-path: d:/stack
+local-bin-path: {{ .stackpath }}
+local-programs-path: {{ .stackpath }}
 skip-msys: true
 # https://www.haskell.org/ghcup/install/#vscode-integration
 system-ghc: true
+install-ghc: false
+extra-path:
+  - '{{ .msyspath }}\usr\bin'
+  - '{{ .msyspath }}\mingw64\bin'
+extra-include-dirs:
+  - '{{ .msyspath }}\mingw64\include'
+extra-lib-dirs:
+  - '{{ .msyspath }}\lib'
+# https://haskell-language-server.readthedocs.io/en/latest/configuration.html#how-to-show-local-documentation-on-hover
+ghc-options:
+  '$everything': -haddock
