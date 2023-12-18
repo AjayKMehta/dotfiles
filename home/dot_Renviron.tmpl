@@ -1,4 +1,4 @@
-PATH="${RTOOLS42_HOME}\usr\bin;${RTOOLS42_HOME}\ucrt64\bin;${RTOOLS42_HOME}\mingw64\bin;{{if .cmdstandir }}{{ .cmdstandir }}/stan/lib/stan_math/lib/tbb;{{end}}${PATH}"
+PATH="${RTOOLS43_HOME}\usr\bin;${RTOOLS43_HOME}\ucrt64\bin;${RTOOLS43_HOME}\mingw64\bin;{{if .cmdstandir }}{{ .cmdstandir }}/stan/lib/stan_math/lib/tbb;{{end}}${PATH}"
 
 plotly_username={{- (keepassxc "PLOTLY").UserName }}
 plotly_api_key={{- (keepassxc "PLOTLY").Password }}
