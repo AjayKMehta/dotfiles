@@ -73,7 +73,8 @@
     ## Ignoring files
     ignore = update-index --assume-unchanged
     unignore = update-index --no-assume-unchanged
-    ignored = !git ls-files -v | grep ^[a-z]
+    # https://stackoverflow.com/a/61311958/781045
+    ignored = ls-files --exclude-standard -oi
     hide = update-index --skip-worktree
     unhide = update-index --no-skip-worktree
 
