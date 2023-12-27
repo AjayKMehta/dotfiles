@@ -401,5 +401,29 @@
         "key": "ctrl+w",
         "command": "git.close",
         "when": "view.workbench.scm.visible"
+    },
+    {
+        "key": "ctrl+alt+u",
+        "command": "-extension.uglifyJson"
+    },
+    {
+        "key": "ctrl+shift+k",
+        "command": "quarto.previewScript",
+        "when": "quartoRenderScriptActive && editorTextFocus && editorLangId == 'quarto-assist.active'"
+    },
+    {
+        "key": "ctrl+shift+k",
+        "command": "-quarto.previewScript",
+        "when": "quartoRenderScriptActive"
+    },
+    {
+        "key": "ctrl+shift+k",
+        "command": "quarto.preview",
+        "when": "!quartoRenderScriptActive && editorTextFocus && editorLangId == 'quarto'"
+    },
+    {
+        "key": "ctrl+shift+k",
+        "command": "-quarto.preview",
+        "when": "!quartoRenderScriptActive"
     }
 ]
