@@ -4,15 +4,15 @@ using namespace System.Management.Automation.Language
 $script:modules
 
 $script:sb = {
-    param($commandName, $parameterName, $wordToComplete, $commandAst, $fakeBoundParameter)
+  param($commandName, $parameterName, $wordToComplete, $commandAst, $fakeBoundParameter)
 
   if (!$script:modules) {
     $script:modules = Get-InstalledModule
-	}
+  }
 
-    $modules | Where-Object Name -like "$wordToComplete*" |
+  $modules | Where-Object Name -Like "$wordToComplete*" |
     ForEach-Object {
-		[CompletionResult]::new($_.Name, $_.Name, [CompletionResultType]::ParameterValue, $_.Description)
+      [CompletionResult]::new($_.Name, $_.Name, [CompletionResultType]::ParameterValue, $_.Description)
     }
 }
 
