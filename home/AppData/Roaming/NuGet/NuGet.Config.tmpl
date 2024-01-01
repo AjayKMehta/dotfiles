@@ -9,9 +9,8 @@
     </packageRestore>
     <config>
         <!-- https://docs.microsoft.com/en-us/nuget/consume-packages/managing-the-global-packages-and-cache-folders -->
-        <add key="repositoryPath" value="D:/NuGet/packages" />
-        <add key="globalPackagesFolder" value="D:/NuGet/packages" />
-        <add key="dependencyVersion" value="Highest" />
+{{if .nugetpkgs }}{{.nugetpkgs | printf "        <add key=\"repositoryPath\" value=%[1]q />\n        <add key=\"globalPackagesFolder\" value=%[1]q />"}}{{ end }}
+     <add key="dependencyVersion" value="Highest" />
     </config>
     <packageSources>
         <add key="nuget.org" value="https://api.nuget.org/v3/index.json" protocolVersion="3" validated="True" trusted="True" />
