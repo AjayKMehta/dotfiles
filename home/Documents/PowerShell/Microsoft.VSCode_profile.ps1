@@ -1,13 +1,15 @@
 Set-PoshPrompt -Theme powerlevel10k_lean
 
+# https://github.com/SeeminglyScience/EditorServicesCommandSuite/issues/45#issuecomment-596243308
 Import-Module EditorServicesCommandSuite
-Import-CommandSuite
+
+$scriptsFolder = Split-Path $PSScriptRoot -Parent | Join-Path -ChildPath scripts
 
 # https://github.com/nightroman/Invoke-Build/wiki/Invoke-Task-from-VSCode
 Register-EditorCommand -Name IB1 -DisplayName 'Invoke task' -ScriptBlock {
-    Invoke-TaskFromVSCode.ps1
+    . "$scriptsFolder\Invoke-TaskFromVSCode.ps1"
 }
 
 Register-EditorCommand -Name IB2 -DisplayName 'Invoke task in console' -SuppressOutput -ScriptBlock {
-    Invoke-TaskFromVSCode.ps1 -Console
+    . "$scriptsFolder\Invoke-TaskFromVSCode.ps1" -Console
 }
