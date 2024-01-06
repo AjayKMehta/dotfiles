@@ -30,8 +30,6 @@
 
 {{- $gpgrecipient := promptStringOnce . "gpgrecipient" "GPG recipient" -}}
 
-{{- $sparkversion := promptStringOnce . "sparkversion" "Spark version" -}}
-
 {{- $stackpath := promptStringOnce . "stackpath" "Path where `stack install` saves binaries" -}}
 
 {{- $msyspath := env "GHCUP_MSYS2" -}}{{- if $msyspath | not}}{{$msyspath = promptStringOnce . "C:\\mys64" "Path for msys2" }}{{- end}}
@@ -58,7 +56,6 @@ encryption = "gpg"
     sparkdir = "{{ $sparkdir }}"
     cmdstandir = "{{ $cmdstandir }}"
     quartopath = "{{ $quartopath }}"
-    sparkversion = "{{ $sparkversion }}"
     stackpath = "{{ $stackpath }}"
     cabalpath = "{{ $cabalpath }}"
     msyspath = "{{ $msyspath}}"
