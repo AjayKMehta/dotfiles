@@ -3,5 +3,10 @@
 		"https://index.docker.io/v1/": {}
 	},
 	"credsStore": "wincred",
-	"currentContext": "default"
+	"currentContext": "default",
+	"plugins": {
+		"-x-cli-hints": {
+			"enabled": "true"
+		}
+	}
 }
