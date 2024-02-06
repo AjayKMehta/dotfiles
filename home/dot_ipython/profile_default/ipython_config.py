@@ -173,7 +173,8 @@ c.InteractiveShell.automagic = False
 c.InteractiveShell.confirm_exit = False
 c.InteractiveShell.xmode = 'Context'
 
-c.InteractiveShellApp.extensions = ['autoreload']
+# https://github.com/alexmojaki/snoop?tab=readme-ov-file#ipythonjupyter-integration
+c.InteractiveShellApp.extensions = ['autoreload', 'snoop']
 # Always import some modules
 c.InteractiveShellApp.exec_lines = ['import numpy as np', 'from rich import print', '%autoreload 2']
 
