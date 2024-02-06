@@ -10,7 +10,7 @@ filter __hugo_escapeStringWithSpecialChars {
     $_ -replace '\s|#|@|\$|;|,|''|\{|\}|\(|\)|"|`|\||<|>|&','`$&'
 }
 
-[scriptblock]$__hugoCompleterBlock = {
+[scriptblock]${__hugoCompleterBlock} = {
     param(
             $WordToComplete,
             $CommandAst,
@@ -85,7 +85,7 @@ filter __hugo_escapeStringWithSpecialChars {
 
     __hugo_debug "Calling $RequestComp"
     # First disable ActiveHelp which is not supported for Powershell
-    $env:HUGO_ACTIVE_HELP=0
+    ${env:HUGO_ACTIVE_HELP}=0
 
     #call the command store the output in $out and redirect stderr and stdout to null
     # $Out is an array contains each line per element
@@ -242,4 +242,4 @@ filter __hugo_escapeStringWithSpecialChars {
     }
 }
 
-Register-ArgumentCompleter -CommandName 'hugo' -ScriptBlock $__hugoCompleterBlock
+Register-ArgumentCompleter -CommandName 'hugo' -ScriptBlock ${__hugoCompleterBlock}
