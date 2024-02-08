@@ -1,9 +1,11 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": [
+    "actions":
+    [
         {
-            "command": {
+            "command":
+            {
                 "action": "copy",
                 "singleLine": false
             },
@@ -14,7 +16,8 @@
             "keys": "ctrl+v"
         },
         {
-            "command": {
+            "command":
+            {
                 "action": "splitPane",
                 "split": "auto",
                 "splitMode": "duplicate"
@@ -30,25 +33,31 @@
     "copyFormatting": "none",
     "copyOnSelect": false,
     "defaultProfile": "{01201329-03d9-413b-ba6b-ce86f4862626}",
-    "newTabMenu": [
+    "newTabMenu":
+    [
         {
             "type": "remainingProfiles"
         }
     ],
-    "profiles": {
-        "defaults": {
-            "font": {
+    "profiles":
+    {
+        "defaults":
+        {
+            "font":
+            {
                 "face": "CaskaydiaMono Nerd Font Mono",
                 "size": 14.0
             }
         },
-        "list": [
+        "list":
+        [
             {
                 "colorScheme": "Tango Dark",
                 "commandline": "\"C:\\Program Files\\PowerShell\\7\\pwsh.exe\"",
                 "elevate": true,
                 "experimental.retroTerminalEffect": false,
-                "font": {
+                "font":
+                {
                     "face": "MonaspiceNe Nerd Font Mono"
                 },
                 "guid": "{01201329-03d9-413b-ba6b-ce86f4862626}",
@@ -59,7 +68,8 @@
             },
             {
                 "colorScheme": "Tango Dark",
-                "font": {
+                "font":
+                {
                     "face": "DejaVuSansM Nerd Font Mono"
                 },
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
@@ -79,16 +89,19 @@
             {
                 "colorScheme": "Solarized Dark",
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-                "font": {
+                "font":
+                {
                     "face": "DejaVuSansM Nerd Font Mono"
                 },
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
                 "name": "Windows PowerShell"
             },
+
             {
                 "commandline": "%SystemRoot%\\System32\\cmd.exe",
-                "font": {
+                "font":
+                {
                     "face": "FiraCode Nerd Font Mono"
                 },
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
@@ -103,7 +116,8 @@
             }
         ]
     },
-    "schemes": [
+    "schemes":
+    [
         {
             "background": "#0C0C0C",
             "black": "#0C0C0C",
