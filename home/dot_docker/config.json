@@ -4,12 +4,12 @@
 	},
 	"credsStore": "wincred",
 	"currentContext": "default",
+	"cliPluginsExtraDirs": [
+		"D:/Apps/docker-scout"
+	],
 	"plugins": {
 		"-x-cli-hints": {
 			"enabled": "true"
 		}
-	},
-	"cliPluginsExtraDirs": [
-		"D:/Apps/docker-scout"
-	]
+	}
 }
