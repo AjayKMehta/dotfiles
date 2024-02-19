@@ -14,7 +14,7 @@
     fsync = committed,added,commit-graph
     fsyncMethod = batch
     sshCommand = ssh -q
-	autocrlf = true
+    autocrlf = true
 [include]
     path = themes.gitconfig
     path = delta.gitconfig
@@ -107,12 +107,14 @@
     prune = true
     parallel = 0
     writeCommitGraph = true
+    fsckobjects = true
 [pull]
     rebase = true
     twohead = ort
 [status]
     showUntrackedFiles = all
     showStash = true
+    submoduleSummary = true
 [diff]
     tool = winmerge
     guitool = winmerge
@@ -122,6 +124,7 @@
     renames = copies
     renameLimit = 10000
     wsErrorHighlight = all
+    submodule = log
 [difftool]
     prompt = false
     trustExitCode = true
@@ -204,6 +207,7 @@
     autoCorrect = prompt
 [transfer]
     credentialsInUrl = warn
+    fsckobjects = true
 [gc]
     cruftPacks = true
     maxCruftSize = 10M
