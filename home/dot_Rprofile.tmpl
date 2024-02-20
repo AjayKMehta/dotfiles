@@ -12,7 +12,7 @@ local({
     # Enable script file names and line numbers for tryCatchLog
     keep.source = TRUE,
     Ncpus = parallel::detectCores(),
-{{ if .mavendir}}    maven.home = "{{.mavendir}}",{{ end }}
+    {{ if .mavendir}}    maven.home = "{{.mavendir}}",{{ end }}
 {{ if .sparkdir}}    spark.install.dir = "{{.sparkdir}}",{{end}}
     warnPartialMatchAttr = TRUE,
     warnPartialMatchDollar = TRUE,
@@ -43,7 +43,7 @@ local({
     }
 
     if (Sys.getenv("TERM_PROGRAM") == "vscode") {
-      # activate RStudio Addins on command pallete
+      # activate RStudio Addins on command palette
       options(vsc.rstudioapi = TRUE)
 
       if ("httpgd" %in% .packages(all.available = TRUE)) {
