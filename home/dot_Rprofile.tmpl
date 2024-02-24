@@ -12,7 +12,7 @@ local({
     # Enable script file names and line numbers for tryCatchLog
     keep.source = TRUE,
     Ncpus = parallel::detectCores(),
-    {{ if .mavendir}}    maven.home = "{{.mavendir}}",{{ end }}
+{{ if .mavendir}}    maven.home = "{{.mavendir}}",{{ end }}
 {{ if .sparkdir}}    spark.install.dir = "{{.sparkdir}}",{{end}}
     warnPartialMatchAttr = TRUE,
     warnPartialMatchDollar = TRUE,
