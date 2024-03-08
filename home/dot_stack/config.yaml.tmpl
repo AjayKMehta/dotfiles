@@ -20,7 +20,9 @@ templates:
 # to see the current sequence.
 # stack-colors: STYLES
 
+# The target directory for stack build --copy-bins and stack install.
 local-bin-path: {{ .stackpath }}
+# Location of the Stack 'programs' directory, where tools like GHC get installed.
 local-programs-path: {{ .stackpath }}
 skip-msys: true
 # https://www.haskell.org/ghcup/install/#vscode-integration
@@ -36,3 +38,6 @@ extra-lib-dirs:
 # https://haskell-language-server.readthedocs.io/en/latest/configuration.html#how-to-show-local-documentation-on-hover
 ghc-options:
   '$everything': -haddock
+allow-newer: true
+allow-newer-deps:
+  - brittany
