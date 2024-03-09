@@ -21,12 +21,14 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
 
     $completions = @(switch ($command) {
         'ruff' {
+            [CompletionResult]::new('--config', 'config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option. Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')
             [CompletionResult]::new('-v', 'v', [CompletionResultType]::ParameterName, 'Enable verbose logging')
             [CompletionResult]::new('--verbose', 'verbose', [CompletionResultType]::ParameterName, 'Enable verbose logging')
             [CompletionResult]::new('-q', 'q', [CompletionResultType]::ParameterName, 'Print diagnostics, but nothing else')
             [CompletionResult]::new('--quiet', 'quiet', [CompletionResultType]::ParameterName, 'Print diagnostics, but nothing else')
             [CompletionResult]::new('-s', 's', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
             [CompletionResult]::new('--silent', 'silent', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
+            [CompletionResult]::new('--isolated', 'isolated', [CompletionResultType]::ParameterName, 'Ignore all configuration files')
             [CompletionResult]::new('-h', 'h', [CompletionResultType]::ParameterName, 'Print help')
             [CompletionResult]::new('--help', 'help', [CompletionResultType]::ParameterName, 'Print help')
             [CompletionResult]::new('-V', 'V ', [CompletionResultType]::ParameterName, 'Print version')
@@ -43,11 +45,10 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
             break
         }
         'ruff;check' {
-            [CompletionResult]::new('--output-format', 'output-format', [CompletionResultType]::ParameterName, 'Output serialization format for violations')
+            [CompletionResult]::new('--output-format', 'output-format', [CompletionResultType]::ParameterName, 'Output serialization format for violations. The default serialization format is "concise". In preview mode, the default serialization format is "full"')
             [CompletionResult]::new('-o', 'o', [CompletionResultType]::ParameterName, 'Specify file to write the linter output to (default: stdout)')
             [CompletionResult]::new('--output-file', 'output-file', [CompletionResultType]::ParameterName, 'Specify file to write the linter output to (default: stdout)')
             [CompletionResult]::new('--target-version', 'target-version', [CompletionResultType]::ParameterName, 'The minimum Python version that should be supported')
-            [CompletionResult]::new('--config', 'config', [CompletionResultType]::ParameterName, 'Path to the `pyproject.toml` or `ruff.toml` file to use for configuration')
             [CompletionResult]::new('--select', 'select', [CompletionResultType]::ParameterName, 'Comma-separated list of rule codes to enable (or ALL, to enable all rules)')
             [CompletionResult]::new('--ignore', 'ignore', [CompletionResultType]::ParameterName, 'Comma-separated list of rule codes to disable')
             [CompletionResult]::new('--extend-select', 'extend-select', [CompletionResultType]::ParameterName, 'Like --select, but adds additional rule codes on top of those already specified')
@@ -65,11 +66,12 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
             [CompletionResult]::new('--cache-dir', 'cache-dir', [CompletionResultType]::ParameterName, 'Path to the cache directory')
             [CompletionResult]::new('--stdin-filename', 'stdin-filename', [CompletionResultType]::ParameterName, 'The name of the file when passing it through stdin')
             [CompletionResult]::new('--extension', 'extension', [CompletionResultType]::ParameterName, 'List of mappings from file extension to language (one of ["python", "ipynb", "pyi"]). For example, to treat `.ipy` files as IPython notebooks, use `--extension ipy:ipynb`')
+            [CompletionResult]::new('--config', 'config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option. Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')
             [CompletionResult]::new('--fix', 'fix', [CompletionResultType]::ParameterName, 'Apply fixes to resolve lint violations. Use `--no-fix` to disable or `--unsafe-fixes` to include unsafe fixes')
             [CompletionResult]::new('--no-fix', 'no-fix', [CompletionResultType]::ParameterName, 'no-fix')
             [CompletionResult]::new('--unsafe-fixes', 'unsafe-fixes', [CompletionResultType]::ParameterName, 'Include fixes that may not retain the original intent of the code. Use `--no-unsafe-fixes` to disable')
             [CompletionResult]::new('--no-unsafe-fixes', 'no-unsafe-fixes', [CompletionResultType]::ParameterName, 'no-unsafe-fixes')
-            [CompletionResult]::new('--show-source', 'show-source', [CompletionResultType]::ParameterName, 'Show violations with source code. Use `--no-show-source` to disable')
+            [CompletionResult]::new('--show-source', 'show-source', [CompletionResultType]::ParameterName, 'Show violations with source code. Use `--no-show-source` to disable. (Deprecated: use `--output-format=full` or `--output-format=concise` instead of `--show-source` and `--no-show-source`, respectively)')
             [CompletionResult]::new('--no-show-source', 'no-show-source', [CompletionResultType]::ParameterName, 'no-show-source')
             [CompletionResult]::new('--show-fixes', 'show-fixes', [CompletionResultType]::ParameterName, 'Show an enumeration of all fixed lint violations. Use `--no-show-fixes` to disable')
             [CompletionResult]::new('--no-show-fixes', 'no-show-fixes', [CompletionResultType]::ParameterName, 'no-show-fixes')
@@ -87,7 +89,6 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
             [CompletionResult]::new('--no-force-exclude', 'no-force-exclude', [CompletionResultType]::ParameterName, 'no-force-exclude')
             [CompletionResult]::new('-n', 'n', [CompletionResultType]::ParameterName, 'Disable cache reads')
             [CompletionResult]::new('--no-cache', 'no-cache', [CompletionResultType]::ParameterName, 'Disable cache reads')
-            [CompletionResult]::new('--isolated', 'isolated', [CompletionResultType]::ParameterName, 'Ignore all configuration files')
             [CompletionResult]::new('-e', 'e', [CompletionResultType]::ParameterName, 'Exit with status code "0", even upon detecting lint violations')
             [CompletionResult]::new('--exit-zero', 'exit-zero', [CompletionResultType]::ParameterName, 'Exit with status code "0", even upon detecting lint violations')
             [CompletionResult]::new('--exit-non-zero-on-fix', 'exit-non-zero-on-fix', [CompletionResultType]::ParameterName, 'Exit with a non-zero status code if any files were modified via fix, even if no lint violations remain')
@@ -102,13 +103,14 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
             [CompletionResult]::new('--quiet', 'quiet', [CompletionResultType]::ParameterName, 'Print diagnostics, but nothing else')
             [CompletionResult]::new('-s', 's', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
             [CompletionResult]::new('--silent', 'silent', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
+            [CompletionResult]::new('--isolated', 'isolated', [CompletionResultType]::ParameterName, 'Ignore all configuration files')
             [CompletionResult]::new('-h', 'h', [CompletionResultType]::ParameterName, 'Print help')
             [CompletionResult]::new('--help', 'help', [CompletionResultType]::ParameterName, 'Print help')
             break
         }
         'ruff;rule' {
             [CompletionResult]::new('--output-format', 'output-format', [CompletionResultType]::ParameterName, 'Output format')
-            [CompletionResult]::new('--format', 'format', [CompletionResultType]::ParameterName, 'Output format (Deprecated: Use `--output-format` instead)')
+            [CompletionResult]::new('--config', 'config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option. Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')
             [CompletionResult]::new('--all', 'all', [CompletionResultType]::ParameterName, 'Explain all rules')
             [CompletionResult]::new('-v', 'v', [CompletionResultType]::ParameterName, 'Enable verbose logging')
             [CompletionResult]::new('--verbose', 'verbose', [CompletionResultType]::ParameterName, 'Enable verbose logging')
@@ -116,64 +118,73 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
             [CompletionResult]::new('--quiet', 'quiet', [CompletionResultType]::ParameterName, 'Print diagnostics, but nothing else')
             [CompletionResult]::new('-s', 's', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
             [CompletionResult]::new('--silent', 'silent', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
+            [CompletionResult]::new('--isolated', 'isolated', [CompletionResultType]::ParameterName, 'Ignore all configuration files')
             [CompletionResult]::new('-h', 'h', [CompletionResultType]::ParameterName, 'Print help')
             [CompletionResult]::new('--help', 'help', [CompletionResultType]::ParameterName, 'Print help')
             break
         }
         'ruff;config' {
+            [CompletionResult]::new('--config', 'config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option. Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')
             [CompletionResult]::new('-v', 'v', [CompletionResultType]::ParameterName, 'Enable verbose logging')
             [CompletionResult]::new('--verbose', 'verbose', [CompletionResultType]::ParameterName, 'Enable verbose logging')
             [CompletionResult]::new('-q', 'q', [CompletionResultType]::ParameterName, 'Print diagnostics, but nothing else')
             [CompletionResult]::new('--quiet', 'quiet', [CompletionResultType]::ParameterName, 'Print diagnostics, but nothing else')
             [CompletionResult]::new('-s', 's', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
             [CompletionResult]::new('--silent', 'silent', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
+            [CompletionResult]::new('--isolated', 'isolated', [CompletionResultType]::ParameterName, 'Ignore all configuration files')
             [CompletionResult]::new('-h', 'h', [CompletionResultType]::ParameterName, 'Print help')
             [CompletionResult]::new('--help', 'help', [CompletionResultType]::ParameterName, 'Print help')
             break
         }
         'ruff;linter' {
             [CompletionResult]::new('--output-format', 'output-format', [CompletionResultType]::ParameterName, 'Output format')
-            [CompletionResult]::new('--format', 'format', [CompletionResultType]::ParameterName, 'Output format (Deprecated: Use `--output-format` instead)')
+            [CompletionResult]::new('--config', 'config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option. Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')
             [CompletionResult]::new('-v', 'v', [CompletionResultType]::ParameterName, 'Enable verbose logging')
             [CompletionResult]::new('--verbose', 'verbose', [CompletionResultType]::ParameterName, 'Enable verbose logging')
             [CompletionResult]::new('-q', 'q', [CompletionResultType]::ParameterName, 'Print diagnostics, but nothing else')
             [CompletionResult]::new('--quiet', 'quiet', [CompletionResultType]::ParameterName, 'Print diagnostics, but nothing else')
             [CompletionResult]::new('-s', 's', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
             [CompletionResult]::new('--silent', 'silent', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
+            [CompletionResult]::new('--isolated', 'isolated', [CompletionResultType]::ParameterName, 'Ignore all configuration files')
             [CompletionResult]::new('-h', 'h', [CompletionResultType]::ParameterName, 'Print help')
             [CompletionResult]::new('--help', 'help', [CompletionResultType]::ParameterName, 'Print help')
             break
         }
         'ruff;clean' {
+            [CompletionResult]::new('--config', 'config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option. Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')
             [CompletionResult]::new('-v', 'v', [CompletionResultType]::ParameterName, 'Enable verbose logging')
             [CompletionResult]::new('--verbose', 'verbose', [CompletionResultType]::ParameterName, 'Enable verbose logging')
             [CompletionResult]::new('-q', 'q', [CompletionResultType]::ParameterName, 'Print diagnostics, but nothing else')
             [CompletionResult]::new('--quiet', 'quiet', [CompletionResultType]::ParameterName, 'Print diagnostics, but nothing else')
             [CompletionResult]::new('-s', 's', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
             [CompletionResult]::new('--silent', 'silent', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
+            [CompletionResult]::new('--isolated', 'isolated', [CompletionResultType]::ParameterName, 'Ignore all configuration files')
             [CompletionResult]::new('-h', 'h', [CompletionResultType]::ParameterName, 'Print help')
             [CompletionResult]::new('--help', 'help', [CompletionResultType]::ParameterName, 'Print help')
             break
         }
         'ruff;generate-shell-completion' {
+            [CompletionResult]::new('--config', 'config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option. Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')
             [CompletionResult]::new('-v', 'v', [CompletionResultType]::ParameterName, 'Enable verbose logging')
             [CompletionResult]::new('--verbose', 'verbose', [CompletionResultType]::ParameterName, 'Enable verbose logging')
             [CompletionResult]::new('-q', 'q', [CompletionResultType]::ParameterName, 'Print diagnostics, but nothing else')
             [CompletionResult]::new('--quiet', 'quiet', [CompletionResultType]::ParameterName, 'Print diagnostics, but nothing else')
             [CompletionResult]::new('-s', 's', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
             [CompletionResult]::new('--silent', 'silent', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
+            [CompletionResult]::new('--isolated', 'isolated', [CompletionResultType]::ParameterName, 'Ignore all configuration files')
             [CompletionResult]::new('-h', 'h', [CompletionResultType]::ParameterName, 'Print help')
             [CompletionResult]::new('--help', 'help', [CompletionResultType]::ParameterName, 'Print help')
             break
         }
         'ruff;format' {
-            [CompletionResult]::new('--config', 'config', [CompletionResultType]::ParameterName, 'Path to the `pyproject.toml` or `ruff.toml` file to use for configuration')
             [CompletionResult]::new('--cache-dir', 'cache-dir', [CompletionResultType]::ParameterName, 'Path to the cache directory')
             [CompletionResult]::new('--exclude', 'exclude', [CompletionResultType]::ParameterName, 'List of paths, used to omit files and/or directories from analysis')
             [CompletionResult]::new('--line-length', 'line-length', [CompletionResultType]::ParameterName, 'Set the line-length')
             [CompletionResult]::new('--stdin-filename', 'stdin-filename', [CompletionResultType]::ParameterName, 'The name of the file when passing it through stdin')
             [CompletionResult]::new('--extension', 'extension', [CompletionResultType]::ParameterName, 'List of mappings from file extension to language (one of ["python", "ipynb", "pyi"]). For example, to treat `.ipy` files as IPython notebooks, use `--extension ipy:ipynb`')
             [CompletionResult]::new('--target-version', 'target-version', [CompletionResultType]::ParameterName, 'The minimum Python version that should be supported')
+            [CompletionResult]::new('--range', 'range', [CompletionResultType]::ParameterName, 'When specified, Ruff will try to only format the code in the given range. It might be necessary to extend the start backwards or the end forwards, to fully enclose a logical line. The `<RANGE>` uses the format `<start_line>:<start_column>-<end_line>:<end_column>`.')
+            [CompletionResult]::new('--config', 'config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option. Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')
             [CompletionResult]::new('--check', 'check', [CompletionResultType]::ParameterName, 'Avoid writing any formatted files back; instead, exit with a non-zero status code if any files would have been modified, and zero otherwise')
             [CompletionResult]::new('--diff', 'diff', [CompletionResultType]::ParameterName, 'Avoid writing any formatted files back; instead, exit with a non-zero status code and the difference between the current file and how the formatted file would look like')
             [CompletionResult]::new('-n', 'n', [CompletionResultType]::ParameterName, 'Disable cache reads')
@@ -182,7 +193,6 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
             [CompletionResult]::new('--no-respect-gitignore', 'no-respect-gitignore', [CompletionResultType]::ParameterName, 'no-respect-gitignore')
             [CompletionResult]::new('--force-exclude', 'force-exclude', [CompletionResultType]::ParameterName, 'Enforce exclusions, even for paths passed to Ruff directly on the command-line. Use `--no-force-exclude` to disable')
             [CompletionResult]::new('--no-force-exclude', 'no-force-exclude', [CompletionResultType]::ParameterName, 'no-force-exclude')
-            [CompletionResult]::new('--isolated', 'isolated', [CompletionResultType]::ParameterName, 'Ignore all configuration files')
             [CompletionResult]::new('--preview', 'preview', [CompletionResultType]::ParameterName, 'Enable preview mode; enables unstable formatting. Use `--no-preview` to disable')
             [CompletionResult]::new('--no-preview', 'no-preview', [CompletionResultType]::ParameterName, 'no-preview')
             [CompletionResult]::new('-v', 'v', [CompletionResultType]::ParameterName, 'Enable verbose logging')
@@ -191,18 +201,21 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
             [CompletionResult]::new('--quiet', 'quiet', [CompletionResultType]::ParameterName, 'Print diagnostics, but nothing else')
             [CompletionResult]::new('-s', 's', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
             [CompletionResult]::new('--silent', 'silent', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
-            [CompletionResult]::new('-h', 'h', [CompletionResultType]::ParameterName, 'Print help')
-            [CompletionResult]::new('--help', 'help', [CompletionResultType]::ParameterName, 'Print help')
+            [CompletionResult]::new('--isolated', 'isolated', [CompletionResultType]::ParameterName, 'Ignore all configuration files')
+            [CompletionResult]::new('-h', 'h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('--help', 'help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
             break
         }
         'ruff;version' {
             [CompletionResult]::new('--output-format', 'output-format', [CompletionResultType]::ParameterName, 'output-format')
+            [CompletionResult]::new('--config', 'config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option. Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')
             [CompletionResult]::new('-v', 'v', [CompletionResultType]::ParameterName, 'Enable verbose logging')
             [CompletionResult]::new('--verbose', 'verbose', [CompletionResultType]::ParameterName, 'Enable verbose logging')
             [CompletionResult]::new('-q', 'q', [CompletionResultType]::ParameterName, 'Print diagnostics, but nothing else')
             [CompletionResult]::new('--quiet', 'quiet', [CompletionResultType]::ParameterName, 'Print diagnostics, but nothing else')
             [CompletionResult]::new('-s', 's', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
             [CompletionResult]::new('--silent', 'silent', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
+            [CompletionResult]::new('--isolated', 'isolated', [CompletionResultType]::ParameterName, 'Ignore all configuration files')
             [CompletionResult]::new('-h', 'h', [CompletionResultType]::ParameterName, 'Print help')
             [CompletionResult]::new('--help', 'help', [CompletionResultType]::ParameterName, 'Print help')
             break
