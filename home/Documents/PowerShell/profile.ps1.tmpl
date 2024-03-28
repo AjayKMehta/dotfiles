@@ -153,7 +153,7 @@ if ($host.Name -eq 'ConsoleHost') {
 Import-Module 'cd-extras'
 Set-CdExtrasOption ColorCompletion
 # Paths within $cde.CD_PATH are included in the completion results.
-Set-CdExtrasOption CD_PATH -Value '~/documents', 'D:/git'
+Set-CdExtrasOption CD_PATH -Value '~/documents', 'D:/git', '~/.local/share'
 
 Import-Module Terminal-Icons
 
