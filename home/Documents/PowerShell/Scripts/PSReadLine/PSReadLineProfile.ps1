@@ -264,6 +264,29 @@ Set-PSReadLineKeyHandler -Key 'Alt+%' `
         }
     } }
 
+# Mapped to RevertLine
+Remove-PSReadLineKeyHandler -Key 'Escape'
+
+# Mapped to BackwardKillWord
+Remove-PSReadLineKeyHandler -Key 'Ctrl+w'
+
+Set-PSReadLineKeyHandler -Key 'Alt+r' -Function RevertLine
+Set-PSReadLineKeyHandler -Key 'Escape,r' -Function RevertLine
+
+Set-PSReadLineKeyHandler -Key 'Ctrl+u' -Function BackwardKillInput
+Set-PSReadLineKeyHandler -Key 'Escape,c' -Function CapitalizeWord
+
+Set-PSReadLineKeyHandler -Key 'Ctrl+d' -Function DeleteCharOrExit
+
+Set-PSReadLineKeyHandler -Key 'Alt+l' -Function DowncaseWord
+Set-PSReadLineKeyHandler -Key 'Escape,l' -Function DowncaseWord
+
+Set-PSReadLineKeyHandler -Key 'Escape,d' -Function KillWord
+
+Set-PSReadLineKeyHandler -Key 'Alt+u' -Function UpcaseWord
+Set-PSReadLineKeyHandler -Key 'Escape,u' -Function UpcaseWord
+
+Set-PSReadLineKeyHandler -Key 'Ctrl+y' -Function Yank
 #endregion
 
 #region Cursor movement functions
