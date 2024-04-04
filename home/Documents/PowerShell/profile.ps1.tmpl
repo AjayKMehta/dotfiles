@@ -20,7 +20,7 @@ $GitPromptSettings.EnableStashStatus = $true
 
 #endregion
 
-if (!(Get-PSDrive -Name 'HKU' -ea SilentlyContinue)) {
+if (!(Get-PSDrive -Name 'HKU' -ErrorAction Ignore)) {
     $null = New-PSDrive -Name 'HKU' -PSProvider Registry -Root 'HKEY_USERS'
 }
 
