@@ -81,24 +81,24 @@ if (!$isvscode) {
         BriefDescription = 'ParenthesizeSelection'
         Description      = 'Put parentheses around the selection or entire line and move the cursor to after the closing parenthesis.'
         ScriptBlock      = {
-        param($key, $arg)
+            param($key, $arg)
 
-        $selectionStart = $null
-        $selectionLength = $null
-        [PSConsoleReadLine]::GetSelectionState([ref]$selectionStart, [ref]$selectionLength)
+            $selectionStart = $null
+            $selectionLength = $null
+            [PSConsoleReadLine]::GetSelectionState([ref]$selectionStart, [ref]$selectionLength)
 
-        $line = $null
-        $cursor = $null
-        [PSConsoleReadLine]::GetBufferState([ref]$line, [ref]$cursor)
-        if ($selectionStart -ne -1) {
-            $replacement = '(' + $line.SubString($selectionStart, $selectionLength) + ')'
-            [PSConsoleReadLine]::Replace($selectionStart, $selectionLength, $replacement)
-            [PSConsoleReadLine]::SetCursorPosition($selectionStart + $selectionLength + 2)
-        } else {
-            [PSConsoleReadLine]::Replace(0, $line.Length, '(' + $line + ')')
-            [PSConsoleReadLine]::EndOfLine()
+            $line = $null
+            $cursor = $null
+            [PSConsoleReadLine]::GetBufferState([ref]$line, [ref]$cursor)
+            if ($selectionStart -ne -1) {
+                $replacement = '(' + $line.SubString($selectionStart, $selectionLength) + ')'
+                [PSConsoleReadLine]::Replace($selectionStart, $selectionLength, $replacement)
+                [PSConsoleReadLine]::SetCursorPosition($selectionStart + $selectionLength + 2)
+            } else {
+                [PSConsoleReadLine]::Replace(0, $line.Length, '(' + $line + ')')
+                [PSConsoleReadLine]::EndOfLine()
+            }
         }
-    }
     }
 
     Set-PSReadLineKeyHandler @setPSReadLineKeyHandlerSplat
@@ -303,7 +303,6 @@ Set-PSReadLineKeyHandler -Key Alt+f -Function ShellForwardWord
 
 Set-PSReadLineKeyHandler -Key Ctrl+b -Function BeginningOfHistory
 
-# TODO: REMOVE AS DOESN'T WORK.
 # Save current line in history but do not execute
 Set-PSReadLineKeyHandler -Chord Shift+Alt+h `
     -BriefDescription SaveInHistory `
@@ -315,11 +314,14 @@ Set-PSReadLineKeyHandler -Chord Shift+Alt+h `
     $cursor = $null
     [PSConsoleReadLine]::GetBufferState([ref]$line, [ref]$cursor)
     $SaveStyle = (Get-PSReadLineOption).HistorySaveStyle
-    if ($SaveStyle -ne [HistorySaveStyle]::SaveIncrementally) {
-        try {
+    $saveInc = $SaveStyle -eq [HistorySaveStyle]::SaveIncrementally
+    try {
+        if (!$saveInc) {
             Set-PSReadLineOption -HistorySaveStyle SaveIncrementally
-            [PSConsoleReadLine]::AddToHistory($line)
-        } finally {
+        }
+        [PSConsoleReadLine]::AddToHistory($line)
+    } finally {
+        if (!$saveInc) {
             Set-PSReadLineOption -HistorySaveStyle $SaveStyle
         }
     }
