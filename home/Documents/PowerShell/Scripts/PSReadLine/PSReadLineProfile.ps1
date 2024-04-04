@@ -11,7 +11,7 @@ $options = @{
     HistoryNoDuplicates           = $true
     HistorySearchCursorMovesToEnd = $true
 
-    HistorySaveStyle              = $program ? 'SaveNothing' : 'SaveIncrementally'
+    HistorySaveStyle              = $isVsCode ? 'SaveNothing' : 'SaveIncrementally'
     MaximumHistoryCount           = 10000
     AddToHistoryHandler           = {
         param([string]$line)
@@ -53,7 +53,6 @@ Remove-Variable colors
 
 # https://github.com/PowerShell/PSReadLine/issues/1643
 Set-PSReadLineKeyHandler -Key Enter -Function ValidateAndAcceptLine
-
 
 # Paste the clipboard text as a here string
 Set-PSReadLineKeyHandler -Chord Alt+v `
@@ -289,6 +288,9 @@ Set-PSReadLineKeyHandler -Key 'Escape,d' -Function KillWord
 Set-PSReadLineKeyHandler -Key 'Alt+u' -Function UpcaseWord
 Set-PSReadLineKeyHandler -Key 'Escape,u' -Function UpcaseWord
 
+Set-PSReadLineKeyHandler -Key 'Ctrl+g' -Function Abort
+Set-PSReadLineKeyHandler -Key 'Ctrl+o' -Function AcceptAndGetNext
+
 Set-PSReadLineKeyHandler -Key 'Ctrl+y' -Function Yank
 #endregion
 
@@ -304,7 +306,7 @@ Set-PSReadLineKeyHandler -Key Alt+f -Function ShellForwardWord
 Set-PSReadLineKeyHandler -Key Ctrl+b -Function BeginningOfHistory
 
 # Save current line in history but do not execute
-Set-PSReadLineKeyHandler -Chord Shift+Alt+h `
+Set-PSReadLineKeyHandler -Chord 'Alt+h' `
     -BriefDescription SaveInHistory `
     -LongDescription 'Save current line in history but do not execute' `
     -ScriptBlock {
@@ -327,7 +329,6 @@ Set-PSReadLineKeyHandler -Chord Shift+Alt+h `
     }
     [PSConsoleReadLine]::RevertLine()
 }
-
 
 if (!$isVsCode) {
     # This key handler shows the entire or filtered history using Out-GridView. The
@@ -433,14 +434,7 @@ if (!$isVsCode) {
         }
     }
     Set-PSReadLineKeyHandler @parameters
-}
 
-# https://www.petri.com/let-psreadline-handle-powershell-part-2
-Set-PSReadLineKeyHandler -Chord Ctrl+h -BriefDescription 'Open PSReadlineHistory' -ScriptBlock {
-    Invoke-Item -Path "$((Get-PSReadLineOption).HistorySavePath)"
-}
-
-if (!$program) {
     Set-PSReadLineKeyHandler -Key Alt+s `
         -BriefDescription ToggleSaveHistory `
         -LongDescription 'Toggle saving history' `
@@ -456,13 +450,18 @@ if (!$program) {
     }
 }
 
+# https://www.petri.com/let-psreadline-handle-powershell-part-2
+Set-PSReadLineKeyHandler -Chord Ctrl+h -BriefDescription 'Open PSReadlineHistory' -ScriptBlock {
+    Invoke-Item -Path "$((Get-PSReadLineOption).HistorySavePath)"
+}
+
 #endregion
 
 #region Predictive IntelliSense functions
 
-if ($program -ne 'vscode') {
-    Set-PSReadLineKeyHandler -Chord Ctrl+1 -Function AcceptSuggestion
-    Set-PSReadLineKeyHandler -Chord Ctrl+2 -Function AcceptNextSuggestionWord
+if (!$isVsCode) {
+    Set-PSReadLineKeyHandler -Chord Alt+1 -Function AcceptSuggestion
+    Set-PSReadLineKeyHandler -Chord Alt+2 -Function AcceptNextSuggestionWord
 }
 
 # `ForwardChar` accepts the entire suggestion text when the cursor is at the end of the line.
@@ -519,7 +518,7 @@ Set-PSReadLineKeyHandler -Key Shift+F1 -BriefDescription 'OnlineCommandHelp' -Lo
     }
 }
 
-if ($program -ne 'vscode') {
+if (!$isVsCode) {
     Set-PSReadLineKeyHandler -Key Alt+F1 -BriefDescription 'CommandHelp' -LongDescription 'Open the help window for the current command' -ScriptBlock {
         param($key, $arg)
 
@@ -563,9 +562,11 @@ Set-PSReadLineKeyHandler -Key Alt+F -Function SelectShellForwardWord
 #region Miscellaneous functions
 
 Set-PSReadLineKeyHandler -Function ShowKeyBindings -Chord 'Shift+Ctrl+?'
+Set-PSReadLineKeyHandler -Function ShowKeyBindings -Chord 'Escape,?'
+Set-PSReadLineKeyHandler -Function WhatIsKey -Chord 'Escape,/'
 
-if ($program -ne 'vscode') {
-    Set-PSReadLineKeyHandler -Chord Ctrl+k -Function CaptureScreen
+if (!$isVsCode) {
+    Set-PSReadLineKeyHandler -Chord 'Ctrl+k' -Function CaptureScreen
 }
 
 #endregion
