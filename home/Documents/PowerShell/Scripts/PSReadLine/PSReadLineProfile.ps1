@@ -3,7 +3,7 @@ using namespace Microsoft.PowerShell
 using namespace System.Management.Automation
 using namespace System.Management.Automation.Language
 
-$program = $env:TERM_PROGRAM
+$isVsCode = $env:TERM_PROGRAM -eq 'vscode'
 
 #region Options
 
@@ -54,9 +54,6 @@ Remove-Variable colors
 # https://github.com/PowerShell/PSReadLine/issues/1643
 Set-PSReadLineKeyHandler -Key Enter -Function ValidateAndAcceptLine
 
-if ($program -ne 'vscode') {
-    Set-PSReadLineKeyHandler -Chord Ctrl+Alt+u -Function InvertCase
-}
 
 # Paste the clipboard text as a here string
 Set-PSReadLineKeyHandler -Chord Alt+v `
@@ -75,12 +72,15 @@ Set-PSReadLineKeyHandler -Chord Alt+v `
     }
 }
 
-if (!$program) {
+if (!$isvscode) {
+    Set-PSReadLineKeyHandler -Chord Ctrl+Alt+u -Function InvertCase
+
     # Put parentheses around the selection or entire line and move the cursor to after the closing parenthesis.
-    Set-PSReadLineKeyHandler -Chord 'Ctrl+Shift+(' `
-        -BriefDescription ParenthesizeSelection `
-        -LongDescription 'Put parentheses around the selection or entire line and move the cursor to after the closing parenthesis' `
-        -ScriptBlock {
+    $setPSReadLineKeyHandlerSplat = @{
+        Chord            = 'Ctrl+Shift+('
+        BriefDescription = 'ParenthesizeSelection'
+        Description      = 'Put parentheses around the selection or entire line and move the cursor to after the closing parenthesis.'
+        ScriptBlock      = {
         param($key, $arg)
 
         $selectionStart = $null
@@ -99,6 +99,9 @@ if (!$program) {
             [PSConsoleReadLine]::EndOfLine()
         }
     }
+    }
+
+    Set-PSReadLineKeyHandler @setPSReadLineKeyHandlerSplat
 
     Set-PSReadLineKeyHandler -Key Ctrl+Shift+l `
         -BriefDescription ToggleLowerCase `
@@ -324,7 +327,7 @@ Set-PSReadLineKeyHandler -Chord Shift+Alt+h `
 }
 
 
-if ($program -ne 'vscode') {
+if (!$isVsCode) {
     # This key handler shows the entire or filtered history using Out-GridView. The
     # typed text is used as the substring pattern for filtering. A selected command
     # is inserted to the command line without invoking. Multiple command selection
