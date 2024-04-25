@@ -49,7 +49,7 @@
     untracked = ls-files --others --exclude-standard
     unstage = restore --staged
     cnv = commit --no-verify
-	grepd = -c core.pager=delta grep
+    grepd = -c core.pager=delta grep
 
     ## Push to remote
     please = push --force-with-lease
@@ -234,3 +234,8 @@
     enabled = true
 [maintenance "pack-refs"]
     enabled = true
+[credential]
+    helper =
+    helper = C:/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
+[credential "https://github.com"]
+    username = {{ .name }}
