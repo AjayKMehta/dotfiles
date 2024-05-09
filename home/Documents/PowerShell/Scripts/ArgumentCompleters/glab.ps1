@@ -1,4 +1,4 @@
-﻿# powershell completion for glab                                 -*- shell-script -*-
+# powershell completion for glab                                 -*- shell-script -*-
 
 function __glab_debug {
     if ($env:BASH_COMP_DEBUG_FILE) {
