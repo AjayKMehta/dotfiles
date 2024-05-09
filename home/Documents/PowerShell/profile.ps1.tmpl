@@ -137,11 +137,19 @@ function ifind() {
 }
 
 Import-Module -Name PSFzf
-Set-PsFzfOption -PSReadlineChordReverseHistory 'Ctrl+Shift+r'
+# Ctrl + t to select based on current PSProvider.
+Set-PsFzfOption -PSReadlineChordReverseHistory 'Ctrl+Shift+r' -PSReadlineChordProvider 'Ctrl+t'
 # Press Alt+C to set location based on selected directory.
-# Ctrl + T to select file in $pwd.
-# fe = fuzzy edit, fh = fuzzy history, fkill = fuzzy kill, fgs = fuzzy git status
-Set-PsFzfOption -EnableAliasFuzzyEdit -EnableAliasFuzzyHistory -EnableAliasFuzzyKillProcess -EnableAliasFuzzyGitStatus
+# fe = fuzzy edit, fh = fuzzy history, fkill = fuzzy kill, fgs = fuzzy {{ .chezmoi.config.git.command }} status
+# <C-g> is leader for {{ .chezmoi.config.git.command }} key bindings.
+# <C-g>, <C-f> selects files.
+# <C-g>, <C-b> selects branches.
+# <C-g>, <C-t> selects tags.
+# <C-g>, <C-h> selects hashes (commits).
+# <C-g>, <C-s> selects stashes.
+Set-PsFzfOption -EnableAliasFuzzyEdit -EnableAliasFuzzyHistory -EnableAliasFuzzyKillProcess -EnableAliasFuzzyGitStatus -EnableFd -GitKeyBindings
+
+Set-Alias -Name ipfr -Value Invoke-PsFzfRipgrep
 
 #endregion
 
