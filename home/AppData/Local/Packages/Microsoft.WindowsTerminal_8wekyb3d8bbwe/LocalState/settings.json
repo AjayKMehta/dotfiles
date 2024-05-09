@@ -1,22 +1,28 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": 
+    "actions":
     [
         {
-            "command": 
-            {
-                "action": "copy",
-                "singleLine": false
-            },
-            "keys": "ctrl+c"
-        },
-        {
-            "command": "paste",
+            "command": "unbound",
             "keys": "ctrl+v"
         },
         {
-            "command": 
+            "command": "unbound",
+            "keys": "ctrl+c"
+        },
+        {
+            "command":
+            {
+                "action": "copy",
+                "singleLine": false
+            }
+        },
+        {
+            "command": "paste"
+        },
+        {
+            "command":
             {
                 "action": "splitPane",
                 "split": "auto",
@@ -33,30 +39,30 @@
     "copyFormatting": "none",
     "copyOnSelect": false,
     "defaultProfile": "{01201329-03d9-413b-ba6b-ce86f4862626}",
-    "newTabMenu": 
+    "newTabMenu":
     [
         {
             "type": "remainingProfiles"
         }
     ],
-    "profiles": 
+    "profiles":
     {
-        "defaults": 
+        "defaults":
         {
-            "font": 
+            "font":
             {
                 "face": "CaskaydiaMono Nerd Font Mono",
                 "size": 14.0
             }
         },
-        "list": 
+        "list":
         [
             {
                 "colorScheme": "Tango Dark",
                 "commandline": "\"C:\\Program Files\\PowerShell\\7\\pwsh.exe\"",
                 "elevate": true,
                 "experimental.retroTerminalEffect": false,
-                "font": 
+                "font":
                 {
                     "face": "MonaspiceNe Nerd Font Mono"
                 },
@@ -68,7 +74,7 @@
             },
             {
                 "colorScheme": "Tango Dark",
-                "font": 
+                "font":
                 {
                     "face": "DejaVuSansM Nerd Font Mono"
                 },
@@ -78,19 +84,20 @@
                 "source": "Windows.Terminal.PowershellCore"
             },
             {
-                "font": 
+                "font":
                 {
                     "face": "MonaspiceKr Nerd Font Mono"
                 },
                 "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
                 "hidden": false,
                 "name": "Ubuntu",
-                "source": "Windows.Terminal.Wsl"
+                "source": "Windows.Terminal.Wsl",
+                "startingDirectory": "/home/ajay"
             },
             {
                 "colorScheme": "Solarized Dark",
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-                "font": 
+                "font":
                 {
                     "face": "DejaVuSansM Nerd Font Mono"
                 },
@@ -100,7 +107,7 @@
             },
             {
                 "commandline": "%SystemRoot%\\System32\\cmd.exe",
-                "font": 
+                "font":
                 {
                     "face": "FiraCode Nerd Font Mono"
                 },
@@ -122,7 +129,7 @@
                 "commandline": "%SystemRoot%\\System32\\cmd.exe \"/K\" D:\\Apps\\Miniconda\\Scripts\\activate.bat D:\\Apps\\Miniconda  ",
                 "cursorShape": "bar",
                 "elevate": true,
-                "font": 
+                "font":
                 {
                     "face": "JuliaMono"
                 },
@@ -138,7 +145,7 @@
             }
         ]
     },
-    "schemes": 
+    "schemes":
     [
         {
             "background": "#0C0C0C",
