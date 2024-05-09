@@ -4,3 +4,9 @@
 # https://github.com/microsoft/vscode-remote-release/issues/4536
 memory=8GB
 processors=5
+
+# Default is 25% of available RAM
+swap=8GB
+
+[experimental]
+autoMemoryReclaim=gradual
