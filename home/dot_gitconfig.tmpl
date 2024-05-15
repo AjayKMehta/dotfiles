@@ -80,7 +80,7 @@
     hide = update-index --skip-worktree
     unhide = update-index --no-skip-worktree
 
-    ## Rewrite hisory
+    ## Rewrite history
     rbi = rebase --autosquash -i HEAD@{upstream}
     append = !git cherry-pick $(git merge-base HEAD $1)..$1
     pop = reset HEAD^
