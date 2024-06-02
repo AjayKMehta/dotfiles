@@ -108,7 +108,7 @@ Remove-Variable condaExe -ErrorAction Ignore
 
 #region fzf
 
-$env:FZF_DEFAULT_COMMAND = 'rg --files . 2> nul'
+# $env:FZF_DEFAULT_COMMAND = 'rg --files . 2> nul'
 
 # Dracula theme
 # See https://github.com/junegunn/fzf.vim/issues/358#issuecomment-841665170
@@ -140,8 +140,8 @@ Import-Module -Name PSFzf
 # Ctrl + t to select based on current PSProvider.
 Set-PsFzfOption -PSReadlineChordReverseHistory 'Ctrl+Shift+r' -PSReadlineChordProvider 'Ctrl+t'
 # Press Alt+C to set location based on selected directory.
-# fe = fuzzy edit, fh = fuzzy history, fkill = fuzzy kill, fgs = fuzzy {{ .chezmoi.config.git.command }} status
-# <C-g> is leader for {{ .chezmoi.config.git.command }} key bindings.
+# fe = fuzzy edit, fh = fuzzy history, fkill = fuzzy kill, fgs = fuzzy git status
+# <C-g> is leader for git key bindings.
 # <C-g>, <C-f> selects files.
 # <C-g>, <C-b> selects branches.
 # <C-g>, <C-t> selects tags.
@@ -178,6 +178,10 @@ Import-Module Microsoft.PowerShell.SecretStore, Microsoft.PowerShell.SecretManag
 
 $env:Path += ';D:\Apps\Quarto\bin'
 
+# WinGet
+
+Import-Module Microsoft.WinGet.CommandNotFound
+
 # https://github.com/microsoft/winget-cli/blob/master/doc/Completion.md
 Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
     param($wordToComplete, $commandAst, $cursorPosition)
@@ -188,3 +192,7 @@ Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
         [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
     }
 }
+
+# Zoxide
+
+Invoke-Expression (& { zoxide init powershell | Out-String })
