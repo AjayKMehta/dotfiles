@@ -3,13 +3,22 @@
 		"https://index.docker.io/v1/": {}
 	},
 	"credsStore": "wincred",
-	"currentContext": "default",
+	"currentContext": "desktop-linux",
 	"cliPluginsExtraDirs": [
 		"D:/Apps/docker-scout"
 	],
 	"plugins": {
 		"-x-cli-hints": {
 			"enabled": "true"
+		},
+		"debug": {
+			"hooks": "exec"
+		},
+		"scout": {
+			"hooks": "pull,buildx build"
 		}
+	},
+	"features": {
+		"hooks": "true"
 	}
 }
