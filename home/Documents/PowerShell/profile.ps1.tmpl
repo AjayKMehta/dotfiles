@@ -35,6 +35,9 @@ Register-ArgumentCompleter -Native -CommandName dotnet -ScriptBlock {
 # Parameter completion for CLI apps
 Get-ChildItem "$PSScriptRoot\Scripts\ArgumentCompleters\*.ps1" | ForEach-Object { . $_ }
 
+
+$PSStyle.Progress.UseOSCIndicator = $true
+
 #region PSReadLine
 
 # Either regular console or one created by PowerShell Extension
@@ -147,9 +150,27 @@ Set-PsFzfOption -PSReadlineChordReverseHistory 'Ctrl+Shift+r' -PSReadlineChordPr
 # <C-g>, <C-t> selects tags.
 # <C-g>, <C-h> selects hashes (commits).
 # <C-g>, <C-s> selects stashes.
-Set-PsFzfOption -EnableAliasFuzzyEdit -EnableAliasFuzzyHistory -EnableAliasFuzzyKillProcess -EnableAliasFuzzyGitStatus -EnableFd -GitKeyBindings
 
-Set-Alias -Name ipfr -Value Invoke-PsFzfRipgrep
+$setPsFzfOptionSplat = @{
+    EnableAliasFuzzyEdit        = $true
+    EnableAliasFuzzyHistory     = $true
+    EnableAliasFuzzyKillProcess = $true
+    EnableAliasFuzzyGitStatus   = $true
+    EnableFd                    = $true
+    GitKeyBindings              = $true
+}
+Set-PsFzfOption @setPsFzfOptionSplat
+
+Set-Alias -Name 'ipfr' -Value Invoke-PsFzfRipgrep
+
+if (!(Get-Alias -Name 'fgb' -ErrorAction Ignore)) {
+    Set-Alias -Name 'fgb' -Value Invoke-PsFzfGitBranches
+}
+
+if (!(Get-Alias -Name 'fgh' -ErrorAction Ignore)) {
+    Set-Alias -Name 'fgh' -Value Invoke-PsFzfGitHashes
+}
+
 
 #endregion
 
@@ -177,8 +198,7 @@ if ($env:TERM_PROGRAM -eq 'vscode') { . "$(code --locate-shell-integration-path 
 Import-Module Microsoft.PowerShell.SecretStore, Microsoft.PowerShell.SecretManagement
 
 $env:Path += ';D:\Apps\Quarto\bin'
-if (Test-Path Env:/SPARK_HOME)
-{
+if (Test-Path Env:/SPARK_HOME) {
     $env:Path += (Join-Path $env:SPARK_HOME bin)
 }
 
