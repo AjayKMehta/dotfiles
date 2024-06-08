@@ -8,21 +8,50 @@ $isVsCode = $env:TERM_PROGRAM -eq 'vscode'
 #region Options
 
 $options = @{
+    AnsiEscapeTimeout             = 200
     HistoryNoDuplicates           = $true
     HistorySearchCursorMovesToEnd = $true
 
     HistorySaveStyle              = $isVsCode ? 'SaveNothing' : 'SaveIncrementally'
     MaximumHistoryCount           = 10000
-    AddToHistoryHandler           = {
-        param([string]$line)
-        return $? -and $line.Length -gt 3 -and $line[0] -notin ' ', ';'
-    }
     # HistorySavePath               = "$PSScriptRoot\PSReadLine_history.txt"
 
     PredictionSource              = 'HistoryAndPlugin'
 }
 
 Set-PSReadLineOption @options
+
+## Add Dongbo's custom history handler to filter out:
+## - Commands with 3 or fewer characters
+## - Commands that start with a space
+## - Commands that end with a semicolon
+## - Start with a space or end with a semicolon if you want the command to be omitted from history
+##   - Useful for filtering out sensitive commands you don't want recorded in history
+$global:__defaultHistoryHandler = (Get-PSReadLineOption).AddToHistoryHandler
+Set-PSReadLineOption -AddToHistoryHandler {
+    param([string]$line)
+
+    $defaultResult = $global:__defaultHistoryHandler.Invoke($line)
+    if ($defaultResult -eq 'MemoryAndFile') {
+        if ($line.Length -gt 3 -and $line[0] -ne ' ' -and $line[-1] -ne ';') {
+            return 'MemoryAndFile'
+        } else {
+            return 'MemoryOnly'
+        }
+    }
+    return $defaultResult
+}
+
+function OnViModeChange {
+    if ($args[0] -eq 'Command') {
+        # Set the cursor to a blinking block.
+        Write-Host -NoNewline "`e[1 q"
+    } else {
+        # Set the cursor to a blinking line.
+        Write-Host -NoNewline "`e[5 q"
+    }
+}
+Set-PSReadLineOption -ViModeIndicator Script -ViModeChangeHandler $Function:OnViModeChange
 
 $colors = @{
     Command            = '#46E515'
