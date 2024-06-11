@@ -104,7 +104,7 @@ Set-PoshPrompt -Theme '~\oh-my-posh\cool.omp.json'
 #region conda initialize
 $condaExe = '{{ .condapath | replaceAllRegex "/" "\\" }}\Scripts\conda.exe'
 If (Test-Path $condaExe) {
-    (& $condaExe "shell.powershell" "hook") | Out-String | Where-Object {$_} | Invoke-Expression
+    (& $condaExe 'shell.powershell' 'hook') | Out-String | Where-Object { $_ } | Invoke-Expression
 }
 Remove-Variable condaExe -ErrorAction Ignore
 #endregion
