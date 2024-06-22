@@ -40,6 +40,7 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
             [CompletionResult]::new('clean', 'clean', [CompletionResultType]::ParameterValue, 'Clear any caches in the current directory and any subdirectories')
             [CompletionResult]::new('generate-shell-completion', 'generate-shell-completion', [CompletionResultType]::ParameterValue, 'Generate shell completion')
             [CompletionResult]::new('format', 'format', [CompletionResultType]::ParameterValue, 'Run the Ruff formatter on the given files or directories')
+            [CompletionResult]::new('server', 'server', [CompletionResultType]::ParameterValue, 'Run the language server')
             [CompletionResult]::new('version', 'version', [CompletionResultType]::ParameterValue, 'Display Ruff''s version')
             [CompletionResult]::new('help', 'help', [CompletionResultType]::ParameterValue, 'Print this message or the help of the given subcommand(s)')
             break
@@ -65,7 +66,7 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
             [CompletionResult]::new('--dummy-variable-rgx', 'dummy-variable-rgx', [CompletionResultType]::ParameterName, 'Regular expression matching the name of dummy variables')
             [CompletionResult]::new('--cache-dir', 'cache-dir', [CompletionResultType]::ParameterName, 'Path to the cache directory')
             [CompletionResult]::new('--stdin-filename', 'stdin-filename', [CompletionResultType]::ParameterName, 'The name of the file when passing it through stdin')
-            [CompletionResult]::new('--extension', 'extension', [CompletionResultType]::ParameterName, 'List of mappings from file extension to language (one of ["python", "ipynb", "pyi"]). For example, to treat `.ipy` files as IPython notebooks, use `--extension ipy:ipynb`')
+            [CompletionResult]::new('--extension', 'extension', [CompletionResultType]::ParameterName, 'List of mappings from file extension to language (one of `python`, `ipynb`, `pyi`). For example, to treat `.ipy` files as IPython notebooks, use `--extension ipy:ipynb`')
             [CompletionResult]::new('--config', 'config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option. Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')
             [CompletionResult]::new('--fix', 'fix', [CompletionResultType]::ParameterName, 'Apply fixes to resolve lint violations. Use `--no-fix` to disable or `--unsafe-fixes` to include unsafe fixes')
             [CompletionResult]::new('--no-fix', 'no-fix', [CompletionResultType]::ParameterName, 'no-fix')
@@ -124,6 +125,7 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
             break
         }
         'ruff;config' {
+            [CompletionResult]::new('--output-format', 'output-format', [CompletionResultType]::ParameterName, 'Output format')
             [CompletionResult]::new('--config', 'config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option. Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')
             [CompletionResult]::new('-v', 'v', [CompletionResultType]::ParameterName, 'Enable verbose logging')
             [CompletionResult]::new('--verbose', 'verbose', [CompletionResultType]::ParameterName, 'Enable verbose logging')
@@ -181,7 +183,7 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
             [CompletionResult]::new('--exclude', 'exclude', [CompletionResultType]::ParameterName, 'List of paths, used to omit files and/or directories from analysis')
             [CompletionResult]::new('--line-length', 'line-length', [CompletionResultType]::ParameterName, 'Set the line-length')
             [CompletionResult]::new('--stdin-filename', 'stdin-filename', [CompletionResultType]::ParameterName, 'The name of the file when passing it through stdin')
-            [CompletionResult]::new('--extension', 'extension', [CompletionResultType]::ParameterName, 'List of mappings from file extension to language (one of ["python", "ipynb", "pyi"]). For example, to treat `.ipy` files as IPython notebooks, use `--extension ipy:ipynb`')
+            [CompletionResult]::new('--extension', 'extension', [CompletionResultType]::ParameterName, 'List of mappings from file extension to language (one of `python`, `ipynb`, `pyi`). For example, to treat `.ipy` files as IPython notebooks, use `--extension ipy:ipynb`')
             [CompletionResult]::new('--target-version', 'target-version', [CompletionResultType]::ParameterName, 'The minimum Python version that should be supported')
             [CompletionResult]::new('--range', 'range', [CompletionResultType]::ParameterName, 'When specified, Ruff will try to only format the code in the given range. It might be necessary to extend the start backwards or the end forwards, to fully enclose a logical line. The `<RANGE>` uses the format `<start_line>:<start_column>-<end_line>:<end_column>`.')
             [CompletionResult]::new('--config', 'config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option. Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')
@@ -206,6 +208,20 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
             [CompletionResult]::new('--help', 'help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
             break
         }
+        'ruff;server' {
+            [CompletionResult]::new('--config', 'config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option. Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')
+            [CompletionResult]::new('--preview', 'preview', [CompletionResultType]::ParameterName, 'Enable preview mode; required for regular operation')
+            [CompletionResult]::new('-v', 'v', [CompletionResultType]::ParameterName, 'Enable verbose logging')
+            [CompletionResult]::new('--verbose', 'verbose', [CompletionResultType]::ParameterName, 'Enable verbose logging')
+            [CompletionResult]::new('-q', 'q', [CompletionResultType]::ParameterName, 'Print diagnostics, but nothing else')
+            [CompletionResult]::new('--quiet', 'quiet', [CompletionResultType]::ParameterName, 'Print diagnostics, but nothing else')
+            [CompletionResult]::new('-s', 's', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
+            [CompletionResult]::new('--silent', 'silent', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
+            [CompletionResult]::new('--isolated', 'isolated', [CompletionResultType]::ParameterName, 'Ignore all configuration files')
+            [CompletionResult]::new('-h', 'h', [CompletionResultType]::ParameterName, 'Print help')
+            [CompletionResult]::new('--help', 'help', [CompletionResultType]::ParameterName, 'Print help')
+            break
+        }
         'ruff;version' {
             [CompletionResult]::new('--output-format', 'output-format', [CompletionResultType]::ParameterName, 'output-format')
             [CompletionResult]::new('--config', 'config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option. Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')
@@ -228,6 +244,7 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
             [CompletionResult]::new('clean', 'clean', [CompletionResultType]::ParameterValue, 'Clear any caches in the current directory and any subdirectories')
             [CompletionResult]::new('generate-shell-completion', 'generate-shell-completion', [CompletionResultType]::ParameterValue, 'Generate shell completion')
             [CompletionResult]::new('format', 'format', [CompletionResultType]::ParameterValue, 'Run the Ruff formatter on the given files or directories')
+            [CompletionResult]::new('server', 'server', [CompletionResultType]::ParameterValue, 'Run the language server')
             [CompletionResult]::new('version', 'version', [CompletionResultType]::ParameterValue, 'Display Ruff''s version')
             [CompletionResult]::new('help', 'help', [CompletionResultType]::ParameterValue, 'Print this message or the help of the given subcommand(s)')
             break
@@ -251,6 +268,9 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
             break
         }
         'ruff;help;format' {
+            break
+        }
+        'ruff;help;server' {
             break
         }
         'ruff;help;version' {
