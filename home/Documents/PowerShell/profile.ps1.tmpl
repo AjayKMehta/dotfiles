@@ -139,6 +139,33 @@ function ifind() {
     fd * | fzf --prompt 'All> ' --header 'CTRL-D: Directories / CTRL-F: Files' --bind 'ctrl-d:change-prompt(Directories> )+reload(fd --glob  * --type d)' --bind 'ctrl-f:change-prompt(Files> )+reload(fd --glob * --type f)'
 }
 
+# Inspired by https://junegunn.github.io/fzf/tips/ripgrep-integration/
+function rfv {
+    param(
+        [switch] $NoPreview
+    )
+
+    $reload = 'reload:rg --column --color=always --smart-case {q} || :'
+    $previewCmd = if ($NoPreview ) {
+        ''
+    } else {
+        " --preview 'bat --style=full --color=always --highlight-line {2} {1}' --preview-window '~4,+{2}+4/3,<80(up)'"
+    }
+
+    $bind = "--bind 'start:$reload' --bind 'change:$reload' --bind 'ctrl-o:execute:code --goto {1}:{2}:{3}'"
+    $cmd = "fzf --disabled --ansi $bind --delimiter :$previewCmd"
+    $result = Invoke-Expression -Command $cmd
+    if ($result) {
+        $parts = $result -split ':', 4
+        [Psobject]@{
+            FileName      = $parts[0]
+            LineNumber    = $parts[1]
+            StartPosition = $parts[2]
+            Match         = $parts[3]
+        }
+    }
+}
+
 Import-Module -Name PSFzf
 # Ctrl + t to select based on current PSProvider.
 Set-PsFzfOption -PSReadlineChordReverseHistory 'Ctrl+Shift+r' -PSReadlineChordProvider 'Ctrl+t'
