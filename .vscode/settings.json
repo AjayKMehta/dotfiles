@@ -1,3 +1,32 @@
 {
-    "sarif-viewer.connectToGithubCodeScanning": "off"
+    "sarif-viewer.connectToGithubCodeScanning": "off",
+    "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#94cfba",
+        "activityBar.background": "#94cfba",
+        "activityBar.foreground": "#15202b",
+        "activityBar.inactiveForeground": "#15202b99",
+        "activityBarBadge.background": "#9c65ba",
+        "activityBarBadge.foreground": "#e7e7e7",
+        "commandCenter.border": "#15202b99",
+        "editorGroup.border": "#94cfba",
+        "panel.border": "#94cfba",
+        "sash.hoverBorder": "#94cfba",
+        "sideBar.border": "#94cfba",
+        "statusBar.background": "#71bfa3",
+        "statusBar.border": "#71bfa3",
+        "statusBar.debuggingBackground": "#bf718d",
+        "statusBar.debuggingBorder": "#bf718d",
+        "statusBar.debuggingForeground": "#15202b",
+        "statusBar.foreground": "#15202b",
+        "statusBarItem.hoverBackground": "#4fae8c",
+        "statusBarItem.remoteBackground": "#71bfa3",
+        "statusBarItem.remoteForeground": "#15202b",
+        "tab.activeBorder": "#94cfba",
+        "titleBar.activeBackground": "#71bfa3",
+        "titleBar.activeForeground": "#15202b",
+        "titleBar.border": "#71bfa3",
+        "titleBar.inactiveBackground": "#71bfa399",
+        "titleBar.inactiveForeground": "#15202b99"
+    },
+    "peacock.color": "#71bfa3"
 }

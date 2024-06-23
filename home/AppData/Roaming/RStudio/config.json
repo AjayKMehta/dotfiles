@@ -10,9 +10,9 @@
 	"view": {
 		"zoomLevel": 0.8,
 		"windowBounds": {
-			"x": -16,
+			"x": -4,
 			"y": 0,
-			"width": 1036,
+			"width": 1040,
 			"height": 512,
 			"maximized": true
 		},
@@ -33,7 +33,7 @@
 		"windows": {
 			"rBinDir": "",
 			"preferR64": true,
-			"rExecutablePath": "C:\\Program Files\\R\\R-4.4.0\\bin\\x64\\Rterm.exe"
+			"rExecutablePath": "C:\\Program Files\\R\\R-4.4.1\\bin\\x64\\Rterm.exe"
 		}
 	},
 	"context_id": "",
