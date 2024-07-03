@@ -21,7 +21,7 @@ Register-ArgumentCompleter -Native -CommandName 'procs' -ScriptBlock {
 
     $completions = @(switch ($command) {
         'procs' {
-            [CompletionResult]::new('-W', 'W', [CompletionResultType]::ParameterName, 'Watch mode with custom interval')
+            [CompletionResult]::new('-W', 'W ', [CompletionResultType]::ParameterName, 'Watch mode with custom interval')
             [CompletionResult]::new('--watch-interval', 'watch-interval', [CompletionResultType]::ParameterName, 'Watch mode with custom interval')
             [CompletionResult]::new('-i', 'i', [CompletionResultType]::ParameterName, 'Insert column to slot')
             [CompletionResult]::new('--insert', 'insert', [CompletionResultType]::ParameterName, 'Insert column to slot')
@@ -38,10 +38,6 @@ Register-ArgumentCompleter -Native -CommandName 'procs' -ScriptBlock {
             [CompletionResult]::new('--load-config', 'load-config', [CompletionResultType]::ParameterName, 'Load configuration from file')
             [CompletionResult]::new('--gen-completion', 'gen-completion', [CompletionResultType]::ParameterName, 'Generate shell completion file')
             [CompletionResult]::new('--gen-completion-out', 'gen-completion-out', [CompletionResultType]::ParameterName, 'Generate shell completion file and write to stdout')
-            [CompletionResult]::new('-h', 'h', [CompletionResultType]::ParameterName, 'Print help information')
-            [CompletionResult]::new('--help', 'help', [CompletionResultType]::ParameterName, 'Print help information')
-            [CompletionResult]::new('-V', 'V', [CompletionResultType]::ParameterName, 'Print version information')
-            [CompletionResult]::new('--version', 'version', [CompletionResultType]::ParameterName, 'Print version information')
             [CompletionResult]::new('-a', 'a', [CompletionResultType]::ParameterName, 'AND  logic for multi-keyword')
             [CompletionResult]::new('--and', 'and', [CompletionResultType]::ParameterName, 'AND  logic for multi-keyword')
             [CompletionResult]::new('-o', 'o', [CompletionResultType]::ParameterName, 'OR   logic for multi-keyword')
@@ -60,6 +56,10 @@ Register-ArgumentCompleter -Native -CommandName 'procs' -ScriptBlock {
             [CompletionResult]::new('--gen-config', 'gen-config', [CompletionResultType]::ParameterName, 'Generate configuration sample file')
             [CompletionResult]::new('--no-header', 'no-header', [CompletionResultType]::ParameterName, 'Suppress header')
             [CompletionResult]::new('--debug', 'debug', [CompletionResultType]::ParameterName, 'Show debug message')
+            [CompletionResult]::new('-h', 'h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('--help', 'help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('-V', 'V ', [CompletionResultType]::ParameterName, 'Print version')
+            [CompletionResult]::new('--version', 'version', [CompletionResultType]::ParameterName, 'Print version')
             break
         }
     })
