@@ -111,6 +111,8 @@ Remove-Variable condaExe -ErrorAction Ignore
 
 #region fzf
 
+# fzf by default binds CTRL-/ and ALT-/ to toggle-wrap
+
 # $env:FZF_DEFAULT_COMMAND = 'rg --files . 2> nul'
 
 # Dracula theme
@@ -120,6 +122,7 @@ $env:FZF_DEFAULT_OPTS = @'
 --color=info:#af87ff,prompt:#5fff87,pointer:#ff87d7,marker:#ff87d7,spinner:#ff87d7
 --bind alt-up:preview-page-up,alt-down:preview-page-down,alt-e:preview-top,alt-f:preview-bottom,ctrl-e:half-page-up,ctrl-f:half-page-down
 --highlight-line
+--wrap --bind 'ctrl-/:toggle-wrap' --wrap-sign $'\t↳ '
 '@
 
 # junegunn/seoul256.vim (light)
