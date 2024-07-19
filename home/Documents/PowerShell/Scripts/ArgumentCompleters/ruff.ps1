@@ -46,7 +46,7 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
             break
         }
         'ruff;check' {
-            [CompletionResult]::new('--output-format', 'output-format', [CompletionResultType]::ParameterName, 'Output serialization format for violations. The default serialization format is "concise". In preview mode, the default serialization format is "full"')
+            [CompletionResult]::new('--output-format', 'output-format', [CompletionResultType]::ParameterName, 'Output serialization format for violations. The default serialization format is "full"')
             [CompletionResult]::new('-o', 'o', [CompletionResultType]::ParameterName, 'Specify file to write the linter output to (default: stdout)')
             [CompletionResult]::new('--output-file', 'output-file', [CompletionResultType]::ParameterName, 'Specify file to write the linter output to (default: stdout)')
             [CompletionResult]::new('--target-version', 'target-version', [CompletionResultType]::ParameterName, 'The minimum Python version that should be supported')
@@ -72,14 +72,12 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
             [CompletionResult]::new('--no-fix', 'no-fix', [CompletionResultType]::ParameterName, 'no-fix')
             [CompletionResult]::new('--unsafe-fixes', 'unsafe-fixes', [CompletionResultType]::ParameterName, 'Include fixes that may not retain the original intent of the code. Use `--no-unsafe-fixes` to disable')
             [CompletionResult]::new('--no-unsafe-fixes', 'no-unsafe-fixes', [CompletionResultType]::ParameterName, 'no-unsafe-fixes')
-            [CompletionResult]::new('--show-source', 'show-source', [CompletionResultType]::ParameterName, 'Show violations with source code. Use `--no-show-source` to disable. (Deprecated: use `--output-format=full` or `--output-format=concise` instead of `--show-source` and `--no-show-source`, respectively)')
-            [CompletionResult]::new('--no-show-source', 'no-show-source', [CompletionResultType]::ParameterName, 'no-show-source')
             [CompletionResult]::new('--show-fixes', 'show-fixes', [CompletionResultType]::ParameterName, 'Show an enumeration of all fixed lint violations. Use `--no-show-fixes` to disable')
             [CompletionResult]::new('--no-show-fixes', 'no-show-fixes', [CompletionResultType]::ParameterName, 'no-show-fixes')
-            [CompletionResult]::new('--diff', 'diff', [CompletionResultType]::ParameterName, 'Avoid writing any fixed files back; instead, output a diff for each changed file to stdout. Implies `--fix-only`')
+            [CompletionResult]::new('--diff', 'diff', [CompletionResultType]::ParameterName, 'Avoid writing any fixed files back; instead, output a diff for each changed file to stdout, and exit 0 if there are no diffs. Implies `--fix-only`')
             [CompletionResult]::new('-w', 'w', [CompletionResultType]::ParameterName, 'Run in watch mode by re-running whenever files change')
             [CompletionResult]::new('--watch', 'watch', [CompletionResultType]::ParameterName, 'Run in watch mode by re-running whenever files change')
-            [CompletionResult]::new('--fix-only', 'fix-only', [CompletionResultType]::ParameterName, 'Apply fixes to resolve lint violations, but don''t report on leftover violations. Implies `--fix`. Use `--no-fix-only` to disable or `--unsafe-fixes` to include unsafe fixes')
+            [CompletionResult]::new('--fix-only', 'fix-only', [CompletionResultType]::ParameterName, 'Apply fixes to resolve lint violations, but don''t report on, or exit non-zero for, leftover violations. Implies `--fix`. Use `--no-fix-only` to disable or `--unsafe-fixes` to include unsafe fixes')
             [CompletionResult]::new('--no-fix-only', 'no-fix-only', [CompletionResultType]::ParameterName, 'no-fix-only')
             [CompletionResult]::new('--ignore-noqa', 'ignore-noqa', [CompletionResultType]::ParameterName, 'Ignore any `# noqa` comments')
             [CompletionResult]::new('--preview', 'preview', [CompletionResultType]::ParameterName, 'Enable preview mode; checks will include unstable rules and fixes. Use `--no-preview` to disable')
