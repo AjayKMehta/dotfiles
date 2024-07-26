@@ -43,16 +43,6 @@
         "key": "ctrl+shift+u"
     },
     {
-        "command": "md-shortcut.toggleLink",
-        "key": "ctrl+m ctrl+l",
-        "when": "editorTextFocus && editorLangId == 'markdown'"
-    },
-    {
-        "command": "md-shortcut.toggleLink",
-        "key": "ctrl+l",
-        "when": "editorTextFocus && editorLangId == 'markdown'"
-    },
-    {
         "command": "-editor.action.insertLineAfter",
         "key": "shift+enter",
         "when": "editorTextFocus && !editorReadonly"
@@ -61,11 +51,6 @@
         "command": "workbench.action.toggleSidebarVisibility",
         "key": "ctrl+b",
         "when": "editorLangId != 'markdown' || !editorTextFocus "
-    },
-    {
-        "command": "md-shortcut.toggleBold",
-        "key": "ctrl+b",
-        "when": "editorTextFocus && markdownShortcuts:enabled && editorLangId=='markdown'"
     },
     {
         "command": "editor.action.inspectTMScopes",
@@ -403,10 +388,6 @@
         "when": "view.workbench.scm.visible"
     },
     {
-        "key": "ctrl+alt+u",
-        "command": "-extension.uglifyJson"
-    },
-    {
         "key": "ctrl+shift+k",
         "command": "quarto.previewScript",
         "when": "quartoRenderScriptActive && editorTextFocus && editorLangId == 'quarto-assist.active'"
@@ -425,5 +406,65 @@
         "key": "ctrl+shift+k",
         "command": "-quarto.preview",
         "when": "!quartoRenderScriptActive"
+    },
+    {
+        "key": "ctrl+shift+4",
+        "command": "markdown.extension.editing.toggleMath",
+        "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
+    },
+    {
+        "key": "ctrl+m",
+        "command": "-markdown.extension.editing.toggleMath",
+        "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
+    },
+    {
+        "key": "ctrl+shift+v",
+        "command": "-markdown.extension.closePreview",
+        "when": "activeWebviewPanelId == 'markdown.preview'"
+    },
+    {
+        "key": "ctrl+k v",
+        "command": "-markdown.extension.closePreview",
+        "when": "activeWebviewPanelId == 'markdown.preview'"
+    },
+    {
+        "key": "ctrl+]",
+        "command": "-markdown.extension.onIndentLines",
+        "when": "editorTextFocus && !suggestWidgetVisible && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
+    },
+    {
+        "key": "ctrl+m ctrl+c",
+        "command": "markdown.extension.editing.toggleCodeBlock",
+        "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
+    },
+    {
+        "key": "ctrl+m ctrl+c",
+        "command": "-md-shortcut.toggleCodeBlock",
+        "when": "editorTextFocus && markdownShortcuts:enabled"
+    },
+    {
+        "key": "alt+c",
+        "command": "-markdown.extension.checkTaskList",
+        "when": "editorTextFocus && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
+    },
+    {
+        "key": "ctrl+m ctrl+i",
+        "command": "markdown.extension.editing.toggleCodeSpan",
+        "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
+    },
+    {
+        "key": "ctrl+m ctrl+i",
+        "command": "-md-shortcut.toggleInlineCode",
+        "when": "editorTextFocus && markdownShortcuts:enabled"
+    },
+    {
+        "key": "ctrl+m ctrl+1",
+        "command": "markdown.extension.editing.toggleList",
+        "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
+    },
+    {
+        "key": "ctrl+m ctrl+1",
+        "command": "-md-shortcut.toggleNumbers",
+        "when": "editorTextFocus && markdownShortcuts:enabled"
     }
 ]
