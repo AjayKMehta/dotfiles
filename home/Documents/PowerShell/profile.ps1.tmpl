@@ -50,7 +50,7 @@ if (!(Get-Module -Name PSReadLine)) {
 Import-Module -Name CompletionPredictor, DirectoryPredictor
 Set-PSReadLineOption -PredictionSource HistoryAndPlugin
 
-function Set-EnvVar {
+function Set-EnvVar([bool]$originalStatus) {
     $env:POSH = if (-not (Get-Module -Name PSReadLine)) {
         $False
     } else {
