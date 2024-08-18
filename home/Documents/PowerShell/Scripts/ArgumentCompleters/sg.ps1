@@ -38,6 +38,7 @@ Register-ArgumentCompleter -Native -CommandName 'sg.exe' -ScriptBlock {
         'sg.exe;run' {
             [CompletionResult]::new('-p', 'p', [CompletionResultType]::ParameterName, 'AST pattern to match')
             [CompletionResult]::new('--pattern', 'pattern', [CompletionResultType]::ParameterName, 'AST pattern to match')
+            [CompletionResult]::new('--selector', 'selector', [CompletionResultType]::ParameterName, 'AST kind to extract sub-part of pattern to match')
             [CompletionResult]::new('-r', 'r', [CompletionResultType]::ParameterName, 'String to replace the matched AST node')
             [CompletionResult]::new('--rewrite', 'rewrite', [CompletionResultType]::ParameterName, 'String to replace the matched AST node')
             [CompletionResult]::new('-l', 'l', [CompletionResultType]::ParameterName, 'The language of the pattern. Supported languages are: [Bash, C, Cpp, CSharp, Css, Dart, Elixir, Go, Haskell, Html, Java, JavaScript, Json, Kotlin, Lua, Php, Python, Ruby, Rust, Scala, Sql, Swift, Tsx, TypeScript]')
