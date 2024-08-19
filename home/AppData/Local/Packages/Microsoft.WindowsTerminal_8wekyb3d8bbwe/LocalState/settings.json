@@ -95,7 +95,7 @@
                 "startingDirectory": "/home/ajay"
             },
             {
-                "colorScheme": "Solarized Dark",
+                "colorScheme": "Solarized Light",
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
                 "font": 
                 {
@@ -125,7 +125,7 @@
                 "altGrAliasing": true,
                 "antialiasingMode": "grayscale",
                 "closeOnExit": "automatic",
-                "colorScheme": "Solarized Dark",
+                "colorScheme": "Tango Dark",
                 "commandline": "%SystemRoot%\\System32\\cmd.exe \"/K\" D:\\Apps\\Miniconda\\Scripts\\activate.bat D:\\Apps\\Miniconda  ",
                 "cursorShape": "bar",
                 "elevate": true,
