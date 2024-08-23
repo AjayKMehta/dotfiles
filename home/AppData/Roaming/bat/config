@@ -30,3 +30,5 @@
 --map-syntax "*.ps1xml:XML"
 --map-syntax "Directory.*.props:XML"
 --map-syntax "Directory.*.targets:XML"
+--map-syntax "*.slnx:XML"
+--map-syntax "*.vsconfig:JSON"
