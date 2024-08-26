@@ -95,7 +95,6 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
             [CompletionResult]::new('--add-noqa', 'add-noqa', [CompletionResultType]::ParameterName, 'Enable automatic additions of `noqa` directives to failing lines')
             [CompletionResult]::new('--show-files', 'show-files', [CompletionResultType]::ParameterName, 'See the files Ruff will be run against with the current settings')
             [CompletionResult]::new('--show-settings', 'show-settings', [CompletionResultType]::ParameterName, 'See the settings Ruff will use to lint a given Python file')
-            [CompletionResult]::new('--ecosystem-ci', 'ecosystem-ci', [CompletionResultType]::ParameterName, 'Dev-only argument to show fixes')
             [CompletionResult]::new('-v', 'v', [CompletionResultType]::ParameterName, 'Enable verbose logging')
             [CompletionResult]::new('--verbose', 'verbose', [CompletionResultType]::ParameterName, 'Enable verbose logging')
             [CompletionResult]::new('-q', 'q', [CompletionResultType]::ParameterName, 'Print diagnostics, but nothing else')
@@ -208,7 +207,8 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
         }
         'ruff;server' {
             [CompletionResult]::new('--config', 'config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option. Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')
-            [CompletionResult]::new('--preview', 'preview', [CompletionResultType]::ParameterName, 'Enable preview mode; required for regular operation')
+            [CompletionResult]::new('--preview', 'preview', [CompletionResultType]::ParameterName, 'Enable preview mode. Use `--no-preview` to disable')
+            [CompletionResult]::new('--no-preview', 'no-preview', [CompletionResultType]::ParameterName, 'no-preview')
             [CompletionResult]::new('-v', 'v', [CompletionResultType]::ParameterName, 'Enable verbose logging')
             [CompletionResult]::new('--verbose', 'verbose', [CompletionResultType]::ParameterName, 'Enable verbose logging')
             [CompletionResult]::new('-q', 'q', [CompletionResultType]::ParameterName, 'Print diagnostics, but nothing else')
@@ -216,8 +216,8 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
             [CompletionResult]::new('-s', 's', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
             [CompletionResult]::new('--silent', 'silent', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
             [CompletionResult]::new('--isolated', 'isolated', [CompletionResultType]::ParameterName, 'Ignore all configuration files')
-            [CompletionResult]::new('-h', 'h', [CompletionResultType]::ParameterName, 'Print help')
-            [CompletionResult]::new('--help', 'help', [CompletionResultType]::ParameterName, 'Print help')
+            [CompletionResult]::new('-h', 'h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('--help', 'help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
             break
         }
         'ruff;version' {
