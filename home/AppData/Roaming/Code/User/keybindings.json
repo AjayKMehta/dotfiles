@@ -100,10 +100,6 @@
         "when": "textInputFocus && !editorReadonly"
     },
     {
-        "command": "workbench.extensions.action.checkForUpdates",
-        "key": "ctrl+alt+f5"
-    },
-    {
         "command": "workbench.actions.view.problems",
         "key": "ctrl+shift+m",
         "when": "editorLangId != r && editorLangId != rmd"
@@ -466,5 +462,9 @@
         "key": "ctrl+m ctrl+1",
         "command": "-md-shortcut.toggleNumbers",
         "when": "editorTextFocus && markdownShortcuts:enabled"
+    },
+    {
+        "key": "ctrl+alt+f5",
+        "command": "workbench.action.restartExtensionHost"
     }
 ]
