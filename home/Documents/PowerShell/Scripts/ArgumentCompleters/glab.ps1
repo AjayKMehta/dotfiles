@@ -10,7 +10,7 @@ filter __glab_escapeStringWithSpecialChars {
     $_ -replace '\s|#|@|\$|;|,|''|\{|\}|\(|\)|"|`|\||<|>|&','`$&'
 }
 
-[scriptblock]$__glabCompleterBlock = {
+[scriptblock]${__glabCompleterBlock} = {
     param(
             $WordToComplete,
             $CommandAst,
@@ -85,7 +85,7 @@ filter __glab_escapeStringWithSpecialChars {
 
     __glab_debug "Calling $RequestComp"
     # First disable ActiveHelp which is not supported for Powershell
-    $env:GLAB_ACTIVE_HELP=0
+    ${env:GLAB_ACTIVE_HELP}=0
 
     #call the command store the output in $out and redirect stderr and stdout to null
     # $Out is an array contains each line per element
@@ -242,4 +242,4 @@ filter __glab_escapeStringWithSpecialChars {
     }
 }
 
-Register-ArgumentCompleter -CommandName 'glab' -ScriptBlock $__glabCompleterBlock
+Register-ArgumentCompleter -CommandName 'glab' -ScriptBlock ${__glabCompleterBlock}
