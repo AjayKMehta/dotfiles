@@ -21,8 +21,8 @@
     path = maintenance.gitconfig
 [pretty]
     extended = format:%C(bold blue)%h% C(dim white)- %an %C(bold green)%ad%C(auto)%d%n %C(bold white)%s
-    alt      = format:%C(yellow)%h %C(green)%ad %C(cyan)[%an] %C(reset)%s %C(auto)%d
-    alt-rel  = format:%C(yellow)%h %C(green)%ar %C(cyan)[%an] %C(reset)%s %C(auto)%d
+    alt = format:%C(yellow)%h %C(green)%ad %C(cyan)[%an] %C(reset)%s %C(auto)%d
+    alt-rel = format:%C(yellow)%h %C(green)%ar %C(cyan)[%an] %C(reset)%s %C(auto)%d
     sub-auth = format:%C(red)%h %C(reset)| %s %C(bold blue)[%an] %C(green)(%cd)%C(auto)%d
     twolines = "format:%C(green)%h% C(#00FFE3)%ad %C(bold yellow)%an%C(auto)%d%n%C(#AA75D0)%s%n"
 [alias]
@@ -141,7 +141,7 @@
 [difftool "winmerge"]
     cmd = WinMergeU -u -e -x -fl -wl -wr -dl \"$LOCAL\" -dr \"$REMOTE\" \"$LOCAL\" \"$REMOTE\"
 [difftool "difftastic"]
-    cmd = difft "$LOCAL" "$REMOTE"
+    cmd = difft \"$LOCAL\" \"$REMOTE\"
 [merge]
     tool = winmerge
     guitool = winmerge
@@ -176,7 +176,7 @@
     diffFilter = delta --color-only
 [delta]
     features = decorations my-line-numbers emph
-    light = false    # set to true if you're in a terminal w/ a light background color
+    light = false  # set to true if you're in a terminal w/ a light background color
     navigate = true
     hyperlinks = true
     whitespace-error-style = magenta reverse
