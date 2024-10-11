@@ -158,7 +158,7 @@
     cmd = WinMergeU -u -e -x -fm -wl -wr -dl \"Local\" -dr \"Remote\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\"
     trustExitCode = true
 [diff "rstats"]
-    xfuncname = "^[[:space:]]*([a-zA-z._]+)[[:space:]]*<-[[:space:]]*function"
+    xfuncname = ^[[:space:]]*([a-zA-z._]+)[[:space:]]*<-[[:space:]]*function
 [rebase]
     autoSquash = true
     autoStash = false
@@ -219,8 +219,8 @@
 [gc]
     cruftPacks = true
     maxCruftSize = 10M
-    rerereResolved = "6.months.ago"
-    rerereUnresolved = "2.months.ago"
+    rerereResolved = 6.months.ago
+    rerereUnresolved = 2.months.ago
 [log]
     date = rfc
 [credential "https://huggingface.co"]
