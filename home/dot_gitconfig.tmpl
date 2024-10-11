@@ -76,12 +76,16 @@
     rbs = refs refs/remotes
 
     ## Ignoring files
-    ignore = update-index --assume-unchanged
-    unignore = update-index --no-assume-unchanged
+    # This ignores updates to file
+    pin = update-index --assume-unchanged
+    unpin = update-index --no-assume-unchanged
+    pinned = !git ls-files -v | rg -e '^h (.+)' -o --replace '$1' --color never
     # https://stackoverflow.com/a/61311958/781045
     ignored = ls-files --exclude-standard -oi
-    hide = update-index --skip-worktree
-    unhide = update-index --no-skip-worktree
+    # This won't even check if file is in worktree. Useful for sparse checkout.
+    skip = update-index --skip-worktree
+    unskip = update-index --no-skip-worktree
+    skipped = !git ls-files -v | rg -e '^S (.+)' -o --replace '$1' --color never
 
     ## Rewrite history
     rbi = rebase --autosquash -i HEAD@{upstream}
