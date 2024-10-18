@@ -229,9 +229,8 @@ Import-Module Microsoft.PowerShell.SecretStore, Microsoft.PowerShell.SecretManag
 
 $env:Path += ';D:\Apps\Quarto\bin'
 if (Test-Path Env:/SPARK_HOME) {
-    $env:Path += (Join-Path $env:SPARK_HOME bin)
+    $env:Path += ";$(Join-Path $env:SPARK_HOME bin)"
 }
-
 
 # WinGet
 
