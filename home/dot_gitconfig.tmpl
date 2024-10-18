@@ -142,6 +142,8 @@
     cmd = WinMergeU -u -e -x -fl -wl -wr -dl \"$LOCAL\" -dr \"$REMOTE\" \"$LOCAL\" \"$REMOTE\"
 [difftool "difftastic"]
     cmd = difft \"$LOCAL\" \"$REMOTE\"
+[difftool "vscode"]
+    cmd = code --new-window --wait --diff \"$LOCAL\" \"$REMOTE\"
 [merge]
     tool = winmerge
     guitool = winmerge
@@ -157,6 +159,8 @@
 [mergetool "winmerge"]
     cmd = WinMergeU -u -e -x -fm -wl -wr -dl \"Local\" -dr \"Remote\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\"
     trustExitCode = true
+[mergetool "vscode"]
+    cmd = code --new-window --wait --merge \"$REMOTE\" \"$LOCAL\" \"$BASE\" \"$MERGED\"
 [diff "rstats"]
     xfuncname = ^[[:space:]]*([a-zA-z._]+)[[:space:]]*<-[[:space:]]*function
 [rebase]
