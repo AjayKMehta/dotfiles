@@ -21,6 +21,8 @@ Register-ArgumentCompleter -Native -CommandName 'sg.exe' -ScriptBlock {
 
     $completions = @(switch ($command) {
         'sg.exe' {
+            [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
+            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
             [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Print version')
@@ -46,15 +48,21 @@ Register-ArgumentCompleter -Native -CommandName 'sg.exe' -ScriptBlock {
             [CompletionResult]::new('--debug-query', '--debug-query', [CompletionResultType]::ParameterName, 'Print query pattern''s tree-sitter AST. Requires lang be set explicitly')
             [CompletionResult]::new('--strictness', '--strictness', [CompletionResultType]::ParameterName, 'The strictness of the pattern')
             [CompletionResult]::new('--no-ignore', '--no-ignore', [CompletionResultType]::ParameterName, 'Do not respect hidden file system or ignore files (.gitignore, .ignore, etc.)')
+            [CompletionResult]::new('--globs', '--globs', [CompletionResultType]::ParameterName, 'Include or exclude file paths')
+            [CompletionResult]::new('-j', '-j', [CompletionResultType]::ParameterName, 'Set the approximate number of threads to use')
+            [CompletionResult]::new('--threads', '--threads', [CompletionResultType]::ParameterName, 'Set the approximate number of threads to use')
             [CompletionResult]::new('--json', '--json', [CompletionResultType]::ParameterName, 'Output matches in structured JSON ')
             [CompletionResult]::new('--color', '--color', [CompletionResultType]::ParameterName, 'Controls output color')
-            [CompletionResult]::new('--heading', '--heading', [CompletionResultType]::ParameterName, 'Controls whether to print the file name as heading')
+            [CompletionResult]::new('--tracing', '--tracing', [CompletionResultType]::ParameterName, 'Show tracing information for file/rule discovery and scanning')
             [CompletionResult]::new('-A', '-A ', [CompletionResultType]::ParameterName, 'Show NUM lines after each match')
             [CompletionResult]::new('--after', '--after', [CompletionResultType]::ParameterName, 'Show NUM lines after each match')
             [CompletionResult]::new('-B', '-B ', [CompletionResultType]::ParameterName, 'Show NUM lines before each match')
             [CompletionResult]::new('--before', '--before', [CompletionResultType]::ParameterName, 'Show NUM lines before each match')
             [CompletionResult]::new('-C', '-C ', [CompletionResultType]::ParameterName, 'Show NUM lines around each match')
             [CompletionResult]::new('--context', '--context', [CompletionResultType]::ParameterName, 'Show NUM lines around each match')
+            [CompletionResult]::new('--heading', '--heading', [CompletionResultType]::ParameterName, 'Controls whether to print the file name as heading')
+            [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
+            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
             [CompletionResult]::new('--follow', '--follow', [CompletionResultType]::ParameterName, 'Follow symbolic links')
             [CompletionResult]::new('--stdin', '--stdin', [CompletionResultType]::ParameterName, 'Enable search code from StdIn')
             [CompletionResult]::new('-i', '-i', [CompletionResultType]::ParameterName, 'Start interactive edit session')
@@ -66,17 +74,32 @@ Register-ArgumentCompleter -Native -CommandName 'sg.exe' -ScriptBlock {
             break
         }
         'sg.exe;scan' {
-            [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
-            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
             [CompletionResult]::new('-r', '-r', [CompletionResultType]::ParameterName, 'Scan the codebase with the single rule located at the path RULE_FILE')
             [CompletionResult]::new('--rule', '--rule', [CompletionResultType]::ParameterName, 'Scan the codebase with the single rule located at the path RULE_FILE')
             [CompletionResult]::new('--inline-rules', '--inline-rules', [CompletionResultType]::ParameterName, 'Scan the codebase with a rule defined by the provided RULE_TEXT')
-            [CompletionResult]::new('--filter', '--filter', [CompletionResultType]::ParameterName, 'Scan the codebase with rules with ids matching REGEX')
             [CompletionResult]::new('--format', '--format', [CompletionResultType]::ParameterName, 'Output warning/error messages in GitHub Action format')
             [CompletionResult]::new('--report-style', '--report-style', [CompletionResultType]::ParameterName, 'report-style')
+            [CompletionResult]::new('--filter', '--filter', [CompletionResultType]::ParameterName, 'Scan the codebase with rules with ids matching REGEX')
+            [CompletionResult]::new('--error', '--error', [CompletionResultType]::ParameterName, 'Set rule severity to error')
+            [CompletionResult]::new('--warning', '--warning', [CompletionResultType]::ParameterName, 'Set rule severity to warning')
+            [CompletionResult]::new('--info', '--info', [CompletionResultType]::ParameterName, 'Set rule severity to info')
+            [CompletionResult]::new('--hint', '--hint', [CompletionResultType]::ParameterName, 'Set rule severity to hint')
+            [CompletionResult]::new('--off', '--off', [CompletionResultType]::ParameterName, 'Turn off rule')
             [CompletionResult]::new('--no-ignore', '--no-ignore', [CompletionResultType]::ParameterName, 'Do not respect hidden file system or ignore files (.gitignore, .ignore, etc.)')
+            [CompletionResult]::new('--globs', '--globs', [CompletionResultType]::ParameterName, 'Include or exclude file paths')
+            [CompletionResult]::new('-j', '-j', [CompletionResultType]::ParameterName, 'Set the approximate number of threads to use')
+            [CompletionResult]::new('--threads', '--threads', [CompletionResultType]::ParameterName, 'Set the approximate number of threads to use')
             [CompletionResult]::new('--json', '--json', [CompletionResultType]::ParameterName, 'Output matches in structured JSON ')
             [CompletionResult]::new('--color', '--color', [CompletionResultType]::ParameterName, 'Controls output color')
+            [CompletionResult]::new('--tracing', '--tracing', [CompletionResultType]::ParameterName, 'Show tracing information for file/rule discovery and scanning')
+            [CompletionResult]::new('-A', '-A ', [CompletionResultType]::ParameterName, 'Show NUM lines after each match')
+            [CompletionResult]::new('--after', '--after', [CompletionResultType]::ParameterName, 'Show NUM lines after each match')
+            [CompletionResult]::new('-B', '-B ', [CompletionResultType]::ParameterName, 'Show NUM lines before each match')
+            [CompletionResult]::new('--before', '--before', [CompletionResultType]::ParameterName, 'Show NUM lines before each match')
+            [CompletionResult]::new('-C', '-C ', [CompletionResultType]::ParameterName, 'Show NUM lines around each match')
+            [CompletionResult]::new('--context', '--context', [CompletionResultType]::ParameterName, 'Show NUM lines around each match')
+            [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
+            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
             [CompletionResult]::new('--follow', '--follow', [CompletionResultType]::ParameterName, 'Follow symbolic links')
             [CompletionResult]::new('--stdin', '--stdin', [CompletionResultType]::ParameterName, 'Enable search code from StdIn')
             [CompletionResult]::new('-i', '-i', [CompletionResultType]::ParameterName, 'Start interactive edit session')
@@ -88,13 +111,13 @@ Register-ArgumentCompleter -Native -CommandName 'sg.exe' -ScriptBlock {
             break
         }
         'sg.exe;test' {
-            [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Path to the root ast-grep config YAML')
-            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Path to the root ast-grep config YAML')
             [CompletionResult]::new('-t', '-t', [CompletionResultType]::ParameterName, 'the directories to search test YAML files')
             [CompletionResult]::new('--test-dir', '--test-dir', [CompletionResultType]::ParameterName, 'the directories to search test YAML files')
             [CompletionResult]::new('--snapshot-dir', '--snapshot-dir', [CompletionResultType]::ParameterName, 'Specify the directory name storing snapshots. Default to __snapshots__')
             [CompletionResult]::new('-f', '-f', [CompletionResultType]::ParameterName, 'Only run rule test cases that matches REGEX')
             [CompletionResult]::new('--filter', '--filter', [CompletionResultType]::ParameterName, 'Only run rule test cases that matches REGEX')
+            [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
+            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
             [CompletionResult]::new('--skip-snapshot-tests', '--skip-snapshot-tests', [CompletionResultType]::ParameterName, 'Only check if the test code is valid, without checking rule output. Turn it on when you want to ignore the output of rules. Conflicts with --update-all')
             [CompletionResult]::new('-U', '-U ', [CompletionResultType]::ParameterName, 'Update the content of all snapshots that have changed in test. Conflicts with --skip-snapshot-tests')
             [CompletionResult]::new('--update-all', '--update-all', [CompletionResultType]::ParameterName, 'Update the content of all snapshots that have changed in test. Conflicts with --skip-snapshot-tests')
@@ -107,8 +130,8 @@ Register-ArgumentCompleter -Native -CommandName 'sg.exe' -ScriptBlock {
         'sg.exe;new' {
             [CompletionResult]::new('-l', '-l', [CompletionResultType]::ParameterName, 'The language of the item to create')
             [CompletionResult]::new('--lang', '--lang', [CompletionResultType]::ParameterName, 'The language of the item to create')
-            [CompletionResult]::new('-b', '-b', [CompletionResultType]::ParameterName, 'Create new project/items in the folder specified by this argument')
-            [CompletionResult]::new('--base-dir', '--base-dir', [CompletionResultType]::ParameterName, 'Create new project/items in the folder specified by this argument')
+            [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
+            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
             [CompletionResult]::new('-y', '-y', [CompletionResultType]::ParameterName, 'Accept all default options without interactive input during creation')
             [CompletionResult]::new('--yes', '--yes', [CompletionResultType]::ParameterName, 'Accept all default options without interactive input during creation')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
@@ -123,8 +146,8 @@ Register-ArgumentCompleter -Native -CommandName 'sg.exe' -ScriptBlock {
         'sg.exe;new;project' {
             [CompletionResult]::new('-l', '-l', [CompletionResultType]::ParameterName, 'The language of the item to create')
             [CompletionResult]::new('--lang', '--lang', [CompletionResultType]::ParameterName, 'The language of the item to create')
-            [CompletionResult]::new('-b', '-b', [CompletionResultType]::ParameterName, 'Create new project/items in the folder specified by this argument')
-            [CompletionResult]::new('--base-dir', '--base-dir', [CompletionResultType]::ParameterName, 'Create new project/items in the folder specified by this argument')
+            [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
+            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
             [CompletionResult]::new('-y', '-y', [CompletionResultType]::ParameterName, 'Accept all default options without interactive input during creation')
             [CompletionResult]::new('--yes', '--yes', [CompletionResultType]::ParameterName, 'Accept all default options without interactive input during creation')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
@@ -134,8 +157,8 @@ Register-ArgumentCompleter -Native -CommandName 'sg.exe' -ScriptBlock {
         'sg.exe;new;rule' {
             [CompletionResult]::new('-l', '-l', [CompletionResultType]::ParameterName, 'The language of the item to create')
             [CompletionResult]::new('--lang', '--lang', [CompletionResultType]::ParameterName, 'The language of the item to create')
-            [CompletionResult]::new('-b', '-b', [CompletionResultType]::ParameterName, 'Create new project/items in the folder specified by this argument')
-            [CompletionResult]::new('--base-dir', '--base-dir', [CompletionResultType]::ParameterName, 'Create new project/items in the folder specified by this argument')
+            [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
+            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
             [CompletionResult]::new('-y', '-y', [CompletionResultType]::ParameterName, 'Accept all default options without interactive input during creation')
             [CompletionResult]::new('--yes', '--yes', [CompletionResultType]::ParameterName, 'Accept all default options without interactive input during creation')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
@@ -145,8 +168,8 @@ Register-ArgumentCompleter -Native -CommandName 'sg.exe' -ScriptBlock {
         'sg.exe;new;test' {
             [CompletionResult]::new('-l', '-l', [CompletionResultType]::ParameterName, 'The language of the item to create')
             [CompletionResult]::new('--lang', '--lang', [CompletionResultType]::ParameterName, 'The language of the item to create')
-            [CompletionResult]::new('-b', '-b', [CompletionResultType]::ParameterName, 'Create new project/items in the folder specified by this argument')
-            [CompletionResult]::new('--base-dir', '--base-dir', [CompletionResultType]::ParameterName, 'Create new project/items in the folder specified by this argument')
+            [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
+            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
             [CompletionResult]::new('-y', '-y', [CompletionResultType]::ParameterName, 'Accept all default options without interactive input during creation')
             [CompletionResult]::new('--yes', '--yes', [CompletionResultType]::ParameterName, 'Accept all default options without interactive input during creation')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
@@ -156,8 +179,8 @@ Register-ArgumentCompleter -Native -CommandName 'sg.exe' -ScriptBlock {
         'sg.exe;new;util' {
             [CompletionResult]::new('-l', '-l', [CompletionResultType]::ParameterName, 'The language of the item to create')
             [CompletionResult]::new('--lang', '--lang', [CompletionResultType]::ParameterName, 'The language of the item to create')
-            [CompletionResult]::new('-b', '-b', [CompletionResultType]::ParameterName, 'Create new project/items in the folder specified by this argument')
-            [CompletionResult]::new('--base-dir', '--base-dir', [CompletionResultType]::ParameterName, 'Create new project/items in the folder specified by this argument')
+            [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
+            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
             [CompletionResult]::new('-y', '-y', [CompletionResultType]::ParameterName, 'Accept all default options without interactive input during creation')
             [CompletionResult]::new('--yes', '--yes', [CompletionResultType]::ParameterName, 'Accept all default options without interactive input during creation')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
@@ -195,11 +218,15 @@ Register-ArgumentCompleter -Native -CommandName 'sg.exe' -ScriptBlock {
             break
         }
         'sg.exe;completions' {
+            [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
+            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help')
             break
         }
         'sg.exe;docs' {
+            [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
+            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help')
             break
