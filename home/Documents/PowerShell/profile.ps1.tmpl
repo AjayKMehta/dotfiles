@@ -242,3 +242,66 @@ Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
 # Zoxide
 
 Invoke-Expression (& { zoxide init powershell | Out-String })
+# cd + custom logic based on the value of _ZO_ECHO.
+function global:__zoxide_cd($dir, $literal) {
+    $dir = if ($literal) {
+        # Use cd instead of Set-Location so it will work with cd-extras too!
+        cd -LiteralPath $dir -PassThru -ErrorAction Stop
+    } else {
+        cd -Path $dir -PassThru -ErrorAction Stop
+    }
+}
+
+# Add hook to handle changing location and setting .env, etc.
+# Inspired by https://github.com/PowerShell/PowerShell/issues/14484#issuecomment-1731647083
+
+# Do not want venv prepending env name to prompt!
+$env:VIRTUAL_ENV_DISABLE_PROMPT = 1
+
+$Global:__locationChangedHandler = [EventHandler[LocationChangedEventArgs]] {
+    param([object] $source, [LocationChangedEventArgs] $locChangedEventArgs)
+    end {
+        [System.Management.Automation.PathInfo] $oldPath = $locChangedEventArgs.OldPath
+        [System.Management.Automation.PathInfo] $newPath = $locChangedEventArgs.NewPath
+        Write-Debug "Old '$oldPath' New '$newPath'"
+        if ($newPath.Provider.Name -eq 'FileSystem') {
+            $envFile = Join-Path $newPath '.env'
+            if (Test-Path $envFile) {
+                Get-Content $envFile | ForEach-Object {
+                    $line = $_.Trim()
+                    if ($line -and $line -notlike '#*') {
+                        $key, $value = $line -split '\s*=\s*', 2
+                        # TODO: Should handle quote-delimited value?
+                        # TODO: Write-Warning if already exist
+                        [Environment]::SetEnvironmentVariable($key, $value, 'Process')
+                    }
+                }
+            }
+
+            $psScript = [System.IO.Path]::Combine($newPath, '.venv', 'Scripts', 'Activate.ps1')
+
+            if (Test-Path $psScript) {
+                . $psScript
+            }
+        }
+    }
+}
+
+function Enable-LocationChanged() {
+    $Global:__prevAction = $ExecutionContext.SessionState.InvokeCommand.LocationChangedAction
+    if ($Global:__prevAction) {
+        $ExecutionContext.SessionState.InvokeCommand.LocationChangedAction = [Delegate]::Combine($Global:__prevAction, $Global:__locationChangedHandler )
+    } else {
+        $ExecutionContext.SessionState.InvokeCommand.LocationChangedAction = $Global:__locationChangedHandler
+    }
+}
+
+function Disable-LocationChanged() {
+    if ($Global:__prevAction) {
+        $ExecutionContext.SessionState.InvokeCommand.LocationChangedAction = $Global:__prevAction
+    } else {
+        $ExecutionContext.SessionState.InvokeCommand.LocationChangedAction = $null
+    }
+}
+
+Enable-LocationChanged
