@@ -5,7 +5,7 @@
     //    "autoUpdateIntervalInMinutes": 5
     // },
     "installBehavior": {
-        "portablePackageUserRoot": "D:/Apps",
+        "portablePackageUserRoot": "D:/Apps/Packages",
         "portablePackageMachineRoot": "D:/Program Files/Packages/Portable"
     },
     "telemetry": {
