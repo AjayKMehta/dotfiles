@@ -12,7 +12,7 @@
 		"windowBounds": {
 			"x": -4,
 			"y": 0,
-			"width": 852,
+			"width": 860,
 			"height": 412,
 			"maximized": true
 		},
@@ -33,7 +33,7 @@
 		"windows": {
 			"rBinDir": "",
 			"preferR64": true,
-			"rExecutablePath": "C:\\Program Files\\R\\R-4.4.1\\bin\\x64\\Rterm.exe"
+			"rExecutablePath": "C:\\Program Files\\R\\R-4.4.2\\bin\\x64\\Rterm.exe"
 		}
 	},
 	"context_id": "",
