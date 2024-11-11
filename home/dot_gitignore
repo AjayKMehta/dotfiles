@@ -1,2 +1,17 @@
 *.bak
 *.tmp
+
+# OS generated files
+.DS_Store
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# Editor files
+*~
+*.swp
+*.swo
+
+# Direnv stuff
+.direnv
+.envrc
