@@ -36,8 +36,8 @@
     delta = -c core.pager=delta diff
     delta-s = -c core.pager=delta -c 'delta.features=sideways decorations my-line-numbers emph' diff
     compare2 = difftool -d -g @
-    difft = -c diff.externa=difft diff
-    difftd = -c core.pager=delta -c diff.externa=difft diff
+    difft = -c diff.external=difft diff
+    difftd = -c core.pager=delta -c diff.external=difft diff
 
     ## Misc
     it = !git init && git commit -m root --allow-empty
