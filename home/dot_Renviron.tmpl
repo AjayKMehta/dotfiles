@@ -12,7 +12,10 @@ GGMAP_GOOGLE_API_KEY={{- (keepassxc "GOOGLE MAPS API").Password }}
 OSSINDEX_USER={{- (keepassxc "OSSINDEX").UserName | quote }}
 OSSINDEX_TOKEN={{- (keepassxc "OSSINDEX").Password }}
 
+# https://wlandau.github.io/instantiate/#administering-cmdstan
 {{if .cmdstandir }}CMDSTAN="{{- .cmdstandir }}"{{end}}
+CMDSTAN_INSTALL="fixed"
+
 {{if .quartopath }}QUARTO_PATH="{{- .quartopath -}}/quarto.cmd"{{end}}
 {{if .quartopath }}RSTUDIO_PANDOC="{{- .quartopath -}}/tools"{{end}}
 RETICULATE_PYTHON_ENV="r-reticulate"
