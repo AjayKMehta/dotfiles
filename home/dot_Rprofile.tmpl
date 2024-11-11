@@ -8,11 +8,14 @@ local({
   r["INLA"] <- "https://inla.r-inla-download.org/R/stable"
   options(repos = r)
 
+  num_cores <- min(parallel::detectCores() - 1, 8)
   options(
     # Enable script file names and line numbers for tryCatchLog
     keep.source = TRUE,
-    Ncpus = parallel::detectCores(),
+    Ncpus = num_cores,
+    mc.cores = num_cores,
 {{ if .sparkdir}}    spark.install.dir = "{{.sparkdir}}",{{end}}
+    datatable.print.trunc.cols = TRUE,
     warnPartialMatchAttr = TRUE,
     warnPartialMatchDollar = TRUE,
     warnPartialMatchArgs = TRUE,
@@ -26,7 +29,9 @@ local({
     rlang_backtrace_on_warning = "full",
     rlang_backtrace_on_warning_report = "branch",
     # 5 min timeout for downloading files
-    timeout = 300
+    timeout = 300,
+    brms.backend = "cmdstanr",
+    brms.file_refit = "on_change"
   )
 
   if (interactive()) {
