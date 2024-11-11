@@ -246,7 +246,12 @@
 [maintenance "pack-refs"]
     enabled = true
 [credential]
-    helper =
     helper = C:/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
 [credential "https://github.com"]
     username = {{ .name }}
+[credential "https://gist.github.com"]
+    helper = !gh auth git-credential
+[pager]
+    # Use a pager if the difftool output is larger than one screenful,
+    # consistent with the behaviour of `git diff`.
+    difftool = true
