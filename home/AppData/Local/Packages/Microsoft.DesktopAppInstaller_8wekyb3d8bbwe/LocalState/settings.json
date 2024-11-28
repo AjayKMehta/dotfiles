@@ -5,10 +5,14 @@
     //    "autoUpdateIntervalInMinutes": 5
     // },
     "installBehavior": {
+        "disableInstallNotes": false,
         "portablePackageUserRoot": "D:/Apps/Packages",
         "portablePackageMachineRoot": "D:/Program Files/Packages/Portable"
     },
     "telemetry": {
         "disable": true
+    },
+    "visual": {
+        "enableSixels": true
     }
 }
