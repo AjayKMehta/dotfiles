@@ -71,9 +71,9 @@
     hist = log --graph --oneline --all --decorate --simplify-by-decoration
 
     ## Refs
-    refs = for-each-ref --sort=-committerdate --format='%(color:red bold)%(refname:short)%(color:reset) %(color:yellow)%(committerdate:relative) %(color:magenta bold)%(authorname) %(color:green)%(objectname:short)%(color:reset) %(contents:subject)'
-    lbs = refs refs/heads
-    rbs = refs refs/remotes
+    rf = for-each-ref --sort=-committerdate --format='%(color:red bold)%(refname:short)%(color:reset) %(color:yellow)%(committerdate:relative) %(color:magenta bold)%(authorname) %(color:green)%(objectname:short)%(color:reset) %(contents:subject)'
+    lbs = rf refs/heads
+    rbs = rf refs/remotes
 
     ## Ignoring files
     # This ignores updates to file
