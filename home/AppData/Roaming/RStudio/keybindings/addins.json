@@ -26,5 +26,6 @@
     "hippie::hippie_down": "Ctrl+Shift+D",
     "codegrip::addin_reshape": "Shift+Tab",
     "codegrip::addin_move_inside": "Alt+3",
-    "codegrip::addin_move_outside": "Alt+4"
+    "codegrip::addin_move_outside": "Alt+4",
+    "pal::.init_addin": "Ctrl+Alt+P"
 }
