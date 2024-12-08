@@ -20,6 +20,8 @@ $GitPromptSettings.EnableStashStatus = $true
 
 #endregion
 
+Import-Module -Name pwshEmojiExplorer
+
 if (!(Get-PSDrive -Name 'HKU' -ErrorAction Ignore)) {
     $null = New-PSDrive -Name 'HKU' -PSProvider Registry -Root 'HKEY_USERS'
 }
@@ -219,7 +221,7 @@ if ($env:TERM_PROGRAM -eq 'vscode') { . "$(code --locate-shell-integration-path 
 
 Import-Module Microsoft.PowerShell.SecretStore, Microsoft.PowerShell.SecretManagement
 
-$env:Path += ';D:\Apps\Quarto\bin'
+$env:Path += ';D:\Apps\Quarto\bin;D:\Apps\Quarto\bin\tools'
 if (Test-Path Env:/SPARK_HOME) {
     $env:Path += ";$(Join-Path $env:SPARK_HOME bin)"
 }
@@ -250,6 +252,11 @@ function global:__zoxide_cd($dir, $literal) {
     } else {
         cd -Path $dir -PassThru -ErrorAction Stop
     }
+}
+
+# Run uv run without sync venv or updating lock file.
+function uvrn() {
+    uv run --no-sync $args
 }
 
 # Add hook to handle changing location and setting .env, etc.
