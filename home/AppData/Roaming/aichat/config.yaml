@@ -171,13 +171,6 @@ clients:
     name: xai
     api_base: https://api.x.ai/v1
     api_key: xxx
-
-  # See https://docs.ai21.com/docs/quickstart
-  - type: openai-compatible
-    name: ai12
-    api_base: https://api.ai21.com/studio/v1
-    api_key: xxx
-
   # See https://docs.cohere.com/docs/the-cohere-platform
   - type: cohere
     api_base: https://api.cohere.ai/v1                # Optional
@@ -186,11 +179,6 @@ clients:
   - type: openai-compatible
     name: perplexity
     api_base: https://api.perplexity.ai
-
-  # See https://console.groq.com/docs/quickstart
-  - type: openai-compatible
-    name: groq
-    api_base: https://api.groq.com/openai/v1
 
   # See https://github.com/jmorganca/ollama
   - type: openai-compatible
@@ -241,44 +229,10 @@ clients:
               - category: HARM_CATEGORY_DANGEROUS_CONTENT
                 threshold: BLOCK_ONLY_HIGH
 
-  # See https://docs.aws.amazon.com/bedrock/latest/userguide/
-  - type: bedrock
-    access_key_id: xxx
-    secret_access_key: xxx
-    region: xxx
-
-  # See https://developers.cloudflare.com/workers-ai/
-  - type: openai-compatible
-    name: cloudflare
-    api_base: https://api.cloudflare.com/client/v4/accounts/{ACCOUNT_ID}/ai/v1
-
-  # See https://cloud.baidu.com/doc/WENXINWORKSHOP/index.html
-  - type: ernie
-
   # See https://dashscope.aliyun.com/
   - type: openai-compatible
     name: qianwen
     api_base: https://dashscope.aliyuncs.com/compatible-mode/v1
-
-  # See https://cloud.tencent.com/product/hunyuan
-  - type: openai-compatible
-    name: hunyuan
-    api_base: https://api.hunyuan.cloud.tencent.com/v1
-
-  # See https://platform.moonshot.cn/docs/intro
-  - type: openai-compatible
-    name: moonshot
-    api_base: https://api.moonshot.cn/v1
-
-  # See https://platform.deepseek.com/api-docs/
-  - type: openai-compatible
-    name: deepseek
-    api_base: https://api.deepseek.com
-
-  # See https://open.bigmodel.cn/dev/howuse/introduction
-  - type: openai-compatible
-    name: zhipuai
-    api_base: https://open.bigmodel.cn/api/paas/v4
 
   # See https://openrouter.ai/docs#quick-start
   - type: openai-compatible
@@ -286,28 +240,11 @@ clients:
     api_base: https://openrouter.ai/api/v1
     api_key: xxx
 
-  # See https://docs.siliconflow.cn/docs/getting-started
-  - type: openai-compatible
-    name: siliconflow
-    api_base: https://api.siliconflow.cn/v1
-    api_key: xxx
-
-  # See https://docs.together.ai/docs/quickstart
-  - type: openai-compatible
-    name: together
-    api_base: https://api.together.xyz/v1
-    api_key: xxx
 
   # ----- RAG dedicated -----
 
   # See https://jina.ai
-  - type: openai-compatible
-    name: jina
-    api_base: https://api.jina.ai/v1
-    api_key: xxx
-
-  # See https://docs.voyageai.com/docs/introduction
-  - type: openai-compatible
-    name: voyageai
-    api_base: https://api.voyageai.com/v1
-    api_key: xxx
+  # - type: openai-compatible
+  #   name: jina
+  #   api_base: https://api.jina.ai/v1
+  #   api_key: xxx

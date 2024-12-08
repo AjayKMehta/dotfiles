@@ -1,0 +1,12 @@
+[
+    {
+        "name": "github-wiki",
+        "test": "github.com/([^/]+)/([^/]+)/wiki",
+        "options": {
+            "exclude": [
+                "_history"
+            ],
+            "extract": "#wiki-body"
+        }
+    }
+]
