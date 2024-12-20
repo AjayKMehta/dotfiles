@@ -221,7 +221,7 @@ if ($env:TERM_PROGRAM -eq 'vscode') { . "$(code --locate-shell-integration-path 
 
 Import-Module Microsoft.PowerShell.SecretStore, Microsoft.PowerShell.SecretManagement
 
-$env:Path += ';D:\Apps\Quarto\bin;D:\Apps\Quarto\bin\tools'
+$env:Path += ';D:\Apps\Quarto\bin;D:\Apps\Quarto\bin\tools;D:\Apps\Ollama'
 if (Test-Path Env:/SPARK_HOME) {
     $env:Path += ";$(Join-Path $env:SPARK_HOME bin)"
 }
