@@ -31,7 +31,10 @@ local({
     # 5 min timeout for downloading files
     timeout = 300,
     brms.backend = "cmdstanr",
-    brms.file_refit = "on_change"
+    brms.file_refit = "on_change",
+    # https://simonpcouch.github.io/pal/articles/pal.html#choosing-a-model
+    .pal_fn = "chat_openai",
+    .pal_args = list(model = "gpt-4o-mini")
   )
 
   if (interactive()) {
