@@ -8,12 +8,12 @@
 		"fixedWidthFont": "Hasklug Nerd Font Mono"
 	},
 	"view": {
-		"zoomLevel": 0.8,
+		"zoomLevel": 1,
 		"windowBounds": {
-			"x": -4,
+			"x": 0,
 			"y": 0,
-			"width": 860,
-			"height": 412,
+			"width": 1325,
+			"height": 716,
 			"maximized": true
 		},
 		"accessibility": false,

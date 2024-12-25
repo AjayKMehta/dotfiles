@@ -12,7 +12,8 @@ Register-ArgumentCompleter -Native -CommandName 'git-absorb' -ScriptBlock {
             $element = $commandElements[$i]
             if ($element -isnot [StringConstantExpressionAst] -or
                 $element.StringConstantType -ne [StringConstantType]::BareWord -or
-                $element.Value.StartsWith('-')) {
+                $element.Value.StartsWith('-') -or
+                $element.Value -eq $wordToComplete) {
                 break
         }
         $element.Value
@@ -31,12 +32,12 @@ Register-ArgumentCompleter -Native -CommandName 'git-absorb' -ScriptBlock {
             [CompletionResult]::new('--verbose', 'verbose', [CompletionResultType]::ParameterName, 'Display more output')
             [CompletionResult]::new('-r', 'r', [CompletionResultType]::ParameterName, 'Run rebase if successful')
             [CompletionResult]::new('--and-rebase', 'and-rebase', [CompletionResultType]::ParameterName, 'Run rebase if successful')
-            [CompletionResult]::new('-w', 'w', [CompletionResultType]::ParameterName, 'Match the change against the complete file   ')
-            [CompletionResult]::new('--whole-file', 'whole-file', [CompletionResultType]::ParameterName, 'Match the change against the complete file   ')
-            [CompletionResult]::new('-h', 'h', [CompletionResultType]::ParameterName, 'Prints help information')
-            [CompletionResult]::new('--help', 'help', [CompletionResultType]::ParameterName, 'Prints help information')
-            [CompletionResult]::new('-V', 'V', [CompletionResultType]::ParameterName, 'Prints version information')
-            [CompletionResult]::new('--version', 'version', [CompletionResultType]::ParameterName, 'Prints version information')
+            [CompletionResult]::new('-w', 'w', [CompletionResultType]::ParameterName, 'Match the change against the complete file')
+            [CompletionResult]::new('--whole-file', 'whole-file', [CompletionResultType]::ParameterName, 'Match the change against the complete file')
+            [CompletionResult]::new('-F', 'F ', [CompletionResultType]::ParameterName, 'Only generate one fixup per commit')
+            [CompletionResult]::new('--one-fixup-per-commit', 'one-fixup-per-commit', [CompletionResultType]::ParameterName, 'Only generate one fixup per commit')
+            [CompletionResult]::new('-h', 'h', [CompletionResultType]::ParameterName, 'Print help')
+            [CompletionResult]::new('--help', 'help', [CompletionResultType]::ParameterName, 'Print help')
             break
         }
     })
