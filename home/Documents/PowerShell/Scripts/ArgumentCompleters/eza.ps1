@@ -47,7 +47,7 @@ $ezaCompletionScriptBlock = {
 
         # Filtering and sort options
         ('all', '-a', '--all', "Show hidden and 'dot' files. Use this twice to also show the '.' and '..' directories"),
-        ('almost-all', '-A', '--almost-all', 'Equivalent to --all; included for compatibility with `ls -A`'),		
+        ('almost-all', '-A', '--almost-all', 'Equivalent to --all; included for compatibility with `ls -A`'),
         ('list-dirs', '-d', '--list-dirs', "List directories as files; don't list their contents"),
         ('only-dirs', '-D', '--only-dirs', 'List only directories'),
         ('only-files', '-f', '--only-files', 'List only files'),
@@ -89,7 +89,7 @@ $ezaCompletionScriptBlock = {
         ('git', '', '--git', 'List each file''s Git status, if tracked or ignored'),
         ('no-git', '', '--no-git', 'Suppress Git status (always overrides --git, --git-repos, --git-repos-no-status)'),
         ('git-repos', '', '--git-repos', 'List root of git-tree status'),
-		('get-repos-no-status', '', '--get-repos-no-status', 'List each git-repos branch name (much faster)')
+		('git-repos-no-status', '', '--git-repos-no-status', 'List each git-repos branch name (much faster)')
     )
 
     # Iterate through the options to find matches
