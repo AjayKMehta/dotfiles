@@ -33,7 +33,7 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
             [CompletionResult]::new('--help', 'help', [CompletionResultType]::ParameterName, 'Print help')
             [CompletionResult]::new('-V', 'V ', [CompletionResultType]::ParameterName, 'Print version')
             [CompletionResult]::new('--version', 'version', [CompletionResultType]::ParameterName, 'Print version')
-            [CompletionResult]::new('check', 'check', [CompletionResultType]::ParameterValue, 'Run Ruff on the given files or directories (default)')
+            [CompletionResult]::new('check', 'check', [CompletionResultType]::ParameterValue, 'Run Ruff on the given files or directories')
             [CompletionResult]::new('rule', 'rule', [CompletionResultType]::ParameterValue, 'Explain a rule (or all rules)')
             [CompletionResult]::new('config', 'config', [CompletionResultType]::ParameterValue, 'List or describe the available configuration options')
             [CompletionResult]::new('linter', 'linter', [CompletionResultType]::ParameterValue, 'List all supported upstream linters')
@@ -41,6 +41,7 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
             [CompletionResult]::new('generate-shell-completion', 'generate-shell-completion', [CompletionResultType]::ParameterValue, 'Generate shell completion')
             [CompletionResult]::new('format', 'format', [CompletionResultType]::ParameterValue, 'Run the Ruff formatter on the given files or directories')
             [CompletionResult]::new('server', 'server', [CompletionResultType]::ParameterValue, 'Run the language server')
+            [CompletionResult]::new('analyze', 'analyze', [CompletionResultType]::ParameterValue, 'Run analysis over Python source code')
             [CompletionResult]::new('version', 'version', [CompletionResultType]::ParameterValue, 'Display Ruff''s version')
             [CompletionResult]::new('help', 'help', [CompletionResultType]::ParameterValue, 'Print this message or the help of the given subcommand(s)')
             break
@@ -220,6 +221,50 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
             [CompletionResult]::new('--help', 'help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
             break
         }
+        'ruff;analyze' {
+            [CompletionResult]::new('--config', 'config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option. Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')
+            [CompletionResult]::new('-v', 'v', [CompletionResultType]::ParameterName, 'Enable verbose logging')
+            [CompletionResult]::new('--verbose', 'verbose', [CompletionResultType]::ParameterName, 'Enable verbose logging')
+            [CompletionResult]::new('-q', 'q', [CompletionResultType]::ParameterName, 'Print diagnostics, but nothing else')
+            [CompletionResult]::new('--quiet', 'quiet', [CompletionResultType]::ParameterName, 'Print diagnostics, but nothing else')
+            [CompletionResult]::new('-s', 's', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
+            [CompletionResult]::new('--silent', 'silent', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
+            [CompletionResult]::new('--isolated', 'isolated', [CompletionResultType]::ParameterName, 'Ignore all configuration files')
+            [CompletionResult]::new('-h', 'h', [CompletionResultType]::ParameterName, 'Print help')
+            [CompletionResult]::new('--help', 'help', [CompletionResultType]::ParameterName, 'Print help')
+            [CompletionResult]::new('graph', 'graph', [CompletionResultType]::ParameterValue, 'Generate a map of Python file dependencies or dependents')
+            [CompletionResult]::new('help', 'help', [CompletionResultType]::ParameterValue, 'Print this message or the help of the given subcommand(s)')
+            break
+        }
+        'ruff;analyze;graph' {
+            [CompletionResult]::new('--direction', 'direction', [CompletionResultType]::ParameterName, 'The direction of the import map. By default, generates a dependency map, i.e., a map from file to files that it depends on. Use `--direction dependents` to generate a map from file to files that depend on it')
+            [CompletionResult]::new('--target-version', 'target-version', [CompletionResultType]::ParameterName, 'The minimum Python version that should be supported')
+            [CompletionResult]::new('--config', 'config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option. Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')
+            [CompletionResult]::new('--detect-string-imports', 'detect-string-imports', [CompletionResultType]::ParameterName, 'Attempt to detect imports from string literals')
+            [CompletionResult]::new('--preview', 'preview', [CompletionResultType]::ParameterName, 'Enable preview mode. Use `--no-preview` to disable')
+            [CompletionResult]::new('--no-preview', 'no-preview', [CompletionResultType]::ParameterName, 'no-preview')
+            [CompletionResult]::new('-v', 'v', [CompletionResultType]::ParameterName, 'Enable verbose logging')
+            [CompletionResult]::new('--verbose', 'verbose', [CompletionResultType]::ParameterName, 'Enable verbose logging')
+            [CompletionResult]::new('-q', 'q', [CompletionResultType]::ParameterName, 'Print diagnostics, but nothing else')
+            [CompletionResult]::new('--quiet', 'quiet', [CompletionResultType]::ParameterName, 'Print diagnostics, but nothing else')
+            [CompletionResult]::new('-s', 's', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
+            [CompletionResult]::new('--silent', 'silent', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
+            [CompletionResult]::new('--isolated', 'isolated', [CompletionResultType]::ParameterName, 'Ignore all configuration files')
+            [CompletionResult]::new('-h', 'h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('--help', 'help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            break
+        }
+        'ruff;analyze;help' {
+            [CompletionResult]::new('graph', 'graph', [CompletionResultType]::ParameterValue, 'Generate a map of Python file dependencies or dependents')
+            [CompletionResult]::new('help', 'help', [CompletionResultType]::ParameterValue, 'Print this message or the help of the given subcommand(s)')
+            break
+        }
+        'ruff;analyze;help;graph' {
+            break
+        }
+        'ruff;analyze;help;help' {
+            break
+        }
         'ruff;version' {
             [CompletionResult]::new('--output-format', 'output-format', [CompletionResultType]::ParameterName, 'output-format')
             [CompletionResult]::new('--config', 'config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option. Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')
@@ -235,7 +280,7 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
             break
         }
         'ruff;help' {
-            [CompletionResult]::new('check', 'check', [CompletionResultType]::ParameterValue, 'Run Ruff on the given files or directories (default)')
+            [CompletionResult]::new('check', 'check', [CompletionResultType]::ParameterValue, 'Run Ruff on the given files or directories')
             [CompletionResult]::new('rule', 'rule', [CompletionResultType]::ParameterValue, 'Explain a rule (or all rules)')
             [CompletionResult]::new('config', 'config', [CompletionResultType]::ParameterValue, 'List or describe the available configuration options')
             [CompletionResult]::new('linter', 'linter', [CompletionResultType]::ParameterValue, 'List all supported upstream linters')
@@ -243,6 +288,7 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
             [CompletionResult]::new('generate-shell-completion', 'generate-shell-completion', [CompletionResultType]::ParameterValue, 'Generate shell completion')
             [CompletionResult]::new('format', 'format', [CompletionResultType]::ParameterValue, 'Run the Ruff formatter on the given files or directories')
             [CompletionResult]::new('server', 'server', [CompletionResultType]::ParameterValue, 'Run the language server')
+            [CompletionResult]::new('analyze', 'analyze', [CompletionResultType]::ParameterValue, 'Run analysis over Python source code')
             [CompletionResult]::new('version', 'version', [CompletionResultType]::ParameterValue, 'Display Ruff''s version')
             [CompletionResult]::new('help', 'help', [CompletionResultType]::ParameterValue, 'Print this message or the help of the given subcommand(s)')
             break
@@ -269,6 +315,13 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
             break
         }
         'ruff;help;server' {
+            break
+        }
+        'ruff;help;analyze' {
+            [CompletionResult]::new('graph', 'graph', [CompletionResultType]::ParameterValue, 'Generate a map of Python file dependencies or dependents')
+            break
+        }
+        'ruff;help;analyze;graph' {
             break
         }
         'ruff;help;version' {
