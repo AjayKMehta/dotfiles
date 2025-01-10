@@ -1,0 +1,100 @@
+########
+# Model:
+
+model: gpt-4o
+
+# Model for editing code
+editor-model: gpt-4o
+
+# For API calls
+timeout: 20
+
+edit-format: whole
+
+########
+# Cache:
+
+# Enable caching to reduce token costs (default: false)
+cache-prompts: true
+
+# Number of pings to keep the prompt cache alive at 5-minute intervals (default: 0)
+cache-keepalive-pings: 5
+
+##########
+# Repomap:
+
+# Suggested number of tokens to use for repo map, use 0 to disable (default: 1024)
+map-tokens: 0
+
+# Control how often the repo map is refreshed. Options: auto, always, files, manual (default: auto)
+map-refresh: manual
+
+#########
+# Output:
+
+# Enable dark mode for a better terminal appearance on dark backgrounds
+dark-mode: true
+
+# Enable pretty, colorized output (default: true)
+pretty: true
+
+stream: true
+
+# Show diffs when committing change (default: False)
+show-diffs: true
+
+code-theme: monokai
+
+######
+# Git:
+
+git: true
+
+# Disable automatic commits after changes made by the AI
+auto-commits: false
+
+# Prevent the AI from suggesting shell commands during chats
+no-suggest-shell-commands: false
+
+# Add .aider* to .gitignore
+gitignore: true
+
+dry-run: false
+
+watch-files: false
+
+########################
+# Fixing and committing:
+
+# Automatically lints code after changes
+auto-lint: true
+
+lint: true
+
+lint-cmd: "python: ruff ."
+
+# Automatically runs tests after code changes
+auto-test: false
+
+
+############
+# Analytics:
+
+analytics: true
+
+# Control verbosity of the output (default: false)
+verbose: false
+
+########
+# Modes:
+
+# Set to true to debug
+show-repo-map: false
+show-prompts: false
+
+########
+# Other:  
+
+# Enable completion suggestions for shell commands
+suggest-shell-commands: true
+editor: "code --wait"
