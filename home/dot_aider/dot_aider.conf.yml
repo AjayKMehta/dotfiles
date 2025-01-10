@@ -69,13 +69,10 @@ watch-files: false
 # Automatically lints code after changes
 auto-lint: true
 
-lint: true
-
 lint-cmd: "python: ruff ."
 
 # Automatically runs tests after code changes
 auto-test: false
-
 
 ############
 # Analytics:
@@ -93,7 +90,7 @@ show-repo-map: false
 show-prompts: false
 
 ########
-# Other:  
+# Other:
 
 # Enable completion suggestions for shell commands
 suggest-shell-commands: true
