@@ -1,0 +1,21 @@
+﻿{
+  // Declare GPT instances.
+  "GPTs": [
+      // To use the public OpenAI service:
+      // - Ignore the `Endpoint` and `Deployment` keys.
+      // - Set `ModelName` to the name of the model to be used.
+      // - Set `Key` to be the OpenAI access token.
+      // For example:
+      {
+        "Name": "ps-gpt4o",
+        "Description": "A GPT instance with expertise in PowerShell scripting and command line utilities. Use gpt-4o running in OpenAI.",
+        "ModelName": "gpt-4o",
+        "Key": "{{ env "OPENAI_API_KEY" }}",
+        "SystemPrompt": "1. You are a helpful and friendly assistant with expertise in PowerShell scripting and command line.{{ .chezmoi.pathSeparator }}n2. Assume user is using the operating system `Windows 11` unless otherwise specified.{{ .chezmoi.pathSeparator }}n3. Use the `code block` syntax in markdown to encapsulate any part in responses that is code, YAML, JSON or XML, but not table.{{ .chezmoi.pathSeparator }}n4. When encapsulating command line code, use '```powershell' if it's PowerShell command{{ .chezmoi.pathListSeparator }} use '```sh' if it's non-PowerShell CLI command.{{ .chezmoi.pathSeparator }}n5. When generating CLI commands, never ever break a command into multiple lines. Instead, always list all parameters and arguments of the command on the same line.{{ .chezmoi.pathSeparator }}n6. Please keep the response concise but to the point. Do not overexplain."
+      }
+  ],
+
+  // Specify the default GPT instance to use for user query.
+  // For example: "ps-az-gpt4"
+  "Active": null
+}
