@@ -517,6 +517,7 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             break
         }
         'uv;lock' {
+            [CompletionResult]::new('--script', '--script', [CompletionResultType]::ParameterName, 'Lock the specified Python script, rather than the current project')
             [CompletionResult]::new('--index', '--index', [CompletionResultType]::ParameterName, 'The URLs to use when resolving dependencies, in addition to the default index')
             [CompletionResult]::new('--default-index', '--default-index', [CompletionResultType]::ParameterName, 'The URL of the default package index (by default: <https://pypi.org/simple>)')
             [CompletionResult]::new('-i', '-i', [CompletionResultType]::ParameterName, '(Deprecated: use `--default-index` instead) The URL of the Python package index (by default: <https://pypi.org/simple>)')
@@ -626,6 +627,7 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-build-package', '--no-build-package', [CompletionResultType]::ParameterName, 'Don''t build source distributions for a specific package')
             [CompletionResult]::new('--no-binary-package', '--no-binary-package', [CompletionResultType]::ParameterName, 'Don''t install pre-built wheels for a specific package')
             [CompletionResult]::new('--refresh-package', '--refresh-package', [CompletionResultType]::ParameterName, 'Refresh cached data for a specific package')
+            [CompletionResult]::new('--script', '--script', [CompletionResultType]::ParameterName, 'Export the dependencies for the specified PEP 723 Python script, rather than the current project')
             [CompletionResult]::new('-p', '-p', [CompletionResultType]::ParameterName, 'The Python interpreter to use during resolution.')
             [CompletionResult]::new('--python', '--python', [CompletionResultType]::ParameterName, 'The Python interpreter to use during resolution.')
             [CompletionResult]::new('--cache-dir', '--cache-dir', [CompletionResultType]::ParameterName, 'Path to the cache directory')
@@ -721,6 +723,7 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-build-isolation-package', '--no-build-isolation-package', [CompletionResultType]::ParameterName, 'Disable isolation when building source distributions for a specific package')
             [CompletionResult]::new('--exclude-newer', '--exclude-newer', [CompletionResultType]::ParameterName, 'Limit candidate packages to those that were uploaded prior to the given date')
             [CompletionResult]::new('--link-mode', '--link-mode', [CompletionResultType]::ParameterName, 'The method to use when installing packages from the global cache')
+            [CompletionResult]::new('--script', '--script', [CompletionResultType]::ParameterName, 'Show the dependency tree the specified PEP 723 Python script, rather than the current project')
             [CompletionResult]::new('--python-version', '--python-version', [CompletionResultType]::ParameterName, 'The Python version to use when filtering the tree')
             [CompletionResult]::new('--python-platform', '--python-platform', [CompletionResultType]::ParameterName, 'The platform to use when filtering the tree')
             [CompletionResult]::new('-p', '-p', [CompletionResultType]::ParameterName, 'The Python interpreter to use for locking and filtering.')
@@ -1341,6 +1344,7 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             break
         }
         'uv;python;list' {
+            [CompletionResult]::new('--output-format', '--output-format', [CompletionResultType]::ParameterName, 'Select the output format')
             [CompletionResult]::new('--cache-dir', '--cache-dir', [CompletionResultType]::ParameterName, 'Path to the cache directory')
             [CompletionResult]::new('--python-preference', '--python-preference', [CompletionResultType]::ParameterName, 'Whether to prefer uv-managed or system Python installations')
             [CompletionResult]::new('--python-fetch', '--python-fetch', [CompletionResultType]::ParameterName, 'Deprecated version of [`Self::python_downloads`]')
@@ -2000,6 +2004,7 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
         'uv;pip;freeze' {
             [CompletionResult]::new('-p', '-p', [CompletionResultType]::ParameterName, 'The Python interpreter for which packages should be listed.')
             [CompletionResult]::new('--python', '--python', [CompletionResultType]::ParameterName, 'The Python interpreter for which packages should be listed.')
+            [CompletionResult]::new('--path', '--path', [CompletionResultType]::ParameterName, 'Restrict to the specified installation path for listing packages (can be used multiple times)')
             [CompletionResult]::new('--cache-dir', '--cache-dir', [CompletionResultType]::ParameterName, 'Path to the cache directory')
             [CompletionResult]::new('--python-preference', '--python-preference', [CompletionResultType]::ParameterName, 'Whether to prefer uv-managed or system Python installations')
             [CompletionResult]::new('--python-fetch', '--python-fetch', [CompletionResultType]::ParameterName, 'Deprecated version of [`Self::python_downloads`]')
@@ -2042,7 +2047,7 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
         }
         'uv;pip;list' {
             [CompletionResult]::new('--exclude', '--exclude', [CompletionResultType]::ParameterName, 'Exclude the specified package(s) from the output')
-            [CompletionResult]::new('--format', '--format', [CompletionResultType]::ParameterName, 'Select the output format between: `columns` (default), `freeze`, or `json`')
+            [CompletionResult]::new('--format', '--format', [CompletionResultType]::ParameterName, 'Select the output format')
             [CompletionResult]::new('--index', '--index', [CompletionResultType]::ParameterName, 'The URLs to use when resolving dependencies, in addition to the default index')
             [CompletionResult]::new('--default-index', '--default-index', [CompletionResultType]::ParameterName, 'The URL of the default package index (by default: <https://pypi.org/simple>)')
             [CompletionResult]::new('-i', '-i', [CompletionResultType]::ParameterName, '(Deprecated: use `--default-index` instead) The URL of the Python package index (by default: <https://pypi.org/simple>)')

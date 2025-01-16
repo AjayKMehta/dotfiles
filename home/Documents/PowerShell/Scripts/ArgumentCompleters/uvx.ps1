@@ -54,7 +54,7 @@ Register-ArgumentCompleter -Native -CommandName 'uvx' -ScriptBlock {
             [CompletionResult]::new('--cache-dir', '--cache-dir', [CompletionResultType]::ParameterName, 'Path to the cache directory')
             [CompletionResult]::new('--python-preference', '--python-preference', [CompletionResultType]::ParameterName, 'Whether to prefer uv-managed or system Python installations')
             [CompletionResult]::new('--python-fetch', '--python-fetch', [CompletionResultType]::ParameterName, 'Deprecated version of [`Self::python_downloads`]')
-            [CompletionResult]::new('--color', '--color', [CompletionResultType]::ParameterName, 'Control colors in output')
+            [CompletionResult]::new('--color', '--color', [CompletionResultType]::ParameterName, 'Control the use of color in output')
             [CompletionResult]::new('--allow-insecure-host', '--allow-insecure-host', [CompletionResultType]::ParameterName, 'Allow insecure connections to a host')
             [CompletionResult]::new('--directory', '--directory', [CompletionResultType]::ParameterName, 'Change to the given directory prior to running the command')
             [CompletionResult]::new('--project', '--project', [CompletionResultType]::ParameterName, 'Run the command within the given project directory')
