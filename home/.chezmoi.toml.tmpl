@@ -21,8 +21,6 @@
 
 {{- $cmdstandir := promptStringOnce . "cmdstandir" "Directory where cmdstan is installed." -}}
 
-{{- $quartopath := promptStringOnce . "quartopath" "Bin folder path for quarto." -}}
-
 {{- $kdbxpath := promptStringOnce . "kdbxpath" "Path for Keepass database" -}}
 
 {{- $gpgrecipient := promptStringOnce . "gpgrecipient" "GPG recipient" -}}
@@ -50,7 +48,6 @@ encryption = "gpg"
     rworkingdir = "{{ $rworkingdir }}"
     sparkdir = "{{ $sparkdir }}"
     cmdstandir = "{{ $cmdstandir }}"
-    quartopath = "{{ $quartopath }}"
     stackpath = "{{ $stackpath }}"
     cabalpath = '{{ $cabalpath }}'
     msyspath = '{{ $msyspath}}'
