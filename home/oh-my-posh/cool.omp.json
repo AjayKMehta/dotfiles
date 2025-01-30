@@ -6,6 +6,11 @@
       "alignment": "left",
       "segments": [
         {
+          "type": "text",
+          "style": "plain",
+          "template": "{{ .Env.OSC7 }}"
+        },
+        {
           "properties": {
             "root_icon": "⚡"
           },

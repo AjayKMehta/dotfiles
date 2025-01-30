@@ -58,6 +58,19 @@ function Set-EnvVar([bool]$originalStatus) {
     } else {
             (Get-PSReadLineOption).HistorySaveStyle -ne 'SaveNothing'
     }
+    # OSC7: Remember current directory so if you open new tab in WezTerm, it will open in the same directory!
+    # https://wezfurlong.org/wezterm/shell-integration.html#osc-7-on-windows-with-powershell
+    # https://github.com/JanDeDobbeleer/oh-my-posh/issues/2515#issuecomment-1374322136
+    $p = $executionContext.SessionState.Path.CurrentLocation
+    $osc7 = ''
+    if ($p.Provider.Name -eq 'FileSystem') {
+        $ansi_escape = [char]27
+        $providerPath = $p.ProviderPath -Replace '\\', '/'
+        $osc7 = ($env:TERM_PROGRAM -eq 'WezTerm') ?
+            "$ansi_escape]7;file://${env:COMPUTERNAME}/${providerPath}${ansi_escape}\" :
+            "$ansi_escape]9;9;`"$p`"${ansi_escape}"
+        }
+    $env:OSC7 = $osc7
 }
 
 function Set-PoshPrompt {
