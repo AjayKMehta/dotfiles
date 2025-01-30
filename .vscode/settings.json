@@ -1,5 +1,7 @@
 {
+    "peacock.color": "#71bfa3",
     "sarif-viewer.connectToGithubCodeScanning": "off",
+    "stylua.targetReleaseVersion": "latest",
     "workbench.colorCustomizations": {
         "activityBar.activeBackground": "#94cfba",
         "activityBar.background": "#94cfba",
@@ -27,6 +29,5 @@
         "titleBar.border": "#71bfa3",
         "titleBar.inactiveBackground": "#71bfa399",
         "titleBar.inactiveForeground": "#15202b99"
-    },
-    "peacock.color": "#71bfa3",
+    }
 }
