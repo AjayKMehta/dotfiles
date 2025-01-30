@@ -71,7 +71,7 @@ Register-ArgumentCompleter -Native -CommandName 'uvx' -ScriptBlock {
             [CompletionResult]::new('--build-isolation', '--build-isolation', [CompletionResultType]::ParameterName, 'build-isolation')
             [CompletionResult]::new('--compile-bytecode', '--compile-bytecode', [CompletionResultType]::ParameterName, 'Compile Python files to bytecode after installation')
             [CompletionResult]::new('--no-compile-bytecode', '--no-compile-bytecode', [CompletionResultType]::ParameterName, 'no-compile-bytecode')
-            [CompletionResult]::new('--no-sources', '--no-sources', [CompletionResultType]::ParameterName, 'Ignore the `tool.uv.sources` table when resolving dependencies. Used to lock against the standards-compliant, publishable package metadata, as opposed to using any local or Git sources')
+            [CompletionResult]::new('--no-sources', '--no-sources', [CompletionResultType]::ParameterName, 'Ignore the `tool.uv.sources` table when resolving dependencies. Used to lock against the standards-compliant, publishable package metadata, as opposed to using any workspace, Git, URL, or local path sources')
             [CompletionResult]::new('--no-build', '--no-build', [CompletionResultType]::ParameterName, 'Don''t build source distributions')
             [CompletionResult]::new('--build', '--build', [CompletionResultType]::ParameterName, 'build')
             [CompletionResult]::new('--no-binary', '--no-binary', [CompletionResultType]::ParameterName, 'Don''t install pre-built wheels')
