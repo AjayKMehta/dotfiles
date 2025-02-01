@@ -239,12 +239,3 @@ clients:
     name: openrouter
     api_base: https://openrouter.ai/api/v1
     api_key: xxx
-
-
-  # ----- RAG dedicated -----
-
-  # See https://jina.ai
-  # - type: openai-compatible
-  #   name: jina
-  #   api_base: https://api.jina.ai/v1
-  #   api_key: xxx
