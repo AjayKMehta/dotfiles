@@ -38,13 +38,11 @@ summary_prompt: 'This is a summary of the chat history as a recap: '
 
 # ---- RAG ----
 # See [RAG-Guide](https://github.com/sigoden/aichat/wiki/RAG-Guide) for more details.
-rag_embedding_model: null                   # Specifies the embedding model to use
+rag_embedding_model: mxbai-embed            # Specifies the embedding model to use
 rag_reranker_model: null                    # Specifies the rerank model to use
 rag_top_k: 5                                # Specifies the number of documents to retrieve
 rag_chunk_size: null                        # Specifies the chunk size
 rag_chunk_overlap: null                     # Specifies the chunk overlap
-rag_min_score_vector_search: 0              # Specifies the minimum relevance score for vector-based searching
-rag_min_score_keyword_search: 0             # Specifies the minimum relevance score for keyword-based searching
 # Defines the query structure using variables like __CONTEXT__ and __INPUT__ to tailor searches to specific needs
 rag_template: |
   Answer the query based on the context while respecting the rules. (user query, some textual context and rules, all inside xml tags)
@@ -73,7 +71,6 @@ document_loaders:
   # Note: Use `$1` for input file and `$2` for output file. If `$2` is omitted, use stdout as output.
   pdf: 'pdftotext $1 -'                         # Load .pdf file, see https://poppler.freedesktop.org to set up pdftotext
   docx: 'pandoc --to plain $1'                  # Load .docx file, see https://pandoc.org to set up pandoc
-  recursive_url: "rag-crawler $1 $2" # Load websites, see https://github.com/sigoden/rag-crawler
 
 # ---- appearance ----
 highlight: true                  # Controls syntax highlighting
@@ -87,7 +84,9 @@ right_prompt:
 # ---- misc ----
 serve_addr: 127.0.0.1:8000                  # Default serve listening address
 user_agent: null                            # Set User-Agent HTTP header, use `auto` for aichat/<current-version>
-append_command_to_history_file: true        # Weather to append shell execute command to the history file
+save_shell_history: true                    # Whether to save shell execution command to the history file
+# URL to sync model changes from, e.g., https://cdn.jsdelivr.net/gh/sigoden/aichat@main/models.yaml
+sync_models_url: https://raw.githubusercontent.com/sigoden/aichat/refs/heads/main/models.yaml
 
 # ---- clients ----
 clients:
@@ -160,26 +159,6 @@ clients:
   # See https://docs.anthropic.com/claude/reference/getting-started-with-the-api
   - type: claude
 
-  # See https://docs.mistral.ai/
-  - type: openai-compatible
-    name: mistral
-    api_base: https://api.mistral.ai/v1
-    api_key: xxx
-
-  # See https://docs.x.ai/docs
-  - type: openai-compatible
-    name: xai
-    api_base: https://api.x.ai/v1
-    api_key: xxx
-  # See https://docs.cohere.com/docs/the-cohere-platform
-  - type: cohere
-    api_base: https://api.cohere.ai/v1                # Optional
-
-  # See https://docs.perplexity.ai/docs/getting-started
-  - type: openai-compatible
-    name: perplexity
-    api_base: https://api.perplexity.ai
-
   # See https://github.com/jmorganca/ollama
   - type: openai-compatible
     name: ollama
@@ -187,52 +166,26 @@ clients:
     models:
       - name: llama3.2
         model: llama3.2:latest
-        max_input_tokens: 131072
-      - name: llama3.2-instruct-1b
-        model: llama3.2:1b-instruct-fp16
-        max_input_tokens: 131072
-      - name: llama3.2-instruct-3b
-        model: llama3.2:3b-instruct-fp16
-        max_input_tokens: 131072
-      - name: llama3.2-instruct-3b-q8
-        model: llama3.2:3b-instruct-q8_0
-        max_input_tokens: 131072
-
-  # See https://learn.microsoft.com/en-us/azure/ai-services/openai/chatgpt-quickstart
-  - type: azure-openai
-    api_base: https://{RESOURCE}.openai.azure.com
-    models:
-      - name: gpt-4o                                  # Model deployment name
-        max_input_tokens: 128000
-        supports_vision: true
-        supports_function_calling: true
-
-  # See https://cloud.google.com/vertex-ai
-  - type: vertexai
-    project_id: xxx
-    location: xxx
-    # Specifies a application-default-credentials (adc) file
-    # Run `gcloud auth application-default login` to init the adc file
-    # see https://cloud.google.com/docs/authentication/external/set-up-adc
-    adc_file: <gcloud-config-dir>/application_default_credentials.json>  # Optional field
-    patch:
-      chat_completions:
-        'gemini-.*':
-          body:
-            safetySettings:
-              - category: HARM_CATEGORY_HARASSMENT
-                threshold: BLOCK_ONLY_HIGH
-              - category: HARM_CATEGORY_HATE_SPEECH
-                threshold: BLOCK_ONLY_HIGH
-              - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
-                threshold: BLOCK_ONLY_HIGH
-              - category: HARM_CATEGORY_DANGEROUS_CONTENT
-                threshold: BLOCK_ONLY_HIGH
-
-  # See https://dashscope.aliyun.com/
-  - type: openai-compatible
-    name: qianwen
-    api_base: https://dashscope.aliyuncs.com/compatible-mode/v1
+        max_input_tokens: 8192
+      - name: mistral
+        model: mistral:latest
+        max_input_tokens: 8192
+      - name: mxbai-embed
+        model: mxbai-embed-large:latest
+        type: embedding
+        max_input_tokens: 8192
+      - name: mixtral
+        model: mixtral:8x7b
+        max_input_tokens: 8192
+      - name: codellama
+        model: codellama:13b
+        max_input_tokens: 8192
+      - name: qwen
+        model: qwen2.5-coder:14b
+        max_input_tokens: 8192
+      - name: deepseek
+        model: deepseek-r1:8b
+        max_input_tokens: 8192
 
   # See https://openrouter.ai/docs#quick-start
   - type: openai-compatible
