@@ -38,7 +38,7 @@ summary_prompt: 'This is a summary of the chat history as a recap: '
 
 # ---- RAG ----
 # See [RAG-Guide](https://github.com/sigoden/aichat/wiki/RAG-Guide) for more details.
-rag_embedding_model: mxbai-embed            # Specifies the embedding model to use
+rag_embedding_model: null
 rag_reranker_model: null                    # Specifies the rerank model to use
 rag_top_k: 5                                # Specifies the number of documents to retrieve
 rag_chunk_size: null                        # Specifies the chunk size
@@ -173,7 +173,10 @@ clients:
       - name: mxbai-embed
         model: mxbai-embed-large:latest
         type: embedding
-        max_input_tokens: 8192
+        max_tokens_per_chunk: 2000
+        default_chunk_size: 1500
+        max_batch_size: 100
+        max_input_tokens: 200000
       - name: mixtral
         model: mixtral:8x7b
         max_input_tokens: 8192

@@ -71,7 +71,7 @@ Register-ArgumentCompleter -Native -CommandName 'aichat' -ScriptBlock {
             $offset=1
         }
         $flag = $commandElements[$commandElements.Count-$offset].ToString()
-        dump-args $flag ($flag -eq "-R") > /tmp/file1
+        # dump-args $flag ($flag -eq "-R") > /tmp/file1
         if ($flag -ceq "-m" -or $flag -eq "--model") {
             $completions = Get-AichatValues "--list-models"
         } elseif ($flag -ceq "-r" -or $flag -eq "--role") {
