@@ -34,9 +34,11 @@ local({
     brms.file_refit = "on_change",
     # https://simonpcouch.github.io/pal/articles/pal.html#choosing-a-model
     .pal_fn = "chat_openai",
-    .pal_args = list(model = "gpt-4o-mini")
+    .pal_args = list(model = "gpt-4o-mini"),
+    # https://simonpcouch.github.io/gander/articles/gander.html#choosing-a-model
+    .gander_fn = "chat_ollama",
+    .gander_args = list(model = "qwen2.5-coder:14b")
   )
-
   if (interactive()) {
     auto.loads <- c("magrittr")
 

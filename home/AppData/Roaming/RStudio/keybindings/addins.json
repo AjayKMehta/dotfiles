@@ -27,5 +27,6 @@
     "codegrip::addin_reshape": "Shift+Tab",
     "codegrip::addin_move_inside": "Alt+3",
     "codegrip::addin_move_outside": "Alt+4",
-    "pal::.init_addin": "Ctrl+Alt+P"
+    "pal::.init_addin": "Ctrl+Alt+P",
+    "gander::gander_addin": "Ctrl+Shift+G"
 }
