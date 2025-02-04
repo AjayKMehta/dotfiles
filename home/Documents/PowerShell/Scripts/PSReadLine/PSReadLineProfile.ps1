@@ -599,3 +599,15 @@ if (!$isVsCode) {
 }
 
 #endregion
+
+# https://github.com/sigoden/aichat/blob/main/scripts/shell-integration/integration.ps1
+Set-PSReadLineKeyHandler -Chord "alt+e" -ScriptBlock {
+    $_old = $null
+    [Microsoft.PowerShell.PSConsoleReadline]::GetBufferState([ref]$_old, [ref]$null)
+    if ($_old) {
+        [Microsoft.PowerShell.PSConsoleReadLine]::Insert('⌛')
+        $_new = (aichat -e $_old)
+        [Microsoft.PowerShell.PSConsoleReadLine]::DeleteLine()
+        [Microsoft.PowerShell.PSConsoleReadline]::Insert($_new)
+    }
+}
