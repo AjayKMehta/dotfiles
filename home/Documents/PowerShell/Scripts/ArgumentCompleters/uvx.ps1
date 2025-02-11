@@ -23,7 +23,7 @@ Register-ArgumentCompleter -Native -CommandName 'uvx' -ScriptBlock {
         'uvx' {
             [CompletionResult]::new('--from', '--from', [CompletionResultType]::ParameterName, 'Use the given package to provide the command')
             [CompletionResult]::new('--with', '--with', [CompletionResultType]::ParameterName, 'Run with the given packages installed')
-            [CompletionResult]::new('--with-editable', '--with-editable', [CompletionResultType]::ParameterName, 'Run with the given packages installed as editables')
+            [CompletionResult]::new('--with-editable', '--with-editable', [CompletionResultType]::ParameterName, 'Run with the given packages installed in editable mode')
             [CompletionResult]::new('--with-requirements', '--with-requirements', [CompletionResultType]::ParameterName, 'Run with all packages listed in the given `requirements.txt` files')
             [CompletionResult]::new('--index', '--index', [CompletionResultType]::ParameterName, 'The URLs to use when resolving dependencies, in addition to the default index')
             [CompletionResult]::new('--default-index', '--default-index', [CompletionResultType]::ParameterName, 'The URL of the default package index (by default: <https://pypi.org/simple>)')
