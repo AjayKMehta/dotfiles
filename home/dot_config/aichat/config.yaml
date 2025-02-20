@@ -164,25 +164,34 @@ clients:
     name: ollama
     api_base: http://localhost:11434/v1
     models:
-      - name: llama3.2:latest
+      - name: llama3.2
+        real_name: llama3.2:latest
+        max_input_tokens: 131072
+        supports_function_calling: true
+      - name: mistral
+        real_name: mistral:latest
         max_input_tokens: 8192
-      - name: mistral:latest
-        max_input_tokens: 8192
-      - name: mxbai-embed-large:latest
+      - name: mxbai
+        real_name: mxbai-embed-large:latest
         type: embedding
-        max_tokens_per_chunk: 2000
-        default_chunk_size: 1500
+        max_tokens_per_chunk: 8192
+        default_chunk_size: 1000
         max_batch_size: 100
         max_input_tokens: 200000
-      - name: mixtral:8x7b
+      - name: mixtral
+        real_name: mixtral:8x7b
         max_input_tokens: 8192
-      - name: codellama:13b
+      - name: codellama
+        real_name: codellama:13b
         max_input_tokens: 8192
-      - name: qwen2.5-coder:14b
-        max_input_tokens: 8192
-      - name: deepseek-r1:8b
-        max_input_tokens: 8192
+      - name: qwen
+        real_name: qwen2.5-coder:14b
+        max_input_tokens: 32768
+      - name: deepseek
+        real_name: deepseek-r1:8b
+        max_input_tokens: 131072
         supports_function_calling: true
+        supports_reasoning: true
 
   # See https://openrouter.ai/docs#quick-start
   - type: openai-compatible
