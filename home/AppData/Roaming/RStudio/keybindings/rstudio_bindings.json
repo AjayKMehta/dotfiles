@@ -36,5 +36,8 @@
     "closeSourceDoc": "Ctrl+W",
     "showPlotsMenu": "",
     "debugStepInto": "F11",
-    "showDebugMenu": "F8"
+    "showDebugMenu": "F8",
+    "copilotRequestCompletions": "Alt+\\",
+    "toggleFullScreen": "F12",
+    "focusConsoleOutputEnd": "Ctrl+Shift+~"
 }

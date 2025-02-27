@@ -20,5 +20,6 @@
     "tolowercase": "Ctrl+Alt+U",
     "touppercase": "Ctrl+U",
     "unfold": "|Shift+Alt+L||Shift+Alt+L|",
-    "unfoldall": ""
+    "unfoldall": "",
+    "openCommandPalette": ""
 }
