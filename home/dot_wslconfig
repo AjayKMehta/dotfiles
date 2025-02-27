@@ -8,5 +8,8 @@ processors=5
 # Default is 25% of available RAM
 swap=8GB
 
+# https://learn.microsoft.com/en-us/windows/wsl/networking#mirrored-mode-networking
+networkingMode=mirrored
+
 [experimental]
 autoMemoryReclaim=gradual
