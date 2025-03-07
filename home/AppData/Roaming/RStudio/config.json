@@ -8,13 +8,13 @@
 		"fixedWidthFont": "Hasklug Nerd Font Mono"
 	},
 	"view": {
-		"zoomLevel": 1,
+		"zoomLevel": 1.1,
 		"windowBounds": {
 			"x": 0,
 			"y": 0,
-			"width": 1325,
-			"height": 716,
-			"maximized": true
+			"width": 1219,
+			"height": 657,
+			"maximized": false
 		},
 		"accessibility": false,
 		"disableRendererAccessibility": false
@@ -33,7 +33,7 @@
 		"windows": {
 			"rBinDir": "",
 			"preferR64": true,
-			"rExecutablePath": "C:\\Program Files\\R\\R-4.4.2\\bin\\x64\\Rterm.exe"
+			"rExecutablePath": "C:\\Program Files\\R\\R-4.4.3\\bin\\x64\\Rterm.exe"
 		}
 	},
 	"context_id": "",
