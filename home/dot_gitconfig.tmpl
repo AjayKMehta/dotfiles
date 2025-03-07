@@ -99,9 +99,7 @@
     su = submodule update --recursive --remote
 
     ## Merge
-    mnf = merge --no-ff
     mffo = merge --ff-only
-    mnc = merge --no-commit
 [blame]
     coloring = highlightRecent
     markIgnoredLines = true
@@ -111,6 +109,7 @@
     autoupdate = true
 [push]
     followTags = true
+    autoSetupRemote = true
 [fetch]
     prune = true
     parallel = 0
@@ -124,6 +123,7 @@
     showStash = true
     submoduleSummary = true
 [diff]
+    algorithm = histogram
     tool = winmerge
     guitool = winmerge
     colorMoved = default
@@ -256,3 +256,7 @@
     # Use a pager if the difftool output is larger than one screenful,
     # consistent with the behaviour of `git diff`.
     difftool = true
+[column]
+    ui = auto
+[branch]
+    sort = -committerdate
