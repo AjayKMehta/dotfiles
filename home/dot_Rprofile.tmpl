@@ -32,9 +32,7 @@ local({
     timeout = 300,
     brms.backend = "cmdstanr",
     brms.file_refit = "on_change",
-    # https://simonpcouch.github.io/pal/articles/pal.html#choosing-a-model
-    .pal_fn = "chat_openai",
-    .pal_args = list(model = "gpt-4o-mini"),
+    .chores_chat = ellmer::chat_ollama(model = "qwen2.5-coder:14b", api_args = list(keep_alive = "30m", num_ctx = 4096)),
     # https://simonpcouch.github.io/gander/articles/gander.html#choosing-a-model
     .gander_fn = "chat_ollama",
     .gander_args = list(model = "qwen2.5-coder:14b")
@@ -42,8 +40,10 @@ local({
   if (interactive()) {
     auto.loads <- c("magrittr")
 
-    invisible(sapply(auto.loads, library, character.only = TRUE,
-                     warn.conflicts = FALSE, quietly = TRUE))
+    invisible(sapply(auto.loads, library,
+      character.only = TRUE,
+      warn.conflicts = FALSE, quietly = TRUE
+    ))
 
     # Don't change working directory if project or calling from VS Code.
     if (length(dir(getwd(), pattern = "[Rr]proj$")) == 0 &&
