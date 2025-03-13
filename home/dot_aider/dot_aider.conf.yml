@@ -1,15 +1,13 @@
 ########
 # Model:
 
-model: gpt-4o
+model: llama
 
 # Model for editing code
-editor-model: gpt-4o
+editor-model: code
 
 # For API calls
 timeout: 20
-
-edit-format: whole
 
 # Specify model-specific settings
 model-settings-file: .aider.model.settings.yml
@@ -20,6 +18,7 @@ alias:
   - "mixtral:ollama_chat/mixtral:8x7b"
   - "code:ollama_chat/qwen2.5-coder:14b"
   - "llama:ollama_chat/llama3.2:latest"
+  - "deepseek:ollama_chat/deepseek-r1:8b"
 
 ########
 # Cache:
@@ -92,8 +91,6 @@ commit-prompt: |
 # Automatically lints code after changes
 auto-lint: true
 
-lint-cmd: "python: ruff ."
-
 # Automatically runs tests after code changes
 auto-test: false
 
@@ -101,9 +98,6 @@ auto-test: false
 # Analytics:
 
 analytics: true
-
-# Control verbosity of the output (default: false)
-verbose: false
 
 ########
 # Modes:
@@ -118,3 +112,5 @@ show-prompts: false
 # Enable completion suggestions for shell commands
 suggest-shell-commands: true
 editor: "code --wait"
+
+notifications: true

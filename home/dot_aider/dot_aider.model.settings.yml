@@ -16,15 +16,15 @@
 - name: ollama_chat/mixtral:8x7b
   extra_params:
     num_ctx: 8192
-- name: ollama/mxbai-embed-large:latest
-  extra_params:
-    num_ctx: 8192
-- name: ollama_chat/mxbai-embed-large:latest
-  extra_params:
-    num_ctx: 8192
 - name: ollama/llama3.2:latest
   extra_params:
     num_ctx: 8192
 - name: ollama_chat/llama3.2:latest
+  extra_params:
+    num_ctx: 8192
+- name: ollama/deepseek-r1:8b
+  extra_params:
+    num_ctx: 8192
+- name: ollama_chat/deepseek-r1:8b
   extra_params:
     num_ctx: 8192
