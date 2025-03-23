@@ -1,10 +1,10 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": 
+    "actions":
     [
         {
-            "command": 
+            "command":
             {
                 "action": "copy",
                 "singleLine": false
@@ -16,66 +16,93 @@
             "id": "User.paste"
         },
         {
-            "command": "find",
-            "id": "User.find"
-        },
-        {
-            "command": 
+            "command":
             {
                 "action": "splitPane",
                 "split": "auto",
                 "splitMode": "duplicate"
             },
             "id": "User.splitPane.A6751878"
+        },
+        {
+            "command": "find",
+            "id": "User.find"
+        },
+        // https://stackoverflow.com/a/42461580/781045
+        // shift+enter
+        {
+            "command":
+            {
+                "action": "sendInput",
+                "input": "\u001b[13;2u"
+            },
+            "id": "User.sendInput.8882FD6D"
+        },
+        // ctrl+enter
+        {
+            "command":
+            {
+                "action": "sendInput",
+                "input": "\u001b[13;5u"
+            },
+            "id": "User.sendInput.F8A79DCB"
         }
     ],
     "alwaysShowNotificationIcon": false,
     "copyFormatting": "none",
     "copyOnSelect": false,
     "defaultProfile": "{01201329-03d9-413b-ba6b-ce86f4862626}",
-    "keybindings": 
+    "keybindings":
     [
         {
-            "id": "User.find",
-            "keys": "ctrl+shift+f"
+            "id": "User.splitPane.A6751878",
+            "keys": "alt+shift+d"
+        },
+        {
+            "id": "User.sendInput.8882FD6D",
+            "keys": "shift+enter"
         },
         {
             "id": null,
             "keys": "ctrl+v"
         },
         {
-            "id": null,
-            "keys": "ctrl+c"
+            "id": "User.find",
+            "keys": "ctrl+shift+f"
         },
         {
-            "id": "User.splitPane.A6751878",
-            "keys": "alt+shift+d"
+            "id": "User.sendInput.F8A79DCB",
+            "keys": "ctrl+enter"
+        },
+        {
+            "id": null,
+            "keys": "ctrl+c"
         }
     ],
-    "newTabMenu": 
+    "newTabMenu":
     [
         {
             "type": "remainingProfiles"
         }
     ],
-    "profiles": 
+    "profiles":
     {
-        "defaults": 
+        "defaults":
         {
-            "font": 
+            "font":
             {
                 "face": "CaskaydiaMono Nerd Font Mono",
                 "size": 14
             }
         },
-        "list": 
+        "list":
         [
             {
                 "colorScheme": "Tango Dark",
                 "commandline": "\"C:\\Program Files\\PowerShell\\7\\pwsh.exe\"",
                 "elevate": true,
                 "experimental.retroTerminalEffect": false,
-                "font": 
+                "font":
                 {
                     "face": "MonaspiceNe Nerd Font Mono"
                 },
@@ -87,7 +114,7 @@
             },
             {
                 "colorScheme": "Tango Dark",
-                "font": 
+                "font":
                 {
                     "face": "DejaVuSansM Nerd Font Mono"
                 },
@@ -99,7 +126,7 @@
                 "source": "Windows.Terminal.PowershellCore"
             },
             {
-                "font": 
+                "font":
                 {
                     "face": "MonaspiceKr Nerd Font Mono"
                 },
@@ -112,7 +139,7 @@
             {
                 "colorScheme": "Solarized Light",
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-                "font": 
+                "font":
                 {
                     "face": "DejaVuSansM Nerd Font Mono"
                 },
@@ -122,7 +149,7 @@
             },
             {
                 "commandline": "%SystemRoot%\\System32\\cmd.exe",
-                "font": 
+                "font":
                 {
                     "face": "UbuntuMono Nerd Font Mono"
                 },
@@ -144,7 +171,7 @@
                 "commandline": "%SystemRoot%\\System32\\cmd.exe \"/K\" D:\\Apps\\Miniconda\\Scripts\\activate.bat D:\\Apps\\Miniconda  ",
                 "cursorShape": "bar",
                 "elevate": true,
-                "font": 
+                "font":
                 {
                     "face": "MonaspiceXe Nerd Font Mono"
                 },
@@ -178,7 +205,7 @@
             }
         ]
     },
-    "schemes": 
+    "schemes":
     [
         {
             "background": "#000000",
