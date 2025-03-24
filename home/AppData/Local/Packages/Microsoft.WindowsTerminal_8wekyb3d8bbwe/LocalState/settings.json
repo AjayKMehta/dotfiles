@@ -1,11 +1,9 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions":
-    [
+    "actions": [
         {
-            "command":
-            {
+            "command": {
                 "action": "copy",
                 "singleLine": false
             },
@@ -16,8 +14,7 @@
             "id": "User.paste"
         },
         {
-            "command":
-            {
+            "command": {
                 "action": "splitPane",
                 "split": "auto",
                 "splitMode": "duplicate"
@@ -31,8 +28,7 @@
         // https://stackoverflow.com/a/42461580/781045
         // shift+enter
         {
-            "command":
-            {
+            "command": {
                 "action": "sendInput",
                 "input": "\u001b[13;2u"
             },
@@ -40,8 +36,7 @@
         },
         // ctrl+enter
         {
-            "command":
-            {
+            "command": {
                 "action": "sendInput",
                 "input": "\u001b[13;5u"
             },
@@ -52,8 +47,7 @@
     "copyFormatting": "none",
     "copyOnSelect": false,
     "defaultProfile": "{01201329-03d9-413b-ba6b-ce86f4862626}",
-    "keybindings":
-    [
+    "keybindings": [
         {
             "id": "User.splitPane.A6751878",
             "keys": "alt+shift+d"
@@ -79,31 +73,25 @@
             "keys": "ctrl+c"
         }
     ],
-    "newTabMenu":
-    [
+    "newTabMenu": [
         {
             "type": "remainingProfiles"
         }
     ],
-    "profiles":
-    {
-        "defaults":
-        {
-            "font":
-            {
+    "profiles": {
+        "defaults": {
+            "font": {
                 "face": "CaskaydiaMono Nerd Font Mono",
                 "size": 14
             }
         },
-        "list":
-        [
+        "list": [
             {
                 "colorScheme": "Tango Dark",
                 "commandline": "\"C:\\Program Files\\PowerShell\\7\\pwsh.exe\"",
                 "elevate": true,
                 "experimental.retroTerminalEffect": false,
-                "font":
-                {
+                "font": {
                     "face": "MonaspiceNe Nerd Font Mono"
                 },
                 "guid": "{01201329-03d9-413b-ba6b-ce86f4862626}",
@@ -114,8 +102,7 @@
             },
             {
                 "colorScheme": "Tango Dark",
-                "font":
-                {
+                "font": {
                     "face": "DejaVuSansM Nerd Font Mono"
                 },
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
@@ -126,8 +113,7 @@
                 "source": "Windows.Terminal.PowershellCore"
             },
             {
-                "font":
-                {
+                "font": {
                     "face": "MonaspiceKr Nerd Font Mono"
                 },
                 "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
@@ -139,8 +125,7 @@
             {
                 "colorScheme": "Solarized Light",
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-                "font":
-                {
+                "font": {
                     "face": "DejaVuSansM Nerd Font Mono"
                 },
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
@@ -149,8 +134,7 @@
             },
             {
                 "commandline": "%SystemRoot%\\System32\\cmd.exe",
-                "font":
-                {
+                "font": {
                     "face": "UbuntuMono Nerd Font Mono"
                 },
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
@@ -171,8 +155,7 @@
                 "commandline": "%SystemRoot%\\System32\\cmd.exe \"/K\" D:\\Apps\\Miniconda\\Scripts\\activate.bat D:\\Apps\\Miniconda  ",
                 "cursorShape": "bar",
                 "elevate": true,
-                "font":
-                {
+                "font": {
                     "face": "MonaspiceXe Nerd Font Mono"
                 },
                 "guid": "{2a77b363-cce6-4a8a-bb8e-5427e2e0daf7}",
@@ -205,8 +188,7 @@
             }
         ]
     },
-    "schemes":
-    [
+    "schemes": [
         {
             "background": "#000000",
             "black": "#0C0C0C",
@@ -252,6 +234,29 @@
             "selectionBackground": "#FFFFFF",
             "white": "#CCCCCC",
             "yellow": "#A2734C"
+        },
+        {
+            "background": "#16181a",
+            "black": "#16181a",
+            "blue": "#5ea1ff",
+            "brightBlack": "#3c4048",
+            "brightBlue": "#5ea1ff",
+            "brightCyan": "#5ef1ff",
+            "brightGreen": "#5eff6c",
+            "brightPurple": "#bd5eff",
+            "brightRed": "#ff6e5e",
+            "brightWhite": "#ffffff",
+            "brightYellow": "#f1ff5e",
+            "cursorColor": "#ffffff",
+            "cyan": "#5ef1ff",
+            "foreground": "#ffffff",
+            "green": "#5eff6c",
+            "name": "cyberdream",
+            "purple": "#bd5eff",
+            "red": "#ff6e5e",
+            "selectionBackground": "#3c4048",
+            "white": "#ffffff",
+            "yellow": "#f1ff5e"
         }
     ],
     "themes": []
