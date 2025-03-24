@@ -9,6 +9,8 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
+-- config.colors = require("cyberdream")
+
 config.color_scheme = "Dracula+"
 config.enable_scroll_bar = true
 config.default_prog = { "pwsh" }
