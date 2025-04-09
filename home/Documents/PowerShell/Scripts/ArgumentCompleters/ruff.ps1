@@ -195,6 +195,7 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
             [CompletionResult]::new('--no-force-exclude', '--no-force-exclude', [CompletionResultType]::ParameterName, 'no-force-exclude')
             [CompletionResult]::new('--preview', '--preview', [CompletionResultType]::ParameterName, 'Enable preview mode; enables unstable formatting. Use `--no-preview` to disable')
             [CompletionResult]::new('--no-preview', '--no-preview', [CompletionResultType]::ParameterName, 'no-preview')
+            [CompletionResult]::new('--exit-non-zero-on-format', '--exit-non-zero-on-format', [CompletionResultType]::ParameterName, 'Exit with a non-zero status code if any files were modified via format, even if all files were formatted successfully')
             [CompletionResult]::new('-v', '-v', [CompletionResultType]::ParameterName, 'Enable verbose logging')
             [CompletionResult]::new('--verbose', '--verbose', [CompletionResultType]::ParameterName, 'Enable verbose logging')
             [CompletionResult]::new('-q', '-q', [CompletionResultType]::ParameterName, 'Print diagnostics, but nothing else')
