@@ -38,20 +38,14 @@ local({
     .gander_args = list(model = "qwen2.5-coder:14b")
   )
   if (interactive()) {
-    auto.loads <- c("magrittr")
-
-    invisible(sapply(auto.loads, library,
-      character.only = TRUE,
-      warn.conflicts = FALSE, quietly = TRUE
-    ))
-
+    is_vscode <- Sys.getenv("TERM_PROGRAM") == "vscode"
     # Don't change working directory if project or calling from VS Code.
     if (length(dir(getwd(), pattern = "[Rr]proj$")) == 0 &&
-      Sys.getenv("TERM_PROGRAM") != "vscode") {
+      !is_vscode) {
       setwd("{{ .rworkingdir }}")
     }
 
-    if (Sys.getenv("TERM_PROGRAM") == "vscode") {
+    if (is_vscode) {
       # activate RStudio Addins on command palette
       options(vsc.rstudioapi = TRUE)
 
