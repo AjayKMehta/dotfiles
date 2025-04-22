@@ -27,6 +27,8 @@ Register-ArgumentCompleter -Native -CommandName 'uvx' -ScriptBlock {
             [CompletionResult]::new('--with-requirements', '--with-requirements', [CompletionResultType]::ParameterName, 'Run with all packages listed in the given `requirements.txt` files')
             [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Constrain versions using the given requirements files')
             [CompletionResult]::new('--constraints', '--constraints', [CompletionResultType]::ParameterName, 'Constrain versions using the given requirements files')
+            [CompletionResult]::new('-b', '-b', [CompletionResultType]::ParameterName, 'Constrain build dependencies using the given requirements files when building source distributions')
+            [CompletionResult]::new('--build-constraints', '--build-constraints', [CompletionResultType]::ParameterName, 'Constrain build dependencies using the given requirements files when building source distributions')
             [CompletionResult]::new('--overrides', '--overrides', [CompletionResultType]::ParameterName, 'Override versions using the given requirements files')
             [CompletionResult]::new('--env-file', '--env-file', [CompletionResultType]::ParameterName, 'Load environment variables from a `.env` file')
             [CompletionResult]::new('--index', '--index', [CompletionResultType]::ParameterName, 'The URLs to use when resolving dependencies, in addition to the default index')
