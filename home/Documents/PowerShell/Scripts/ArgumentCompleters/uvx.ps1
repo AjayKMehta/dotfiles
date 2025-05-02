@@ -86,6 +86,8 @@ Register-ArgumentCompleter -Native -CommandName 'uvx' -ScriptBlock {
             [CompletionResult]::new('--refresh', '--refresh', [CompletionResultType]::ParameterName, 'Refresh all cached data')
             [CompletionResult]::new('--no-refresh', '--no-refresh', [CompletionResultType]::ParameterName, 'no-refresh')
             [CompletionResult]::new('--show-resolution', '--show-resolution', [CompletionResultType]::ParameterName, 'Whether to show resolver and installer output from any environment modifications')
+            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uvx version')
+            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uvx version')
             [CompletionResult]::new('-n', '-n', [CompletionResultType]::ParameterName, 'Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation')
             [CompletionResult]::new('--no-cache', '--no-cache', [CompletionResultType]::ParameterName, 'Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation')
             [CompletionResult]::new('--managed-python', '--managed-python', [CompletionResultType]::ParameterName, 'Require use of uv-managed Python versions')
@@ -109,8 +111,6 @@ Register-ArgumentCompleter -Native -CommandName 'uvx' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
     })

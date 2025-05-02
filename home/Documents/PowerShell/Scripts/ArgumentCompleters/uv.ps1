@@ -73,7 +73,7 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('cache', 'cache', [CompletionResultType]::ParameterValue, 'Manage uv''s cache')
             [CompletionResult]::new('self', 'self', [CompletionResultType]::ParameterValue, 'Manage the uv executable')
             [CompletionResult]::new('clean', 'clean', [CompletionResultType]::ParameterValue, 'Clear the cache, removing all entries or those linked to specific packages')
-            [CompletionResult]::new('version', 'version', [CompletionResultType]::ParameterValue, 'Display uv''s version')
+            [CompletionResult]::new('version', 'version', [CompletionResultType]::ParameterValue, 'Read or update the project''s version')
             [CompletionResult]::new('generate-shell-completion', 'generate-shell-completion', [CompletionResultType]::ParameterValue, 'Generate shell completion')
             [CompletionResult]::new('help', 'help', [CompletionResultType]::ParameterValue, 'Display documentation for a command')
             break
@@ -189,8 +189,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;init' {
@@ -246,8 +244,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;add' {
@@ -349,8 +345,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;remove' {
@@ -439,8 +433,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;sync' {
@@ -547,8 +539,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;lock' {
@@ -626,8 +616,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;export' {
@@ -732,8 +720,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;tree' {
@@ -825,8 +811,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;tool' {
@@ -862,8 +846,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             [CompletionResult]::new('run', 'run', [CompletionResultType]::ParameterValue, 'Run a command provided by a Python package')
             [CompletionResult]::new('uvx', 'uvx', [CompletionResultType]::ParameterValue, 'Run a command provided by a Python package.')
             [CompletionResult]::new('install', 'install', [CompletionResultType]::ParameterValue, 'Install commands provided by a Python package')
@@ -963,8 +945,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;tool;uvx' {
@@ -1033,6 +1013,8 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--refresh', '--refresh', [CompletionResultType]::ParameterName, 'Refresh all cached data')
             [CompletionResult]::new('--no-refresh', '--no-refresh', [CompletionResultType]::ParameterName, 'no-refresh')
             [CompletionResult]::new('--show-resolution', '--show-resolution', [CompletionResultType]::ParameterName, 'Whether to show resolver and installer output from any environment modifications')
+            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uvx version')
+            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uvx version')
             [CompletionResult]::new('-n', '-n', [CompletionResultType]::ParameterName, 'Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation')
             [CompletionResult]::new('--no-cache', '--no-cache', [CompletionResultType]::ParameterName, 'Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation')
             [CompletionResult]::new('--managed-python', '--managed-python', [CompletionResultType]::ParameterName, 'Require use of uv-managed Python versions')
@@ -1056,8 +1038,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;tool;install' {
@@ -1148,8 +1128,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;tool;upgrade' {
@@ -1225,8 +1203,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;tool;list' {
@@ -1264,8 +1240,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;tool;uninstall' {
@@ -1302,8 +1276,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;tool;update-shell' {
@@ -1339,8 +1311,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;tool;dir' {
@@ -1377,8 +1347,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;python' {
@@ -1414,8 +1382,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             [CompletionResult]::new('list', 'list', [CompletionResultType]::ParameterValue, 'List the available Python installations')
             [CompletionResult]::new('install', 'install', [CompletionResultType]::ParameterValue, 'Download and install Python versions')
             [CompletionResult]::new('find', 'find', [CompletionResultType]::ParameterValue, 'Search for a Python installation')
@@ -1464,8 +1430,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;python;install' {
@@ -1510,8 +1474,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;python;find' {
@@ -1552,8 +1514,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;python;pin' {
@@ -1593,8 +1553,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;python;dir' {
@@ -1631,8 +1589,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;python;uninstall' {
@@ -1671,8 +1627,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;pip' {
@@ -1708,10 +1662,8 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('compile', 'compile', [CompletionResultType]::ParameterValue, 'Compile a `requirements.in` file to a `requirements.txt` file')
-            [CompletionResult]::new('sync', 'sync', [CompletionResultType]::ParameterValue, 'Sync an environment with a `requirements.txt` file')
+            [CompletionResult]::new('compile', 'compile', [CompletionResultType]::ParameterValue, 'Compile a `requirements.in` file to a `requirements.txt` or `pylock.toml` file')
+            [CompletionResult]::new('sync', 'sync', [CompletionResultType]::ParameterValue, 'Sync an environment with a `requirements.txt` or `pylock.toml` file')
             [CompletionResult]::new('install', 'install', [CompletionResultType]::ParameterValue, 'Install packages into an environment')
             [CompletionResult]::new('uninstall', 'uninstall', [CompletionResultType]::ParameterValue, 'Uninstall packages from an environment')
             [CompletionResult]::new('freeze', 'freeze', [CompletionResultType]::ParameterValue, 'List, in requirements format, packages installed in an environment')
@@ -1848,8 +1800,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-installer-metadata', '--no-installer-metadata', [CompletionResultType]::ParameterName, 'Skip writing `uv` installer metadata files (e.g., `INSTALLER`, `REQUESTED`, and `direct_url.json`) to site-packages `.dist-info` directories')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;pip;sync' {
@@ -1946,13 +1896,11 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-installer-metadata', '--no-installer-metadata', [CompletionResultType]::ParameterName, 'Skip writing `uv` installer metadata files (e.g., `INSTALLER`, `REQUESTED`, and `direct_url.json`) to site-packages `.dist-info` directories')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;pip;install' {
-            [CompletionResult]::new('-r', '-r', [CompletionResultType]::ParameterName, 'Install all packages listed in the given `requirements.txt` files')
-            [CompletionResult]::new('--requirements', '--requirements', [CompletionResultType]::ParameterName, 'Install all packages listed in the given `requirements.txt` files')
+            [CompletionResult]::new('-r', '-r', [CompletionResultType]::ParameterName, 'Install all packages listed in the given `requirements.txt` or `pylock.toml` files')
+            [CompletionResult]::new('--requirements', '--requirements', [CompletionResultType]::ParameterName, 'Install all packages listed in the given `requirements.txt` or `pylock.toml` files')
             [CompletionResult]::new('-e', '-e', [CompletionResultType]::ParameterName, 'Install the editable package based on the provided local file path')
             [CompletionResult]::new('--editable', '--editable', [CompletionResultType]::ParameterName, 'Install the editable package based on the provided local file path')
             [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Constrain versions using the given requirements files')
@@ -2059,8 +2007,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;pip;uninstall' {
@@ -2109,8 +2055,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;pip;freeze' {
@@ -2155,8 +2099,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;pip;list' {
@@ -2217,8 +2159,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;pip;show' {
@@ -2263,8 +2203,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;pip;tree' {
@@ -2326,8 +2264,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;pip;check' {
@@ -2367,8 +2303,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;venv' {
@@ -2434,8 +2368,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;build' {
@@ -2525,8 +2457,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;publish' {
@@ -2574,8 +2504,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;build-backend' {
@@ -2611,8 +2539,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             [CompletionResult]::new('build-sdist', 'build-sdist', [CompletionResultType]::ParameterValue, 'PEP 517 hook `build_sdist`')
             [CompletionResult]::new('build-wheel', 'build-wheel', [CompletionResultType]::ParameterValue, 'PEP 517 hook `build_wheel`')
             [CompletionResult]::new('build-editable', 'build-editable', [CompletionResultType]::ParameterValue, 'PEP 660 hook `build_editable`')
@@ -2656,8 +2582,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;build-backend;build-wheel' {
@@ -2694,8 +2618,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;build-backend;build-editable' {
@@ -2732,8 +2654,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;build-backend;get-requires-for-build-sdist' {
@@ -2769,8 +2689,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;build-backend;get-requires-for-build-wheel' {
@@ -2806,8 +2724,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;build-backend;prepare-metadata-for-build-wheel' {
@@ -2843,8 +2759,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;build-backend;get-requires-for-build-editable' {
@@ -2880,8 +2794,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;build-backend;prepare-metadata-for-build-editable' {
@@ -2917,8 +2829,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;cache' {
@@ -2954,8 +2864,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             [CompletionResult]::new('clean', 'clean', [CompletionResultType]::ParameterValue, 'Clear the cache, removing all entries or those linked to specific packages')
             [CompletionResult]::new('prune', 'prune', [CompletionResultType]::ParameterValue, 'Prune all unreachable objects from the cache')
             [CompletionResult]::new('dir', 'dir', [CompletionResultType]::ParameterValue, 'Show the cache directory')
@@ -2994,8 +2902,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;cache;prune' {
@@ -3032,8 +2938,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;cache;dir' {
@@ -3069,8 +2973,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;self' {
@@ -3106,9 +3008,8 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             [CompletionResult]::new('update', 'update', [CompletionResultType]::ParameterValue, 'Update uv')
+            [CompletionResult]::new('version', 'version', [CompletionResultType]::ParameterValue, 'Display uv''s version')
             break
         }
         'uv;self;update' {
@@ -3145,8 +3046,43 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
+            break
+        }
+        'uv;self;version' {
+            [CompletionResult]::new('--output-format', '--output-format', [CompletionResultType]::ParameterName, 'output-format')
+            [CompletionResult]::new('--cache-dir', '--cache-dir', [CompletionResultType]::ParameterName, 'Path to the cache directory')
+            [CompletionResult]::new('--python-preference', '--python-preference', [CompletionResultType]::ParameterName, 'python-preference')
+            [CompletionResult]::new('--python-fetch', '--python-fetch', [CompletionResultType]::ParameterName, 'Deprecated version of [`Self::python_downloads`]')
+            [CompletionResult]::new('--color', '--color', [CompletionResultType]::ParameterName, 'Control the use of color in output')
+            [CompletionResult]::new('--allow-insecure-host', '--allow-insecure-host', [CompletionResultType]::ParameterName, 'Allow insecure connections to a host')
+            [CompletionResult]::new('--directory', '--directory', [CompletionResultType]::ParameterName, 'Change to the given directory prior to running the command')
+            [CompletionResult]::new('--project', '--project', [CompletionResultType]::ParameterName, 'Run the command within the given project directory')
+            [CompletionResult]::new('--config-file', '--config-file', [CompletionResultType]::ParameterName, 'The path to a `uv.toml` file to use for configuration')
+            [CompletionResult]::new('--short', '--short', [CompletionResultType]::ParameterName, 'Only print the version')
+            [CompletionResult]::new('-n', '-n', [CompletionResultType]::ParameterName, 'Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation')
+            [CompletionResult]::new('--no-cache', '--no-cache', [CompletionResultType]::ParameterName, 'Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation')
+            [CompletionResult]::new('--managed-python', '--managed-python', [CompletionResultType]::ParameterName, 'Require use of uv-managed Python versions')
+            [CompletionResult]::new('--no-managed-python', '--no-managed-python', [CompletionResultType]::ParameterName, 'Disable use of uv-managed Python versions')
+            [CompletionResult]::new('--allow-python-downloads', '--allow-python-downloads', [CompletionResultType]::ParameterName, 'Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]')
+            [CompletionResult]::new('--no-python-downloads', '--no-python-downloads', [CompletionResultType]::ParameterName, 'Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]')
+            [CompletionResult]::new('-q', '-q', [CompletionResultType]::ParameterName, 'Use quiet output')
+            [CompletionResult]::new('--quiet', '--quiet', [CompletionResultType]::ParameterName, 'Use quiet output')
+            [CompletionResult]::new('-v', '-v', [CompletionResultType]::ParameterName, 'Use verbose output')
+            [CompletionResult]::new('--verbose', '--verbose', [CompletionResultType]::ParameterName, 'Use verbose output')
+            [CompletionResult]::new('--no-color', '--no-color', [CompletionResultType]::ParameterName, 'Disable colors')
+            [CompletionResult]::new('--native-tls', '--native-tls', [CompletionResultType]::ParameterName, 'Whether to load TLS certificates from the platform''s native certificate store')
+            [CompletionResult]::new('--no-native-tls', '--no-native-tls', [CompletionResultType]::ParameterName, 'no-native-tls')
+            [CompletionResult]::new('--offline', '--offline', [CompletionResultType]::ParameterName, 'Disable network access')
+            [CompletionResult]::new('--no-offline', '--no-offline', [CompletionResultType]::ParameterName, 'no-offline')
+            [CompletionResult]::new('--preview', '--preview', [CompletionResultType]::ParameterName, 'Whether to enable experimental, preview features')
+            [CompletionResult]::new('--no-preview', '--no-preview', [CompletionResultType]::ParameterName, 'no-preview')
+            [CompletionResult]::new('--isolated', '--isolated', [CompletionResultType]::ParameterName, 'Avoid discovering a `pyproject.toml` or `uv.toml` file')
+            [CompletionResult]::new('--show-settings', '--show-settings', [CompletionResultType]::ParameterName, 'Show the resolved settings for the current command')
+            [CompletionResult]::new('--no-progress', '--no-progress', [CompletionResultType]::ParameterName, 'Hide all progress outputs')
+            [CompletionResult]::new('--no-installer-metadata', '--no-installer-metadata', [CompletionResultType]::ParameterName, 'Skip writing `uv` installer metadata files (e.g., `INSTALLER`, `REQUESTED`, and `direct_url.json`) to site-packages `.dist-info` directories')
+            [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             break
         }
         'uv;clean' {
@@ -3182,11 +3118,10 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;version' {
+            [CompletionResult]::new('--bump', '--bump', [CompletionResultType]::ParameterName, 'Update the project version using the given semantics')
             [CompletionResult]::new('--output-format', '--output-format', [CompletionResultType]::ParameterName, 'output-format')
             [CompletionResult]::new('--cache-dir', '--cache-dir', [CompletionResultType]::ParameterName, 'Path to the cache directory')
             [CompletionResult]::new('--python-preference', '--python-preference', [CompletionResultType]::ParameterName, 'python-preference')
@@ -3196,6 +3131,8 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--directory', '--directory', [CompletionResultType]::ParameterName, 'Change to the given directory prior to running the command')
             [CompletionResult]::new('--project', '--project', [CompletionResultType]::ParameterName, 'Run the command within the given project directory')
             [CompletionResult]::new('--config-file', '--config-file', [CompletionResultType]::ParameterName, 'The path to a `uv.toml` file to use for configuration')
+            [CompletionResult]::new('--dry-run', '--dry-run', [CompletionResultType]::ParameterName, 'Don''t write a new version to the `pyproject.toml`')
+            [CompletionResult]::new('--short', '--short', [CompletionResultType]::ParameterName, 'Only show the version')
             [CompletionResult]::new('-n', '-n', [CompletionResultType]::ParameterName, 'Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation')
             [CompletionResult]::new('--no-cache', '--no-cache', [CompletionResultType]::ParameterName, 'Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation')
             [CompletionResult]::new('--managed-python', '--managed-python', [CompletionResultType]::ParameterName, 'Require use of uv-managed Python versions')
@@ -3220,8 +3157,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
         'uv;generate-shell-completion' {
@@ -3295,8 +3230,6 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-config', '--no-config', [CompletionResultType]::ParameterName, 'Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
-            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uv version')
-            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uv version')
             break
         }
     })
