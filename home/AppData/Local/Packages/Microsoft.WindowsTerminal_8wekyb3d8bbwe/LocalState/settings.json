@@ -1,9 +1,11 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": [
+    "actions": 
+    [
         {
-            "command": {
+            "command": 
+            {
                 "action": "copy",
                 "singleLine": false
             },
@@ -14,7 +16,8 @@
             "id": "User.paste"
         },
         {
-            "command": {
+            "command": 
+            {
                 "action": "splitPane",
                 "split": "auto",
                 "splitMode": "duplicate"
@@ -25,18 +28,17 @@
             "command": "find",
             "id": "User.find"
         },
-        // https://stackoverflow.com/a/42461580/781045
-        // shift+enter
         {
-            "command": {
+            "command": 
+            {
                 "action": "sendInput",
                 "input": "\u001b[13;2u"
             },
             "id": "User.sendInput.8882FD6D"
         },
-        // ctrl+enter
         {
-            "command": {
+            "command": 
+            {
                 "action": "sendInput",
                 "input": "\u001b[13;5u"
             },
@@ -47,7 +49,8 @@
     "copyFormatting": "none",
     "copyOnSelect": false,
     "defaultProfile": "{01201329-03d9-413b-ba6b-ce86f4862626}",
-    "keybindings": [
+    "keybindings": 
+    [
         {
             "id": "User.splitPane.A6751878",
             "keys": "alt+shift+d"
@@ -73,25 +76,31 @@
             "keys": "ctrl+c"
         }
     ],
-    "newTabMenu": [
+    "newTabMenu": 
+    [
         {
             "type": "remainingProfiles"
         }
     ],
-    "profiles": {
-        "defaults": {
-            "font": {
+    "profiles": 
+    {
+        "defaults": 
+        {
+            "font": 
+            {
                 "face": "CaskaydiaMono Nerd Font Mono",
                 "size": 14
             }
         },
-        "list": [
+        "list": 
+        [
             {
                 "colorScheme": "Tango Dark",
                 "commandline": "\"C:\\Program Files\\PowerShell\\7\\pwsh.exe\"",
                 "elevate": true,
                 "experimental.retroTerminalEffect": false,
-                "font": {
+                "font": 
+                {
                     "face": "MonaspiceNe Nerd Font Mono"
                 },
                 "guid": "{01201329-03d9-413b-ba6b-ce86f4862626}",
@@ -102,7 +111,8 @@
             },
             {
                 "colorScheme": "Tango Dark",
-                "font": {
+                "font": 
+                {
                     "face": "DejaVuSansM Nerd Font Mono"
                 },
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
@@ -113,7 +123,8 @@
                 "source": "Windows.Terminal.PowershellCore"
             },
             {
-                "font": {
+                "font": 
+                {
                     "face": "MonaspiceKr Nerd Font Mono"
                 },
                 "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
@@ -125,7 +136,8 @@
             {
                 "colorScheme": "Solarized Light",
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-                "font": {
+                "font": 
+                {
                     "face": "DejaVuSansM Nerd Font Mono"
                 },
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
@@ -134,7 +146,8 @@
             },
             {
                 "commandline": "%SystemRoot%\\System32\\cmd.exe",
-                "font": {
+                "font": 
+                {
                     "face": "UbuntuMono Nerd Font Mono"
                 },
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
@@ -142,39 +155,30 @@
                 "name": "Command Prompt"
             },
             {
+                "font": 
+                {
+                    "face": "CaskaydiaCove Nerd Font Mono"
+                },
                 "guid": "{c1aa3eca-e10a-5b31-a157-ab26fd9e5fc9}",
                 "hidden": false,
                 "name": "Developer Command Prompt for VS 2022",
                 "source": "Windows.Terminal.VisualStudio"
             },
             {
-                "altGrAliasing": true,
-                "antialiasingMode": "grayscale",
-                "closeOnExit": "automatic",
-                "colorScheme": "Tango Dark",
-                "commandline": "%SystemRoot%\\System32\\cmd.exe \"/K\" D:\\Apps\\Miniconda\\Scripts\\activate.bat D:\\Apps\\Miniconda  ",
-                "cursorShape": "bar",
-                "elevate": true,
-                "font": {
-                    "face": "MonaspiceXe Nerd Font Mono"
+                "font": 
+                {
+                    "face": "Cascadia Mono"
                 },
-                "guid": "{2a77b363-cce6-4a8a-bb8e-5427e2e0daf7}",
-                "hidden": false,
-                "historySize": 9001,
-                "icon": "D:\\Apps\\miniconda\\Menu\\Iconleak-Atrous-Console.ico",
-                "name": "Conda",
-                "padding": "8, 8, 8, 8",
-                "snapOnInput": true,
-                "startingDirectory": "%HOME%",
-                "useAcrylic": false
-            },
-            {
                 "guid": "{16208362-94fc-5b1f-a491-5b2624d5ab56}",
                 "hidden": true,
                 "name": "Visual Studio Debug Console",
                 "source": "VSDebugConsole"
             },
             {
+                "font": 
+                {
+                    "face": "CaskaydiaCove Nerd Font Mono"
+                },
                 "guid": "{6e9049ed-3051-5e8a-8a3d-50789b4294c9}",
                 "hidden": false,
                 "name": "Developer Command Prompt for VS 2022 (2)",
@@ -188,7 +192,8 @@
             }
         ]
     },
-    "schemes": [
+    "schemes": 
+    [
         {
             "background": "#000000",
             "black": "#0C0C0C",
@@ -236,27 +241,27 @@
             "yellow": "#A2734C"
         },
         {
-            "background": "#16181a",
-            "black": "#16181a",
-            "blue": "#5ea1ff",
-            "brightBlack": "#3c4048",
-            "brightBlue": "#5ea1ff",
-            "brightCyan": "#5ef1ff",
-            "brightGreen": "#5eff6c",
-            "brightPurple": "#bd5eff",
-            "brightRed": "#ff6e5e",
-            "brightWhite": "#ffffff",
-            "brightYellow": "#f1ff5e",
-            "cursorColor": "#ffffff",
-            "cyan": "#5ef1ff",
-            "foreground": "#ffffff",
-            "green": "#5eff6c",
+            "background": "#16181A",
+            "black": "#16181A",
+            "blue": "#5EA1FF",
+            "brightBlack": "#3C4048",
+            "brightBlue": "#5EA1FF",
+            "brightCyan": "#5EF1FF",
+            "brightGreen": "#5EFF6C",
+            "brightPurple": "#BD5EFF",
+            "brightRed": "#FF6E5E",
+            "brightWhite": "#FFFFFF",
+            "brightYellow": "#F1FF5E",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#5EF1FF",
+            "foreground": "#FFFFFF",
+            "green": "#5EFF6C",
             "name": "cyberdream",
-            "purple": "#bd5eff",
-            "red": "#ff6e5e",
-            "selectionBackground": "#3c4048",
-            "white": "#ffffff",
-            "yellow": "#f1ff5e"
+            "purple": "#BD5EFF",
+            "red": "#FF6E5E",
+            "selectionBackground": "#3C4048",
+            "white": "#FFFFFF",
+            "yellow": "#F1FF5E"
         }
     ],
     "themes": []
