@@ -1,0 +1,337 @@
+{
+    "Lua.codeLens.enable": true,
+    "Lua.hint.enable": true,
+    "[gitattributes]": {
+        "editor.defaultFormatter": "hashhar.gitattributes"
+    },
+    "[gitconfig]": {
+        "editor.defaultFormatter": "yy0931.gitconfig-lsp"
+    },
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "github.vscode-github-actions"
+    },
+    "[go-template]": {
+        "files.insertFinalNewline": false
+    },
+    "[json]": {
+        "editor.autoClosingBrackets": "always",
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+        "editor.autoClosingBrackets": "always",
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[latex]": {
+        "editor.defaultFormatter": "James-Yu.latex-workshop"
+    },
+    "[lua]": {
+        "editor.defaultFormatter": "JohnnyMorganz.stylua"
+    },
+    "[markdown]": {
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
+        "editor.fontFamily": "'DejaVuSansM Nerd Font', Consolas, 'Courier New', monospace, 'Lucida Sans'",
+        "editor.formatOnSave": false,
+        "editor.wordWrap": "on",
+        "files.trimTrailingWhitespace": false
+    },
+    "[powershell]": {
+        "editor.defaultFormatter": "ms-vscode.powershell",
+        "editor.fontLigatures": false
+    },
+    "[shellscript]": {
+        "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode"
+    },
+    "[toml]": {
+        "editor.defaultFormatter": "tamasfe.even-better-toml"
+    },
+    "[xml]": {
+        "editor.defaultFormatter": "redhat.vscode-xml",
+        "editor.fontLigatures": false
+    },
+    "[xslt]": {
+        "editor.semanticHighlighting.enabled": true
+    },
+    "[yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml",
+        "editor.fontLigatures": false
+    },
+    "code-runner.showRunIconInEditorTitleMenu": false,
+    "debug.inlineValues": "on",
+    "diffEditor.codeLens": true,
+    "diffEditor.diffAlgorithm": "advanced",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "diffEditor.wordWrap": "on",
+    "dotfiles.repository": "https://github.com/AjayKMehta/dotfiles",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.colorDecoratorsLimit": 5000,
+    "editor.defaultColorDecorators": "auto",
+    "editor.definitionLinkOpensInPeek": true,
+    "editor.fontFamily": "'FiraCode Nerd Font Mono', 'Cascadia Code', Consolas, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "editor.largeFileOptimizations": false,
+    "editor.minimap.autohide": true,
+    "editor.minimap.renderCharacters": false,
+    "editor.minimap.scale": 3,
+    "editor.quickSuggestions": {
+        "comments": true,
+        "other": true,
+        "strings": true
+    },
+    "editor.renderWhitespace": "all",
+    "editor.rulers": [
+        80
+    ],
+    "editor.semanticTokenColorCustomizations": {
+        "[Dark Atom Dark]": {
+            "enabled": true
+        }
+    },
+    "editor.suggest.preview": true,
+    "editor.tokenColorCustomizations": {
+        "[Ayu Dark Bordered]": {
+            "comments": "#229977"
+        }
+    },
+    "editor.wordWrap": "on",
+    "errorLens.enabled": false,
+    "errorLens.excludeByMessage": [
+        "Ambiguous link to heading"
+    ],
+    "evenBetterToml.formatter.indentEntries": true,
+    "evenBetterToml.formatter.indentTables": true,
+    "evenBetterToml.schema.links": true,
+    "evenBetterToml.semanticTokens": true,
+    "files.autoSave": "onFocusChange",
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "git-graph.customEmojiShortcodeMappings": [],
+    "github.copilot.enable": {
+        "*": false,
+        "quarto": false
+    },
+    "githubLocalActions.dockerDesktopPath": "C:/Program Files/Docker/Docker/Docker Desktop.exe",
+    "latex-workshop.formatting.latexindent.path": "D:\\Apps\\CLI\\latexindent.exe",
+    "latex-workshop.hover.preview.mathjax.extensions": [
+        "amscd",
+        "bbox",
+        "boldsymbol",
+        "braket",
+        "empheq",
+        "html",
+        "mathtools",
+        "textcomp",
+        "textmacros",
+        "unicode",
+        "upgreek"
+    ],
+    "latex-workshop.latex.autoBuild.interval": 2000,
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "xelatex",
+            "tools": [
+                "xelatex"
+            ]
+        },
+        {
+            "name": "pdflatex -> bibtex -> pdflatex * 2",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "tectonic",
+            "tools": [
+                "tectonic"
+            ]
+        },
+        {
+            "name": "texify",
+            "tools": [
+                "texify"
+            ]
+        }
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "args": [
+                "-synctex=1",
+                "-c-style-errors",
+                "-interaction=nonstopmode",
+                "-output-directory=%OUTDIR%",
+                "%DOC_EXT%"
+            ],
+            "command": "xelatex",
+            "env": {},
+            "name": "xelatex"
+        },
+        {
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-output-directory=%OUTDIR%",
+                "%DOC_EXT%"
+            ],
+            "command": "pdflatex",
+            "env": {},
+            "name": "pdflatex"
+        },
+        {
+            "args": [
+                "%DOCFILE%"
+            ],
+            "command": "bibtex",
+            "env": {},
+            "name": "bibtex"
+        },
+        {
+            "args": [
+                "-e",
+                "knitr::opts_knit$set(concordance = TRUE); knitr::knit('%DOCFILE_EXT%')"
+            ],
+            "command": "Rscript",
+            "env": {},
+            "name": "rnw2tex"
+        },
+        {
+            "args": [
+                "-e",
+                "using Weave; weave(\"%DOC_EXT%\", doctype=\"tex\")"
+            ],
+            "command": "julia",
+            "env": {},
+            "name": "jnw2tex"
+        },
+        {
+            "args": [
+                "-e",
+                "using Weave; weave(\"%DOC_EXT%\", doctype=\"texminted\")"
+            ],
+            "command": "julia",
+            "env": {},
+            "name": "jnw2texminted"
+        },
+        {
+            "args": [
+                "-f",
+                "tex",
+                "%DOC_EXT%"
+            ],
+            "command": "pweave",
+            "env": {},
+            "name": "pnw2tex"
+        },
+        {
+            "args": [
+                "-f",
+                "texminted",
+                "%DOC_EXT%"
+            ],
+            "command": "pweave",
+            "env": {},
+            "name": "pnw2texminted"
+        },
+        {
+            "args": [
+                "--synctex",
+                "--keep-logs",
+                "%DOC%.tex"
+            ],
+            "command": "tectonic",
+            "env": {},
+            "name": "tectonic"
+        },
+        {
+            "args": [
+                "--synctex",
+                "--pdf",
+                "--tex-option=\"-interaction=nonstopmode\"",
+                "--tex-option=\"-file-line-error\"",
+                "%DOC_EXT%"
+            ],
+            "command": "texify",
+            "env": {},
+            "name": "texify"
+        }
+    ],
+    "latex-workshop.linting.chktex.enabled": true,
+    "latex-workshop.linting.chktex.exec.args": [
+        "-wall",
+        "-n22",
+        "-n30",
+        "-e16",
+        "-q",
+        "-n46"
+    ],
+    "latex-workshop.linting.lacheck.enabled": true,
+    "latex-workshop.showContextMenu": true,
+    "latex-workshop.view.pdf.viewer": "tab",
+    "markdown-preview-enhanced.alwaysShowBacklinksInPreview": true,
+    "markdown-preview-enhanced.codeBlockTheme": "solarized-light.css",
+    "markdown-preview-enhanced.enablePreviewZenMode": false,
+    "markdown-preview-enhanced.pandocPath": "D:\\Apps\\Quarto\\bin\\tools\\pandoc.exe",
+    "markdown-table-formatter.keepFirstAndLastPipes": false,
+    "markdown-table-formatter.markdownGrammarScopes": [
+        "markdown",
+        "quarto",
+        "rmarkdown"
+    ],
+    "markdown.extension.completion.respectVscodeSearchExclude": true,
+    "markdown.extension.extraLangIds": [
+        "quarto",
+        "rmd"
+    ],
+    "markdown.extension.list.toggle.candidate-markers": [
+        "-",
+        "*",
+        "1."
+    ],
+    "markdown.extension.math.enabled": false,
+    "markdown.occurrencesHighlight.enabled": true,
+    "markdown.preview.typographer": true,
+    "markdown.validate.unusedLinkDefinitions.enabled": "warning",
+    "notebook.cellExecutionTimeVerbosity": "verbose",
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "notebook.lineNumbers": "on",
+    "notebook.outline.showCodeCells": true,
+    "notebook.showFoldingControls": "always",
+    "powershell.codeFormatting.addWhitespaceAroundPipe": true,
+    "powershell.codeFormatting.ignoreOneLineBlock": true,
+    "powershell.codeFormatting.pipelineIndentationStyle": "IncreaseIndentationForFirstPipeline",
+    "powershell.codeFormatting.preset": "OTBS",
+    "powershell.codeFormatting.trimWhitespaceAroundPipe": true,
+    "powershell.codeFormatting.useConstantStrings": true,
+    "powershell.codeFormatting.useCorrectCasing": true,
+    "powershell.codeFormatting.whitespaceBetweenParameters": true,
+    "powershell.debugging.createTemporaryIntegratedConsole": true,
+    "powershell.integratedConsole.focusConsoleOnExecute": false,
+    "powershell.integratedConsole.forceClearScrollbackBuffer": true,
+    "powershell.integratedConsole.suppressStartupBanner": true,
+    "powershell.pester.codeLens": false,
+    "powershell.promptToUpdatePowerShell": false,
+    "print.folder.include": [],
+    "print.folder.includeFileList": false,
+    "quarto.render.previewReveal": false,
+    "remote.autoForwardPortsSource": "hybrid",
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
+    "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
+    "todo-tree.filtering.useBuiltInExcludes": "file excludes",
+    "todo-tree.tree.showCountsInTree": true,
+    "versionlens.dotnet.caching.duration": 3,
+    "versionlens.suggestions.showOnStartup": true,
+    "vsicons.dontShowNewVersionMessage": true,
+    "vsicons.presets.foldersAllDefaultIcon": true,
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "window.commandCenter": true,
+    "workbench.colorTheme": "Neon City",
+    "workbench.editor.labelFormat": "default",
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.tree.renderIndentGuides": "always",
+}

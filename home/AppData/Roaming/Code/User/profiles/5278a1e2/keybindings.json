@@ -3,14 +3,6 @@
 // If a rule is found, no more rules are processed.
 [
     {
-        "args": {
-            "text": " <- "
-        },
-        "command": "type",
-        "key": "alt+-",
-        "when": "editorLangId == r && editorTextFocus || editorLangId == rmd && editorTextFocus"
-    },
-    {
         "command": "-markdown.extension.checkTaskList",
         "key": "alt+c",
         "when": "editorTextFocus && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
@@ -81,14 +73,8 @@
         "key": "ctrl+alt+e"
     },
     {
-        "command": "jupyter.runFileInteractive",
-        "key": "ctrl+alt+f5",
-        "when": "editorTextFocus && isWorkspaceTrusted && jupyter.ownsSelection && !findInputFocussed && !isCompositeNotebook && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
-    },
-    {
         "command": "workbench.action.restartExtensionHost",
-        "key": "ctrl+alt+f5",
-        "when": "view.workbench.views.extensions.installed.visible"
+        "key": "ctrl+alt+f5"
     },
     {
         "command": "emojisense.quickEmoji",
@@ -101,16 +87,11 @@
         "when": "terminalFocus"
     },
     {
-        "command": "-workbench.view.explorer",
-        "key": "ctrl+alt+l",
-        "when": "viewContainer.workbench.view.explorer.enabled"
-    },
-    {
         "command": "-code-runner.stop",
         "key": "ctrl+alt+m"
     },
     {
-        // Lets you select matches to edit via multi-cursors!
+    	// Lets you select matches to edit via multi-cursors!
         "command": "editor.action.selectHighlights",
         "key": "ctrl+alt+m",
         "when": "editorFocus"
@@ -124,21 +105,8 @@
         "when": "terminalFocus"
     },
     {
-        "command": "githubLocalActions.runWorkflow",
-        "key": "ctrl+alt+r",
-        "when": "editorTextFocus && resourceDirname =~ ^.+/\\.github/workflows$"
-    },
-    {
         "command": "git.stage",
         "key": "ctrl+alt+s"
-    },
-    {
-        "args": {
-            "text": "#' Title\n#'\n#'Description\n#'\n#'@param $$\n#'\n#'@export\n#'\n#'@example\n#'"
-        },
-        "command": "type",
-        "key": "ctrl+alt+shift+r",
-        "when": "editorTextFocus && editorLangId == r || editorTextFocus && editorLangId == rmd"
     },
     {
         "command": "-workbench.debug.viewlet.action.addFunctionBreakpointAction",
@@ -311,11 +279,6 @@
         "when": "editorTextFocus && !editorReadonly"
     },
     {
-        "command": "jupyter.notebookeditor.restartkernel",
-        "key": "ctrl+shift+f10",
-        "when": "jupyter.featureenabled && !findInputFocussed && !replaceInputFocussed && editorLangId == 'python'"
-    },
-    {
         "command": "git.reopenClosedRepositories",
         "key": "ctrl+shift+g r",
         "when": "view.workbench.scm.visible"
@@ -326,60 +289,14 @@
         "when": "view.workbench.scm.visible"
     },
     {
-        "args": {
-            "snippet": "```{r}\n${TM_SELECTED_TEXT}$0\n```"
-        },
-        "command": "editor.action.insertSnippet",
-        "key": "ctrl+shift+i",
-        "label": "input indicative of r markdown code chunk",
-        "when": "editorTextFocus && editorLangId == 'rmd'"
-    },
-    {
-        "args": {
-            "snippet": "$LINE_COMMENT %% "
-        },
-        "command": "editor.action.insertSnippet",
-        "key": "ctrl+shift+i",
-        "label": "input indicative of code chunk",
-        "when": "editorTextFocus && editorLangId == 'r'"
-    },
-    {
         "command": "-editor.action.deleteLines",
         "key": "ctrl+shift+k",
         "when": "textInputFocus && !editorReadonly"
     },
     {
-        "command": "-quarto.preview",
-        "key": "ctrl+shift+k",
-        "when": "!quartoRenderScriptActive"
-    },
-    {
-        "command": "-quarto.previewScript",
-        "key": "ctrl+shift+k",
-        "when": "quartoRenderScriptActive"
-    },
-    {
-        "command": "quarto.preview",
-        "key": "ctrl+shift+k",
-        "when": "!quartoRenderScriptActive && editorTextFocus && editorLangId == 'quarto'"
-    },
-    {
-        "command": "quarto.previewScript",
-        "key": "ctrl+shift+k",
-        "when": "quartoRenderScriptActive && editorTextFocus && editorLangId == 'quarto-assist.active'"
-    },
-    {
         "command": "-editor.action.selectHighlights",
         "key": "ctrl+shift+l",
         "when": "editorFocus"
-    },
-    {
-        "args": {
-            "text": " |> "
-        },
-        "command": "type",
-        "key": "ctrl+shift+m",
-        "when": "editorLangId == r && editorTextFocus || editorLangId == rmd && editorTextFocus:grinning:"
     },
     {
         "command": "workbench.actions.view.problems",
@@ -412,7 +329,7 @@
         "command": "editor.action.transformToUppercase",
         "key": "ctrl+shift+u",
         "when": "editorTextFocus && !editorReadonly"
-    },    
+    },
     {
         "command": "-markdown.extension.closePreview",
         "key": "ctrl+shift+v",
@@ -436,11 +353,6 @@
         "command": "-editor.action.smartSelect.expand",
         "key": "ctrl+w",
         "when": "editorTextFocus"
-    },
-    {
-        "command": "r.helpPanel.openForSelection",
-        "key": "f1",
-        "when": "editorTextFocus && editorLangId == 'r' || editorTextFocus && editorLangId == 'rmd'"
     },
     {
         "command": "-sortLines.sortLines",

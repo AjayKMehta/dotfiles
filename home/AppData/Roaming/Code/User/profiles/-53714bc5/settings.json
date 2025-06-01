@@ -1,0 +1,378 @@
+{
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "vscode.css-language-features"
+    },
+    "[gitattributes]": {
+        "editor.defaultFormatter": "hashhar.gitattributes"
+    },
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "GlenBuktenica.unicode-substitutions"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[json]": {
+        "editor.autoClosingBrackets": "always",
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+        "editor.autoClosingBrackets": "always",
+        "editor.codeActionsOnSave": {
+            "source.sort.json": "explicit"
+        },
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[latex]": {
+        "editor.defaultFormatter": "James-Yu.latex-workshop"
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
+        "editor.fontFamily": "'DejaVuSansM Nerd Font', Consolas, 'Courier New', monospace, 'Lucida Sans'",
+        "editor.wordWrap": "on",
+        "files.trimTrailingWhitespace": false
+    },
+    "[python]": {
+        "editor.codeActionsOnSave": {
+            "source.fixAll.ruff": "explicit",
+            "source.organizeImports.ruff": "never"
+        },
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.formatOnPaste": false,
+        "editor.formatOnType": true,
+        "editor.rulers": [
+            80
+        ]
+    },
+    "[quarto]": {
+        "editor.defaultFormatter": "quarto.quarto"
+    },
+    "[r]": {
+        "editor.defaultFormatter": "Posit.air-vscode",
+        "editor.detectIndentation": false,
+        "editor.formatOnSaveMode": "file",
+        "editor.indentSize": 2,
+        "editor.tabSize": 2,
+        "editor.wordSeparators": "`~!@#%$^&*()-=+[{]}\\|;:'\",<>/?"
+    },
+    "[rmd]": {
+        "editor.defaultFormatter": "GlenBuktenica.unicode-substitutions",
+        "editor.detectIndentation": false,
+        "editor.indentSize": 2,
+        "editor.quickSuggestions": {
+            "comments": "on",
+            "other": "on",
+            "strings": "on"
+        },
+        "editor.tabSize": 2,
+        "files.trimTrailingWhitespace": false
+    },
+    "[toml]": {
+        "editor.defaultFormatter": "tamasfe.even-better-toml"
+    },
+    "[xml]": {
+        "editor.defaultFormatter": "redhat.vscode-xml",
+        "editor.fontLigatures": false
+    },
+    "[xslt]": {
+        "editor.semanticHighlighting.enabled": true
+    },
+    "[yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml",
+        "editor.fontLigatures": false
+    },
+    "auto-run-command.rules": [
+        {
+            "command": "r.createRTerm",
+            "condition": [
+                "isLanguage: r"
+            ],
+            "message": "Activate R Terminal."
+        },
+        {
+            "command": "r.createRTerm",
+            "condition": [
+                "isLanguage: rmd"
+            ],
+            "message": "Activate R Terminal."
+        }
+    ],
+    "chat.commandCenter.enabled": false,
+    "coverage-gutters.coverageFileNames": [
+        "cov.xml",
+        "coverage.cobertura.xml",
+        "coverage.xml",
+        "jacoco.xml",
+        "lcov.info"
+    ],
+    "coverage-gutters.customizable.context-menu": false,
+    "coverage-gutters.showLineCoverage": true,
+    "coverage-gutters.showRulerCoverage": true,
+    "debug.inlineValues": "on",
+    "debugpy.showPythonInlineValues": true,
+    "diffEditor.codeLens": true,
+    "diffEditor.diffAlgorithm": "advanced",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "diffEditor.maxComputationTime": 0,
+    "diffEditor.wordWrap": "on",
+    "editor.defaultColorDecorators": "auto",
+    "editor.fontFamily": "'FiraCode Nerd Font Mono', 'Cascadia Code', Consolas, 'Courier New', monospace",
+    "editor.minimap.autohide": true,
+    "editor.minimap.renderCharacters": false,
+    "editor.minimap.scale": 3,
+    "editor.quickSuggestions": {
+        "comments": true,
+        "other": true,
+        "strings": true
+    },
+    "editor.renderWhitespace": "none",
+    "editor.rulers": [
+        80
+    ],
+    "editor.semanticHighlighting.enabled": true,
+    "editor.semanticTokenColorCustomizations": {
+        "[Dark Atom Dark]": {
+            "enabled": true
+        }
+    },
+    "editor.suggest.preview": true,
+    "editor.tokenColorCustomizations": {
+        "[Ayu Dark Bordered]": {
+            "comments": "#229977"
+        }
+    },
+    "editor.wordWrap": "on",
+    "errorLens.disableLineComments": {
+        "Pylance": "  # type:ignore SAME_LINE",
+        "Ruff": "  # noqa: $code SAME_LINE"
+    },
+    "evenBetterToml.formatter.indentEntries": true,
+    "evenBetterToml.formatter.indentTables": true,
+    "evenBetterToml.schema.links": true,
+    "evenBetterToml.semanticTokens": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "github.copilot.chat.codesearch.enabled": true,
+    "github.copilot.chat.editor.temporalContext.enabled": true,
+    "github.copilot.enable": {
+        "quarto": false
+    },
+    "githubLocalActions.dockerDesktopPath": "C:/Program Files/Docker/Docker/Docker Desktop.exe",
+    "interactiveWindow.executeWithShiftEnter": true,
+    "jupyter.askForKernelRestart": false,
+    "jupyter.debugJustMyCode": true,
+    "jupyter.exportWithOutputEnabled": true,
+    "jupyter.interactiveWindow.codeLens.commands": "jupyter.runcell,  jupyter.runallcellsabove,  jupyter.runallcellbelow,  jupyter.debugcell",
+    "jupyter.interactiveWindow.creationMode": "perFile",
+    "jupyter.interactiveWindow.textEditor.executeSelection": true,
+    "jupyter.notebookFileRoot": "${fileDirname}",
+    "jupyter.themeMatplotlibPlots": false,
+    "latex-workshop.formatting.latexindent.path": "D:\\Apps\\CLI\\latexindent.exe",
+    "latex-workshop.latex.autoBuild.interval": 2000,
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "xelatex",
+            "tools": [
+                "xelatex"
+            ]
+        },
+        {
+            "name": "pdflatex -> bibtex -> pdflatex * 2",
+            "tools": [
+                "bibtex",
+                "pdflatex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "tectonic",
+            "tools": [
+                "tectonic"
+            ]
+        }
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "args": [
+                "%DOC_EXT%",
+                "-c-style-errors",
+                "-interaction=nonstopmode",
+                "-output-directory=%OUTDIR%",
+                "-synctex=1"
+            ],
+            "command": "xelatex",
+            "env": {},
+            "name": "xelatex"
+        },
+        {
+            "args": [
+                "%DOC_EXT%",
+                "-file-line-error",
+                "-interaction=nonstopmode",
+                "-output-directory=%OUTDIR%",
+                "-synctex=1"
+            ],
+            "command": "pdflatex",
+            "env": {},
+            "name": "pdflatex"
+        },
+        {
+            "args": [
+                "%DOCFILE%"
+            ],
+            "command": "bibtex",
+            "env": {},
+            "name": "bibtex"
+        },
+        {
+            "args": [
+                "-e",
+                "knitr::opts_knit$set(concordance = TRUE); knitr::knit('%DOCFILE_EXT%')"
+            ],
+            "command": "Rscript",
+            "env": {},
+            "name": "rnw2tex"
+        },
+        {
+            "args": [
+                "-e",
+                "using Weave; weave(\"%DOC_EXT%\", doctype=\"tex\")"
+            ],
+            "command": "julia",
+            "env": {},
+            "name": "jnw2tex"
+        },
+        {
+            "args": [
+                "-e",
+                "using Weave; weave(\"%DOC_EXT%\", doctype=\"texminted\")"
+            ],
+            "command": "julia",
+            "env": {},
+            "name": "jnw2texminted"
+        },
+        {
+            "args": [
+                "%DOC_EXT%",
+                "-f",
+                "tex"
+            ],
+            "command": "pweave",
+            "env": {},
+            "name": "pnw2tex"
+        },
+        {
+            "args": [
+                "%DOC_EXT%",
+                "-f",
+                "texminted"
+            ],
+            "command": "pweave",
+            "env": {},
+            "name": "pnw2texminted"
+        },
+        {
+            "args": [
+                "%DOC%.tex",
+                "--keep-logs",
+                "--synctex"
+            ],
+            "command": "tectonic",
+            "env": {},
+            "name": "tectonic"
+        }
+    ],
+    "latex-workshop.showContextMenu": true,
+    "latex-workshop.view.pdf.viewer": "tab",
+    "markdown-preview-enhanced.codeBlockTheme": "pen-paper-coffee.css",
+    "markdown-preview-enhanced.pandocPath": "D:\\Apps\\Quarto\\bin\\tools\\pandoc.exe",
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "notebook.codeActionsOnSave": {
+        "notebook.source.organizeImports": "explicit"
+    },
+    "notebook.confirmDeleteRunningCell": false,
+    "notebook.diff.experimental.toggleInline": true,
+    "notebook.formatOnSave.enabled": true,
+    "notebook.lineNumbers": "on",
+    "notebook.multiCursor.enabled": true,
+    "notebook.outline.showCodeCells": true,
+    "notebook.output.scrolling": true,
+    "notebook.showFoldingControls": "always",
+    "print.folder.includeFileList": false,
+    "python.analysis.aiCodeActions": {
+        "convertFormatString": true,
+        "generateDocstring": true
+    },
+    "python.analysis.autoFormatStrings": true,
+    "python.analysis.completeFunctionParens": true,
+    "python.analysis.diagnosticMode": "openFilesOnly",
+    "python.analysis.fixAll": [
+        "source.convertImportFormat",
+        "source.unusedImports"
+    ],
+    "python.analysis.importFormat": "absolute",
+    "python.analysis.indexing": true,
+    "python.analysis.inlayHints.callArgumentNames": "partial",
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.analysis.inlayHints.variableTypes": true,
+    "python.analysis.logLevel": "Warning",
+    "python.analysis.packageIndexDepths": [
+        {
+            "depth": 2,
+            "name": "sklearn"
+        },
+        {
+            "depth": 2,
+            "name": "matplotlib"
+        },
+        {
+            "depth": 2,
+            "name": "scipy"
+        }
+    ],
+    "python.languageServer": "Pylance",
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "python.terminal.executeInFileDir": true,
+    "python.testing.pytestArgs": [
+        "tests"
+    ],
+    "python.testing.pytestEnabled": true,
+    "r.alwaysUseActiveTerminal": true,
+    "r.bracketedPaste": true,
+    "r.debugger.timeouts.startup": 5000,
+    "r.lsp.diagnostics": true,
+    "r.plot.defaults.colorTheme": "vscode",
+    "r.plot.useHttpgd": true,
+    "r.rmarkdown.codeLensCommands": [
+        "r.runAboveChunks",
+        "r.runBelowChunks",
+        "r.runCurrentChunk"
+    ],
+    "r.rmarkdown.preview.zoom": 1.2,
+    "r.rpath.linux": "/usr/bin/R",
+    "r.rpath.windows": "${env:R_BINARY}",
+    "r.rterm.linux": "/home/ajay/.local/bin/radian",
+    "r.rterm.windows": "D:\\Apps\\uv\\tools\\radian.exe",
+    "r.session.levelOfObjectDetail": "Normal",
+    "r.sessionWatcher": true,
+    "ruff.configurationPreference": "filesystemFirst",
+    "ruff.lint.preview": true,
+    "ruff.nativeServer": true,
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
+    "terminal.integrated.enablePersistentSessions": false,
+    "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
+    "versionlens.suggestions.showOnStartup": true,
+    "vsicons.dontShowNewVersionMessage": true,
+    "vsicons.presets.foldersAllDefaultIcon": true,
+    "vsicons.presets.jsonOfficial": true,
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "workbench.colorTheme": "Night Owl",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.tree.renderIndentGuides": "always"
+}

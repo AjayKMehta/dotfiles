@@ -1,0 +1,215 @@
+{
+    "[aspnetcorerazor]": {
+        "editor.defaultFormatter": "ms-dotnettools.csharp"
+    },
+    "[csharp]": {
+        "editor.autoClosingBrackets": "always",
+        "editor.defaultFormatter": "ms-dotnettools.csharp",
+        "editor.formatOnPaste": false,
+        "editor.formatOnType": true
+    },
+    "[gitattributes]": {
+        "editor.defaultFormatter": "hashhar.gitattributes"
+    },
+    "[gitconfig]": {
+        "editor.defaultFormatter": "yy0931.gitconfig-lsp"
+    },
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "github.vscode-github-actions"
+    },
+    "[json]": {
+        "editor.autoClosingBrackets": "always",
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+        "editor.autoClosingBrackets": "always",
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
+        "editor.fontFamily": "'DejaVuSansM Nerd Font', Consolas, 'Courier New', monospace, 'Lucida Sans'",
+        "editor.wordWrap": "on",
+        "files.trimTrailingWhitespace": false
+    },
+    "[msbuild]": {
+        "editor.defaultFormatter": "redhat.vscode-xml"
+    },
+    "[powershell]": {
+        "editor.defaultFormatter": "ms-vscode.powershell",
+        "editor.fontLigatures": false,
+        "editor.tabSize": 4
+    },
+    "[shellscript]": {
+        "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode"
+    },
+    "[xml]": {
+        "editor.defaultFormatter": "redhat.vscode-xml",
+        "editor.fontLigatures": false,
+        "editor.formatOnSaveMode": "modificationsIfAvailable"
+    },
+    "[xslt]": {
+        "editor.semanticHighlighting.enabled": true
+    },
+    "[yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml",
+        "editor.fontLigatures": false
+    },
+    "code-runner.executorMap": {
+        "haskell": "stack runghc"
+    },
+    "containers.images.label": "RepositoryName",
+    "csharp.debug.console": "integratedTerminal",
+    "csharp.inlayHints.enableInlayHintsForImplicitObjectCreation": true,
+    "csharp.inlayHints.enableInlayHintsForImplicitVariableTypes": true,
+    "csharp.inlayHints.enableInlayHintsForLambdaParameterTypes": true,
+    "csharp.inlayHints.enableInlayHintsForTypes": true,
+    "csharp.semanticHighlighting.enabled": true,
+    "csharp.suppressDotnetRestoreNotification": true,
+    "debug.inlineValues": "on",
+    "diffEditor.codeLens": true,
+    "diffEditor.diffAlgorithm": "advanced",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "diffEditor.wordWrap": "on",
+    "dotnet.automaticallyCreateSolutionInWorkspace": false,
+    "dotnet.backgroundAnalysis.analyzerDiagnosticsScope": "fullSolution",
+    "dotnet.backgroundAnalysis.compilerDiagnosticsScope": "fullSolution",
+    "dotnet.completion.showCompletionItemsFromUnimportedNamespaces": true,
+    "dotnet.completion.showNameCompletionSuggestions": true,
+    "dotnet.completion.triggerCompletionInArgumentLists": true,
+    "dotnet.formatting.organizeImportsOnFormat": true,
+    "dotnet.inlayHints.enableInlayHintsForIndexerParameters": true,
+    "dotnet.inlayHints.enableInlayHintsForLiteralParameters": true,
+    "dotnet.inlayHints.enableInlayHintsForObjectCreationParameters": true,
+    "dotnet.inlayHints.enableInlayHintsForOtherParameters": true,
+    "dotnet.previewSolution-freeWorkspaceMode": true,
+    "dotnet.symbolSearch.searchReferenceAssemblies": false,
+    "dotnet.testWindow.useTestingPlatformProtocol": true,
+    "dotnet.typeMembers.memberInsertionLocation": "withOtherMembersOfTheSameKind",
+    "dotnet.typeMembers.propertyGenerationBehavior": "preferThrowingProperties",
+    "dotnetAcquisitionExtension.enableTelemetry": false,
+    "dotnetAcquisitionExtension.existingDotnetPath": [
+        {
+            "extensionId": "ms-dotnettools.csharp",
+            "path": "C:\\Program Files\\dotnet\\dotnet.exe"
+        },
+        {
+            "extensionId": "ms-dotnettools.csdevkit",
+            "path": "C:\\Program Files\\dotnet\\dotnet.exe"
+        }
+    ],
+    "editor.bracketPairColorization.enabled": true,
+    "editor.defaultColorDecorators": "auto",
+    "editor.definitionLinkOpensInPeek": true,
+    "editor.fontFamily": "'FiraCode Nerd Font Mono', 'JuliaMono', Consolas, 'Courier New', monospace",
+    "editor.minimap.autohide": true,
+    "editor.minimap.renderCharacters": false,
+    "editor.minimap.scale": 3,
+    "editor.mouseWheelZoom": true,
+    "editor.quickSuggestions": {
+        "comments": true,
+        "other": true,
+        "strings": true
+    },
+    "editor.renderWhitespace": "all",
+    "editor.rulers": [
+        80
+    ],
+    "editor.semanticHighlighting.enabled": true,
+    "editor.semanticTokenColorCustomizations": {
+        "[Dark Atom Dark]": {
+            "enabled": true
+        }
+    },
+    "editor.suggest.preview": true,
+    "editor.tokenColorCustomizations": {
+        "[Ayu Dark Bordered]": {
+            "comments": "#229977"
+        }
+    },
+    "editor.wordWrap": "on",
+    "errorLens.excludeByMessage": [
+        "\"Rscript\": Unknown word\\."
+    ],
+    "evenBetterToml.formatter.indentEntries": true,
+    "evenBetterToml.formatter.indentTables": true,
+    "evenBetterToml.schema.links": true,
+    "evenBetterToml.semanticTokens": true,
+    "explorer.excludeGitIgnore": false,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "github.copilot.enable": {
+        "*": false,
+        "markdown": false,
+        "plaintext": false,
+        "scminput": false
+    },
+    "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
+    "githubLocalActions.dockerDesktopPath": "C:/Program Files/Docker/Docker/Docker Desktop.exe",
+    "githubPullRequests.createOnPublishBranch": "never",
+    "markdown-preview-enhanced.codeBlockTheme": "pen-paper-coffee.css",
+    "markdownlint.config": {
+        "commands-show-output": false,
+        "default": true,
+        "first-header-h1": false,
+        "first-line-h1": false,
+        "header-start-left": false,
+        "line-length": false,
+        "list-marker-space": false,
+        "no-alt-text": false,
+        "no-blanks-blockquote": false,
+        "no-duplicate-header": {
+            "siblings_only": true
+        },
+        "no-inline-html": false,
+        "no-trailing-punctuation": false,
+        "single-h1": false,
+        "ul-indent": false,
+        "ul-start-left": false
+    },
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "notebook.lineNumbers": "on",
+    "notebook.outline.showCodeCells": true,
+    "notebook.showFoldingControls": "always",
+    "omnisharp.projectFilesExcludePattern": "**/node_modules/**,**/.git/**,**/bower_components/**,**/bin/**,**/obj/**",
+    "omnisharp.projectLoadTimeout": 120,
+    "powershell.codeFormatting.addWhitespaceAroundPipe": true,
+    "powershell.codeFormatting.autoCorrectAliases": true,
+    "powershell.codeFormatting.avoidSemicolonsAsLineTerminators": true,
+    "powershell.codeFormatting.ignoreOneLineBlock": true,
+    "powershell.codeFormatting.pipelineIndentationStyle": "IncreaseIndentationForFirstPipeline",
+    "powershell.codeFormatting.preset": "OTBS",
+    "powershell.codeFormatting.trimWhitespaceAroundPipe": true,
+    "powershell.codeFormatting.useConstantStrings": true,
+    "powershell.codeFormatting.useCorrectCasing": true,
+    "powershell.codeFormatting.whitespaceBetweenParameters": true,
+    "powershell.debugging.createTemporaryIntegratedConsole": true,
+    "powershell.integratedConsole.focusConsoleOnExecute": false,
+    "powershell.integratedConsole.forceClearScrollbackBuffer": true,
+    "powershell.integratedConsole.suppressStartupBanner": true,
+    "powershell.pester.codeLens": false,
+    "powershell.promptToUpdatePowerShell": false,
+    "print.folder.fileNames": true,
+    "print.folder.include": [],
+    "print.folder.includeFileList": false,
+    "terminal.integrated.enableMultiLinePasteWarning": "auto",
+    "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
+    "testing.coverageToolbarEnabled": true,
+    "versionlens.dotnet.caching.duration": 3,
+    "versionlens.suggestions.showOnStartup": true,
+    "vsicons.dontShowNewVersionMessage": true,
+    "vsicons.presets.foldersAllDefaultIcon": true,
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "window.commandCenter": true,
+
+    "workbench.editor.labelFormat": "short",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.sideBar.location": "left",
+    "workbench.statusBar.visible": true,
+    "workbench.tree.renderIndentGuides": "always"
+}

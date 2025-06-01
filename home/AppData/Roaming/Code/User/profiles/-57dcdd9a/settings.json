@@ -1,0 +1,116 @@
+{
+    "Lua.codeLens.enable": true,
+    "Lua.hint.enable": true,
+    "[gitattributes]": {
+        "editor.defaultFormatter": "hashhar.gitattributes"
+    },
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "github.vscode-github-actions"
+    },
+    "[go-template]": {
+        "files.insertFinalNewline": false
+    },
+    "[haskell]": {
+        "editor.defaultFormatter": "haskell.haskell",
+        "editor.tabSize": 2
+    },
+    "[json]": {
+        "editor.autoClosingBrackets": "always",
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+        "editor.autoClosingBrackets": "always",
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[lua]": {
+        "editor.defaultFormatter": "sumneko.lua"
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "vscode.markdown-language-features",
+        "editor.fontFamily": "'DejaVuSansM Nerd Font', Consolas, 'Courier New', monospace, 'Lucida Sans'",
+        "editor.wordWrap": "on",
+        "files.trimTrailingWhitespace": false
+    },
+    "[toml]": {
+        "editor.defaultFormatter": "tamasfe.even-better-toml"
+    },
+    "[xml]": {
+        "editor.defaultFormatter": "redhat.vscode-xml",
+        "editor.fontLigatures": false
+    },
+    "[xslt]": {
+        "editor.semanticHighlighting.enabled": true
+    },
+    "[yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml",
+        "editor.fontLigatures": false
+    },
+    "debug.inlineValues": "on",
+    "diffEditor.codeLens": true,
+    "diffEditor.diffAlgorithm": "advanced",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.colorDecoratorsLimit": 5000,
+    "editor.defaultColorDecorators": "auto",
+    "editor.definitionLinkOpensInPeek": true,
+    "editor.fontFamily": "'FiraCode Nerd Font Mono', 'Cascadia Code', Consolas, 'Courier New', monospace",
+    "editor.minimap.autohide": true,
+    "editor.minimap.renderCharacters": false,
+    "editor.minimap.scale": 3,
+    "editor.quickSuggestions": {
+        "comments": true,
+        "other": true,
+        "strings": true
+    },
+    "editor.renderWhitespace": "all",
+    "editor.rulers": [
+        80
+    ],
+    "editor.semanticTokenColorCustomizations": {
+        "[Dark Atom Dark]": {
+            "enabled": true
+        }
+    },
+    "editor.suggest.preview": true,
+    "editor.tokenColorCustomizations": {
+        "[Ayu Dark Bordered]": {
+            "comments": "#229977"
+        }
+    },
+    "editor.wordWrap": "on",
+    "evenBetterToml.formatter.indentEntries": true,
+    "evenBetterToml.formatter.indentTables": true,
+    "evenBetterToml.schema.links": true,
+    "evenBetterToml.semanticTokens": true,
+    "files.autoSave": "onFocusChange",
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "githubLocalActions.dockerDesktopPath": "C:/Program Files/Docker/Docker/Docker Desktop.exe",
+    "haskell.manageHLS": "GHCup",
+    "haskell.plugin.ghcide-completions.config.autoExtendOn": true,
+    "haskell.plugin.ghcide-type-lenses.config.mode": "always",
+    "haskell.plugin.hlint.config.flags": [
+        "-j4"
+    ],
+    "haskell.upgradeGHCup": false,
+    "markdown-preview-enhanced.codeBlockTheme": "hopscotch.css",
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "notebook.formatOnSave.enabled": true,
+    "notebook.lineNumbers": "on",
+    "notebook.outline.showCodeCells": true,
+    "notebook.output.scrolling": true,
+    "notebook.showFoldingControls": "always",
+    "print.folder.include": [],
+    "print.folder.includeFileList": false,
+    "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
+    "vsicons.dontShowNewVersionMessage": true,
+    "vsicons.presets.foldersAllDefaultIcon": true,
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "window.commandCenter": true,
+    "workbench.colorTheme": "Lambda Black",
+    "workbench.editor.labelFormat": "short",
+    "workbench.iconTheme": "vscode-great-icons",
+    "workbench.tree.renderIndentGuides": "always"
+}

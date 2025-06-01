@@ -1,20 +1,4 @@
-// Rules are evaluated from bottom to top.
-// The first rule that matches both the key and when clause, is accepted.
-// If a rule is found, no more rules are processed.
 [
-    {
-        "args": {
-            "text": " <- "
-        },
-        "command": "type",
-        "key": "alt+-",
-        "when": "editorLangId == r && editorTextFocus || editorLangId == rmd && editorTextFocus"
-    },
-    {
-        "command": "-markdown.extension.checkTaskList",
-        "key": "alt+c",
-        "when": "editorTextFocus && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
-    },
     {
         "command": "git-graph.view",
         "key": "alt+g"
@@ -55,11 +39,6 @@
         "key": "ctrl+[ s"
     },
     {
-        "command": "-markdown.extension.onIndentLines",
-        "key": "ctrl+]",
-        "when": "editorTextFocus && !suggestWidgetVisible && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
-    },
-    {
         "command": "workbench.profiles.actions.switchProfile",
         "key": "ctrl+alt+/"
     },
@@ -79,11 +58,6 @@
     {
         "command": "errorLens.toggle",
         "key": "ctrl+alt+e"
-    },
-    {
-        "command": "jupyter.runFileInteractive",
-        "key": "ctrl+alt+f5",
-        "when": "editorTextFocus && isWorkspaceTrusted && jupyter.ownsSelection && !findInputFocussed && !isCompositeNotebook && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
     },
     {
         "command": "workbench.action.restartExtensionHost",
@@ -124,11 +98,6 @@
         "when": "terminalFocus"
     },
     {
-        "command": "githubLocalActions.runWorkflow",
-        "key": "ctrl+alt+r",
-        "when": "editorTextFocus && resourceDirname =~ ^.+/\\.github/workflows$"
-    },
-    {
         "command": "git.stage",
         "key": "ctrl+alt+s"
     },
@@ -143,15 +112,6 @@
     {
         "command": "-workbench.debug.viewlet.action.addFunctionBreakpointAction",
         "key": "ctrl+b"
-    },
-    {
-        "command": "-workbench.action.toggleSidebarVisibility",
-        "key": "ctrl+b"
-    },
-    {
-        "command": "workbench.action.toggleSidebarVisibility",
-        "key": "ctrl+b",
-        "when": "editorLangId != 'markdown' || editorLangId != 'rmd' || editorLangId != 'quarto' || !editorTextFocus"
     },
     {
         "command": "-editor.action.copyLinesDownAction",
@@ -235,31 +195,6 @@
         "when": "activeEditorIsPinned"
     },
     {
-        "command": "-markdown.extension.closePreview",
-        "key": "ctrl+k v",
-        "when": "activeWebviewPanelId == 'markdown.preview'"
-    },
-    {
-        "command": "-markdown.extension.editing.toggleMath",
-        "key": "ctrl+m",
-        "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
-    },
-    {
-        "command": "markdown.extension.editing.toggleList",
-        "key": "ctrl+m ctrl+1",
-        "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
-    },
-    {
-        "command": "markdown.extension.editing.toggleCodeBlock",
-        "key": "ctrl+m ctrl+c",
-        "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
-    },
-    {
-        "command": "markdown.extension.editing.toggleCodeSpan",
-        "key": "ctrl+m ctrl+i",
-        "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
-    },
-    {
         "command": "workbench.action.terminal.runRecentCommand",
         "key": "ctrl+r",
         "when": "terminalFocus"
@@ -281,11 +216,6 @@
         "command": "rewrap.rewrapComment",
         "key": "ctrl+shift+/",
         "when": "editorTextFocus"
-    },
-    {
-        "command": "markdown.extension.editing.toggleMath",
-        "key": "ctrl+shift+4",
-        "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
     },
     {
         "command": "github.copilot.completions.toggle",
@@ -324,7 +254,7 @@
         "command": "git.close",
         "key": "ctrl+shift+g w",
         "when": "view.workbench.scm.visible"
-    },
+    },    
     {
         "args": {
             "snippet": "```{r}\n${TM_SELECTED_TEXT}$0\n```"
@@ -335,51 +265,14 @@
         "when": "editorTextFocus && editorLangId == 'rmd'"
     },
     {
-        "args": {
-            "snippet": "$LINE_COMMENT %% "
-        },
-        "command": "editor.action.insertSnippet",
-        "key": "ctrl+shift+i",
-        "label": "input indicative of code chunk",
-        "when": "editorTextFocus && editorLangId == 'r'"
-    },
-    {
         "command": "-editor.action.deleteLines",
         "key": "ctrl+shift+k",
         "when": "textInputFocus && !editorReadonly"
     },
     {
-        "command": "-quarto.preview",
-        "key": "ctrl+shift+k",
-        "when": "!quartoRenderScriptActive"
-    },
-    {
-        "command": "-quarto.previewScript",
-        "key": "ctrl+shift+k",
-        "when": "quartoRenderScriptActive"
-    },
-    {
-        "command": "quarto.preview",
-        "key": "ctrl+shift+k",
-        "when": "!quartoRenderScriptActive && editorTextFocus && editorLangId == 'quarto'"
-    },
-    {
-        "command": "quarto.previewScript",
-        "key": "ctrl+shift+k",
-        "when": "quartoRenderScriptActive && editorTextFocus && editorLangId == 'quarto-assist.active'"
-    },
-    {
         "command": "-editor.action.selectHighlights",
         "key": "ctrl+shift+l",
         "when": "editorFocus"
-    },
-    {
-        "args": {
-            "text": " |> "
-        },
-        "command": "type",
-        "key": "ctrl+shift+m",
-        "when": "editorLangId == r && editorTextFocus || editorLangId == rmd && editorTextFocus:grinning:"
     },
     {
         "command": "workbench.actions.view.problems",
@@ -412,11 +305,6 @@
         "command": "editor.action.transformToUppercase",
         "key": "ctrl+shift+u",
         "when": "editorTextFocus && !editorReadonly"
-    },    
-    {
-        "command": "-markdown.extension.closePreview",
-        "key": "ctrl+shift+v",
-        "when": "activeWebviewPanelId == 'markdown.preview'"
     },
     {
         "command": "workbench.action.quickOpenPreviousRecentlyUsedEditor",

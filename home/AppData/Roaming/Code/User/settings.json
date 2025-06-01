@@ -1,0 +1,1207 @@
+{
+    "[aspnetcorerazor]": {
+        "editor.defaultFormatter": "ms-dotnettools.csharp"
+    },
+    "[csharp]": {
+        "editor.autoClosingBrackets": "always",
+        "editor.defaultFormatter": "ms-dotnettools.csharp",
+        "editor.formatOnPaste": false,
+        "editor.formatOnType": true
+    },
+    "[gitattributes]": {
+        "editor.defaultFormatter": "hashhar.gitattributes"
+    },
+    "[gitconfig]": {
+        "editor.defaultFormatter": "yy0931.gitconfig-lsp"
+    },
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "github.vscode-github-actions"
+    },
+    "[go-template]": {
+        "files.insertFinalNewline": false
+    },
+    "[haskell]": {
+        "editor.defaultFormatter": "haskell.haskell",
+        "editor.tabSize": 2
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.json-language-features",
+        "editor.suggest.insertMode": "replace",
+        "gitlens.codeLens.scopes": [
+            "document"
+        ]
+    },
+    "[json]": {
+        "editor.autoClosingBrackets": "always",
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+        "editor.autoClosingBrackets": "always",
+        "editor.codeActionsOnSave": {
+            "source.sort.json": "explicit"
+        },
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[latex]": {
+        "editor.defaultFormatter": "James-Yu.latex-workshop"
+    },
+    "[lua]": {
+        "editor.defaultFormatter": "JohnnyMorganz.stylua"
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "vscode.markdown-language-features",
+        "editor.fontFamily": "'DejaVuSansM Nerd Font', Consolas, 'Courier New', monospace, 'Lucida Sans'",
+        "editor.wordWrap": "on",
+        "files.trimTrailingWhitespace": false
+    },
+    "[powershell]": {
+        "editor.defaultFormatter": "ms-vscode.powershell",
+        "editor.fontLigatures": false,
+        "editor.tabSize": 4
+    },
+    "[python]": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.formatOnPaste": false,
+        "editor.formatOnType": true,
+        "editor.rulers": [
+            80
+        ]
+    },
+    "[r]": {
+        "editor.defaultFormatter": "REditorSupport.r",
+        "editor.detectIndentation": false,
+        "editor.formatOnSaveMode": "file",
+        "editor.indentSize": 2,
+        "editor.tabSize": 2,
+        "editor.wordSeparators": "`~!@#%$^&*()-=+[{]}\\|;:'\",<>/?"
+    },
+    "[rmd]": {
+        "editor.defaultFormatter": "GlenBuktenica.unicode-substitutions",
+        "editor.detectIndentation": false,
+        "editor.indentSize": 2,
+        "editor.quickSuggestions": {
+            "comments": "on",
+            "other": "on",
+            "strings": "on"
+        },
+        "editor.tabSize": 2,
+        "files.trimTrailingWhitespace": false
+    },
+    "[shellscript]": {
+        "editor.tabSize": 2
+    },
+    "[snowflake-sql]": {
+        "editor.defaultFormatter": "ReneSaarsoo.sql-formatter-vsc"
+    },
+    "[toml]": {
+        "editor.defaultFormatter": "tamasfe.even-better-toml"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[xml]": {
+        "editor.defaultFormatter": "redhat.vscode-xml",
+        "editor.fontLigatures": false,
+        "editor.formatOnSaveMode": "modificationsIfAvailable"
+    },
+    "[xslt]": {
+        "editor.semanticHighlighting.enabled": true
+    },
+    "[yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml",
+        "editor.fontLigatures": false
+    },
+    "breadcrumbs.enabled": true,
+    "chat.agent.enabled": true,
+    "code-runner.enableAppInsights": false,
+    "code-runner.runInTerminal": true,
+    "code-runner.showRunCommandInEditorContextMenu": false,
+    "containers.images.label": "RepositoryName",
+    "debug.showVariableTypes": true,
+    "dev.containers.defaultExtensions": [
+        "aaron-bond.better-comments",
+        "adpyke.codesnap",
+        "alefragnani.Bookmarks",
+        "alefragnani.project-manager",
+        "andyyaldoo.vscode-json",
+        "Cardinal90.multi-cursor-case-preserve",
+        "DavidAnson.vscode-markdownlint",
+        "DotJoshJohnson.xml",
+        "dracula-theme.theme-dracula",
+        "eamodio.gitlens",
+        "EditorConfig.EditorConfig",
+        "equinusocio.vsc-material-theme-icons",
+        "formulahendry.code-runner",
+        "gabrielgrinberg.auto-run-command",
+        "gabrielgrinberg.auto-run-command",
+        "gimenete.github-linker",
+        "GitHub.vscode-pull-request-github",
+        "hashhar.gitattributes",
+        "johnpapa.vscode-peacock",
+        "ldez.ignore-files",
+        "mdickin.markdown-shortcuts",
+        "mhutchie.git-graph",
+        "ms-azuretools.vscode-docker",
+        "natqe.reload",
+        "naumovs.color-highlight",
+        "nhoizey.gremlins",
+        "oderwat.indent-rainbow",
+        "pflannery.vscode-versionlens",
+        "redhat.vscode-commons",
+        "redhat.vscode-xml",
+        "redhat.vscode-yaml",
+        "rioj7.command-variable",
+        "sdras.night-owl",
+        "seatonjiang.gitmoji-vscode",
+        "stkb.rewrap",
+        "thertzlor.semantic-rainbow",
+        "usernamehw.errorlens",
+        "usernamehw.remove-empty-lines",
+        "vscode-icons-team.vscode-icons",
+        "wayou.vscode-todo-highlight",
+        "yy0931.gitconfig-lsp",
+        "yzhang.dictionary-completion"
+    ],
+    "diffEditor.codeLens": true,
+    "diffEditor.diffAlgorithm": "advanced",
+    "diffEditor.experimental.showMoves": true,
+    "diffEditor.hideUnchangedRegions.enabled": true,
+    "diffEditor.ignoreTrimWhitespace": true,
+    "docker.images.label": "RepositoryName",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.colorDecoratorsLimit": 5000,
+    "editor.defaultColorDecorators": "auto",
+    "editor.definitionLinkOpensInPeek": true,
+    "editor.fontFamily": "'FiraCode Nerd Font Mono', 'Cascadia Code', Consolas, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 12,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "modifications",
+    "editor.guides.bracketPairs": true,
+    "editor.guides.bracketPairsHorizontal": true,
+    "editor.inlayHints.padding": true,
+    "editor.lightbulb.enabled": "onCode",
+    "editor.linkedEditing": true,
+    "editor.matchBrackets": "always",
+    "editor.minimap.autohide": true,
+    "editor.minimap.renderCharacters": false,
+    "editor.minimap.scale": 3,
+    "editor.mouseWheelZoom": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.occurrencesHighlightDelay": 200,
+    "editor.overtypeCursorStyle": "block-outline",
+    "editor.quickSuggestions": {
+        "comments": true,
+        "other": true,
+        "strings": true
+    },
+    "editor.renderWhitespace": "all",
+    "editor.rulers": [
+        80
+    ],
+    "editor.semanticTokenColorCustomizations": {
+        "[Dark Atom Dark]": {
+            "enabled": true
+        }
+    },
+    "editor.snippetSuggestions": "bottom",
+    "editor.stickyTabStops": true,
+    "editor.suggest.preview": true,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "on",
+    "editor.tokenColorCustomizations": {
+        "[Ayu Dark Bordered]": {
+            "comments": "#229977"
+        }
+    },
+    "editor.wordWrap": "on",
+    "errorLens.codeLensTemplate": "$severity $message ($source)",
+    "errorLens.delayMode": "debounce",
+    "errorLens.editorHoverPartsEnabled": {
+        "messageEnabled": true
+    },
+    "errorLens.enableOnDiffView": true,
+    "errorLens.excludeBySource": [
+        "Pylance(reportGeneralTypeIssues)"
+    ],
+    "errorLens.followCursor": "closestProblem",
+    "errorLens.fontWeight": "bold",
+    "errorLens.gutterIconSet": "emoji",
+    "errorLens.messageTemplate": "$severity $message ($source)",
+    "errorLens.severityText": [
+        "ℹ",
+        "⚠",
+        "⛔",
+        "📗"
+    ],
+    "evenBetterToml.formatter.indentEntries": true,
+    "evenBetterToml.formatter.indentTables": true,
+    "evenBetterToml.schema.links": true,
+    "evenBetterToml.semanticTokens": true,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "extensions.ignoreRecommendations": true,
+    "files.associations": {
+        "*.props": "msbuild"
+    },
+    "files.autoSave": "onFocusChange",
+    "files.defaultLanguage": "${activeEditorLanguage}",
+    "files.exclude": {
+        "**/*.html": false,
+        "**/*_cache": false,
+        "**/.history/**": false,
+        "**/.hypothesis": false,
+        "**/.tmp-projections": false,
+        "**/.venv": false,
+        "**/.virtual_documents": false,
+        "**/.vs": false,
+        "**/__pycache__": false,
+        "**/bin": false,
+        "**/History_**": false,
+        "**/obj": false,
+        "**/TestResults": false,
+        "artifacts": false
+    },
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "fontAwesomeAutocomplete.patterns": [
+        "**/*.html",
+        "**/*.md",
+        "**/*.qmd",
+        "**/*.toml",
+        "**/*.txt"
+    ],
+    "formatContextMenu.closeAfterSave": true,
+    "git-graph.date.format": "ISO Date & Time",
+    "git-graph.dialog.addTag.pushToRemote": true,
+    "git-graph.repository.fetchAndPrune": true,
+    "git.allowForcePush": true,
+    "git.allowNoVerifyCommit": true,
+    "git.closeDiffOnOperation": true,
+    "git.confirmEmptyCommits": false,
+    "git.confirmForcePush": false,
+    "git.confirmNoVerifyCommit": false,
+    "git.confirmSync": false,
+    "git.enableCommitSigning": true,
+    "git.mergeEditor": true,
+    "git.promptToSaveFilesBeforeCommit": "always",
+    "git.pruneOnFetch": true,
+    "git.repositoryScanIgnoredFolders": [
+        "bin",
+        "node_modules",
+        "obj"
+    ],
+    "git.suggestSmartCommit": false,
+    "git.timeline.showUncommitted": true,
+    "git.useCommitInputAsStashMessage": true,
+    "github.branchProtection": true,
+    "github.copilot.chat.generateTests.codeLens": true,
+    "github.copilot.enable": {
+        "*": false,
+        "quarto": false
+    },
+    "githubLocalActions.dockerDesktopPath": "C:/Program Files/Docker/Docker/Docker Desktop.exe",
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false
+    },
+    "gitlens.ai.generateCommitMessage.enabled": false,
+    "gitlens.cloudPatches.enabled": false,
+    "gitlens.codeLens.scopes": [
+        "blocks",
+        "containers",
+        "document"
+    ],
+    "gitlens.keymap": "chorded",
+    "gitlens.launchpad.indicator.enabled": false,
+    "gitlens.menus": {
+        "editor": {
+            "blame": false,
+            "clipboard": true,
+            "compare": true,
+            "history": true,
+            "remote": false
+        },
+        "editorGroup": {
+            "blame": true,
+            "compare": true
+        },
+        "editorTab": {
+            "clipboard": true,
+            "compare": true,
+            "history": true,
+            "remote": true
+        },
+        "explorer": {
+            "clipboard": true,
+            "compare": true,
+            "history": true,
+            "remote": true
+        },
+        "scm": {
+            "authors": true
+        },
+        "scmGroup": {
+            "compare": true,
+            "openClose": true,
+            "stash": true
+        },
+        "scmGroupInline": {
+            "stash": true
+        },
+        "scmItem": {
+            "clipboard": true,
+            "compare": true,
+            "history": true,
+            "remote": false,
+            "stash": true
+        }
+    },
+    "gitlens.sortTagsBy": "date:desc",
+    "gitlens.statusBar.command": "gitlens.openFileOnRemote",
+    "gitlens.telemetry.enabled": false,
+    "gitlens.views.fileHistory.avatars": false,
+    "gitlens.views.scm.grouped.views": {
+        "branches": true,
+        "commits": true,
+        "contributors": true,
+        "launchpad": true,
+        "remotes": true,
+        "repositories": false,
+        "searchAndCompare": false,
+        "stashes": true,
+        "tags": true,
+        "worktrees": true
+    },
+
+    "gitmoji.addCustomEmoji": [
+        {
+            "code": ":whale:",
+            "description": "Work about Docker",
+            "description_zh_cn": "处理 Docker 相关的工作",
+            "emoji": "🐳"
+        },
+        {
+            "code": ":wheel_of_dharma:",
+            "description": "Work about Kubernetes",
+            "description_zh_cn": "处理 Kubernetes 相关的工作 K8S",
+            "emoji": "☸️"
+        }
+    ],
+    "gitmoji.showEmojiCode": true,
+    "hadolint.hadolintPath": "D:\\Apps\\hadolint.EXE",
+    "haskell.plugin.ghcide-completions.config.autoExtendOn": true,
+    "haskell.plugin.ghcide-type-lenses.config.mode": "always",
+    "haskell.plugin.hlint.config.flags": [
+        "-j4"
+    ],
+    "haskell.upgradeGHCup": false,
+    "http.proxyAuthorization": null,
+    "http.proxySupport": "fallback",
+    "insertDateString.format": "YYYY-MM-DDThh:mm:ssZZZ",
+    "jupyter.askForKernelRestart": false,
+    "jupyter.debugJustMyCode": true,
+    "jupyter.exportWithOutputEnabled": true,
+    "jupyter.interactiveWindow.codeLens.commands": "jupyter.runcell,  jupyter.runallcellsabove,  jupyter.runallcellbelow,  jupyter.debugcell",
+    "jupyter.interactiveWindow.textEditor.executeSelection": true,
+    "jupyter.notebookFileRoot": "${fileDirname}",
+    "jupyter.runStartupCommands": [
+        "%load_ext autoreload\\n%autoreload 2"
+    ],
+    "latex-workshop.formatting.latexindent.path": "D:\\Apps\\CLI\\latexindent.exe",
+    "latex-workshop.hover.preview.mathjax.extensions": [
+        "amscd",
+        "bbox",
+        "boldsymbol",
+        "braket",
+        "empheq",
+        "html",
+        "mathtools",
+        "textcomp",
+        "textmacros",
+        "unicode",
+        "upgreek"
+    ],
+    "latex-workshop.latex.autoBuild.interval": 2000,
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "xelatex",
+            "tools": [
+                "xelatex"
+            ]
+        },
+        {
+            "name": "pdflatex -> bibtex -> pdflatex * 2",
+            "tools": [
+                "bibtex",
+                "pdflatex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "tectonic",
+            "tools": [
+                "tectonic"
+            ]
+        },
+        {
+            "name": "texify",
+            "tools": [
+                "texify"
+            ]
+        }
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "args": [
+                "%DOC_EXT%",
+                "-c-style-errors",
+                "-interaction=nonstopmode",
+                "-output-directory=%OUTDIR%",
+                "-synctex=1"
+            ],
+            "command": "xelatex",
+            "env": {},
+            "name": "xelatex"
+        },
+        {
+            "args": [
+                "%DOC_EXT%",
+                "-file-line-error",
+                "-interaction=nonstopmode",
+                "-output-directory=%OUTDIR%",
+                "-synctex=1"
+            ],
+            "command": "pdflatex",
+            "env": {},
+            "name": "pdflatex"
+        },
+        {
+            "args": [
+                "%DOCFILE%"
+            ],
+            "command": "bibtex",
+            "env": {},
+            "name": "bibtex"
+        },
+        {
+            "args": [
+                "-e",
+                "knitr::opts_knit$set(concordance = TRUE); knitr::knit('%DOCFILE_EXT%')"
+            ],
+            "command": "Rscript",
+            "env": {},
+            "name": "rnw2tex"
+        },
+        {
+            "args": [
+                "-e",
+                "using Weave; weave(\"%DOC_EXT%\", doctype=\"tex\")"
+            ],
+            "command": "julia",
+            "env": {},
+            "name": "jnw2tex"
+        },
+        {
+            "args": [
+                "-e",
+                "using Weave; weave(\"%DOC_EXT%\", doctype=\"texminted\")"
+            ],
+            "command": "julia",
+            "env": {},
+            "name": "jnw2texminted"
+        },
+        {
+            "args": [
+                "%DOC_EXT%",
+                "-f",
+                "tex"
+            ],
+            "command": "pweave",
+            "env": {},
+            "name": "pnw2tex"
+        },
+        {
+            "args": [
+                "%DOC_EXT%",
+                "-f",
+                "texminted"
+            ],
+            "command": "pweave",
+            "env": {},
+            "name": "pnw2texminted"
+        },
+        {
+            "args": [
+                "%DOC%.tex",
+                "--keep-logs",
+                "--synctex"
+            ],
+            "command": "tectonic",
+            "env": {},
+            "name": "tectonic"
+        },
+        {
+            "args": [
+                "%DOC_EXT%",
+                "--pdf",
+                "--synctex",
+                "--tex-option=\"-file-line-error\"",
+                "--tex-option=\"-interaction=nonstopmode\""
+            ],
+            "command": "texify",
+            "env": {},
+            "name": "texify"
+        }
+    ],
+    "latex-workshop.linting.chktex.enabled": true,
+    "latex-workshop.linting.chktex.exec.args": [
+        "-e16",
+        "-n22",
+        "-n30",
+        "-n46",
+        "-q",
+        "-wall"
+    ],
+    "latex-workshop.linting.lacheck.enabled": true,
+    "latex-workshop.showContextMenu": true,
+    "latex-workshop.view.pdf.viewer": "tab",
+    "launch": {
+        "compounds": [],
+        "configurations": [
+            {
+                "debugMode": "file",
+                "name": "Debug R-File",
+                "request": "launch",
+                "type": "R-Debugger",
+                "workingDirectory": ""
+            },
+            {
+                "cwd": "${cwd}",
+                "name": "PowerShell Launch Current File",
+                "request": "launch",
+                "script": "${file}",
+                "type": "PowerShell"
+            },
+            {
+                "cwd": "${cwd}",
+                "name": "PowerShell Interactive Session",
+                "request": "launch",
+                "type": "PowerShell"
+            },
+            {
+                "name": ".NET Core Attach",
+                "request": "attach",
+                "type": "coreclr"
+            },
+            {
+                "name": "PowerShell Attach to Host Process",
+                "request": "attach",
+                "type": "PowerShell"
+            }
+        ],
+        "version": "0.2.0"
+    },
+    "licenser.author": "Ajay Mehta",
+    "licenser.disableAutoHeaderInsertion": true,
+    "licenser.license": "AL2",
+    "Lua.codeLens.enable": true,
+    "Lua.hint.enable": true,
+    "markdown-preview-enhanced.codeBlockTheme": "solarized-light.css",
+    "markdown-preview-enhanced.enableCriticMarkupSyntax": true,
+    "markdown-preview-enhanced.enableExtendedTableSyntax": true,
+    "markdown-preview-enhanced.enableHTML5Embed": true,
+    "markdown-preview-enhanced.enableTypographer": true,
+    "markdown-preview-enhanced.HTML5EmbedUseLinkSyntax": true,
+    "markdown-preview-enhanced.mermaidTheme": "forest",
+    "markdown-preview-enhanced.pandocPath": "D:\\Apps\\Quarto\\bin\\tools\\pandoc.exe",
+    "markdown-preview-enhanced.previewTheme": "github-light.css",
+    "markdown-preview-enhanced.scrollSync": true,
+    "markdown.occurrencesHighlight.enabled": true,
+    "markdown.preview.typographer": true,
+    "markdown.validate.unusedLinkDefinitions.enabled": "warning",
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "notebook.consolidatedRunButton": true,
+    "notebook.formatOnSave.enabled": true,
+    "notebook.inlineValues": "auto",
+    "notebook.lineNumbers": "on",
+    "notebook.outline.showCodeCells": true,
+    "notebook.output.scrolling": true,
+    "notebook.showFoldingControls": "always",
+    "omnisharp.organizeImportsOnFormat": true,
+    "omnisharp.projectFilesExcludePattern": "**/node_modules/**,**/.git/**,**/bower_components/**,**/bin/**,**/obj/**",
+    "path-autocomplete.disableUpOneFolder": false,
+    "path-autocomplete.pathMappings": {
+        "./": "${folder}",
+        "/": "/"
+    },
+    "peacock.affectDebuggingStatusBar": true,
+    "peacock.affectEditorGroupBorder": true,
+    "peacock.affectPanelBorder": true,
+    "peacock.affectSideBarBorder": true,
+    "peacock.affectStatusAndTitleBorders": true,
+    "peacock.affectTabActiveBorder": true,
+    "peacock.favoriteColors": [
+        {
+            "name": "Angular Red",
+            "value": "#b52e31"
+        },
+        {
+            "name": "Auth0 Orange",
+            "value": "#eb5424"
+        },
+        {
+            "name": "Azure Blue",
+            "value": "#007fff"
+        },
+        {
+            "name": "C# Purple",
+            "value": "#68217A"
+        },
+        {
+            "name": "Gatsby Purple",
+            "value": "#639"
+        },
+        {
+            "name": "Go Cyan",
+            "value": "#5dc9e2"
+        },
+        {
+            "name": "Java Blue-Gray",
+            "value": "#557c9b"
+        },
+        {
+            "name": "JavaScript Yellow",
+            "value": "#f9e64f"
+        },
+        {
+            "name": "Mandalorian Blue",
+            "value": "#1857a4"
+        },
+        {
+            "name": "Node Green",
+            "value": "#215732"
+        },
+        {
+            "name": "React Blue",
+            "value": "#00b3e6"
+        },
+        {
+            "name": "Something Different",
+            "value": "#832561"
+        },
+        {
+            "name": "Vue Green",
+            "value": "#42b883"
+        }
+    ],
+    "peacock.showColorInStatusBar": false,
+    "powershell.codeFormatting.addWhitespaceAroundPipe": true,
+    "powershell.codeFormatting.ignoreOneLineBlock": true,
+    "powershell.codeFormatting.pipelineIndentationStyle": "IncreaseIndentationForFirstPipeline",
+    "powershell.codeFormatting.preset": "OTBS",
+    "powershell.codeFormatting.trimWhitespaceAroundPipe": true,
+    "powershell.codeFormatting.useConstantStrings": true,
+    "powershell.codeFormatting.useCorrectCasing": true,
+    "powershell.codeFormatting.whitespaceBetweenParameters": true,
+    "powershell.debugging.createTemporaryIntegratedConsole": true,
+    "powershell.integratedConsole.focusConsoleOnExecute": false,
+    "powershell.integratedConsole.forceClearScrollbackBuffer": true,
+    "powershell.integratedConsole.suppressStartupBanner": true,
+    "powershell.pester.codeLens": false,
+    "powershell.promptToUpdatePowerShell": false,
+    "print.folder.exclude": [
+        "**/*.{bin,exe,dll,hex,pdb,pdf,pfx,png,jpg,gif,bmp,suo,design}",
+        "data",
+        "node_modules",
+        "{bin,obj,out}"
+    ],
+    "print.folder.fileNames": true,
+    "print.folder.includeFileList": false,
+    "print.folder.maxFiles": 30,
+    "print.folder.maxLines": 1200,
+    "projectManager.any.ignoredFolders": [
+        "artifacts",
+        "bin",
+        "node_modules",
+        "obj",
+        "out",
+        "test",
+        "typings"
+    ],
+    "projectManager.git.baseFolders": [
+        "D:\\git"
+    ],
+    "projectManager.openInNewWindowWhenClickingInStatusBar": true,
+    "projectManager.showParentFolderInfoOnDuplicates": true,
+    "python.analysis.autoFormatStrings": true,
+    "python.analysis.completeFunctionParens": true,
+    "python.analysis.diagnosticMode": "openFilesOnly",
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportConstantRedefinition": "error",
+        "reportDeprecated": "warning",
+        "reportDuplicateImport": "error",
+        "reportFunctionMemberAccess": "information",
+        "reportImplicitStringConcatenation": "error",
+        "reportImportCycles": "error",
+        "reportIncompatibleMethodOverride": "error",
+        "reportIncompatibleVariableOverride": "error",
+        "reportInconsistentConstructor": "warning",
+        "reportInvalidStringEscapeSequence": "error",
+        "reportMatchNotExhaustive": "warning",
+        "reportMissingTypeArgument": "information",
+        "reportPropertyTypeMismatch": "error",
+        "reportShadowedImports": "error",
+        "reportTypeCommentUsage": "information",
+        "reportUnboundVariable": "none",
+        "reportUnnecessaryCast": "warning",
+        "reportUnnecessaryTypeIgnoreComment": "warning",
+        "reportUntypedNamedTuple": "warning",
+        "reportUnusedImport": "warning"
+    },
+    "python.analysis.exclude": [
+        "**/.hypothesis",
+        "**/__pycache__",
+        "**/experimental",
+        "**/node_modules",
+        "**/typestubs"
+    ],
+    "python.analysis.fixAll": [
+        "source.convertImportFormat",
+        "source.unusedImports"
+    ],
+    "python.analysis.importFormat": "absolute",
+    "python.analysis.indexing": true,
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.analysis.inlayHints.variableTypes": true,
+    "python.analysis.logLevel": "Warning",
+    "python.analysis.packageIndexDepths": [
+        {
+            "depth": 2,
+            "name": "sklearn"
+        },
+        {
+            "depth": 2,
+            "name": "matplotlib"
+        },
+        {
+            "depth": 2,
+            "name": "scipy"
+        }
+    ],
+    "python.languageServer": "Pylance",
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "python.terminal.executeInFileDir": true,
+    "python.testing.pytestArgs": [
+        "tests"
+    ],
+    "python.testing.pytestEnabled": true,
+    "quarto.mathjax.extensions": [
+        "boldsymbol",
+        "braket",
+        "cases",
+        "colortbl",
+        "html",
+        "mathtools",
+        "unicode"
+    ],
+    "r.alwaysUseActiveTerminal": true,
+    "r.bracketedPaste": true,
+    "r.debugger.timeouts.startup": 5000,
+    "r.lsp.diagnostics": true,
+    "r.plot.defaults.colorTheme": "vscode",
+    "r.plot.useHttpgd": true,
+    "r.rmarkdown.codeLensCommands": [
+        "r.runAboveChunks",
+        "r.runBelowChunks",
+        "r.runCurrentChunk"
+    ],
+    "r.rmarkdown.preview.zoom": 1.2,
+    "r.rpath.linux": "/usr/bin/R",
+    "r.rpath.windows": "${env:R_BINARY}",
+    "r.rterm.linux": "/home/ajay/.local/bin/radian",
+    "r.rterm.windows": "D:\\Apps\\uv\\tools\\radian.exe",
+    "r.session.levelOfObjectDetail": "Normal",
+    "r.sessionWatcher": true,
+    "redhat.telemetry.enabled": false,
+    "remote.autoForwardPortsSource": "hybrid",
+    "rest-client.decodeEscapedUnicodeCharacters": true,
+    "rest-client.enableTelemetry": false,
+    "rest-client.previewOption": "exchange",
+    "rest-client.requestNameAsResponseTabTitle": true,
+    "rewrap.autoWrap.enabled": false,
+    "sarif-viewer.explorer.openWhenNoResults": false,
+    "scm.inputFontSize": 14,
+    "search.exclude": {
+        "**/*.code-search": true,
+        "**/bin": false,
+        "**/bower_components": true,
+        "**/node_modules": true
+    },
+    "search.showLineNumbers": true,
+    "search.useGlobalIgnoreFiles": true,
+    "security.promptForLocalFileProtocolHandling": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    // https: //stackoverflow.com/questions/64603768/can-i-exclude-certain-settings-with-vs-code-built-in-settings-sync-feature
+    "settingsSync.ignoredSettings": [
+        "hadolint.hadolintPath",
+        "projectManager.git.baseFolders",
+        // "python.venvPath",
+        // "r.rpath.windows",
+        // "r.rterm.windows",
+        "terminal.integrated.profiles.windows"
+    ],
+    "sort-json.settings.listSortType": "Value",
+    "sort-json.settings.objectSortType": "Key",
+    "sort-json.settings.promptCollectionKeys": true,
+    "stylua.searchBinaryInPATH": true,
+    "stylua.searchParentDirectories": true,
+    "telemetry.telemetryLevel": "error",
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
+    "terminal.integrated.fontLigatures.enabled": true,
+    "terminal.integrated.fontSize": 12,
+    "terminal.integrated.minimumContrastRatio": 1,
+    "terminal.integrated.profiles.windows": {
+        "Command Prompt": {
+            "args": [],
+            "icon": "terminal-cmd",
+            "path": [
+                "${env:windir}\\Sysnative\\cmd.exe",
+                "${env:windir}\\System32\\cmd.exe"
+            ]
+        },
+        "Git Bash": {
+            "icon": "terminal-bash",
+            "overrideName": true,
+            "source": "Git Bash"
+        },
+        "PowerShell": {
+            "icon": "terminal-powershell",
+            "source": "PowerShell"
+        }
+    },
+    "terminal.integrated.shellIntegration.enabled": true,
+    "terminal.integrated.smoothScrolling": true,
+    "terminal.integrated.stickyScroll.enabled": true,
+    "terminal.integrated.suggest.enabled": true,
+    "terminal.integrated.suggest.quickSuggestions": {
+        "arguments": "on",
+        "commands": "on",
+        "paths": "on",
+        "unknown": "off"
+    },
+    "terminal.integrated.tabs.description": "${task}${separator}${local}${separator}${progress}${separator}${cwdFolder}",
+    "terminal.integrated.tabs.title": "${process}${separator}${shellCommand}",
+    "versionlens.dotnet.caching.duration": 3,
+    "versionlens.logging.level": "debug",
+    "versionlens.suggestions.showOnStartup": true,
+    "vscode-color-picker.languages": [
+        "javascript",
+        "lua",
+        "markdown",
+        "powershell",
+        "python",
+        "typescript"
+    ],
+    "vsicons.dontShowNewVersionMessage": true,
+    "vsicons.presets.foldersAllDefaultIcon": true,
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "window.commandCenter": true,
+    "window.menuBarVisibility": "classic",
+    "window.newWindowProfile": "Default",
+    "window.restoreWindows": "preserve",
+    "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}${separator}${activeRepositoryBranchName}",
+    "workbench.colorCustomizations": {
+        "diffEditor.insertedTextBackground": "#0d7a5ba8",
+        "diffEditor.removedTextBackground": "#703131ec",
+        "gitDecoration.addedResourceForeground": "#13af2d91",
+        "gitDecoration.conflictingResourceForeground": "#ffdd11",
+        "gitDecoration.deletedResourceForeground": "#ff0000",
+        "gitDecoration.ignoredResourceForeground": "#e7e7e770",
+        "gitDecoration.modifiedResourceForeground": "#e08816",
+        "gitDecoration.stageDeletedResourceForeground": "#fc1ea0",
+        "gitDecoration.stageModifiedResourceForeground": "#2daa07",
+        "gitDecoration.untrackedResourceForeground": "#e7e7e7"
+    },
+    "workbench.colorTheme": "Monokai++",
+    "workbench.editor.doubleClickTabToToggleEditorGroupSizes": "maximize",
+    "workbench.editor.highlightModifiedTabs": true,
+    "workbench.editor.historyBasedLanguageDetection": true,
+    "workbench.panel.showLabels": false,
+    "workbench.settings.applyToAllProfiles": [
+        "breadcrumbs.enabled",
+        "chat.agent.enabled",
+        "code-runner.enableAppInsights",
+        "code-runner.runInTerminal",
+        "code-runner.showRunCommandInEditorContextMenu",
+        "debug.showVariableTypes",
+        "diffEditor.experimental.collapseUnchangedRegions",
+        "diffEditor.experimental.showMoves",
+        "diffEditor.experimental.useVersion2",
+        "diffEditor.hideUnchangedRegions.enabled",
+        "editor.fontSize",
+        "editor.formatOnPaste",
+        "editor.formatOnSave",
+        "editor.formatOnSaveMode",
+        "editor.guides.bracketPairs",
+        "editor.guides.bracketPairsHorizontal",
+        "editor.inlayHints.padding",
+        "editor.lightbulb.enabled",
+        "editor.linkedEditing",
+        "editor.matchBrackets",
+        "editor.mouseWheelZoom",
+        "editor.multiCursorModifier",
+        "editor.multiDocumentOccurrencesHighlight",
+        "editor.occurrencesHighlightDelay",
+        "editor.overtypeCursorStyle",
+        "editor.snippetSuggestions",
+        "editor.stickyTabStops",
+        "editor.suggestSelection",
+        "editor.tabCompletion",
+        "errorLens.codeLensEnabled",
+        "errorLens.codeLensOnClick",
+        "errorLens.codeLensTemplate",
+        "errorLens.delayMode",
+        "errorLens.editorHoverPartsEnabled",
+        "errorLens.enabledInMergeConflict",
+        "errorLens.enableOnDiffView",
+        "errorLens.excludeBySource",
+        "errorLens.followCursor",
+        "errorLens.fontWeight",
+        "errorLens.gutterIconSet",
+        "errorLens.gutterIconsFollowCursorOverride",
+        "errorLens.messageBackgroundMode",
+        "errorLens.messageTemplate",
+        "errorLens.respectUpstreamEnabled",
+        "errorLens.severityText",
+        "explorer.confirmDelete",
+        "explorer.confirmDragAndDrop",
+        "extensions.ignoreRecommendations",
+        "files.associations",
+        "files.defaultLanguage",
+        "files.exclude",
+        "files.insertFinalNewline",
+        "fontAwesomeAutocomplete.patterns",
+        "formatContextMenu.closeAfterSave",
+        "formatContextMenu.saveAfterFormat",
+        "git-graph.date.format",
+        "git-graph.dialog.addTag.pushToRemote",
+        "git-graph.repository.fetchAndPrune",
+        "git.allowForcePush",
+        "git.allowNoVerifyCommit",
+        "git.alwaysShowStagedChangesResourceGroup",
+        "git.alwaysSignOff",
+        "git.autorefresh",
+        "git.closeDiffOnOperation",
+        "git.confirmEmptyCommits",
+        "git.confirmForcePush",
+        "git.confirmNoVerifyCommit",
+        "git.confirmSync",
+        "git.decorations.enabled",
+        "git.enableCommitSigning",
+        "git.enableStatusBarSync",
+        "git.mergeEditor",
+        "git.promptToSaveFilesBeforeCommit",
+        "git.pruneOnFetch",
+        "git.repositoryScanIgnoredFolders",
+        "git.showCommitInput",
+        "git.suggestSmartCommit",
+        "git.timeline.date",
+        "git.timeline.showUncommitted",
+        "git.useCommitInputAsStashMessage",
+        "git.useEditorAsCommitInput",
+        "git.useForcePushWithLease",
+        "github.branchProtection",
+        "github.copilot.chat.generateTests.codeLens",
+        "gitlens.advanced.fileHistoryFollowsRenames",
+        "gitlens.advanced.messages",
+        "gitlens.ai.generateCommitMessage.enabled",
+        "gitlens.cloudPatches.enabled",
+        "gitlens.codeLens.authors.command",
+        "gitlens.codeLens.authors.enabled",
+        "gitlens.codeLens.enabled",
+        "gitlens.codeLens.recentChange.command",
+        "gitlens.codeLens.recentChange.enabled",
+        "gitlens.codeLens.scopes",
+        "gitlens.currentLine.enabled",
+        "gitlens.graph.statusBar.enabled",
+        "gitlens.hovers.enabled",
+        "gitlens.keymap",
+        "gitlens.launchpad.indicator.enabled",
+        "gitlens.menus",
+        "gitlens.plusFeatures.enabled",
+        "gitlens.showWelcomeOnInstall",
+        "gitlens.sortTagsBy",
+        "gitlens.statusBar.command",
+        "gitlens.statusBar.enabled",
+        "gitlens.statusBar.pullRequests.enabled",
+        "gitlens.telemetry.enabled",
+        "gitlens.terminalLinks.enabled",
+        "gitlens.views.commits.avatars",
+        "gitlens.views.commits.pullRequests.enabled",
+        "gitlens.views.commits.pullRequests.showForBranches",
+        "gitlens.views.commits.pullRequests.showForCommits",
+        "gitlens.views.fileHistory.avatars",
+        "gitlens.views.scm.grouped.default",
+        "gitlens.views.scm.grouped.views",
+        "gitmoji.addCustomEmoji",
+        "gitmoji.outputType",
+        "gitmoji.showEmojiCode",
+        "insertDateString.format",
+        "launch",
+        "licenser.author",
+        "licenser.disableAutoHeaderInsertion",
+        "markdown-preview-enhanced.enableCriticMarkupSyntax",
+        "markdown-preview-enhanced.enableExtendedTableSyntax",
+        "markdown-preview-enhanced.enableHTML5Embed",
+        "markdown-preview-enhanced.enableTypographer",
+        "markdown-preview-enhanced.HTML5EmbedUseLinkSyntax",
+        "markdown-preview-enhanced.mermaidTheme",
+        "markdown-preview-enhanced.previewTheme",
+        "markdown-preview-enhanced.scrollSync",
+        "markdown.editor.pasteUrlAsFormattedLink.enabled",
+        "markdown.occurrencesHighlight.enabled",
+        "markdown.preview.typographer",
+        "markdown.validate.unusedLinkDefinitions.enabled",
+        "notebook.consolidatedRunButton",
+        "notebook.inlineValues",
+        "partialDiff.enableTelemetry",
+        "path-autocomplete.disableUpOneFolder",
+        "path-autocomplete.pathMappings",
+        "peacock.affectDebuggingStatusBar",
+        "peacock.affectEditorGroupBorder",
+        "peacock.affectPanelBorder",
+        "peacock.affectSideBarBorder",
+        "peacock.affectStatusAndTitleBorders",
+        "peacock.affectTabActiveBorder",
+        "peacock.favoriteColors",
+        "peacock.showColorInStatusBar",
+        "print.folder.exclude",
+        "print.folder.fileNames",
+        "print.folder.maxFiles",
+        "print.folder.maxLines",
+        "projectManager.any.ignoredFolders",
+        "projectManager.git.baseFolders",
+        "projectManager.openInNewWindowWhenClickingInStatusBar",
+        "projectManager.showParentFolderInfoOnDuplicates",
+        "quarto.mathjax.extensions",
+        "redhat.telemetry.enabled",
+        "rest-client.decodeEscapedUnicodeCharacters",
+        "rest-client.enableTelemetry",
+        "rest-client.previewOption",
+        "rest-client.requestNameAsResponseTabTitle",
+        "rewrap.autoWrap.enabled",
+        "scm.inputFontSize",
+        "search.exclude",
+        "search.showLineNumbers",
+        "search.useGlobalIgnoreFiles",
+        "sort-json.settings.listSortType",
+        "sort-json.settings.objectSortType",
+        "sort-json.settings.promptCollectionKeys",
+        "stylua.searchBinaryInPATH",
+        "stylua.searchParentDirectories",
+        "terminal.integrated.defaultProfile.windows",
+        "terminal.integrated.fontLigatures.enabled",
+        "terminal.integrated.fontSize",
+        "terminal.integrated.minimumContrastRatio",
+        "terminal.integrated.profiles.windows",
+        "terminal.integrated.shellIntegration.enabled",
+        "terminal.integrated.shellIntegration.suggestEnabled",
+        "terminal.integrated.smoothScrolling",
+        "terminal.integrated.stickyScroll.enabled",
+        "terminal.integrated.suggest.enabled",
+        "terminal.integrated.suggest.quickSuggestions",
+        "terminal.integrated.tabs.description",
+        "terminal.integrated.tabs.title",
+        "vscode-color-picker.languages",
+        "window.title",
+        "window.zoomLevel",
+        "workbench.colorCustomizations",
+        "workbench.editor.doubleClickTabToToggleEditorGroupSizes",
+        "workbench.editor.enablePreview",
+        "workbench.editor.highlightModifiedTabs",
+        "workbench.editor.historyBasedLanguageDetection",
+        "workbench.layoutControl.enabled",
+        "workbench.panel.showLabels",
+        "xml.codeLens.enabled",
+        "xml.format.emptyElements",
+        "xml.format.joinCommentLines",
+        "xml.format.maxLineWidth",
+        "xml.format.preserveAttributeLineBreaks",
+        "xml.format.preservedNewlines",
+        "xml.symbols.filters",
+        "yaml.customTags",
+        "yaml.maxItemsComputed",
+        "yaml.schemas"
+    ],
+    "workbench.tree.renderIndentGuides": "always",
+    "xml.codeLens.enabled": true,
+    "xml.format.emptyElements": "collapse",
+    "xml.format.joinCommentLines": true,
+    "xml.format.maxLineWidth": 0,
+    "xml.format.preserveAttributeLineBreaks": true,
+    "xml.format.preservedNewlines": 0,
+    "xml.symbols.filters": [
+        {
+            "expressions": [
+                {
+                    "xpath": "//text()"
+                }
+            ],
+            "pattern": "**/pom.xml"
+        },
+        {
+            "expressions": [
+                {
+                    "xpath": "/Project/ItemGroup/PackageReference/@*"
+                },
+                {
+                    "xpath": "//text()"
+                }
+            ],
+            "pattern": "**/*.csproj"
+        }
+    ],
+    "yaml.customTags": [
+        "!And",
+        "!And sequence",
+        "!Base64",
+        "!Cidr",
+        "!Equals",
+        "!Equals sequence",
+        "!FindInMap",
+        "!FindInMap sequence",
+        "!GetAtt",
+        "!GetAZs",
+        "!If",
+        "!If sequence",
+        "!ImportValue",
+        "!ImportValue sequence",
+        "!Join",
+        "!Join sequence",
+        "!Not",
+        "!Not sequence",
+        "!Or",
+        "!Or sequence",
+        "!Ref",
+        "!Select",
+        "!Select sequence",
+        "!Split",
+        "!Split sequence",
+        "!Sub",
+        "!Sub sequence"
+    ],
+    "yaml.maxItemsComputed": 50000,
+    "yaml.schemas": {
+        "file:///c%3A/Users/ajaym/.vscode/extensions/docsmsft.docs-yaml-1.0.1/dist/toc.schema.json": "/toc\\.yml/i"
+    }
+}
