@@ -157,7 +157,8 @@ c.TerminalInteractiveShell.highlighting_style_overrides = {
     'completion-menu.multi-column-meta': f'bg:{pmenu} {white}',
 }
 
-c.InteractiveShellApp.pylab = 'auto'
+# This is bad - hijacks methods due to namespace pollution.
+# c.InteractiveShellApp.pylab = 'auto'
 
 c.TerminalInteractiveShell.colors = 'Linux'
 c.TerminalInteractiveShell.confirm_exit = False
@@ -175,8 +176,7 @@ c.InteractiveShell.xmode = 'Context'
 
 # https://github.com/alexmojaki/snoop?tab=readme-ov-file#ipythonjupyter-integration
 c.InteractiveShellApp.extensions = ['autoreload', 'snoop']
-# Always import some modules
-c.InteractiveShellApp.exec_lines = ['import numpy as np', 'from rich import print', '%autoreload 2']
+c.InteractiveShellApp.exec_lines = ['%autoreload 0']
 
 c.PrefilterManager.multi_line_specials = True
 
