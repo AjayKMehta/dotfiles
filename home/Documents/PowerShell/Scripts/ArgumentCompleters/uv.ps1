@@ -255,6 +255,7 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--marker', '--marker', [CompletionResultType]::ParameterName, 'Apply this marker to all added packages')
             [CompletionResult]::new('--optional', '--optional', [CompletionResultType]::ParameterName, 'Add the requirements to the package''s optional dependencies for the specified extra')
             [CompletionResult]::new('--group', '--group', [CompletionResultType]::ParameterName, 'Add the requirements to the specified dependency group')
+            [CompletionResult]::new('--bounds', '--bounds', [CompletionResultType]::ParameterName, 'The kind of version specifier to use when adding dependencies')
             [CompletionResult]::new('--rev', '--rev', [CompletionResultType]::ParameterName, 'Commit to use when adding a dependency from Git')
             [CompletionResult]::new('--tag', '--tag', [CompletionResultType]::ParameterName, 'Tag to use when adding a dependency from Git')
             [CompletionResult]::new('--branch', '--branch', [CompletionResultType]::ParameterName, 'Branch to use when adding a dependency from Git')
