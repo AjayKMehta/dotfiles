@@ -100,6 +100,7 @@ Register-ArgumentCompleter -Native -CommandName 'ast-grep' -ScriptBlock {
             [CompletionResult]::new('--context', '--context', [CompletionResultType]::ParameterName, 'Show NUM lines around each match')
             [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
             [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
+            [CompletionResult]::new('--include-metadata', '--include-metadata', [CompletionResultType]::ParameterName, 'Include rule metadata in the json output')
             [CompletionResult]::new('--follow', '--follow', [CompletionResultType]::ParameterName, 'Follow symbolic links')
             [CompletionResult]::new('--stdin', '--stdin', [CompletionResultType]::ParameterName, 'Enable search code from StdIn')
             [CompletionResult]::new('-i', '-i', [CompletionResultType]::ParameterName, 'Start interactive edit session')
