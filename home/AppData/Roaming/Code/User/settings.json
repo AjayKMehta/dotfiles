@@ -366,16 +366,17 @@
     "gitlens.telemetry.enabled": false,
     "gitlens.views.fileHistory.avatars": false,
     "gitlens.views.scm.grouped.views": {
-        "branches": true,
         "commits": true,
-        "contributors": true,
-        "launchpad": true,
+        "branches": true,
         "remotes": true,
-        "repositories": false,
-        "searchAndCompare": false,
         "stashes": true,
         "tags": true,
-        "worktrees": true
+        "worktrees": true,
+        "contributors": true,
+        "fileHistory": false,
+        "repositories": false,
+        "searchAndCompare": false,
+        "launchpad": true
     },
 
     "gitmoji.addCustomEmoji": [

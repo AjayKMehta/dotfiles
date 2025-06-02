@@ -304,11 +304,6 @@
         "when": "editorTextFocus"
     },
     {
-        "command": "git.close",
-        "key": "ctrl+w",
-        "when": "view.workbench.scm.visible"
-    },
-    {
         "command": "-sortLines.sortLines",
         "key": "f9",
         "when": "editorTextFocus"
