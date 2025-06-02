@@ -189,6 +189,19 @@
                 "hidden": false,
                 "name": "Developer PowerShell for VS 2022 (2)",
                 "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "colorScheme": "Dark+",
+                "commandline": "C:\\Program Files\\Git\\git-bash.exe",
+                "font": 
+                {
+                    "face": "Agave Nerd Font Mono"
+                },
+                "guid": "{9a63f933-d44f-4909-8f1a-6978b2b3636a}",
+                "hidden": false,
+                "icon": "C:\\Program Files\\Git\\mingw64\\share\\git\\git-for-windows.ico",
+                "name": "Git Bash",
+                "startingDirectory": "%USERPROFILE%"
             }
         ]
     },
