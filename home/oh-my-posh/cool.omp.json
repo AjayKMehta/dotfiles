@@ -73,7 +73,10 @@
             "fetch_stash_count": true,
             "fetch_status": true,
             "fetch_upstream_icon": true,
-            "truncate_symbol": "\u2026"
+            "truncate_symbol": "\u2026",
+            "untracked_modes": {
+              "*": "all"
+            }
           },
           "style": "powerline",
           "template": " {{ url .UpstreamIcon .UpstreamURL }}{{ trunc 30 .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} <#FF479C>\uf044 {{ .Working.String }}</>{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} <#35FF00>\uf046 {{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0 }} <#009AFF>\ueb4b {{ .StashCount }}{{ end }}</>{{ if gt .WorktreeCount 0 }} \uf1bb {{ .WorktreeCount }}{{ end }}",
