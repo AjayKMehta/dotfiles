@@ -35,7 +35,6 @@
 
     ## Diff
     delta = -c core.pager=delta diff
-    delta-s = -c core.pager=delta -c 'delta.features=sideways decorations my-line-numbers emph' diff
     compare2 = difftool -d -g @
     difft = -c diff.external=difft diff
     difftd = -c core.pager=delta -c diff.external=difft diff
@@ -180,17 +179,10 @@
 [interactive]
     diffFilter = delta --color-only
 [delta]
-    features = decorations my-line-numbers emph
-    light = false  # set to true if you're in a terminal w/ a light background color
+    # Override or modify (precede with +) with $DELTA_FEATURES
+    features = default sideways
     navigate = true
     hyperlinks = true
-    whitespace-error-style = magenta reverse
-    inspect-raw-lines = true
-    max-line-distance = 1.0
-    plus-style = "syntax #003800"
-    minus-style = "syntax #3f0001"
-    syntax-theme = TwoDark
-    map-styles = bold purple => syntax magenta, bold cyan => syntax blue
 [tag]
     sort = version:refname
     gpgsign = true
