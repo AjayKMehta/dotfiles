@@ -906,11 +906,13 @@
     "versionlens.logging.level": "debug",
     "versionlens.suggestions.showOnStartup": true,
     "vscode-color-picker.languages": [
+        "gitconfig",
         "javascript",
         "lua",
         "markdown",
         "powershell",
         "python",
+        "quarto",
         "typescript"
     ],
     "vsicons.dontShowNewVersionMessage": true,
