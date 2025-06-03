@@ -1,3 +1,29 @@
+# features = decorations my-line-numbers emph
+[delta "default"]
+    whitespace-error-style = magenta reverse
+    inspect-raw-lines = true
+    max-line-distance = 1.0
+    plus-style = "syntax #003800"
+    minus-style = "syntax #3f0001"
+    syntax-theme = TwoDark
+    map-styles = bold purple => syntax magenta, bold cyan => syntax blue
+    commit-decoration-style = blue ol
+    commit-style = raw
+    file-style = omit
+    hunk-header-decoration-style = blue box
+    hunk-header-file-style = red
+    hunk-header-line-number-style = "#067a00"
+    hunk-header-style = file line-number syntax
+	line-numbers = true
+	line-numbers-minus-style = red
+	line-numbers-zero-style = "#FFF000"
+	line-numbers-plus-style = green
+	line-numbers-left-format = {nm:>4}┊
+	line-numbers-right-format = {np:>4}│
+	line-numbers-left-style = blue
+	line-numbers-right-style = blue
+	minus-emph-style = "#A92211 bold #ffeadd"
+	plus-emph-style = "#003A0A bold #ffeadd"
 [delta "interactive"]
     keep-plus-minus-markers = false
 [delta "sideways"]
