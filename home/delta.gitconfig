@@ -1,5 +1,6 @@
 # features = decorations my-line-numbers emph
 [delta "default"]
+    dark = true
     whitespace-error-style = magenta reverse
     inspect-raw-lines = true
     max-line-distance = 1.0
@@ -14,33 +15,34 @@
     hunk-header-file-style = red
     hunk-header-line-number-style = "#067a00"
     hunk-header-style = file line-number syntax
-	line-numbers = true
-	line-numbers-minus-style = red
-	line-numbers-zero-style = "#FFF000"
-	line-numbers-plus-style = green
-	line-numbers-left-format = {nm:>4}┊
-	line-numbers-right-format = {np:>4}│
-	line-numbers-left-style = blue
-	line-numbers-right-style = blue
-	minus-emph-style = "#A92211 bold #ffeadd"
-	plus-emph-style = "#003A0A bold #ffeadd"
+    line-numbers = true
+    line-numbers-minus-style = red
+    line-numbers-zero-style = "#FFF000"
+    line-numbers-plus-style = green
+    line-numbers-left-format = {nm:>4}┊
+    line-numbers-right-format = {np:>4}│
+    line-numbers-left-style = blue
+    line-numbers-right-style = blue
+    minus-emph-style = "#A92211 bold #ffeadd"
+    plus-emph-style = "#003A0A bold #ffeadd"
 [delta "interactive"]
     keep-plus-minus-markers = false
 [delta "sideways"]
-	side-by-side = true
-	line-numbers-left-style = cyan
-	line-numbers-right-style = cyan
-	line-numbers-minus-style = 124
-	line-numbers-plus-style = 28
+    side-by-side = true
+    line-numbers-left-style = cyan
+    line-numbers-right-style = cyan
+    line-numbers-minus-style = 124
+    line-numbers-plus-style = 28
 [delta "highlight"]
-	diff-highlight = true
+    diff-highlight = true
 [delta "so-fancy"]
-	diff-so-fancy = true
+    diff-so-fancy = true
 [delta "var-width"]
-	width = variable
+    width = variable
 [delta "light"]
-	plus-style = "green bold ul #ffeeee"
-	minus-style = "red bold ul #ffeeee"
+    dark = false
+    plus-style = "green bold ul #ffeeee"
+    minus-style = "red bold ul #ffeeee"
 [delta "decorations"]
     commit-decoration-style = blue ol
     commit-style = raw
@@ -50,23 +52,23 @@
     hunk-header-line-number-style = "#067a00"
     hunk-header-style = file line-number syntax
 [delta "emph"]
-	minus-emph-style = "#A92211 bold #ffeadd"
-	plus-emph-style = "#003A0A bold #ffeadd"
+    minus-emph-style = "#A92211 bold #ffeadd"
+    plus-emph-style = "#003A0A bold #ffeadd"
 [delta "unobtrusive-line-numbers"]
-	line-numbers = true
-	line-numbers-minus-style = "#444444"
-	line-numbers-zero-style = "#444444"
-	line-numbers-plus-style = "#444444"
-	line-numbers-left-format = {nm:>4}┊
-	line-numbers-right-format = {np:>4}│
-	line-numbers-left-style = blue
-	line-numbers-right-style = blue
+    line-numbers = true
+    line-numbers-minus-style = "#444444"
+    line-numbers-zero-style = "#444444"
+    line-numbers-plus-style = "#444444"
+    line-numbers-left-format = {nm:>4}┊
+    line-numbers-right-format = {np:>4}│
+    line-numbers-left-style = blue
+    line-numbers-right-style = blue
 [delta "my-line-numbers"]
-	line-numbers = true
-	line-numbers-minus-style = red
-	line-numbers-zero-style = "#FFF000"
-	line-numbers-plus-style = green
-	line-numbers-left-format = {nm:>4}┊
-	line-numbers-right-format = {np:>4}│
-	line-numbers-left-style = blue
-	line-numbers-right-style = blue
+    line-numbers = true
+    line-numbers-minus-style = red
+    line-numbers-zero-style = "#FFF000"
+    line-numbers-plus-style = green
+    line-numbers-left-format = {nm:>4}┊
+    line-numbers-right-format = {np:>4}│
+    line-numbers-left-style = blue
+    line-numbers-right-style = blue
