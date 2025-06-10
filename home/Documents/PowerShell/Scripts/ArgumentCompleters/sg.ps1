@@ -124,8 +124,9 @@ Register-ArgumentCompleter -Native -CommandName 'ast-grep' -ScriptBlock {
             [CompletionResult]::new('--update-all', '--update-all', [CompletionResultType]::ParameterName, 'Update the content of all snapshots that have changed in test. Conflicts with --skip-snapshot-tests')
             [CompletionResult]::new('-i', '-i', [CompletionResultType]::ParameterName, 'Start an interactive review to update snapshots selectively')
             [CompletionResult]::new('--interactive', '--interactive', [CompletionResultType]::ParameterName, 'Start an interactive review to update snapshots selectively')
-            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help')
-            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help')
+            [CompletionResult]::new('--include-off', '--include-off', [CompletionResultType]::ParameterName, 'Include `severity:off` rules in test')
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
             break
         }
         'ast-grep;new' {
