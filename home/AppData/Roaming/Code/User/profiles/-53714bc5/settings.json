@@ -9,7 +9,7 @@
         "editor.defaultFormatter": "hashhar.gitattributes"
     },
     "[github-actions-workflow]": {
-        "editor.defaultFormatter": "GlenBuktenica.unicode-substitutions"
+        "editor.defaultFormatter": "redhat.vscode-yaml"
     },
     "[javascript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"

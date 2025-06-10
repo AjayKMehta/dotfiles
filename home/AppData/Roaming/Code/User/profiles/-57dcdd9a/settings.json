@@ -5,7 +5,7 @@
         "editor.defaultFormatter": "hashhar.gitattributes"
     },
     "[github-actions-workflow]": {
-        "editor.defaultFormatter": "github.vscode-github-actions"
+        "editor.defaultFormatter": "redhat.vscode-yaml"
     },
     "[go-template]": {
         "files.insertFinalNewline": false

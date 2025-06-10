@@ -15,7 +15,7 @@
         "editor.defaultFormatter": "yy0931.gitconfig-lsp"
     },
     "[github-actions-workflow]": {
-        "editor.defaultFormatter": "github.vscode-github-actions"
+        "editor.defaultFormatter": "redhat.vscode-yaml"
     },
     "[go-template]": {
         "files.insertFinalNewline": false
@@ -49,7 +49,7 @@
         "editor.defaultFormatter": "JohnnyMorganz.stylua"
     },
     "[markdown]": {
-        "editor.defaultFormatter": "vscode.markdown-language-features",
+        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
         "editor.fontFamily": "'DejaVuSansM Nerd Font', Consolas, 'Courier New', monospace, 'Lucida Sans'",
         "editor.wordWrap": "on",
         "files.trimTrailingWhitespace": false
@@ -227,6 +227,13 @@
     "errorLens.enableOnDiffView": true,
     "errorLens.excludeBySource": [
         "Pylance(reportGeneralTypeIssues)"
+    ],
+    "errorLens.excludeByMessage": [
+        "\"Rscript\": Unknown word\\.",
+        "Ambiguous link to heading",
+        {
+            "regex": "Context access might be invalid: .+"
+        }
     ],
     "errorLens.followCursor": "closestProblem",
     "errorLens.fontWeight": "bold",
@@ -890,7 +897,6 @@
             "source": "PowerShell"
         }
     },
-    "terminal.integrated.shellIntegration.enabled": true,
     "terminal.integrated.smoothScrolling": true,
     "terminal.integrated.stickyScroll.enabled": true,
     "terminal.integrated.suggest.enabled": true,
@@ -977,6 +983,7 @@
         "errorLens.editorHoverPartsEnabled",
         "errorLens.enabledInMergeConflict",
         "errorLens.enableOnDiffView",
+        "errorLens.excludeByMessage",
         "errorLens.excludeBySource",
         "errorLens.followCursor",
         "errorLens.fontWeight",

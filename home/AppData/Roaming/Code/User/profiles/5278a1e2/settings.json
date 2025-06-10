@@ -8,7 +8,7 @@
         "editor.defaultFormatter": "yy0931.gitconfig-lsp"
     },
     "[github-actions-workflow]": {
-        "editor.defaultFormatter": "github.vscode-github-actions"
+        "editor.defaultFormatter": "redhat.vscode-yaml"
     },
     "[go-template]": {
         "files.insertFinalNewline": false
@@ -60,7 +60,7 @@
     "debug.inlineValues": "on",
     "diffEditor.codeLens": true,
     "diffEditor.diffAlgorithm": "advanced",
-    "diffEditor.ignoreTrimWhitespace": false,
+    "diffEditor.ignoreTrimWhitespace": true,
     "diffEditor.wordWrap": "on",
     "dotfiles.repository": "https://github.com/AjayKMehta/dotfiles",
     "editor.bracketPairColorization.enabled": true,
@@ -95,9 +95,6 @@
     },
     "editor.wordWrap": "on",
     "errorLens.enabled": false,
-    "errorLens.excludeByMessage": [
-        "Ambiguous link to heading"
-    ],
     "evenBetterToml.formatter.indentEntries": true,
     "evenBetterToml.formatter.indentTables": true,
     "evenBetterToml.schema.links": true,

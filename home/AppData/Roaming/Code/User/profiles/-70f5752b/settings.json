@@ -15,7 +15,7 @@
         "editor.defaultFormatter": "yy0931.gitconfig-lsp"
     },
     "[github-actions-workflow]": {
-        "editor.defaultFormatter": "github.vscode-github-actions"
+        "editor.defaultFormatter": "redhat.vscode-yaml"
     },
     "[json]": {
         "editor.autoClosingBrackets": "always",
@@ -127,9 +127,6 @@
         }
     },
     "editor.wordWrap": "on",
-    "errorLens.excludeByMessage": [
-        "\"Rscript\": Unknown word\\."
-    ],
     "evenBetterToml.formatter.indentEntries": true,
     "evenBetterToml.formatter.indentTables": true,
     "evenBetterToml.schema.links": true,
@@ -203,7 +200,6 @@
     "vsicons.presets.foldersAllDefaultIcon": true,
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "window.commandCenter": true,
-
     "workbench.editor.labelFormat": "short",
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
