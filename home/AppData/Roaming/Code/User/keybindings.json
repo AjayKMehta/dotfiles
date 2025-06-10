@@ -151,7 +151,7 @@
     {
         "command": "workbench.action.toggleSidebarVisibility",
         "key": "ctrl+b",
-        "when": "editorLangId != 'markdown' || editorLangId != 'rmd' || editorLangId != 'quarto' || !editorTextFocus"
+        "when": "editorLangId != 'markdown' && editorLangId && 'rmd' && editorLangId != 'quarto' && !editorTextFocus"
     },
     {
         "command": "-editor.action.copyLinesDownAction",
@@ -412,7 +412,7 @@
         "command": "editor.action.transformToUppercase",
         "key": "ctrl+shift+u",
         "when": "editorTextFocus && !editorReadonly"
-    },    
+    },
     {
         "command": "-markdown.extension.closePreview",
         "key": "ctrl+shift+v",

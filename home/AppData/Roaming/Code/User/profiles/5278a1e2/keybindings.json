@@ -119,7 +119,7 @@
     {
         "command": "workbench.action.toggleSidebarVisibility",
         "key": "ctrl+b",
-        "when": "editorLangId != 'markdown' || editorLangId != 'rmd' || editorLangId != 'quarto' || !editorTextFocus"
+        "when": "!editorTextFocus && editorLangId != 'markdown' && editorLangId != 'quarto' && editorLangId != 'rmd'"
     },
     {
         "command": "-editor.action.copyLinesDownAction",
