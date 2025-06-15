@@ -336,9 +336,11 @@
             "name": "scipy"
         }
     ],
+    "python.analysis.supportAllPythonDocuments": true,
     "python.languageServer": "Pylance",
     "python.terminal.activateEnvInCurrentTerminal": true,
     "python.terminal.executeInFileDir": true,
+    "python.terminal.shellIntegration.enabled": true,
     "python.testing.pytestArgs": [
         "tests"
     ],
