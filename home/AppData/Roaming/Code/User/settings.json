@@ -114,6 +114,7 @@
         "editor.defaultFormatter": "redhat.vscode-yaml",
         "editor.fontLigatures": false
     },
+    "application.shellEnvironmentResolutionTimeout": 20,
     "breadcrumbs.enabled": true,
     "chat.agent.enabled": true,
     "code-runner.enableAppInsights": false,
@@ -225,15 +226,15 @@
         "messageEnabled": true
     },
     "errorLens.enableOnDiffView": true,
-    "errorLens.excludeBySource": [
-        "Pylance(reportGeneralTypeIssues)"
-    ],
     "errorLens.excludeByMessage": [
         "\"Rscript\": Unknown word\\.",
         "Ambiguous link to heading",
         {
             "regex": "Context access might be invalid: .+"
         }
+    ],
+    "errorLens.excludeBySource": [
+        "Pylance(reportGeneralTypeIssues)"
     ],
     "errorLens.followCursor": "closestProblem",
     "errorLens.fontWeight": "bold",
@@ -373,19 +374,18 @@
     "gitlens.telemetry.enabled": false,
     "gitlens.views.fileHistory.avatars": false,
     "gitlens.views.scm.grouped.views": {
-        "commits": true,
         "branches": true,
-        "remotes": true,
-        "stashes": true,
-        "tags": true,
-        "worktrees": true,
+        "commits": true,
         "contributors": true,
         "fileHistory": false,
+        "launchpad": true,
+        "remotes": true,
         "repositories": false,
         "searchAndCompare": false,
-        "launchpad": true
+        "stashes": true,
+        "tags": true,
+        "worktrees": true
     },
-
     "gitmoji.addCustomEmoji": [
         {
             "code": ":whale:",
@@ -899,7 +899,6 @@
     },
     "terminal.integrated.smoothScrolling": true,
     "terminal.integrated.stickyScroll.enabled": true,
-    "terminal.integrated.suggest.enabled": true,
     "terminal.integrated.suggest.quickSuggestions": {
         "arguments": "on",
         "commands": "on",
