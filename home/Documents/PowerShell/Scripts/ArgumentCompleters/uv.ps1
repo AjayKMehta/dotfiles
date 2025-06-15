@@ -1622,6 +1622,7 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--no-resolved', '--no-resolved', [CompletionResultType]::ParameterName, 'no-resolved')
             [CompletionResult]::new('--no-project', '--no-project', [CompletionResultType]::ParameterName, 'Avoid validating the Python pin is compatible with the project or workspace')
             [CompletionResult]::new('--global', '--global', [CompletionResultType]::ParameterName, 'Update the global Python version pin')
+            [CompletionResult]::new('--rm', '--rm', [CompletionResultType]::ParameterName, 'Remove the Python version pin')
             [CompletionResult]::new('-n', '-n', [CompletionResultType]::ParameterName, 'Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation')
             [CompletionResult]::new('--no-cache', '--no-cache', [CompletionResultType]::ParameterName, 'Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation')
             [CompletionResult]::new('--managed-python', '--managed-python', [CompletionResultType]::ParameterName, 'Require use of uv-managed Python versions')
