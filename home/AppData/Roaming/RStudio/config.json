@@ -8,7 +8,7 @@
 		"fixedWidthFont": "Hasklug Nerd Font Mono"
 	},
 	"view": {
-		"zoomLevel": 1,
+		"zoomLevel": 0.9,
 		"windowBounds": {
 			"x": -19,
 			"y": -19,
@@ -33,7 +33,7 @@
 		"windows": {
 			"rBinDir": "",
 			"preferR64": true,
-			"rExecutablePath": "C:\\Program Files\\R\\R-4.5.0\\bin\\x64\\Rterm.exe"
+			"rExecutablePath": "C:\\Program Files\\R\\R-4.5.1\\bin\\x64\\Rterm.exe"
 		}
 	},
 	"context_id": "",
