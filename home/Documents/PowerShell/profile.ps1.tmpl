@@ -1,4 +1,3 @@
-
 $env:LC_ALL = 'C.UTF-8'
 $env:ConEmuANSI = $True
 $env:DELTA_PAGER = 'less -rFX'
@@ -149,7 +148,7 @@ $env:FZF_DEFAULT_OPTS = @'
 
 
 function ifind() {
-    fd * | fzf --prompt 'All> ' --header 'CTRL-D: Directories / CTRL-F: Files' --bind 'ctrl-d:change-prompt(Directories> )+reload(fd --glob  * --type d)' --bind 'ctrl-f:change-prompt(Files> )+reload(fd --glob * --type f)'
+    fd | fzf --prompt 'All> ' --header 'CTRL-D: Directories / CTRL-F: Files' --bind 'ctrl-d:change-prompt(Directories> )+reload(fd --glob  * --type d)' --bind 'ctrl-f:change-prompt(Files> )+reload(fd --glob * --type f)'
 }
 
 # Inspired by https://junegunn.github.io/fzf/tips/ripgrep-integration/
@@ -336,4 +335,4 @@ function Disable-LocationChanged() {
     }
 }
 
-Enable-LocationChanged
+#Enable-LocationChanged
