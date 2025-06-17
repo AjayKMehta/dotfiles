@@ -69,9 +69,11 @@
     lds = -c 'delta.features=sideways decorations my-line-numbers emph' -c core.pager=delta log -p
     graph = lg --decorate --simplify-by-decoration
     hist = log --graph --oneline --all --decorate --simplify-by-decoration
+    # nd = No dependabot. Set --perl-regexp to be safe.
+    lnd = log -P --author='^((?!dependabot).*)$'
 
     ## Refs
-    rf = for-each-ref --sort=-committerdate --format='%(color:red bold)%(refname:short)%(color:reset) %(color:yellow)%(committerdate:relative) %(color:magenta bold)%(authorname) %(color:green)%(objectname:short)%(color:reset) %(contents:subject)'
+    rf = for-each-ref --sort=-committerdate --format='%(color:blue bold)%(refname:short)%(color:reset) %(color:yellow)%(committerdate:relative) %(color:magenta bold)%(authorname) %(color:green)%(objectname:short)%(color:reset) %(contents:subject)'
     lbs = rf refs/heads
     rbs = rf refs/remotes
 
