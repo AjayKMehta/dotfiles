@@ -1,7 +1,7 @@
 ########
 # Model:
 
-model: llama
+model: llama3.2
 
 # Model for editing code
 editor-model: code
@@ -16,9 +16,14 @@ show-model-warnings: false
 
 alias:
   - "mixtral:ollama_chat/mixtral:8x7b"
-  - "code:ollama_chat/qwen2.5-coder:14b"
-  - "llama:ollama_chat/llama3.2:latest"
+  - "llama3.2:ollama_chat/llama3.2:latest"
   - "deepseek:ollama_chat/deepseek-r1:8b"
+  - "qwen2.5-coder:ollama_chat/qwen2.5-coder:14b"
+  - "qwen3:ollama_chat/qwen3:8b"
+  - "codellama:ollama_chat/codellama:13b"
+
+# Check if model accepts settings like reasoning_effort/thinking_tokens (default: True)
+check-model-accepts-settings: true
 
 ########
 # Cache:
@@ -85,8 +90,13 @@ commit-prompt: |
   2. Is in the imperative mood (e.g., "add feature" not "added feature" or "adding feature").
   3. Does not exceed 72 characters.
 
+# Commit all pending changes with a suitable commit message, then exit
+commit: false
+
 ########################
 # Fixing and committing:
+
+lint: true
 
 # Automatically lints code after changes
 auto-lint: true
@@ -104,6 +114,7 @@ analytics: true
 
 # Set to true to debug
 show-repo-map: false
+
 show-prompts: false
 
 ########
@@ -111,6 +122,7 @@ show-prompts: false
 
 # Enable completion suggestions for shell commands
 suggest-shell-commands: true
+
 editor: "code --wait"
 
 notifications: true
