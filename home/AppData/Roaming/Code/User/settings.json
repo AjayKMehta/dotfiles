@@ -114,7 +114,7 @@
         "editor.defaultFormatter": "redhat.vscode-yaml",
         "editor.fontLigatures": false
     },
-    "application.shellEnvironmentResolutionTimeout": 20,
+    "application.shellEnvironmentResolutionTimeout": 30,
     "breadcrumbs.enabled": true,
     "chat.agent.enabled": true,
     "code-runner.enableAppInsights": false,
