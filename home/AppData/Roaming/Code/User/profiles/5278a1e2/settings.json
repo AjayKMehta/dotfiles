@@ -54,13 +54,13 @@
     },
     "[yaml]": {
         "editor.defaultFormatter": "redhat.vscode-yaml",
-        "editor.fontLigatures": false
+        "editor.fontLigatures": false,
+        "diffEditor.ignoreTrimWhitespace": true
     },
     "code-runner.showRunIconInEditorTitleMenu": false,
     "debug.inlineValues": "on",
     "diffEditor.codeLens": true,
     "diffEditor.diffAlgorithm": "advanced",
-    "diffEditor.ignoreTrimWhitespace": true,
     "diffEditor.wordWrap": "on",
     "dotfiles.repository": "https://github.com/AjayKMehta/dotfiles",
     "editor.bracketPairColorization.enabled": true,
@@ -327,7 +327,6 @@
     "vsicons.presets.foldersAllDefaultIcon": true,
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "window.commandCenter": true,
-    "workbench.colorTheme": "Neon City",
     "workbench.editor.labelFormat": "default",
     "workbench.iconTheme": "vscode-icons",
     "workbench.tree.renderIndentGuides": "always",
