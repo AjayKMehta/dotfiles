@@ -169,6 +169,7 @@
     "diffEditor.hideUnchangedRegions.enabled": true,
     "diffEditor.ignoreTrimWhitespace": true,
     "docker.images.label": "RepositoryName",
+    "dotnet.formatting.organizeImportsOnFormat": true,
     "editor.bracketPairColorization.enabled": true,
     "editor.colorDecoratorsLimit": 5000,
     "editor.defaultColorDecorators": "auto",
@@ -305,6 +306,7 @@
     "git.timeline.showUncommitted": true,
     "git.useCommitInputAsStashMessage": true,
     "github.branchProtection": true,
+    "github.copilot.chat.commitMessageGeneration.instructions": [],
     "github.copilot.chat.generateTests.codeLens": true,
     "github.copilot.enable": {
         "*": false,
@@ -641,7 +643,6 @@
     "notebook.outline.showCodeCells": true,
     "notebook.output.scrolling": true,
     "notebook.showFoldingControls": "always",
-    "omnisharp.organizeImportsOnFormat": true,
     "omnisharp.projectFilesExcludePattern": "**/node_modules/**,**/.git/**,**/bower_components/**,**/bin/**,**/obj/**",
     "path-autocomplete.disableUpOneFolder": false,
     "path-autocomplete.pathMappings": {
@@ -1027,6 +1028,7 @@
         "git.useEditorAsCommitInput",
         "git.useForcePushWithLease",
         "github.branchProtection",
+        "github.copilot.chat.commitMessageGeneration.instructions",
         "github.copilot.chat.generateTests.codeLens",
         "gitlens.advanced.fileHistoryFollowsRenames",
         "gitlens.advanced.messages",
