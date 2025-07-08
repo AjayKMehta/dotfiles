@@ -157,6 +157,7 @@
     "github.copilot.chat.codesearch.enabled": true,
     "github.copilot.chat.editor.temporalContext.enabled": true,
     "github.copilot.enable": {
+        "python": false,
         "quarto": false
     },
     "githubLocalActions.dockerDesktopPath": "C:/Program Files/Docker/Docker/Docker Desktop.exe",
