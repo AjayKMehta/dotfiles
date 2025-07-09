@@ -9,7 +9,6 @@ local({
   options(repos = r)
 
   num_cores <- min(parallel::detectCores() - 1, 8)
-  chat_qwen <-  ellmer::chat_ollama(model = "qwen2.5-coder:14b", api_args = list(keep_alive = "30m", num_ctx = 4096))
   options(
     # Enable script file names and line numbers for tryCatchLog
     keep.source = TRUE,
@@ -32,10 +31,7 @@ local({
     # 5 min timeout for downloading files
     timeout = 300,
     brms.backend = "cmdstanr",
-    brms.file_refit = "on_change",
-    .chores_chat = chat_qwen,
-    # https://simonpcouch.github.io/gander/articles/gander.html#choosing-a-model
-    .gander_chat = chat_qwen
+    brms.file_refit = "on_change"
   )
   if (interactive()) {
     is_vscode <- Sys.getenv("TERM_PROGRAM") == "vscode"
@@ -99,3 +95,15 @@ local({
     cat("Working Directory =", getwd())
   }
 })
+
+set_ollama_model <- function(model_name, num_ctx) {
+  chat_model <- ellmer::chat_ollama(
+    model = model_name,
+    api_args = list(keep_alive = "30m", num_ctx = num_ctx)
+  )
+  options(
+    .chores_chat = chat_model,
+    # https://simonpcouch.github.io/gander/articles/gander.html#choosing-a-model
+    .gander_chat = chat_model
+  )
+}
