@@ -15,7 +15,11 @@ local({
     Ncpus = num_cores,
     mc.cores = num_cores,
 {{ if .sparkdir}}    spark.install.dir = "{{.sparkdir}}",{{end}}
+    datatable.print.class = TRUE,
+    datatable.print.nrows = 10,
+    datatable.print.topn = 5,
     datatable.print.trunc.cols = TRUE,
+    datatable.show.indices = TRUE,
     warnPartialMatchAttr = TRUE,
     warnPartialMatchDollar = TRUE,
     warnPartialMatchArgs = TRUE,
