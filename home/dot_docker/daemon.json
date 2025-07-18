@@ -7,6 +7,6 @@
   },
   "debug": false,
   "experimental": false,
-  "insecure-registries": [],
-  "registry-mirrors": []
+  "insecure-registries": null,
+  "registry-mirrors": null
 }

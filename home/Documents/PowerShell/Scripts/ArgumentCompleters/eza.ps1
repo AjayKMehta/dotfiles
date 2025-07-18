@@ -48,7 +48,7 @@ $ezaCompletionScriptBlock = {
         # Filtering and sort options
         ('all', '-a', '--all', "Show hidden and 'dot' files. Use this twice to also show the '.' and '..' directories"),
         ('almost-all', '-A', '--almost-all', 'Equivalent to --all; included for compatibility with `ls -A`'),
-        ('list-dirs', '-d', '--list-dirs', "List directories as files; don't list their contents"),
+        ('list-dirs', '-d', '--treat-dirs-as-files', "List directories as files; don't list their contents"),
         ('only-dirs', '-D', '--only-dirs', 'List only directories'),
         ('only-files', '-f', '--only-files', 'List only files'),
 		('show-symlinks', '', '--show-symlinks', 'Explicitly show symbolic links (for use with --only-dirs | --only-files)'),
