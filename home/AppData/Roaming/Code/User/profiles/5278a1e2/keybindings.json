@@ -91,7 +91,7 @@
         "key": "ctrl+alt+m"
     },
     {
-    	// Lets you select matches to edit via multi-cursors!
+        // Lets you select matches to edit via multi-cursors!
         "command": "editor.action.selectHighlights",
         "key": "ctrl+alt+m",
         "when": "editorFocus"
@@ -206,6 +206,11 @@
         "command": "-markdown.extension.closePreview",
         "key": "ctrl+k v",
         "when": "activeWebviewPanelId == 'markdown.preview'"
+    },
+    {
+        "key": "ctrl+k v",
+        "command": "markdown-preview-enhanced.openPreviewToTheSide",
+        "when": "editorLangId =~ /^markdown$|^instructions$/^chatmode$/"
     },
     {
         "command": "-markdown.extension.editing.toggleMath",

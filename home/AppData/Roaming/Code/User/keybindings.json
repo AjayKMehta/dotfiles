@@ -240,6 +240,11 @@
         "when": "activeWebviewPanelId == 'markdown.preview'"
     },
     {
+        "key": "ctrl+k v",
+        "command": "markdown-preview-enhanced.openPreviewToTheSide",
+        "when": "editorLangId =~ /^markdown$|^instructions$/^chatmode$/"
+    },
+    {
         "command": "-markdown.extension.editing.toggleMath",
         "key": "ctrl+m",
         "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"

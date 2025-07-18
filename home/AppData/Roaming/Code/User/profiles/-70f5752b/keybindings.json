@@ -75,6 +75,10 @@
         "when": "terminalFocus"
     },
     {
+        "command": "-code-runner.runByLanguage",
+        "key": "ctrl+alt+j"
+    },
+    {
         "command": "-workbench.view.explorer",
         "key": "ctrl+alt+l",
         "when": "viewContainer.workbench.view.explorer.enabled"
@@ -190,6 +194,11 @@
         "command": "-workbench.action.unpinEditor",
         "key": "ctrl+k shift+enter",
         "when": "activeEditorIsPinned"
+    },
+    {
+        "key": "ctrl+k v",
+        "command": "markdown-preview-enhanced.openPreviewToTheSide",
+        "when": "editorLangId =~ /^markdown$|^instructions$/^chatmode$/"
     },
     {
         "command": "workbench.action.terminal.runRecentCommand",
