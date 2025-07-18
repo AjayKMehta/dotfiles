@@ -114,6 +114,7 @@
     "application.shellEnvironmentResolutionTimeout": 30,
     "breadcrumbs.enabled": true,
     "chat.agent.enabled": true,
+    "chat.editing.confirmEditRequestRetry": false,
     "code-runner.enableAppInsights": false,
     "code-runner.runInTerminal": true,
     "code-runner.showRunCommandInEditorContextMenu": false,
@@ -168,6 +169,7 @@
     "diffEditor.experimental.showMoves": true,
     "diffEditor.hideUnchangedRegions.enabled": true,
     "diffEditor.ignoreTrimWhitespace": true,
+    "docker.extension.enableComposeLanguageServer": false,
     "docker.images.label": "RepositoryName",
     "dotnet.formatting.organizeImportsOnFormat": true,
     "editor.bracketPairColorization.enabled": true,
@@ -895,6 +897,7 @@
             "source": "PowerShell"
         }
     },
+    "terminal.integrated.shellIntegration.enabled": false,
     "terminal.integrated.smoothScrolling": true,
     "terminal.integrated.stickyScroll.enabled": true,
     "terminal.integrated.suggest.quickSuggestions": {
