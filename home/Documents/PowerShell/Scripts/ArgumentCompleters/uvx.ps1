@@ -22,6 +22,7 @@ Register-ArgumentCompleter -Native -CommandName 'uvx' -ScriptBlock {
     $completions = @(switch ($command) {
         'uvx' {
             [CompletionResult]::new('--from', '--from', [CompletionResultType]::ParameterName, 'Use the given package to provide the command')
+            [CompletionResult]::new('-w', '-w', [CompletionResultType]::ParameterName, 'Run with the given packages installed')
             [CompletionResult]::new('--with', '--with', [CompletionResultType]::ParameterName, 'Run with the given packages installed')
             [CompletionResult]::new('--with-editable', '--with-editable', [CompletionResultType]::ParameterName, 'Run with the given packages installed in editable mode')
             [CompletionResult]::new('--with-requirements', '--with-requirements', [CompletionResultType]::ParameterName, 'Run with all packages listed in the given `requirements.txt` files')
@@ -48,6 +49,7 @@ Register-ArgumentCompleter -Native -CommandName 'uvx' -ScriptBlock {
             [CompletionResult]::new('--fork-strategy', '--fork-strategy', [CompletionResultType]::ParameterName, 'The strategy to use when selecting multiple versions of a given package across Python versions and platforms')
             [CompletionResult]::new('-C', '-C ', [CompletionResultType]::ParameterName, 'Settings to pass to the PEP 517 build backend, specified as `KEY=VALUE` pairs')
             [CompletionResult]::new('--config-setting', '--config-setting', [CompletionResultType]::ParameterName, 'Settings to pass to the PEP 517 build backend, specified as `KEY=VALUE` pairs')
+            [CompletionResult]::new('--config-settings-package', '--config-settings-package', [CompletionResultType]::ParameterName, 'Settings to pass to the PEP 517 build backend for a specific package, specified as `PACKAGE:KEY=VALUE` pairs')
             [CompletionResult]::new('--no-build-isolation-package', '--no-build-isolation-package', [CompletionResultType]::ParameterName, 'Disable isolation when building source distributions for a specific package')
             [CompletionResult]::new('--exclude-newer', '--exclude-newer', [CompletionResultType]::ParameterName, 'Limit candidate packages to those that were uploaded prior to the given date')
             [CompletionResult]::new('--link-mode', '--link-mode', [CompletionResultType]::ParameterName, 'The method to use when installing packages from the global cache')
