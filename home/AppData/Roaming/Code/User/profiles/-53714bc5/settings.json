@@ -97,16 +97,6 @@
         }
     ],
     "chat.commandCenter.enabled": false,
-    "coverage-gutters.coverageFileNames": [
-        "cov.xml",
-        "coverage.cobertura.xml",
-        "coverage.xml",
-        "jacoco.xml",
-        "lcov.info"
-    ],
-    "coverage-gutters.customizable.context-menu": false,
-    "coverage-gutters.showLineCoverage": true,
-    "coverage-gutters.showRulerCoverage": true,
     "debug.inlineValues": "on",
     "debugpy.showPythonInlineValues": true,
     "diffEditor.codeLens": true,
