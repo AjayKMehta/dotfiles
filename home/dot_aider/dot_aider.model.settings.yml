@@ -10,12 +10,6 @@
 - name: ollama_chat/mistral:latest
   extra_params:
     num_ctx: 32768
-- name: ollama/mixtral:8x7b
-  extra_params:
-    num_ctx: 32768
-- name: ollama_chat/mixtral:8x7b
-  extra_params:
-    num_ctx: 32768
 - name: ollama/llama3.2:latest
   extra_params:
     num_ctx: 131072

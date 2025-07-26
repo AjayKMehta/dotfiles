@@ -15,7 +15,6 @@ model-settings-file: .aider.model.settings.yml
 show-model-warnings: false
 
 alias:
-  - "mixtral:ollama_chat/mixtral:8x7b"
   - "llama3.2:ollama_chat/llama3.2:latest"
   - "deepseek:ollama_chat/deepseek-r1:8b"
   - "qwen2.5-coder:ollama_chat/qwen2.5-coder:14b"

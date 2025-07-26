@@ -175,9 +175,6 @@ clients:
         max_batch_size: 100
         max_tokens_per_chunk: 512
         max_input_tokens: 200000
-      - name: mixtral
-        real_name: mixtral:8x7b
-        max_input_tokens: 32768
       - name: codellama
         real_name: codellama:13b
         max_input_tokens: 16384
