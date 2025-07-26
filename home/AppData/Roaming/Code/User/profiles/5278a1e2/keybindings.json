@@ -388,5 +388,9 @@
         "command": "editor.action.insertLineAfter",
         "key": "shift+enter",
         "when": "editorTextFocus && !editorReadonly && editorLangId != 'python' && editorLangId != 'julia'"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "-workbench.action.quickOpen"
     }
 ]

@@ -331,5 +331,9 @@
         "command": "PowerShell.ShowAdditionalCommands",
         "key": "shift+alt+s",
         "when": "editorTextFocus && editorLangId == 'powershell'"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "-workbench.action.quickOpen"
     }
 ]
