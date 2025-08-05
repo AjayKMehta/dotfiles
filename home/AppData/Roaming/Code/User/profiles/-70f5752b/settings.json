@@ -134,6 +134,7 @@
     "explorer.excludeGitIgnore": false,
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
+    "git.openRepositoryInParentFolders": "always",
     "github.copilot.enable": {
         "*": false,
         "markdown": false,
