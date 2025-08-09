@@ -137,9 +137,6 @@
     "git.openRepositoryInParentFolders": "always",
     "github.copilot.enable": {
         "*": false,
-        "markdown": false,
-        "plaintext": false,
-        "scminput": false
     },
     "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
     "githubLocalActions.dockerDesktopPath": "C:/Program Files/Docker/Docker/Docker Desktop.exe",

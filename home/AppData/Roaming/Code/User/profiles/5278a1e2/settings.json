@@ -70,7 +70,7 @@
     "editor.fontFamily": "'FiraCode Nerd Font Mono', 'Cascadia Code', Consolas, 'Courier New', monospace",
     "editor.fontLigatures": true,
     "editor.largeFileOptimizations": false,
-    "editor.minimap.autohide": true,
+    "editor.minimap.autohide": "mouseover",
     "editor.minimap.renderCharacters": false,
     "editor.minimap.scale": 3,
     "editor.quickSuggestions": {
@@ -105,7 +105,6 @@
     "git-graph.customEmojiShortcodeMappings": [],
     "github.copilot.enable": {
         "*": false,
-        "quarto": false
     },
     "githubLocalActions.dockerDesktopPath": "C:/Program Files/Docker/Docker/Docker Desktop.exe",
     "latex-workshop.formatting.latexindent.path": "D:\\Apps\\CLI\\latexindent.exe",
@@ -330,4 +329,8 @@
     "workbench.editor.labelFormat": "default",
     "workbench.iconTheme": "vscode-icons",
     "workbench.tree.renderIndentGuides": "always",
+    "chat.todoListTool.enabled": true,
+    "chat.math.enabled": true,
+    "editor.aiStats.enabled": true,
+    "fontAwesomeAutocomplete.version": "6",
 }
