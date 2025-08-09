@@ -239,6 +239,7 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
         }
         'ruff;analyze;graph' {
             [CompletionResult]::new('--direction', '--direction', [CompletionResultType]::ParameterName, 'The direction of the import map. By default, generates a dependency map, i.e., a map from file to files that it depends on. Use `--direction dependents` to generate a map from file to files that depend on it')
+            [CompletionResult]::new('--min-dots', '--min-dots', [CompletionResultType]::ParameterName, 'The minimum number of dots in a string import to consider it a valid import')
             [CompletionResult]::new('--target-version', '--target-version', [CompletionResultType]::ParameterName, 'The minimum Python version that should be supported')
             [CompletionResult]::new('--python', '--python', [CompletionResultType]::ParameterName, 'Path to a virtual environment to use for resolving additional dependencies')
             [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option. Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')

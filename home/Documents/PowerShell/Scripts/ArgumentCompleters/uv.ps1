@@ -1175,6 +1175,7 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--with', '--with', [CompletionResultType]::ParameterName, 'Include the following additional requirements')
             [CompletionResult]::new('--with-requirements', '--with-requirements', [CompletionResultType]::ParameterName, 'Include all requirements listed in the given `requirements.txt` files')
             [CompletionResult]::new('--with-editable', '--with-editable', [CompletionResultType]::ParameterName, 'Include the given packages in editable mode')
+            [CompletionResult]::new('--with-executables-from', '--with-executables-from', [CompletionResultType]::ParameterName, 'Install executables from the following packages')
             [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Constrain versions using the given requirements files')
             [CompletionResult]::new('--constraints', '--constraints', [CompletionResultType]::ParameterName, 'Constrain versions using the given requirements files')
             [CompletionResult]::new('--overrides', '--overrides', [CompletionResultType]::ParameterName, 'Override versions using the given requirements files')
