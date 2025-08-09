@@ -115,6 +115,8 @@
     "breadcrumbs.enabled": true,
     "chat.agent.enabled": true,
     "chat.editing.confirmEditRequestRetry": false,
+    "chat.math.enabled": true,
+    "chat.todoListTool.enabled": true,
     "code-runner.enableAppInsights": false,
     "code-runner.runInTerminal": true,
     "code-runner.showRunCommandInEditorContextMenu": false,
@@ -172,6 +174,7 @@
     "docker.extension.enableComposeLanguageServer": false,
     "docker.images.label": "RepositoryName",
     "dotnet.formatting.organizeImportsOnFormat": true,
+    "editor.aiStats.enabled": true,
     "editor.bracketPairColorization.enabled": true,
     "editor.colorDecoratorsLimit": 5000,
     "editor.defaultColorDecorators": "auto",
@@ -188,7 +191,7 @@
     "editor.lightbulb.enabled": "onCode",
     "editor.linkedEditing": true,
     "editor.matchBrackets": "always",
-    "editor.minimap.autohide": true,
+    "editor.minimap.autohide": "mouseover",
     "editor.minimap.renderCharacters": false,
     "editor.minimap.scale": 3,
     "editor.mouseWheelZoom": true,
@@ -311,8 +314,7 @@
     "github.copilot.chat.commitMessageGeneration.instructions": [],
     "github.copilot.chat.generateTests.codeLens": true,
     "github.copilot.enable": {
-        "*": false,
-        "quarto": false
+        "*": false
     },
     "githubLocalActions.dockerDesktopPath": "C:/Program Files/Docker/Docker/Docker Desktop.exe",
     "gitlens.advanced.messages": {
@@ -919,7 +921,9 @@
         "powershell",
         "python",
         "quarto",
-        "typescript"
+        "toml",
+        "typescript",
+        "yaml"
     ],
     "vsicons.dontShowNewVersionMessage": true,
     "vsicons.presets.foldersAllDefaultIcon": true,
@@ -949,6 +953,8 @@
     "workbench.settings.applyToAllProfiles": [
         "breadcrumbs.enabled",
         "chat.agent.enabled",
+        "chat.math.enabled",
+        "chat.todoListTool.enabled",
         "code-runner.enableAppInsights",
         "code-runner.runInTerminal",
         "code-runner.showRunCommandInEditorContextMenu",
@@ -957,6 +963,7 @@
         "diffEditor.experimental.showMoves",
         "diffEditor.experimental.useVersion2",
         "diffEditor.hideUnchangedRegions.enabled",
+        "editor.aiStats.enabled",
         "editor.fontSize",
         "editor.formatOnPaste",
         "editor.formatOnSave",
