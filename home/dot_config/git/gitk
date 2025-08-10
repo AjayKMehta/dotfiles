@@ -7,6 +7,8 @@ set maxgraphpct 50
 set maxwidth 16
 set cmitmode patch
 set wrapcomment none
+set wrapdefault none
+set autocopy 0
 set autoselect 1
 set autosellen 40
 set showneartags 1
@@ -53,12 +55,12 @@ set linkfgcolor blue
 set circleoutlinecolor SystemWindowText
 set diffbgcolors {"#fff3f3" "#f0fff0"}
 set web_browser {cmd /c start}
-set geometry(main) 2560x1357+0+26
+set geometry(main) 2560x1317+0+7
 set geometry(state) zoomed
 set geometry(topwidth) 2560
 set geometry(topheight) 255
 set geometry(pwsash0) "904 1"
 set geometry(pwsash1) "1356 1"
 set geometry(botwidth) 1123
-set geometry(botheight) 1097
+set geometry(botheight) 1057
 set permviews {}
