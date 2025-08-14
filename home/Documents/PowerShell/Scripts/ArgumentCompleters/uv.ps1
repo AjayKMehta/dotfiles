@@ -1645,6 +1645,8 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--directory', '--directory', [CompletionResultType]::ParameterName, 'Change to the given directory prior to running the command')
             [CompletionResult]::new('--project', '--project', [CompletionResultType]::ParameterName, 'Run the command within the given project directory')
             [CompletionResult]::new('--config-file', '--config-file', [CompletionResultType]::ParameterName, 'The path to a `uv.toml` file to use for configuration')
+            [CompletionResult]::new('-r', '-r', [CompletionResultType]::ParameterName, 'Reinstall the latest Python patch, if it''s already installed')
+            [CompletionResult]::new('--reinstall', '--reinstall', [CompletionResultType]::ParameterName, 'Reinstall the latest Python patch, if it''s already installed')
             [CompletionResult]::new('-n', '-n', [CompletionResultType]::ParameterName, 'Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation')
             [CompletionResult]::new('--no-cache', '--no-cache', [CompletionResultType]::ParameterName, 'Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation')
             [CompletionResult]::new('--managed-python', '--managed-python', [CompletionResultType]::ParameterName, 'Require use of uv-managed Python versions')
