@@ -78,7 +78,8 @@
     },
     "[yaml]": {
         "editor.defaultFormatter": "redhat.vscode-yaml",
-        "editor.fontLigatures": false
+        "editor.fontLigatures": false,
+        "diffEditor.ignoreTrimWhitespace": false
     },
     "auto-run-command.rules": [
         {
@@ -361,6 +362,7 @@
     "terminal.integrated.enableMultiLinePasteWarning": "never",
     "terminal.integrated.enablePersistentSessions": false,
     "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
+    "terminal.integrated.sendKeybindingsToShell": true,
     "versionlens.suggestions.showOnStartup": true,
     "vsicons.dontShowNewVersionMessage": true,
     "vsicons.presets.foldersAllDefaultIcon": true,
@@ -368,6 +370,5 @@
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "workbench.colorTheme": "Night Owl",
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.tree.renderIndentGuides": "always",
-    "terminal.integrated.sendKeybindingsToShell": true
+    "workbench.tree.renderIndentGuides": "always"
 }

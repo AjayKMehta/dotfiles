@@ -332,5 +332,5 @@
     "chat.todoListTool.enabled": true,
     "chat.math.enabled": true,
     "editor.aiStats.enabled": true,
-    "fontAwesomeAutocomplete.version": "6",
+    "fontAwesomeAutocomplete.version": "6"
 }
