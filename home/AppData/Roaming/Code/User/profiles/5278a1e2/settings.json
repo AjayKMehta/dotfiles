@@ -15,7 +15,8 @@
     },
     "[json]": {
         "editor.autoClosingBrackets": "always",
-        "editor.defaultFormatter": "vscode.json-language-features"
+        "editor.defaultFormatter": "vscode.json-language-features",
+        "editor.formatOnPaste": false
     },
     "[jsonc]": {
         "editor.autoClosingBrackets": "always",
@@ -53,9 +54,9 @@
         "editor.semanticHighlighting.enabled": true
     },
     "[yaml]": {
+        "diffEditor.ignoreTrimWhitespace": true,
         "editor.defaultFormatter": "redhat.vscode-yaml",
-        "editor.fontLigatures": false,
-        "diffEditor.ignoreTrimWhitespace": true
+        "editor.fontLigatures": false
     },
     "code-runner.showRunIconInEditorTitleMenu": false,
     "debug.inlineValues": "on",
@@ -102,9 +103,10 @@
     "files.autoSave": "onFocusChange",
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
+    "fontAwesomeAutocomplete.version": "6",
     "git-graph.customEmojiShortcodeMappings": [],
     "github.copilot.enable": {
-        "*": false,
+        "*": false
     },
     "githubLocalActions.dockerDesktopPath": "C:/Program Files/Docker/Docker/Docker Desktop.exe",
     "latex-workshop.formatting.latexindent.path": "D:\\Apps\\CLI\\latexindent.exe",
@@ -329,8 +331,6 @@
     "workbench.editor.labelFormat": "default",
     "workbench.iconTheme": "vscode-icons",
     "workbench.tree.renderIndentGuides": "always",
-    "chat.todoListTool.enabled": true,
-    "chat.math.enabled": true,
-    "editor.aiStats.enabled": true,
-    "fontAwesomeAutocomplete.version": "6"
+    "pasteImage.path": "${currentFileDir}/images",
+    "pasteImage.showFilePathConfirmInputBox": true
 }

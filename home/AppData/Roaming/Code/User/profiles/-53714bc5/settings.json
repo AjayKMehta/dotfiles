@@ -102,7 +102,7 @@
     "debugpy.showPythonInlineValues": true,
     "diffEditor.codeLens": true,
     "diffEditor.diffAlgorithm": "advanced",
-    "diffEditor.ignoreTrimWhitespace": false,
+    "diffEditor.ignoreTrimWhitespace": true,
     "diffEditor.maxComputationTime": 0,
     "diffEditor.wordWrap": "on",
     "editor.defaultColorDecorators": "auto",
