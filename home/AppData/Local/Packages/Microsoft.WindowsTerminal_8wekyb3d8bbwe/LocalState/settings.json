@@ -163,7 +163,7 @@
                     "face": "CaskaydiaCove Nerd Font Mono"
                 },
                 "guid": "{c1aa3eca-e10a-5b31-a157-ab26fd9e5fc9}",
-                "hidden": false,
+                "hidden": true,
                 "name": "Developer Command Prompt for VS 2022",
                 "source": "Windows.Terminal.VisualStudio"
             },
@@ -178,19 +178,9 @@
                 "source": "VSDebugConsole"
             },
             {
-                "font": 
-                {
-                    "face": "CaskaydiaCove Nerd Font Mono"
-                },
-                "guid": "{6e9049ed-3051-5e8a-8a3d-50789b4294c9}",
-                "hidden": false,
-                "name": "Developer Command Prompt for VS 2022 (2)",
-                "source": "Windows.Terminal.VisualStudio"
-            },
-            {
                 "guid": "{b4cac8fb-7fab-591b-87d7-9439740a962d}",
-                "hidden": false,
-                "name": "Developer PowerShell for VS 2022 (2)",
+                "hidden": true,
+                "name": "Developer PowerShell for VS 2022",
                 "source": "Windows.Terminal.VisualStudio"
             },
             {
