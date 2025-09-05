@@ -196,3 +196,8 @@ clients:
         max_input_tokens: 40960
         supports_function_calling: true
         supports_reasoning: true
+      - name: embed-gemma
+        real_name: embeddinggemma:latest
+        type: embedding
+        default_chunk_size: 2048
+        max_batch_size: 2048
