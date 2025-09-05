@@ -99,6 +99,7 @@
     fc = !git fetch origin $(git branch --show-current)
     up = !git fetch && git rebase --autostash FETCH_HEAD
     su = submodule update --recursive --remote
+	pclone = clone --filter=blob:limit=100k
 
     ## Merge
     mffo = merge --ff-only
