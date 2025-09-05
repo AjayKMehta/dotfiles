@@ -59,6 +59,7 @@ Register-ArgumentCompleter -Native -CommandName 'uvx' -ScriptBlock {
             [CompletionResult]::new('--refresh-package', '--refresh-package', [CompletionResultType]::ParameterName, 'Refresh cached data for a specific package')
             [CompletionResult]::new('-p', '-p', [CompletionResultType]::ParameterName, 'The Python interpreter to use to build the run environment.')
             [CompletionResult]::new('--python', '--python', [CompletionResultType]::ParameterName, 'The Python interpreter to use to build the run environment.')
+            [CompletionResult]::new('--python-platform', '--python-platform', [CompletionResultType]::ParameterName, 'The platform for which requirements should be installed')
             [CompletionResult]::new('--generate-shell-completion', '--generate-shell-completion', [CompletionResultType]::ParameterName, 'generate-shell-completion')
             [CompletionResult]::new('--cache-dir', '--cache-dir', [CompletionResultType]::ParameterName, 'Path to the cache directory')
             [CompletionResult]::new('--python-preference', '--python-preference', [CompletionResultType]::ParameterName, 'python-preference')
