@@ -3,6 +3,8 @@ PATH="${RTOOLS45_HOME}\usr\bin;${RTOOLS45_HOME}\ucrt64\bin;${RTOOLS45_HOME}\ming
 plotly_username={{- (keepassxc "PLOTLY").UserName }}
 plotly_api_key={{- (keepassxc "PLOTLY").Password }}
 
+RETICULATE_PYTHON="${APPDATA}\\uv\\python\\cpython-3.12.7-windows-x86_64-none\\python.exe"
+
 QUANDL_API_KEY={{- (keepassxc "QUANDL").Password }}
 GOOGLE_MAPS_API_KEY={{- (keepassxc "GOOGLE MAPS API").Password }}
 RIINGO_TOKEN={{- (keepassxc "RIINGO").Password }}
