@@ -25,7 +25,7 @@ Register-ArgumentCompleter -Native -CommandName 'uvx' -ScriptBlock {
             [CompletionResult]::new('-w', '-w', [CompletionResultType]::ParameterName, 'Run with the given packages installed')
             [CompletionResult]::new('--with', '--with', [CompletionResultType]::ParameterName, 'Run with the given packages installed')
             [CompletionResult]::new('--with-editable', '--with-editable', [CompletionResultType]::ParameterName, 'Run with the given packages installed in editable mode')
-            [CompletionResult]::new('--with-requirements', '--with-requirements', [CompletionResultType]::ParameterName, 'Run with all packages listed in the given `requirements.txt` files')
+            [CompletionResult]::new('--with-requirements', '--with-requirements', [CompletionResultType]::ParameterName, 'Run with the packages listed in the given files')
             [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Constrain versions using the given requirements files')
             [CompletionResult]::new('--constraints', '--constraints', [CompletionResultType]::ParameterName, 'Constrain versions using the given requirements files')
             [CompletionResult]::new('-b', '-b', [CompletionResultType]::ParameterName, 'Constrain build dependencies using the given requirements files when building source distributions')

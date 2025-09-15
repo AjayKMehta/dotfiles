@@ -287,7 +287,7 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('-w', '-w', [CompletionResultType]::ParameterName, 'Run with the given packages installed')
             [CompletionResult]::new('--with', '--with', [CompletionResultType]::ParameterName, 'Run with the given packages installed')
             [CompletionResult]::new('--with-editable', '--with-editable', [CompletionResultType]::ParameterName, 'Run with the given packages installed in editable mode')
-            [CompletionResult]::new('--with-requirements', '--with-requirements', [CompletionResultType]::ParameterName, 'Run with all packages listed in the given `requirements.txt` files')
+            [CompletionResult]::new('--with-requirements', '--with-requirements', [CompletionResultType]::ParameterName, 'Run with the packages listed in the given files')
             [CompletionResult]::new('--index', '--index', [CompletionResultType]::ParameterName, 'The URLs to use when resolving dependencies, in addition to the default index')
             [CompletionResult]::new('--default-index', '--default-index', [CompletionResultType]::ParameterName, 'The URL of the default package index (by default: <https://pypi.org/simple>)')
             [CompletionResult]::new('-i', '-i', [CompletionResultType]::ParameterName, '(Deprecated: use `--default-index` instead) The URL of the Python package index (by default: <https://pypi.org/simple>)')
@@ -336,6 +336,7 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('-m', '-m', [CompletionResultType]::ParameterName, 'Run a Python module')
             [CompletionResult]::new('--module', '--module', [CompletionResultType]::ParameterName, 'Run a Python module')
             [CompletionResult]::new('--only-dev', '--only-dev', [CompletionResultType]::ParameterName, 'Only include the development dependency group')
+            [CompletionResult]::new('--editable', '--editable', [CompletionResultType]::ParameterName, 'Install any non-editable dependencies, including the project and any workspace members, as editable')
             [CompletionResult]::new('--no-editable', '--no-editable', [CompletionResultType]::ParameterName, 'Install any editable dependencies, including the project and any workspace members, as non-editable')
             [CompletionResult]::new('--inexact', '--inexact', [CompletionResultType]::ParameterName, 'Do not remove extraneous packages present in the environment')
             [CompletionResult]::new('--exact', '--exact', [CompletionResultType]::ParameterName, 'Perform an exact sync, removing extraneous packages')
@@ -452,8 +453,8 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             break
         }
         'uv;add' {
-            [CompletionResult]::new('-r', '-r', [CompletionResultType]::ParameterName, 'Add all packages listed in the given `requirements.txt` files')
-            [CompletionResult]::new('--requirements', '--requirements', [CompletionResultType]::ParameterName, 'Add all packages listed in the given `requirements.txt` files')
+            [CompletionResult]::new('-r', '-r', [CompletionResultType]::ParameterName, 'Add the packages listed in the given files')
+            [CompletionResult]::new('--requirements', '--requirements', [CompletionResultType]::ParameterName, 'Add the packages listed in the given files')
             [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Constrain versions using the given requirements files')
             [CompletionResult]::new('--constraints', '--constraints', [CompletionResultType]::ParameterName, 'Constrain versions using the given requirements files')
             [CompletionResult]::new('-m', '-m', [CompletionResultType]::ParameterName, 'Apply this marker to all added packages')
@@ -797,6 +798,7 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--only-dev', '--only-dev', [CompletionResultType]::ParameterName, 'Only include the development dependency group')
             [CompletionResult]::new('--no-default-groups', '--no-default-groups', [CompletionResultType]::ParameterName, 'Ignore the default dependency groups')
             [CompletionResult]::new('--all-groups', '--all-groups', [CompletionResultType]::ParameterName, 'Include dependencies from all dependency groups')
+            [CompletionResult]::new('--editable', '--editable', [CompletionResultType]::ParameterName, 'Install any non-editable dependencies, including the project and any workspace members, as editable')
             [CompletionResult]::new('--no-editable', '--no-editable', [CompletionResultType]::ParameterName, 'Install any editable dependencies, including the project and any workspace members, as non-editable')
             [CompletionResult]::new('--inexact', '--inexact', [CompletionResultType]::ParameterName, 'Do not remove extraneous packages present in the environment')
             [CompletionResult]::new('--exact', '--exact', [CompletionResultType]::ParameterName, 'Perform an exact sync, removing extraneous packages')
@@ -995,6 +997,7 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--annotate', '--annotate', [CompletionResultType]::ParameterName, 'annotate')
             [CompletionResult]::new('--no-header', '--no-header', [CompletionResultType]::ParameterName, 'Exclude the comment header at the top of the generated output file')
             [CompletionResult]::new('--header', '--header', [CompletionResultType]::ParameterName, 'header')
+            [CompletionResult]::new('--editable', '--editable', [CompletionResultType]::ParameterName, 'Export any non-editable dependencies, including the project and any workspace members, as editable')
             [CompletionResult]::new('--no-editable', '--no-editable', [CompletionResultType]::ParameterName, 'Export any editable dependencies, including the project and any workspace members, as non-editable')
             [CompletionResult]::new('--hashes', '--hashes', [CompletionResultType]::ParameterName, 'Include hashes for all dependencies')
             [CompletionResult]::new('--no-hashes', '--no-hashes', [CompletionResultType]::ParameterName, 'Omit hashes in the generated output')
@@ -1151,6 +1154,7 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--config-file', '--config-file', [CompletionResultType]::ParameterName, 'The path to a `uv.toml` file to use for configuration')
             [CompletionResult]::new('--check', '--check', [CompletionResultType]::ParameterName, 'Check if files are formatted without applying changes')
             [CompletionResult]::new('--diff', '--diff', [CompletionResultType]::ParameterName, 'Show a diff of formatting changes without applying them')
+            [CompletionResult]::new('--no-project', '--no-project', [CompletionResultType]::ParameterName, 'Avoid discovering a project or workspace')
             [CompletionResult]::new('-n', '-n', [CompletionResultType]::ParameterName, 'Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation')
             [CompletionResult]::new('--no-cache', '--no-cache', [CompletionResultType]::ParameterName, 'Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation')
             [CompletionResult]::new('--managed-python', '--managed-python', [CompletionResultType]::ParameterName, 'Require use of uv-managed Python versions')
@@ -1226,7 +1230,7 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('-w', '-w', [CompletionResultType]::ParameterName, 'Run with the given packages installed')
             [CompletionResult]::new('--with', '--with', [CompletionResultType]::ParameterName, 'Run with the given packages installed')
             [CompletionResult]::new('--with-editable', '--with-editable', [CompletionResultType]::ParameterName, 'Run with the given packages installed in editable mode')
-            [CompletionResult]::new('--with-requirements', '--with-requirements', [CompletionResultType]::ParameterName, 'Run with all packages listed in the given `requirements.txt` files')
+            [CompletionResult]::new('--with-requirements', '--with-requirements', [CompletionResultType]::ParameterName, 'Run with the packages listed in the given files')
             [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Constrain versions using the given requirements files')
             [CompletionResult]::new('--constraints', '--constraints', [CompletionResultType]::ParameterName, 'Constrain versions using the given requirements files')
             [CompletionResult]::new('-b', '-b', [CompletionResultType]::ParameterName, 'Constrain build dependencies using the given requirements files when building source distributions')
@@ -1322,7 +1326,7 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('-w', '-w', [CompletionResultType]::ParameterName, 'Run with the given packages installed')
             [CompletionResult]::new('--with', '--with', [CompletionResultType]::ParameterName, 'Run with the given packages installed')
             [CompletionResult]::new('--with-editable', '--with-editable', [CompletionResultType]::ParameterName, 'Run with the given packages installed in editable mode')
-            [CompletionResult]::new('--with-requirements', '--with-requirements', [CompletionResultType]::ParameterName, 'Run with all packages listed in the given `requirements.txt` files')
+            [CompletionResult]::new('--with-requirements', '--with-requirements', [CompletionResultType]::ParameterName, 'Run with the packages listed in the given files')
             [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Constrain versions using the given requirements files')
             [CompletionResult]::new('--constraints', '--constraints', [CompletionResultType]::ParameterName, 'Constrain versions using the given requirements files')
             [CompletionResult]::new('-b', '-b', [CompletionResultType]::ParameterName, 'Constrain build dependencies using the given requirements files when building source distributions')
@@ -1419,7 +1423,7 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--from', '--from', [CompletionResultType]::ParameterName, 'The package to install commands from')
             [CompletionResult]::new('-w', '-w', [CompletionResultType]::ParameterName, 'Include the following additional requirements')
             [CompletionResult]::new('--with', '--with', [CompletionResultType]::ParameterName, 'Include the following additional requirements')
-            [CompletionResult]::new('--with-requirements', '--with-requirements', [CompletionResultType]::ParameterName, 'Include all requirements listed in the given `requirements.txt` files')
+            [CompletionResult]::new('--with-requirements', '--with-requirements', [CompletionResultType]::ParameterName, 'Run with the packages listed in the given files')
             [CompletionResult]::new('--with-editable', '--with-editable', [CompletionResultType]::ParameterName, 'Include the given packages in editable mode')
             [CompletionResult]::new('--with-executables-from', '--with-executables-from', [CompletionResultType]::ParameterName, 'Install executables from the following packages')
             [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Constrain versions using the given requirements files')
@@ -2396,8 +2400,8 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             break
         }
         'uv;pip;install' {
-            [CompletionResult]::new('-r', '-r', [CompletionResultType]::ParameterName, 'Install all packages listed in the given `requirements.txt` or `pylock.toml` files')
-            [CompletionResult]::new('--requirements', '--requirements', [CompletionResultType]::ParameterName, 'Install all packages listed in the given `requirements.txt` or `pylock.toml` files')
+            [CompletionResult]::new('-r', '-r', [CompletionResultType]::ParameterName, 'Install the packages listed in the given files')
+            [CompletionResult]::new('--requirements', '--requirements', [CompletionResultType]::ParameterName, 'Install the packages listed in the given files')
             [CompletionResult]::new('-e', '-e', [CompletionResultType]::ParameterName, 'Install the editable package based on the provided local file path')
             [CompletionResult]::new('--editable', '--editable', [CompletionResultType]::ParameterName, 'Install the editable package based on the provided local file path')
             [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Constrain versions using the given requirements files')
@@ -2510,8 +2514,8 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             break
         }
         'uv;pip;uninstall' {
-            [CompletionResult]::new('-r', '-r', [CompletionResultType]::ParameterName, 'Uninstall all packages listed in the given requirements files')
-            [CompletionResult]::new('--requirements', '--requirements', [CompletionResultType]::ParameterName, 'Uninstall all packages listed in the given requirements files')
+            [CompletionResult]::new('-r', '-r', [CompletionResultType]::ParameterName, 'Uninstall the packages listed in the given files')
+            [CompletionResult]::new('--requirements', '--requirements', [CompletionResultType]::ParameterName, 'Uninstall the packages listed in the given files')
             [CompletionResult]::new('-p', '-p', [CompletionResultType]::ParameterName, 'The Python interpreter from which packages should be uninstalled.')
             [CompletionResult]::new('--python', '--python', [CompletionResultType]::ParameterName, 'The Python interpreter from which packages should be uninstalled.')
             [CompletionResult]::new('--keyring-provider', '--keyring-provider', [CompletionResultType]::ParameterName, 'Attempt to use `keyring` for authentication for remote requirements files')

@@ -33,7 +33,6 @@ Register-ArgumentCompleter -Native -CommandName 'ast-grep' -ScriptBlock {
             [CompletionResult]::new('new', 'new', [CompletionResultType]::ParameterValue, 'Create new ast-grep project or items like rules/tests')
             [CompletionResult]::new('lsp', 'lsp', [CompletionResultType]::ParameterValue, 'Start language server')
             [CompletionResult]::new('completions', 'completions', [CompletionResultType]::ParameterValue, 'Generate shell completion script')
-            [CompletionResult]::new('docs', 'docs', [CompletionResultType]::ParameterValue, 'Generate rule docs for current configuration. (Not Implemented Yet)')
             [CompletionResult]::new('help', 'help', [CompletionResultType]::ParameterValue, 'Print this message or the help of the given subcommand(s)')
             break
         }
@@ -43,15 +42,15 @@ Register-ArgumentCompleter -Native -CommandName 'ast-grep' -ScriptBlock {
             [CompletionResult]::new('--selector', '--selector', [CompletionResultType]::ParameterName, 'AST kind to extract sub-part of pattern to match')
             [CompletionResult]::new('-r', '-r', [CompletionResultType]::ParameterName, 'String to replace the matched AST node')
             [CompletionResult]::new('--rewrite', '--rewrite', [CompletionResultType]::ParameterName, 'String to replace the matched AST node')
-            [CompletionResult]::new('-l', '-l', [CompletionResultType]::ParameterName, 'The language of the pattern. Supported languages are: [Bash, C, Cpp, CSharp, Css, Elixir, Go, Haskell, Html, Java, JavaScript, Json, Kotlin, Lua, Php, Python, Ruby, Rust, Scala, Swift, Tsx, TypeScript, Yaml]')
-            [CompletionResult]::new('--lang', '--lang', [CompletionResultType]::ParameterName, 'The language of the pattern. Supported languages are: [Bash, C, Cpp, CSharp, Css, Elixir, Go, Haskell, Html, Java, JavaScript, Json, Kotlin, Lua, Php, Python, Ruby, Rust, Scala, Swift, Tsx, TypeScript, Yaml]')
+            [CompletionResult]::new('-l', '-l', [CompletionResultType]::ParameterName, 'The language of the pattern. Supported languages are: [Bash, C, Cpp, CSharp, Css, Elixir, Go, Haskell, Hcl, Html, Java, JavaScript, Json, Kotlin, Lua, Nix, Php, Python, Ruby, Rust, Scala, Solidity, Swift, Tsx, TypeScript, Yaml]')
+            [CompletionResult]::new('--lang', '--lang', [CompletionResultType]::ParameterName, 'The language of the pattern. Supported languages are: [Bash, C, Cpp, CSharp, Css, Elixir, Go, Haskell, Hcl, Html, Java, JavaScript, Json, Kotlin, Lua, Nix, Php, Python, Ruby, Rust, Scala, Solidity, Swift, Tsx, TypeScript, Yaml]')
             [CompletionResult]::new('--debug-query', '--debug-query', [CompletionResultType]::ParameterName, 'Print query pattern''s tree-sitter AST. Requires lang be set explicitly')
             [CompletionResult]::new('--strictness', '--strictness', [CompletionResultType]::ParameterName, 'The strictness of the pattern')
             [CompletionResult]::new('--no-ignore', '--no-ignore', [CompletionResultType]::ParameterName, 'Do not respect hidden file system or ignore files (.gitignore, .ignore, etc.)')
             [CompletionResult]::new('--globs', '--globs', [CompletionResultType]::ParameterName, 'Include or exclude file paths')
             [CompletionResult]::new('-j', '-j', [CompletionResultType]::ParameterName, 'Set the approximate number of threads to use')
             [CompletionResult]::new('--threads', '--threads', [CompletionResultType]::ParameterName, 'Set the approximate number of threads to use')
-            [CompletionResult]::new('--json', '--json', [CompletionResultType]::ParameterName, 'Output matches in structured JSON ')
+            [CompletionResult]::new('--json', '--json', [CompletionResultType]::ParameterName, 'Output matches in structured JSON')
             [CompletionResult]::new('--color', '--color', [CompletionResultType]::ParameterName, 'Controls output color')
             [CompletionResult]::new('--inspect', '--inspect', [CompletionResultType]::ParameterName, 'Inspect information for file/rule discovery and scanning')
             [CompletionResult]::new('-A', '-A ', [CompletionResultType]::ParameterName, 'Show NUM lines after each match')
@@ -89,7 +88,7 @@ Register-ArgumentCompleter -Native -CommandName 'ast-grep' -ScriptBlock {
             [CompletionResult]::new('--globs', '--globs', [CompletionResultType]::ParameterName, 'Include or exclude file paths')
             [CompletionResult]::new('-j', '-j', [CompletionResultType]::ParameterName, 'Set the approximate number of threads to use')
             [CompletionResult]::new('--threads', '--threads', [CompletionResultType]::ParameterName, 'Set the approximate number of threads to use')
-            [CompletionResult]::new('--json', '--json', [CompletionResultType]::ParameterName, 'Output matches in structured JSON ')
+            [CompletionResult]::new('--json', '--json', [CompletionResultType]::ParameterName, 'Output matches in structured JSON')
             [CompletionResult]::new('--color', '--color', [CompletionResultType]::ParameterName, 'Controls output color')
             [CompletionResult]::new('--inspect', '--inspect', [CompletionResultType]::ParameterName, 'Inspect information for file/rule discovery and scanning')
             [CompletionResult]::new('-A', '-A ', [CompletionResultType]::ParameterName, 'Show NUM lines after each match')
@@ -226,13 +225,6 @@ Register-ArgumentCompleter -Native -CommandName 'ast-grep' -ScriptBlock {
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help')
             break
         }
-        'ast-grep;docs' {
-            [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
-            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
-            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help')
-            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help')
-            break
-        }
         'ast-grep;help' {
             [CompletionResult]::new('run', 'run', [CompletionResultType]::ParameterValue, 'Run one time search or rewrite in command line. (default command)')
             [CompletionResult]::new('scan', 'scan', [CompletionResultType]::ParameterValue, 'Scan and rewrite code by configuration')
@@ -240,7 +232,6 @@ Register-ArgumentCompleter -Native -CommandName 'ast-grep' -ScriptBlock {
             [CompletionResult]::new('new', 'new', [CompletionResultType]::ParameterValue, 'Create new ast-grep project or items like rules/tests')
             [CompletionResult]::new('lsp', 'lsp', [CompletionResultType]::ParameterValue, 'Start language server')
             [CompletionResult]::new('completions', 'completions', [CompletionResultType]::ParameterValue, 'Generate shell completion script')
-            [CompletionResult]::new('docs', 'docs', [CompletionResultType]::ParameterValue, 'Generate rule docs for current configuration. (Not Implemented Yet)')
             [CompletionResult]::new('help', 'help', [CompletionResultType]::ParameterValue, 'Print this message or the help of the given subcommand(s)')
             break
         }
@@ -276,9 +267,6 @@ Register-ArgumentCompleter -Native -CommandName 'ast-grep' -ScriptBlock {
             break
         }
         'ast-grep;help;completions' {
-            break
-        }
-        'ast-grep;help;docs' {
             break
         }
         'ast-grep;help;help' {
