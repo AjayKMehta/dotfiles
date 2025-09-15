@@ -1,6 +1,4 @@
 {
-    "Lua.codeLens.enable": true,
-    "Lua.hint.enable": true,
     "[gitattributes]": {
         "editor.defaultFormatter": "hashhar.gitattributes"
     },
@@ -62,6 +60,7 @@
     "debug.inlineValues": "on",
     "diffEditor.codeLens": true,
     "diffEditor.diffAlgorithm": "advanced",
+    "diffEditor.ignoreTrimWhitespace": false,
     "diffEditor.wordWrap": "on",
     "dotfiles.repository": "https://github.com/AjayKMehta/dotfiles",
     "editor.bracketPairColorization.enabled": true,
@@ -268,6 +267,8 @@
     "latex-workshop.linting.lacheck.enabled": true,
     "latex-workshop.showContextMenu": true,
     "latex-workshop.view.pdf.viewer": "tab",
+    "Lua.codeLens.enable": true,
+    "Lua.hint.enable": true,
     "markdown-preview-enhanced.alwaysShowBacklinksInPreview": true,
     "markdown-preview-enhanced.codeBlockTheme": "solarized-light.css",
     "markdown-preview-enhanced.enablePreviewZenMode": false,
@@ -300,6 +301,8 @@
     "notebook.lineNumbers": "on",
     "notebook.outline.showCodeCells": true,
     "notebook.showFoldingControls": "always",
+    "pasteImage.path": "${currentFileDir}/images",
+    "pasteImage.showFilePathConfirmInputBox": true,
     "powershell.codeFormatting.addWhitespaceAroundPipe": true,
     "powershell.codeFormatting.ignoreOneLineBlock": true,
     "powershell.codeFormatting.pipelineIndentationStyle": "IncreaseIndentationForFirstPipeline",
@@ -330,7 +333,5 @@
     "window.commandCenter": true,
     "workbench.editor.labelFormat": "default",
     "workbench.iconTheme": "vscode-icons",
-    "workbench.tree.renderIndentGuides": "always",
-    "pasteImage.path": "${currentFileDir}/images",
-    "pasteImage.showFilePathConfirmInputBox": true
+    "workbench.tree.renderIndentGuides": "always"
 }

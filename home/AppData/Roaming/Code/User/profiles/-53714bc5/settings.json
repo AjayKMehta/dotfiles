@@ -25,6 +25,9 @@
     "[latex]": {
         "editor.defaultFormatter": "James-Yu.latex-workshop"
     },
+    "[lua]": {
+        "editor.defaultFormatter": "sumneko.lua"
+    },
     "[markdown]": {
         "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
         "editor.fontFamily": "'DejaVuSansM Nerd Font', Consolas, 'Courier New', monospace, 'Lucida Sans'",
@@ -77,9 +80,9 @@
         "editor.semanticHighlighting.enabled": true
     },
     "[yaml]": {
+        "diffEditor.ignoreTrimWhitespace": false,
         "editor.defaultFormatter": "redhat.vscode-yaml",
-        "editor.fontLigatures": false,
-        "diffEditor.ignoreTrimWhitespace": false
+        "editor.fontLigatures": false
     },
     "auto-run-command.rules": [
         {
@@ -368,7 +371,7 @@
     "vsicons.presets.foldersAllDefaultIcon": true,
     "vsicons.presets.jsonOfficial": true,
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "workbench.colorTheme": "Night Owl",
+    "workbench.colorTheme": "Monokai++",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.tree.renderIndentGuides": "always"
 }

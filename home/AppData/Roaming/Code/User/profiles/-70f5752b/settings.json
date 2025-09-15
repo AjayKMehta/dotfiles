@@ -186,7 +186,6 @@
     "powershell.integratedConsole.suppressStartupBanner": true,
     "powershell.pester.codeLens": false,
     "powershell.promptToUpdatePowerShell": false,
-    "print.folder.fileNames": true,
     "print.folder.include": [],
     "print.folder.includeFileList": false,
     "terminal.integrated.enableMultiLinePasteWarning": "auto",
