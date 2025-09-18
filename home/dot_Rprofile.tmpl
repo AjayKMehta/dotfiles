@@ -23,7 +23,9 @@ local({
     warnPartialMatchAttr = TRUE,
     warnPartialMatchDollar = TRUE,
     warnPartialMatchArgs = TRUE,
-    RCurlOptions = list(cainfo = system.file("CurlSSL", "cacert.pem", package = "RCurl")),
+    RCurlOptions = list(
+      cainfo = system.file("CurlSSL", "cacert.pem", package = "RCurl")
+    ),
     # https://github.com/Ikuyadeu/vscode-R/wiki/RStudio-addin-support
     vsc.rstudioapi = TRUE,
     # https://www.tidyverse.org/blog/2021/03/clock-0-1-0/#production
@@ -38,14 +40,27 @@ local({
     brms.file_refit = "on_change"
   )
   if (interactive()) {
+    if (
+      requireNamespace("terminalgraphics", quietly = TRUE) &&
+        terminalgraphics::has_sixel_support()
+    ) {
+      options(device = terminalgraphics::sixel)
+    }
+
     is_vscode <- Sys.getenv("TERM_PROGRAM") == "vscode"
+    is_rstudio <- Sys.getenv("RSTUDIO") == "1"
     # Don't change working directory if project or calling from VS Code.
-    if (length(dir(getwd(), pattern = "[Rr]proj$")) == 0 &&
-      !is_vscode) {
-      setwd("{{ .rworkingdir }}")
+    if (
+      length(dir(getwd(), pattern = "[Rr]proj$")) == 0 &&
+        !is_vscode
+    ) {
+      setwd("D:/git/R")
     }
 
     if (is_vscode) {
+      if (!is_rstudio) {
+        source(file.path(Sys.getenv("USERPROFILE"), ".vscode-R", "init.R"))
+      }
       # activate RStudio Addins on command palette
       options(vsc.rstudioapi = TRUE)
 
@@ -64,6 +79,7 @@ local({
         # Use 0 (or 1) is the default - literal value or object type and dimensions
         # Use 2 to show list contents, data frame columns, and example values.
         options(vsc.str.max.level = 2)
+        options(vsc.use_httpgd = TRUE)
       }
     }
 
@@ -82,8 +98,7 @@ local({
       }
       ## Reporting via RStudio, if running in the RStudio Console,
       ## but not the terminal
-      if ((Sys.getenv("RSTUDIO") == "1") &&
-        !nzchar(Sys.getenv("RSTUDIO_TERM"))) {
+      if (is_rstudio && !nzchar(Sys.getenv("RSTUDIO_TERM"))) {
         progressr::handlers("rstudio", append = TRUE)
       }
     }
@@ -100,14 +115,16 @@ local({
   }
 })
 
-set_ollama_model <- function(model_name, num_ctx) {
-  chat_model <- ellmer::chat_ollama(
-    model = model_name,
-    api_args = list(keep_alive = "30m", num_ctx = num_ctx)
-  )
-  options(
-    .chores_chat = chat_model,
-    # https://simonpcouch.github.io/gander/articles/gander.html#choosing-a-model
-    .gander_chat = chat_model
-  )
+if (requireNamespace("rlang", quietly = TRUE)) {
+  set_ollama_model <- function(model_name, num_ctx) {
+    chat_model <- ellmer::chat_ollama(
+      model = model_name,
+      api_args = list(keep_alive = "30m", num_ctx = num_ctx)
+    )
+    options(
+      .chores_chat = chat_model,
+      # https://simonpcouch.github.io/gander/articles/gander.html#choosing-a-model
+      .gander_chat = chat_model
+    )
+  }
 }
