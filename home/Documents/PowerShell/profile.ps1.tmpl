@@ -71,7 +71,7 @@ function Set-EnvVar([bool]$originalStatus) {
     $osc7 = ''
     if ($p.Provider.Name -eq 'FileSystem') {
         $ansi_escape = [char]27
-        $providerPath = $p.ProviderPath -Replace '\\', '/'
+        $providerPath = $p.ProviderPath -replace '\\', '/'
         $osc7 = ($env:TERM_PROGRAM -eq 'WezTerm') ?
             "$ansi_escape]7;file://${env:COMPUTERNAME}/${providerPath}${ansi_escape}\" :
             "$ansi_escape]9;9;`"$p`"${ansi_escape}"
@@ -202,14 +202,9 @@ Set-PsFzfOption @setPsFzfOptionSplat
 
 Set-Alias -Name 'ipfr' -Value Invoke-PsFzfRipgrep
 
-if (!(Get-Alias -Name 'fgb' -ErrorAction Ignore)) {
-    Set-Alias -Name 'fgb' -Value Invoke-PsFzfGitBranches
-}
-
-if (!(Get-Alias -Name 'fgh' -ErrorAction Ignore)) {
-    Set-Alias -Name 'fgh' -Value Invoke-PsFzfGitHashes
-}
-
+# Use Ctrl+g, Ctrl+b for git branches
+# Use Ctrl+g, Ctrl+f for git files
+# Use Ctrl+g, Ctrl+h for git hashes
 
 #endregion
 
@@ -287,7 +282,7 @@ $Global:__locationChangedHandler = [EventHandler[LocationChangedEventArgs]] {
     end {
         [System.Management.Automation.PathInfo] $oldPath = $locChangedEventArgs.OldPath
         [System.Management.Automation.PathInfo] $newPath = $locChangedEventArgs.NewPath
-        Write-Debug "Old '$oldPath' New '$newPath'"
+        Write-Debug "Old: '$oldPath' New: '$newPath'"
         if ($newPath.Provider.Name -ne 'FileSystem') {
             return
         }
