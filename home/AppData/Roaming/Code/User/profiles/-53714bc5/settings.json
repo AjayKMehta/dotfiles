@@ -188,9 +188,28 @@
             "tools": [
                 "tectonic"
             ]
+        },
+        {
+            "name": "texify",
+            "tools": [
+                "texify"
+            ]
         }
     ],
     "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        },
         {
             "args": [
                 "%DOC_EXT%",
@@ -234,44 +253,6 @@
         },
         {
             "args": [
-                "-e",
-                "using Weave; weave(\"%DOC_EXT%\", doctype=\"tex\")"
-            ],
-            "command": "julia",
-            "env": {},
-            "name": "jnw2tex"
-        },
-        {
-            "args": [
-                "-e",
-                "using Weave; weave(\"%DOC_EXT%\", doctype=\"texminted\")"
-            ],
-            "command": "julia",
-            "env": {},
-            "name": "jnw2texminted"
-        },
-        {
-            "args": [
-                "%DOC_EXT%",
-                "-f",
-                "tex"
-            ],
-            "command": "pweave",
-            "env": {},
-            "name": "pnw2tex"
-        },
-        {
-            "args": [
-                "%DOC_EXT%",
-                "-f",
-                "texminted"
-            ],
-            "command": "pweave",
-            "env": {},
-            "name": "pnw2texminted"
-        },
-        {
-            "args": [
                 "%DOC%.tex",
                 "--keep-logs",
                 "--synctex"
@@ -279,6 +260,18 @@
             "command": "tectonic",
             "env": {},
             "name": "tectonic"
+        },
+        {
+            "args": [
+                "%DOC_EXT%",
+                "--pdf",
+                "--synctex",
+                "--tex-option=\"-file-line-error\"",
+                "--tex-option=\"-interaction=nonstopmode\""
+            ],
+            "command": "texify",
+            "env": {},
+            "name": "texify"
         }
     ],
     "latex-workshop.showContextMenu": true,

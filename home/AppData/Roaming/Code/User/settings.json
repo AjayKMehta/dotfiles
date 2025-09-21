@@ -90,9 +90,6 @@
     "[shellscript]": {
         "editor.tabSize": 2
     },
-    "[snowflake-sql]": {
-        "editor.defaultFormatter": "ReneSaarsoo.sql-formatter-vsc"
-    },
     "[toml]": {
         "editor.defaultFormatter": "tamasfe.even-better-toml"
     },
@@ -111,7 +108,6 @@
         "editor.defaultFormatter": "redhat.vscode-yaml",
         "editor.fontLigatures": false
     },
-    "application.shellEnvironmentResolutionTimeout": 30,
     "breadcrumbs.enabled": true,
     "chat.agent.enabled": true,
     "chat.editing.confirmEditRequestRetry": false,
@@ -172,7 +168,6 @@
     "diffEditor.hideUnchangedRegions.enabled": true,
     "diffEditor.ignoreTrimWhitespace": true,
     "docker.extension.enableComposeLanguageServer": false,
-    "docker.images.label": "RepositoryName",
     "dotnet.formatting.organizeImportsOnFormat": true,
     "editor.aiStats.enabled": true,
     "editor.bracketPairColorization.enabled": true,
@@ -438,138 +433,6 @@
         "upgreek"
     ],
     "latex-workshop.latex.autoBuild.interval": 2000,
-    "latex-workshop.latex.recipes": [
-        {
-            "name": "xelatex",
-            "tools": [
-                "xelatex"
-            ]
-        },
-        {
-            "name": "pdflatex -> bibtex -> pdflatex * 2",
-            "tools": [
-                "bibtex",
-                "pdflatex",
-                "pdflatex",
-                "pdflatex"
-            ]
-        },
-        {
-            "name": "tectonic",
-            "tools": [
-                "tectonic"
-            ]
-        },
-        {
-            "name": "texify",
-            "tools": [
-                "texify"
-            ]
-        }
-    ],
-    "latex-workshop.latex.tools": [
-        {
-            "args": [
-                "%DOC_EXT%",
-                "-c-style-errors",
-                "-interaction=nonstopmode",
-                "-output-directory=%OUTDIR%",
-                "-synctex=1"
-            ],
-            "command": "xelatex",
-            "env": {},
-            "name": "xelatex"
-        },
-        {
-            "args": [
-                "%DOC_EXT%",
-                "-file-line-error",
-                "-interaction=nonstopmode",
-                "-output-directory=%OUTDIR%",
-                "-synctex=1"
-            ],
-            "command": "pdflatex",
-            "env": {},
-            "name": "pdflatex"
-        },
-        {
-            "args": [
-                "%DOCFILE%"
-            ],
-            "command": "bibtex",
-            "env": {},
-            "name": "bibtex"
-        },
-        {
-            "args": [
-                "-e",
-                "knitr::opts_knit$set(concordance = TRUE); knitr::knit('%DOCFILE_EXT%')"
-            ],
-            "command": "Rscript",
-            "env": {},
-            "name": "rnw2tex"
-        },
-        {
-            "args": [
-                "-e",
-                "using Weave; weave(\"%DOC_EXT%\", doctype=\"tex\")"
-            ],
-            "command": "julia",
-            "env": {},
-            "name": "jnw2tex"
-        },
-        {
-            "args": [
-                "-e",
-                "using Weave; weave(\"%DOC_EXT%\", doctype=\"texminted\")"
-            ],
-            "command": "julia",
-            "env": {},
-            "name": "jnw2texminted"
-        },
-        {
-            "args": [
-                "%DOC_EXT%",
-                "-f",
-                "tex"
-            ],
-            "command": "pweave",
-            "env": {},
-            "name": "pnw2tex"
-        },
-        {
-            "args": [
-                "%DOC_EXT%",
-                "-f",
-                "texminted"
-            ],
-            "command": "pweave",
-            "env": {},
-            "name": "pnw2texminted"
-        },
-        {
-            "args": [
-                "%DOC%.tex",
-                "--keep-logs",
-                "--synctex"
-            ],
-            "command": "tectonic",
-            "env": {},
-            "name": "tectonic"
-        },
-        {
-            "args": [
-                "%DOC_EXT%",
-                "--pdf",
-                "--synctex",
-                "--tex-option=\"-file-line-error\"",
-                "--tex-option=\"-interaction=nonstopmode\""
-            ],
-            "command": "texify",
-            "env": {},
-            "name": "texify"
-        }
-    ],
     "latex-workshop.linting.chktex.enabled": true,
     "latex-workshop.linting.chktex.exec.args": [
         "-e16",
@@ -848,7 +711,6 @@
     "rest-client.previewOption": "exchange",
     "rest-client.requestNameAsResponseTabTitle": true,
     "rewrap.autoWrap.enabled": false,
-    "sarif-viewer.explorer.openWhenNoResults": false,
     "scm.inputFontSize": 14,
     "search.exclude": {
         "**/*.code-search": true,
@@ -913,18 +775,6 @@
     "versionlens.dotnet.caching.duration": 3,
     "versionlens.logging.level": "debug",
     "versionlens.suggestions.showOnStartup": true,
-    "vscode-color-picker.languages": [
-        "gitconfig",
-        "javascript",
-        "lua",
-        "markdown",
-        "powershell",
-        "python",
-        "quarto",
-        "toml",
-        "typescript",
-        "yaml"
-    ],
     "vsicons.dontShowNewVersionMessage": true,
     "vsicons.presets.foldersAllDefaultIcon": true,
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
@@ -1141,7 +991,6 @@
         "terminal.integrated.suggest.quickSuggestions",
         "terminal.integrated.tabs.description",
         "terminal.integrated.tabs.title",
-        "vscode-color-picker.languages",
         "window.title",
         "window.zoomLevel",
         "workbench.colorCustomizations",
