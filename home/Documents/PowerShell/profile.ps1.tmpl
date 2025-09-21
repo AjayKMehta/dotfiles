@@ -255,7 +255,9 @@ Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
 
 Invoke-Expression (& { zoxide init powershell | Out-String })
 # cd + custom logic based on the value of _ZO_ECHO.
-function global:__zoxide_cd($dir, $literal) {
+function global:__zoxide_cd {
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSAvoidUsingCmdletAliases', '', Justification = 'Required.')]
+    param($dir, [bool] $literal)
     $dir = if ($literal) {
         # Use cd instead of Set-Location so it will work with cd-extras too!
         cd -LiteralPath $dir -PassThru -ErrorAction Stop
@@ -268,6 +270,21 @@ function global:__zoxide_cd($dir, $literal) {
 function uvrn() {
     uv run --no-sync $args
 }
+
+function uvu() {
+    uv sync --upgrade
+}
+
+function lint-py {
+    [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseApprovedverbs', Justification = 'OK')]
+    param()
+    uvx ruff check $args
+}
+
+function format-py {
+    uvx ruff format $args
+}
+
 
 # Add hook to handle changing location and setting .env, etc.
 # Inspired by https://github.com/PowerShell/PowerShell/issues/14484#issuecomment-1731647083
