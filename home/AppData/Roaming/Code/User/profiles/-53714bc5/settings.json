@@ -5,6 +5,17 @@
     "[css]": {
         "editor.defaultFormatter": "vscode.css-language-features"
     },
+    "[dockercompose]": {
+        "editor.autoIndent": "advanced",
+        "editor.defaultFormatter": "redhat.vscode-yaml",
+        "editor.insertSpaces": true,
+        "editor.quickSuggestions": {
+            "comments": false,
+            "other": true,
+            "strings": true
+        },
+        "editor.tabSize": 2
+    },
     "[gitattributes]": {
         "editor.defaultFormatter": "hashhar.gitattributes"
     },
@@ -143,7 +154,6 @@
     "evenBetterToml.formatter.indentTables": true,
     "evenBetterToml.schema.links": true,
     "evenBetterToml.semanticTokens": true,
-    "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
     "github.copilot.chat.codesearch.enabled": true,
     "github.copilot.chat.editor.temporalContext.enabled": true,
@@ -198,17 +208,17 @@
     ],
     "latex-workshop.latex.tools": [
         {
-            "name": "latexmk",
-            "command": "latexmk",
             "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
+                "%DOC%",
                 "-file-line-error",
-                "-pdf",
+                "-interaction=nonstopmode",
                 "-outdir=%OUTDIR%",
-                "%DOC%"
+                "-pdf",
+                "-synctex=1"
             ],
-            "env": {}
+            "command": "latexmk",
+            "env": {},
+            "name": "latexmk"
         },
         {
             "args": [
@@ -352,6 +362,7 @@
     "r.rterm.windows": "D:\\Apps\\uv\\tools\\radian.exe",
     "r.session.levelOfObjectDetail": "Normal",
     "r.sessionWatcher": true,
+    "remote.autoForwardPortsSource": "hybrid",
     "ruff.configurationPreference": "filesystemFirst",
     "ruff.lint.preview": true,
     "ruff.nativeServer": true,

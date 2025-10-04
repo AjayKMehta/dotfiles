@@ -82,7 +82,6 @@
     "evenBetterToml.schema.links": true,
     "evenBetterToml.semanticTokens": true,
     "files.autoSave": "onFocusChange",
-    "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
     "githubLocalActions.dockerDesktopPath": "C:/Program Files/Docker/Docker/Docker Desktop.exe",
     "haskell.manageHLS": "GHCup",

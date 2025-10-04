@@ -8,6 +8,17 @@
         "editor.formatOnPaste": false,
         "editor.formatOnType": true
     },
+    "[dockercompose]": {
+        "editor.autoIndent": "advanced",
+        "editor.defaultFormatter": "redhat.vscode-yaml",
+        "editor.insertSpaces": true,
+        "editor.quickSuggestions": {
+            "comments": false,
+            "other": true,
+            "strings": true
+        },
+        "editor.tabSize": 2
+    },
     "[gitattributes]": {
         "editor.defaultFormatter": "hashhar.gitattributes"
     },
@@ -57,7 +68,6 @@
     "code-runner.executorMap": {
         "haskell": "stack runghc"
     },
-    "containers.images.label": "RepositoryName",
     "csharp.debug.console": "integratedTerminal",
     "csharp.inlayHints.enableInlayHintsForImplicitObjectCreation": true,
     "csharp.inlayHints.enableInlayHintsForImplicitVariableTypes": true,
@@ -131,12 +141,10 @@
     "evenBetterToml.formatter.indentTables": true,
     "evenBetterToml.schema.links": true,
     "evenBetterToml.semanticTokens": true,
-    "explorer.excludeGitIgnore": false,
-    "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
     "git.openRepositoryInParentFolders": "always",
     "github.copilot.enable": {
-        "*": false,
+        "*": false
     },
     "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
     "githubLocalActions.dockerDesktopPath": "C:/Program Files/Docker/Docker/Docker Desktop.exe",

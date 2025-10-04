@@ -1,7 +1,4 @@
 {
-    "[aspnetcorerazor]": {
-        "editor.defaultFormatter": "ms-dotnettools.csharp"
-    },
     "[csharp]": {
         "editor.autoClosingBrackets": "always",
         "editor.defaultFormatter": "ms-dotnettools.csharp",
@@ -257,6 +254,11 @@
     "files.autoSave": "onFocusChange",
     "files.defaultLanguage": "${activeEditorLanguage}",
     "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
         "**/*.html": true,
         "**/*_cache": true,
         "**/.history/**": true,
@@ -275,6 +277,8 @@
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
+    "fileVisibilityToggle.alsoToggleGitIgnoreExclusion": true,
+    "fileVisibilityToggle.fullVisibilityMode": false,
     "fontAwesomeAutocomplete.patterns": [
         "**/*.html",
         "**/*.md",
@@ -809,6 +813,7 @@
         "code-runner.enableAppInsights",
         "code-runner.runInTerminal",
         "code-runner.showRunCommandInEditorContextMenu",
+        "containers.images.label",
         "debug.showVariableTypes",
         "diffEditor.experimental.collapseUnchangedRegions",
         "diffEditor.experimental.showMoves",
@@ -858,6 +863,7 @@
         "files.defaultLanguage",
         "files.exclude",
         "files.insertFinalNewline",
+        "files.trimFinalNewlines",
         "fontAwesomeAutocomplete.patterns",
         "formatContextMenu.closeAfterSave",
         "formatContextMenu.saveAfterFormat",

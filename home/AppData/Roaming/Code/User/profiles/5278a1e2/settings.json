@@ -100,7 +100,6 @@
     "evenBetterToml.schema.links": true,
     "evenBetterToml.semanticTokens": true,
     "files.autoSave": "onFocusChange",
-    "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
     "fontAwesomeAutocomplete.version": "6",
     "git-graph.customEmojiShortcodeMappings": [],
