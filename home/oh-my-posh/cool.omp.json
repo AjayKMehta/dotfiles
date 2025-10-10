@@ -73,6 +73,7 @@
           "properties": {
             "fetch_stash_count": true,
             "fetch_status": true,
+            "fetch_push_status": true,
             "fetch_upstream_icon": true,
             "truncate_symbol": "\u2026",
             "untracked_modes": {
