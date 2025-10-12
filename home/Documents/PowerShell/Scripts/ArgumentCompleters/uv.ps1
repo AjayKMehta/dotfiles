@@ -1608,6 +1608,7 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--show-version-specifiers', '--show-version-specifiers', [CompletionResultType]::ParameterName, 'Whether to display the version specifier(s) used to install each tool')
             [CompletionResult]::new('--show-with', '--show-with', [CompletionResultType]::ParameterName, 'Whether to display the additional requirements installed with each tool')
             [CompletionResult]::new('--show-extras', '--show-extras', [CompletionResultType]::ParameterName, 'Whether to display the extra requirements installed with each tool')
+            [CompletionResult]::new('--show-python', '--show-python', [CompletionResultType]::ParameterName, 'Whether to display the Python version associated with run each tool')
             [CompletionResult]::new('--no-python-downloads', '--no-python-downloads', [CompletionResultType]::ParameterName, 'no-python-downloads')
             [CompletionResult]::new('-n', '-n', [CompletionResultType]::ParameterName, 'Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation')
             [CompletionResult]::new('--no-cache', '--no-cache', [CompletionResultType]::ParameterName, 'Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation')
