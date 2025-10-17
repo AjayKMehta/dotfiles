@@ -1,0 +1,16 @@
+{
+  "name": "test",
+  "colors": {
+    "pointer": "red",
+    "fg+": "white",
+    "fg": -1,
+    "info": "bright-green",
+    "bg+": "grey",
+    "marker": "#00AAFF",
+    "prompt": "bright-yellow",
+    "header": "bright-blue",
+    "bg": "black",
+    "hl": "blue",
+    "border": "cyan"
+  }
+}
