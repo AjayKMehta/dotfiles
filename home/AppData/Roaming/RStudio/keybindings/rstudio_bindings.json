@@ -39,5 +39,7 @@
     "showDebugMenu": "F8",
     "copilotRequestCompletions": "Alt+\\",
     "toggleFullScreen": "F12",
-    "focusConsoleOutputEnd": "Ctrl+Shift+~"
+    "focusConsoleOutputEnd": "Ctrl+Shift+~",
+    "reformatDocument": "Alt+F D",
+    "reformatCode": "Alt+F S"
 }
