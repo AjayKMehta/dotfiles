@@ -7,12 +7,25 @@
     "installBehavior": {
         "disableInstallNotes": false,
         "portablePackageUserRoot": "D:/Apps/Packages",
-        "portablePackageMachineRoot": "D:/Program Files/Packages/Portable"
+        "portablePackageMachineRoot": "D:/Program Files/Packages/Portable",
+        "preferences": {
+            "locale": [
+                "en-US"
+            ]
+        }
+    },
+    "experimentalFeatures": {
+        "resume": true,
+        "fonts": true
     },
     "telemetry": {
         "disable": true
     },
+    "uninstallBehavior": {
+        "purgePortablePackage": true
+    },
     "visual": {
-        "enableSixels": true
+        "enableSixels": true,
+        "progressBar": "sixel"
     }
 }
