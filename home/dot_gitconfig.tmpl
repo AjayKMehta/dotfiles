@@ -50,9 +50,10 @@
     unstage = restore --staged
     cnv = commit --no-verify
     grepd = -c core.pager=delta grep
+    first = !git log --reverse --format='%H' | head -n 1
     # Use fzf to select branch to checkout
-    gcb = !git branch | fzf --bind 'enter:become(git checkout {-1})'
-    gcbp = !git branch | fzf --preview 'git show --color=always {-1}' --bind 'enter:become(git checkout {-1})'
+    gcb = !git branch | fzf --bind 'enter:become(git switch {-1})'
+    gcbp = !git branch | fzf --preview 'git show --color=always {-1}' --bind 'enter:become(git switch {-1})'
 
     ## Push to remote
     please = push --force-with-lease
