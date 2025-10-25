@@ -1,4 +1,4 @@
-Set-PoshPrompt -Theme 'C:\Program Files (x86)\oh-my-posh\themes\bubblesextra.omp.json'
+Set-PoshPrompt -Theme "$env:LOCALAPPDATA\Programs\oh-my-posh\themes\bubblesextra.omp.json"
 
 # https://github.com/SeeminglyScience/EditorServicesCommandSuite/issues/45#issuecomment-596243308
 Import-Module EditorServicesCommandSuite
