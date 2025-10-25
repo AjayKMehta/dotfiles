@@ -70,7 +70,7 @@ function Set-EnvVar([bool]$originalStatus) {
     $env:POSH = if (-not (Get-Module -Name PSReadLine)) {
         $False
     } else {
-            (Get-PSReadLineOption).HistorySaveStyle -ne 'SaveNothing'
+        (Get-PSReadLineOption).HistorySaveStyle -ne 'SaveNothing'
     }
     # OSC7: Remember current directory so if you open new tab in WezTerm, it will open in the same directory!
     # https://wezfurlong.org/wezterm/shell-integration.html#osc-7-on-windows-with-powershell
