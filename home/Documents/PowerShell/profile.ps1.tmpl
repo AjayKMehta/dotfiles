@@ -25,6 +25,14 @@ if (!(Get-PSDrive -Name 'HKU' -ErrorAction Ignore)) {
     $null = New-PSDrive -Name 'HKU' -PSProvider Registry -Root 'HKEY_USERS'
 }
 
+if (!(Get-PSDrive -Name 'ps' -ErrorAction Ignore)) {
+    $null = New-PSDrive -Name 'ps' -PSProvider FileSystem -Root '~/Documents/PowerShell/'
+}
+
+if (!(Get-PSDrive -Name 'vsc' -ErrorAction Ignore)) {
+    $null = New-PSDrive -Name 'vsc' -PSProvider FileSystem -Root "$env:APPDATA\Code"
+}
+
 #region PSReadLine
 
 # Either regular console or one created by PowerShell Extension
