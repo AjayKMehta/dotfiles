@@ -247,6 +247,7 @@
     "evenBetterToml.semanticTokens": true,
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
+    "explorer.excludeGitIgnore": true,
     "extensions.ignoreRecommendations": true,
     "files.associations": {
         "*.props": "xml"
@@ -254,15 +255,14 @@
     "files.autoSave": "onFocusChange",
     "files.defaultLanguage": "${activeEditorLanguage}",
     "files.exclude": {
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
-        "**/.DS_Store": true,
-        "**/Thumbs.db": true,
         "**/*.html": true,
         "**/*_cache": true,
+        "**/.DS_Store": true,
+        "**/.git": true,
+        "**/.hg": true,
         "**/.history/**": true,
         "**/.hypothesis": true,
+        "**/.svn": true,
         "**/.tmp-projections": true,
         "**/.venv": true,
         "**/.virtual_documents": true,
@@ -272,6 +272,7 @@
         "**/History_**": true,
         "**/obj": true,
         "**/TestResults": true,
+        "**/Thumbs.db": true,
         "artifacts": true
     },
     "files.insertFinalNewline": true,
@@ -861,7 +862,6 @@
         "extensions.ignoreRecommendations",
         "files.associations",
         "files.defaultLanguage",
-        "files.exclude",
         "files.insertFinalNewline",
         "files.trimFinalNewlines",
         "fontAwesomeAutocomplete.patterns",

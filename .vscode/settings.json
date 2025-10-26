@@ -29,5 +29,12 @@
         "titleBar.border": "#71bfa3",
         "titleBar.inactiveBackground": "#71bfa399",
         "titleBar.inactiveForeground": "#15202b99"
+    },
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true
     }
 }
