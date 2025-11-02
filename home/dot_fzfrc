@@ -1,4 +1,4 @@
---with-shell "pwsh -NoProfile -Command"
+# --with-shell "pwsh -NoProfile -Command"
 --bind alt-up:preview-page-up,alt-down:preview-page-down,alt-e:preview-top,alt-f:preview-bottom,ctrl-e:half-page-up,ctrl-f:half-page-down,alt-/:toggle-wrap,alt-r:toggle-raw,ctrl-b:best,ctrl-c:cancel
 --tabstop=4
 --highlight-line
