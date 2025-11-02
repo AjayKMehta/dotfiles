@@ -168,7 +168,7 @@
         "**/.venv": true,
         "**/.virtual_documents": true,
         "**/__pycache__": true,
-        "**/History_**": true,
+        "**/History_**": true
     },
     "files.trimTrailingWhitespace": true,
     "github.copilot.chat.codesearch.enabled": true,
