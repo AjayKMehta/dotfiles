@@ -26,9 +26,7 @@
 
 --map-syntax "*.qmd:Markdown"
 --map-syntax "*.Rmd:Markdown"
---map-syntax "*.csproj:XML"
 --map-syntax "*.ps1xml:XML"
---map-syntax "Directory.*.props:XML"
---map-syntax "Directory.*.targets:XML"
 --map-syntax "*.slnx:XML"
 --map-syntax "*.vsconfig:JSON"
+--map-syntax "uv.lock:TOML"
