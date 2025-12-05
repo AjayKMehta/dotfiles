@@ -40,12 +40,14 @@
         "editor.defaultFormatter": "sumneko.lua"
     },
     "[markdown]": {
+        "diffEditor.ignoreTrimWhitespace": true,
         "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
         "editor.fontFamily": "'DejaVuSansM Nerd Font', Consolas, 'Courier New', monospace, 'Lucida Sans'",
         "editor.wordWrap": "on",
         "files.trimTrailingWhitespace": false
     },
     "[python]": {
+        "diffEditor.ignoreTrimWhitespace": false,
         "editor.codeActionsOnSave": {
             "source.fixAll.ruff": "explicit",
             "source.organizeImports.ruff": "never"
@@ -155,20 +157,20 @@
     "evenBetterToml.schema.links": true,
     "evenBetterToml.semanticTokens": true,
     "files.exclude": {
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
-        "**/.DS_Store": true,
-        "**/Thumbs.db": true,
         "**/*.html": true,
         "**/*_cache": true,
+        "**/.DS_Store": true,
+        "**/.git": true,
+        "**/.hg": true,
         "**/.history/**": true,
         "**/.hypothesis": true,
+        "**/.svn": true,
         "**/.tmp-projections": true,
         "**/.venv": true,
         "**/.virtual_documents": true,
         "**/__pycache__": true,
-        "**/History_**": true
+        "**/History_**": true,
+        "**/Thumbs.db": true
     },
     "files.trimTrailingWhitespace": true,
     "github.copilot.chat.codesearch.enabled": true,
@@ -390,7 +392,6 @@
     "vsicons.dontShowNewVersionMessage": true,
     "vsicons.presets.foldersAllDefaultIcon": true,
     "vsicons.presets.jsonOfficial": true,
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "workbench.colorTheme": "Monokai++",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.tree.renderIndentGuides": "always"

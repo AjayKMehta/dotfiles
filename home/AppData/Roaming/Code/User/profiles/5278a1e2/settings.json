@@ -82,11 +82,6 @@
     "editor.rulers": [
         80
     ],
-    "editor.semanticTokenColorCustomizations": {
-        "[Dark Atom Dark]": {
-            "enabled": true
-        }
-    },
     "editor.suggest.preview": true,
     "editor.tokenColorCustomizations": {
         "[Ayu Dark Bordered]": {
@@ -299,9 +294,6 @@
         "1."
     ],
     "markdown.extension.math.enabled": false,
-    "markdown.occurrencesHighlight.enabled": true,
-    "markdown.preview.typographer": true,
-    "markdown.validate.unusedLinkDefinitions.enabled": "warning",
     "notebook.cellExecutionTimeVerbosity": "verbose",
     "notebook.cellToolbarLocation": {
         "default": "right",
@@ -332,13 +324,10 @@
     "remote.autoForwardPortsSource": "hybrid",
     "terminal.integrated.enableMultiLinePasteWarning": "never",
     "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
-    "todo-tree.filtering.useBuiltInExcludes": "file excludes",
-    "todo-tree.tree.showCountsInTree": true,
     "versionlens.dotnet.caching.duration": 3,
     "versionlens.suggestions.showOnStartup": true,
     "vsicons.dontShowNewVersionMessage": true,
     "vsicons.presets.foldersAllDefaultIcon": true,
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "window.commandCenter": true,
     "workbench.editor.labelFormat": "default",
     "workbench.iconTheme": "vscode-icons",

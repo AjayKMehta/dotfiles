@@ -78,7 +78,7 @@
     "debug.inlineValues": "on",
     "diffEditor.codeLens": true,
     "diffEditor.diffAlgorithm": "advanced",
-    "diffEditor.ignoreTrimWhitespace": false,
+    "diffEditor.ignoreTrimWhitespace": true,
     "diffEditor.wordWrap": "on",
     "dotnet.automaticallyCreateSolutionInWorkspace": false,
     "dotnet.backgroundAnalysis.analyzerDiagnosticsScope": "fullSolution",

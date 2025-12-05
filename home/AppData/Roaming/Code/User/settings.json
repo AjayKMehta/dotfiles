@@ -200,9 +200,31 @@
         80
     ],
     "editor.semanticTokenColorCustomizations": {
-        "[Dark Atom Dark]": {
-            "enabled": true
-        }
+        "[Default Dark+]": {
+            "enabled": true,
+            "rules": {
+                "comment": {
+                    "fontStyle": "italic",
+                    "foreground": "#546E7A"
+                },
+                "function": "#00BCD4",
+                "keyword": "#7986CB",
+                "macro": "#7E57C2",
+                "namespace": "#00897B",
+                "number": "#90A4AE",
+                "operator": "#9575CD",
+                "punctuation": "#A1887F",
+                "string": {
+                    "foreground": "#90A4AE",
+                    "italic": true
+                },
+                "type": "#26A69A",
+                "type.modification": "#00897B",
+                "variable": "#42A5F5",
+                "variable.readonly.defaultLibrary": "#A89F9B"
+            }
+        },
+        "enabled": true
     },
     "editor.snippetSuggestions": "bottom",
     "editor.stickyTabStops": true,
@@ -255,15 +277,14 @@
     "files.autoSave": "onFocusChange",
     "files.defaultLanguage": "${activeEditorLanguage}",
     "files.exclude": {
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
-        "**/.DS_Store": true,
-        "**/Thumbs.db": true,
         "**/*.html": true,
         "**/*_cache": true,
+        "**/.DS_Store": true,
+        "**/.git": true,
+        "**/.hg": true,
         "**/.history/**": true,
         "**/.hypothesis": true,
+        "**/.svn": true,
         "**/.tmp-projections": true,
         "**/.venv": true,
         "**/.virtual_documents": true,
@@ -273,6 +294,7 @@
         "**/History_**": true,
         "**/obj": true,
         "**/TestResults": true,
+        "**/Thumbs.db": true,
         "artifacts": true
     },
     "files.insertFinalNewline": true,
@@ -310,6 +332,7 @@
     "git.suggestSmartCommit": false,
     "git.timeline.showUncommitted": true,
     "git.useCommitInputAsStashMessage": true,
+    "git.verboseCommit": true,
     "github.branchProtection": true,
     "github.copilot.chat.commitMessageGeneration.instructions": [],
     "github.copilot.chat.generateTests.codeLens": true,
@@ -372,6 +395,7 @@
             "stash": true
         }
     },
+    "gitlens.plusFeatures.enabled": false,
     "gitlens.sortTagsBy": "date:desc",
     "gitlens.statusBar.command": "gitlens.openFileOnRemote",
     "gitlens.telemetry.enabled": false,
@@ -766,9 +790,9 @@
             "source": "PowerShell"
         }
     },
-    "terminal.integrated.shellIntegration.enabled": false,
     "terminal.integrated.smoothScrolling": true,
     "terminal.integrated.stickyScroll.enabled": true,
+    "terminal.integrated.suggest.enabled": true,
     "terminal.integrated.suggest.quickSuggestions": {
         "arguments": "on",
         "commands": "on",
@@ -836,6 +860,7 @@
         "editor.multiDocumentOccurrencesHighlight",
         "editor.occurrencesHighlightDelay",
         "editor.overtypeCursorStyle",
+        "editor.semanticTokenColorCustomizations",
         "editor.snippetSuggestions",
         "editor.stickyTabStops",
         "editor.suggestSelection",
@@ -894,6 +919,7 @@
         "git.useCommitInputAsStashMessage",
         "git.useEditorAsCommitInput",
         "git.useForcePushWithLease",
+        "git.verboseCommit",
         "github.branchProtection",
         "github.copilot.chat.commitMessageGeneration.instructions",
         "github.copilot.chat.generateTests.codeLens",
@@ -995,6 +1021,7 @@
         "terminal.integrated.stickyScroll.enabled",
         "terminal.integrated.suggest.enabled",
         "terminal.integrated.suggest.quickSuggestions",
+        "terminal.integrated.suggest.windowsExecutableExtensions",
         "terminal.integrated.tabs.description",
         "terminal.integrated.tabs.title",
         "window.title",
