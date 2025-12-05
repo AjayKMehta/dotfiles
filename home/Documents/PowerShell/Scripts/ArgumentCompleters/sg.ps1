@@ -76,7 +76,7 @@ Register-ArgumentCompleter -Native -CommandName 'ast-grep' -ScriptBlock {
             [CompletionResult]::new('-r', '-r', [CompletionResultType]::ParameterName, 'Scan the codebase with the single rule located at the path RULE_FILE')
             [CompletionResult]::new('--rule', '--rule', [CompletionResultType]::ParameterName, 'Scan the codebase with the single rule located at the path RULE_FILE')
             [CompletionResult]::new('--inline-rules', '--inline-rules', [CompletionResultType]::ParameterName, 'Scan the codebase with a rule defined by the provided RULE_TEXT')
-            [CompletionResult]::new('--format', '--format', [CompletionResultType]::ParameterName, 'Output warning/error messages in GitHub Action format')
+            [CompletionResult]::new('--format', '--format', [CompletionResultType]::ParameterName, 'Output warning/error messages in different formats')
             [CompletionResult]::new('--report-style', '--report-style', [CompletionResultType]::ParameterName, 'report-style')
             [CompletionResult]::new('--filter', '--filter', [CompletionResultType]::ParameterName, 'Scan the codebase with rules with ids matching REGEX')
             [CompletionResult]::new('--error', '--error', [CompletionResultType]::ParameterName, 'Set rule severity to error')
