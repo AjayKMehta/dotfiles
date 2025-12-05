@@ -90,6 +90,7 @@ Register-ArgumentCompleter -Native -CommandName 'uvx' -ScriptBlock {
             [CompletionResult]::new('--binary', '--binary', [CompletionResultType]::ParameterName, 'binary')
             [CompletionResult]::new('--refresh', '--refresh', [CompletionResultType]::ParameterName, 'Refresh all cached data')
             [CompletionResult]::new('--no-refresh', '--no-refresh', [CompletionResultType]::ParameterName, 'no-refresh')
+            [CompletionResult]::new('--lfs', '--lfs', [CompletionResultType]::ParameterName, 'Whether to use Git LFS when adding a dependency from Git')
             [CompletionResult]::new('--show-resolution', '--show-resolution', [CompletionResultType]::ParameterName, 'Whether to show resolver and installer output from any environment modifications')
             [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Display the uvx version')
             [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Display the uvx version')
