@@ -31,12 +31,16 @@
     },
     {
         "command": "clever.blockSelect.cleverSelect",
-        "key": "ctrl+[ ctrl+]",
-        "when": "editorHasSelection"
+        "key": "ctrl+[ ctrl+]"
     },
     {
         "command": "workbench.files.action.showActiveFileInExplorer",
         "key": "ctrl+[ s"
+    },
+    {
+        "command": "-markdown.extension.onIndentLines",
+        "key": "ctrl+]",
+        "when": "editorTextFocus && !suggestWidgetVisible && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
     },
     {
         "command": "workbench.profiles.actions.switchProfile",
@@ -75,6 +79,10 @@
         "when": "terminalFocus"
     },
     {
+        "command": "-code-runner.runByLanguage",
+        "key": "ctrl+alt+j"
+    },
+    {
         "command": "-workbench.view.explorer",
         "key": "ctrl+alt+l",
         "when": "viewContainer.workbench.view.explorer.enabled"
@@ -98,6 +106,11 @@
         "when": "terminalFocus"
     },
     {
+        "command": "githubLocalActions.runWorkflow",
+        "key": "ctrl+alt+r",
+        "when": "editorTextFocus && resourceDirname =~ ^.+/\\.github/workflows$"
+    },
+    {
         "command": "git.stage",
         "key": "ctrl+alt+s"
     },
@@ -112,6 +125,15 @@
     {
         "command": "-workbench.debug.viewlet.action.addFunctionBreakpointAction",
         "key": "ctrl+b"
+    },
+    {
+        "command": "-workbench.action.toggleSidebarVisibility",
+        "key": "ctrl+b"
+    },
+    {
+        "command": "workbench.action.toggleSidebarVisibility",
+        "key": "ctrl+b",
+        "when": "editorLangId != 'markdown' && editorLangId != 'rmd' && editorLangId != 'quarto' && !editorTextFocus"
     },
     {
         "command": "-editor.action.copyLinesDownAction",
@@ -195,6 +217,36 @@
         "when": "activeEditorIsPinned"
     },
     {
+        "command": "-markdown.extension.closePreview",
+        "key": "ctrl+k v",
+        "when": "activeWebviewPanelId == 'markdown.preview'"
+    },
+    {
+        "key": "ctrl+k v",
+        "command": "markdown-preview-enhanced.openPreviewToTheSide",
+        "when": "editorLangId =~ /^markdown$|^instructions$/^chatmode$/"
+    },
+    {
+        "command": "-markdown.extension.editing.toggleMath",
+        "key": "ctrl+m",
+        "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
+    },
+    {
+        "command": "markdown.extension.editing.toggleList",
+        "key": "ctrl+m ctrl+1",
+        "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
+    },
+    {
+        "command": "markdown.extension.editing.toggleCodeBlock",
+        "key": "ctrl+m ctrl+c",
+        "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
+    },
+    {
+        "command": "markdown.extension.editing.toggleCodeSpan",
+        "key": "ctrl+m ctrl+i",
+        "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
+    },
+    {
         "command": "workbench.action.terminal.runRecentCommand",
         "key": "ctrl+r",
         "when": "terminalFocus"
@@ -216,6 +268,11 @@
         "command": "rewrap.rewrapComment",
         "key": "ctrl+shift+/",
         "when": "editorTextFocus"
+    },
+    {
+        "command": "markdown.extension.editing.toggleMath",
+        "key": "ctrl+shift+4",
+        "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
     },
     {
         "command": "github.copilot.completions.toggle",
@@ -254,7 +311,7 @@
         "command": "git.close",
         "key": "ctrl+shift+g w",
         "when": "view.workbench.scm.visible"
-    },    
+    },
     {
         "args": {
             "snippet": "```{r}\n${TM_SELECTED_TEXT}$0\n```"
@@ -305,6 +362,11 @@
         "command": "editor.action.transformToUppercase",
         "key": "ctrl+shift+u",
         "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "command": "-markdown.extension.closePreview",
+        "key": "ctrl+shift+v",
+        "when": "activeWebviewPanelId == 'markdown.preview'"
     },
     {
         "command": "workbench.action.quickOpenPreviousRecentlyUsedEditor",
@@ -359,5 +421,44 @@
         "command": "editor.action.insertLineAfter",
         "key": "shift+enter",
         "when": "editorTextFocus && !editorReadonly && editorLangId != 'python' && editorLangId != 'julia'"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "-workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+shift+v",
+        "command": "fileVisibilityToggle.toggleVisibility",
+        "when": "explorerViewletFocus"
+    },
+    {
+        "key": "alt+w",
+        "command": "toggle.diff.ignoreTrimWhitespace",
+        "when": "inDiffEditor"
+    },
+    {
+        "key": "alt+s",
+        "command": "-gitlens.showQuickRepoStatus",
+        "when": "!gitlens:disabled && config.gitlens.keymap == 'alternate'"
+    },
+    {
+        "key": "ctrl+shift+[",
+        "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+    },
+    {
+        "key": "ctrl+pagedown",
+        "command": "-workbench.action.terminal.focusNext",
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+    },
+    {
+        "key": "ctrl+shift+]",
+        "command": "workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+    },
+    {
+        "key": "ctrl+pageup",
+        "command": "-workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
     }
 ]

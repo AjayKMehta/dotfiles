@@ -39,8 +39,7 @@
     },
     {
         "command": "clever.blockSelect.cleverSelect",
-        "key": "ctrl+[ ctrl+]",
-        "when": "editorHasSelection"
+        "key": "ctrl+[ ctrl+]"
     },
     {
         "command": "workbench.files.action.showActiveFileInExplorer",
@@ -74,7 +73,8 @@
     },
     {
         "command": "workbench.action.restartExtensionHost",
-        "key": "ctrl+alt+f5"
+        "key": "ctrl+alt+f5",
+        "when": "view.workbench.views.extensions.installed.visible"
     },
     {
         "command": "emojisense.quickEmoji",
@@ -85,6 +85,15 @@
         "command": "emojisense.quickEmojiTerminal",
         "key": "ctrl+alt+i",
         "when": "terminalFocus"
+    },
+    {
+        "command": "-code-runner.runByLanguage",
+        "key": "ctrl+alt+j"
+    },
+    {
+        "command": "-workbench.view.explorer",
+        "key": "ctrl+alt+l",
+        "when": "viewContainer.workbench.view.explorer.enabled"
     },
     {
         "command": "-code-runner.stop",
@@ -103,6 +112,11 @@
         "command": "workbench.action.terminal.sendSequence",
         "key": "ctrl+alt+r",
         "when": "terminalFocus"
+    },
+    {
+        "command": "githubLocalActions.runWorkflow",
+        "key": "ctrl+alt+r",
+        "when": "editorTextFocus && resourceDirname =~ ^.+/\\.github/workflows$"
     },
     {
         "command": "git.stage",
@@ -392,5 +406,40 @@
     {
         "key": "ctrl+e",
         "command": "-workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+shift+v",
+        "command": "fileVisibilityToggle.toggleVisibility",
+        "when": "explorerViewletFocus"
+    },
+    {
+        "key": "alt+w",
+        "command": "toggle.diff.ignoreTrimWhitespace",
+        "when": "inDiffEditor"
+    },
+    {
+        "key": "alt+s",
+        "command": "-gitlens.showQuickRepoStatus",
+        "when": "!gitlens:disabled && config.gitlens.keymap == 'alternate'"
+    },
+    {
+        "key": "ctrl+shift+[",
+        "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+    },
+    {
+        "key": "ctrl+pagedown",
+        "command": "-workbench.action.terminal.focusNext",
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+    },
+    {
+        "key": "ctrl+shift+]",
+        "command": "workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+    },
+    {
+        "key": "ctrl+pageup",
+        "command": "-workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
     }
 ]

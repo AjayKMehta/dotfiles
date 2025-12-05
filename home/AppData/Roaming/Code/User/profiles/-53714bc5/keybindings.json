@@ -11,11 +11,6 @@
         "when": "editorLangId == r && editorTextFocus || editorLangId == rmd && editorTextFocus"
     },
     {
-        "command": "-markdown.extension.checkTaskList",
-        "key": "alt+c",
-        "when": "editorTextFocus && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
-    },
-    {
         "command": "git-graph.view",
         "key": "alt+g"
     },
@@ -119,6 +114,12 @@
         "when": "editorFocus"
     },
     {
+        "args": ".vsc.browser(httpgd::httpgdURL(), viewer = \"Beside\")",
+        "command": "r.runCommand",
+        "key": "ctrl+alt+p",
+        "when": "editorTextFocus && editorLangId == 'r'"
+    },
+    {
         "args": {
             "text": "\u0012"
         },
@@ -154,7 +155,7 @@
     {
         "command": "workbench.action.toggleSidebarVisibility",
         "key": "ctrl+b",
-        "when": "!editorTextFocus && editorLangId != 'markdown' && editorLangId != 'quarto' && editorLangId != 'rmd'"
+        "when": "editorLangId != 'markdown' && editorLangId != 'rmd' && editorLangId != 'quarto' && !editorTextFocus"
     },
     {
         "command": "-editor.action.copyLinesDownAction",
@@ -271,10 +272,6 @@
         "command": "workbench.action.terminal.runRecentCommand",
         "key": "ctrl+r",
         "when": "terminalFocus"
-    },
-    {
-        "command": "csharpsortusings.sortUsings",
-        "key": "ctrl+r ctrl+g"
     },
     {
         "command": "-workbench.action.zoomOut",
@@ -424,7 +421,7 @@
     {
         "command": "-markdown.extension.closePreview",
         "key": "ctrl+shift+v",
-        "when": "activeWebviewPanelId == 'markdown.psreview'"
+        "when": "activeWebviewPanelId == 'markdown.preview'"
     },
     {
         "command": "workbench.action.quickOpenPreviousRecentlyUsedEditor",
@@ -464,11 +461,6 @@
         "command": "-cursorColumnSelectRight",
         "key": "shift+alt+right",
         "when": "editorTextFocus"
-    },
-    {
-        "command": "PowerShell.ShowAdditionalCommands",
-        "key": "shift+alt+s",
-        "when": "editorTextFocus && editorLangId == 'powershell'"
     },
     {
         "command": "-editor.action.insertLineAfter",
