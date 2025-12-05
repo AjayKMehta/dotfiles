@@ -71,7 +71,6 @@
         },
         {
           "properties": {
-            "fetch_stash_count": true,
             "fetch_status": true,
             "fetch_push_status": true,
             "fetch_upstream_icon": true,
@@ -95,7 +94,7 @@
         },
         {
           "style": "powerline",
-          "template": " {{ if eq .Env.POSH \"True\"}}\uf0c7{{end}} ",
+          "template": "{{ if .Env.POSH }} {{ if eq .Env.POSH \"True\"}}\uf0c7{{end}} {{end}}",
           "foreground": "transparent",
           "powerline_symbol": "\ue0b0",
           "background": "#a8cdc9",
