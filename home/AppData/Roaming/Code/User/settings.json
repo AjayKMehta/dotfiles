@@ -248,7 +248,7 @@
         "Ambiguous link to heading",
         {
             "regex": "Context access might be invalid: .+"
-        }
+        },
     ],
     "errorLens.excludeBySource": [
         "Pylance(reportGeneralTypeIssues)"
