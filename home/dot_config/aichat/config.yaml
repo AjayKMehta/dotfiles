@@ -164,9 +164,9 @@ clients:
         real_name: llama3.2:latest
         max_input_tokens: 131072
         supports_function_calling: true
-      - name: mistral
-        real_name: mistral:latest
-        max_input_tokens: 32768
+      - name: ministral
+        real_name: ministral-3:8b
+        max_input_tokens: 200000
         supports_function_calling: true
       - name: mxbai
         real_name: mxbai-embed-large:latest
@@ -175,13 +175,6 @@ clients:
         max_batch_size: 100
         max_tokens_per_chunk: 512
         max_input_tokens: 200000
-      - name: codellama
-        real_name: codellama:13b
-        max_input_tokens: 16384
-      - name: qwen2.5-coder
-        real_name: qwen2.5-coder:14b
-        max_input_tokens: 32768
-        supports_function_calling: true
       - name: deepseek
         real_name: deepseek-r1:8b
         max_input_tokens: 131072
@@ -201,3 +194,7 @@ clients:
         type: embedding
         default_chunk_size: 2048
         max_batch_size: 2048
+      - name: gemma
+        real_name: gemma3:4b
+        max_input_tokens: 131072
+        supports_reasoning: true

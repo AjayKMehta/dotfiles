@@ -1,13 +1,7 @@
-- name: ollama/qwen2.5-coder:14b
-  extra_params:
-    num_ctx: 8192
-- name: ollama_chat/qwen2.5-coder:14b
-  extra_params:
-    num_ctx: 8192
-- name: ollama/mistral:latest
+- name: ollama/ministral-3:8b
   extra_params:
     num_ctx: 32768
-- name: ollama_chat/mistral:latest
+- name: ollama_chat/ministral-3:8b
   extra_params:
     num_ctx: 32768
 - name: ollama/llama3.2:latest
@@ -22,15 +16,15 @@
 - name: ollama_chat/deepseek-r1:8b
   extra_params:
     num_ctx: 8192
-- name: ollama/codellama:13b
-  extra_params:
-    num_ctx: 16384
-- name: ollama_chat/codellama:13b
-  extra_params:
-    num_ctx: 16384
 - name: ollama/qwen3:8b
   extra_params:
     num_ctx: 40960
 - name: ollama_chat/qwen3:8b
   extra_params:
     num_ctx: 40960
+- name: ollama/gemma3:4b
+  extra_params:
+    num_ctx: 131072
+- name: ollama_chat/gemma3:4b
+  extra_params:
+    num_ctx: 131072
