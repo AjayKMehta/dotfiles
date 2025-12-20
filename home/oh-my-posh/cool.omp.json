@@ -11,7 +11,7 @@
           "template": "{{ .Env.OSC7 }}"
         },
         {
-          "properties": {
+          "options": {
             "root_icon": "⚡"
           },
           "style": "powerline",
@@ -46,8 +46,9 @@
           "type": "r"
         },
         {
-          "properties": {
-            "display_mode": "context"
+          "options": {
+            "display_mode": "context",
+            "tooling": ["uv"]
           },
           "style": "powerline",
           "template": " \ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} ",
@@ -57,7 +58,21 @@
           "type": "python"
         },
         {
-          "properties": {
+          "type": "copilot",
+          "style": "powerline",
+          "foreground": "#111111",
+          "background": "#fee898",
+          "template": "  {{ .Premium.Percent.Gauge() }} {{ .Premium.Used }}/{{ .Premium.Limit }} ",
+          "cache": {
+            "duration": "5m",
+            "strategy": "session"
+          },
+          "options": {
+            "http_timeout": 1000
+          }
+        },
+        {
+          "options": {
             "display_mode": "files",
             "home_icon": "\uf015",
             "style": "agnoster"
@@ -70,7 +85,7 @@
           "type": "path"
         },
         {
-          "properties": {
+          "options": {
             "fetch_status": true,
             "fetch_push_status": true,
             "fetch_upstream_icon": true,
