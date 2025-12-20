@@ -10,11 +10,11 @@
 	"view": {
 		"zoomLevel": 0.9,
 		"windowBounds": {
-			"x": -18,
-			"y": -18,
-			"width": 1052,
-			"height": 608,
-			"maximized": true
+			"x": -32,
+			"y": -32,
+			"width": 1080,
+			"height": 636,
+			"maximized": false
 		},
 		"accessibility": false,
 		"disableRendererAccessibility": false
@@ -33,7 +33,9 @@
 		"windows": {
 			"rBinDir": "",
 			"preferR64": true,
-			"rExecutablePath": "C:\\Program Files\\R\\R-4.5.1\\bin\\x64\\Rterm.exe"
+			"rExecutablePath": "C:\\Program Files\\R\\R-4.5.2\\bin\\x64\\Rterm.exe",
+			"useDefault32BitR": false,
+			"useDefault64BitR": true
 		}
 	},
 	"context_id": "",
