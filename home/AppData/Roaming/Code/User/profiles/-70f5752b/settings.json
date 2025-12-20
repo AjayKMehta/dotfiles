@@ -162,7 +162,6 @@
     "github.copilot.enable": {
         "*": false
     },
-    "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
     "githubLocalActions.dockerDesktopPath": "C:/Program Files/Docker/Docker/Docker Desktop.exe",
     "githubPullRequests.createOnPublishBranch": "never",
     "markdown-preview-enhanced.codeBlockTheme": "pen-paper-coffee.css",

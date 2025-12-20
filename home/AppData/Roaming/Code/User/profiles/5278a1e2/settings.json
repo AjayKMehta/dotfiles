@@ -60,7 +60,7 @@
     "debug.inlineValues": "on",
     "diffEditor.codeLens": true,
     "diffEditor.diffAlgorithm": "advanced",
-    "diffEditor.ignoreTrimWhitespace": false,
+    "diffEditor.ignoreTrimWhitespace": true,
     "diffEditor.wordWrap": "on",
     "dotfiles.repository": "https://github.com/AjayKMehta/dotfiles",
     "editor.bracketPairColorization.enabled": true,
