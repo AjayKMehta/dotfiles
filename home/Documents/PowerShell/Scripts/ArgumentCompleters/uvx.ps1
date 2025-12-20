@@ -68,7 +68,7 @@ Register-ArgumentCompleter -Native -CommandName 'uvx' -ScriptBlock {
             [CompletionResult]::new('--allow-insecure-host', '--allow-insecure-host', [CompletionResultType]::ParameterName, 'Allow insecure connections to a host')
             [CompletionResult]::new('--preview-features', '--preview-features', [CompletionResultType]::ParameterName, 'Enable experimental preview features')
             [CompletionResult]::new('--directory', '--directory', [CompletionResultType]::ParameterName, 'Change to the given directory prior to running the command')
-            [CompletionResult]::new('--project', '--project', [CompletionResultType]::ParameterName, 'Run the command within the given project directory')
+            [CompletionResult]::new('--project', '--project', [CompletionResultType]::ParameterName, 'Discover a project in the given directory')
             [CompletionResult]::new('--config-file', '--config-file', [CompletionResultType]::ParameterName, 'The path to a `uv.toml` file to use for configuration')
             [CompletionResult]::new('--isolated', '--isolated', [CompletionResultType]::ParameterName, 'Run the tool in an isolated virtual environment, ignoring any already-installed tools')
             [CompletionResult]::new('--no-env-file', '--no-env-file', [CompletionResultType]::ParameterName, 'Avoid reading environment variables from a `.env` file')
