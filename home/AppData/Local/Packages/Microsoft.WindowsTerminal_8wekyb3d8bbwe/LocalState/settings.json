@@ -1,10 +1,10 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": 
+    "actions":
     [
         {
-            "command": 
+            "command":
             {
                 "action": "copy",
                 "singleLine": false
@@ -16,7 +16,11 @@
             "id": "User.paste"
         },
         {
-            "command": 
+            "command": "find",
+            "id": "User.find"
+        },
+        {
+            "command":
             {
                 "action": "splitPane",
                 "split": "auto",
@@ -25,11 +29,7 @@
             "id": "User.splitPane.A6751878"
         },
         {
-            "command": "find",
-            "id": "User.find"
-        },
-        {
-            "command": 
+            "command":
             {
                 "action": "sendInput",
                 "input": "\u001b[13;2u"
@@ -37,7 +37,7 @@
             "id": "User.sendInput.8882FD6D"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "sendInput",
                 "input": "\u001b[13;5u"
@@ -49,57 +49,57 @@
     "copyFormatting": "none",
     "copyOnSelect": false,
     "defaultProfile": "{01201329-03d9-413b-ba6b-ce86f4862626}",
-    "keybindings": 
+    "keybindings":
     [
-        {
-            "id": "User.splitPane.A6751878",
-            "keys": "alt+shift+d"
-        },
         {
             "id": "User.sendInput.8882FD6D",
             "keys": "shift+enter"
         },
         {
-            "id": null,
-            "keys": "ctrl+v"
-        },
-        {
-            "id": "User.find",
-            "keys": "ctrl+shift+f"
+            "id": "User.splitPane.A6751878",
+            "keys": "alt+shift+d"
         },
         {
             "id": "User.sendInput.F8A79DCB",
             "keys": "ctrl+enter"
         },
         {
+            "id": "User.find",
+            "keys": "ctrl+shift+f"
+        },
+        {
+            "id": null,
+            "keys": "ctrl+v"
+        },
+        {
             "id": null,
             "keys": "ctrl+c"
         }
     ],
-    "newTabMenu": 
+    "newTabMenu":
     [
         {
             "type": "remainingProfiles"
         }
     ],
-    "profiles": 
+    "profiles":
     {
-        "defaults": 
+        "defaults":
         {
-            "font": 
+            "font":
             {
                 "face": "CaskaydiaMono Nerd Font Mono",
                 "size": 14
             }
         },
-        "list": 
+        "list":
         [
             {
                 "colorScheme": "Tango Dark",
                 "commandline": "\"C:\\Program Files\\PowerShell\\7\\pwsh.exe\"",
                 "elevate": true,
                 "experimental.retroTerminalEffect": false,
-                "font": 
+                "font":
                 {
                     "face": "MonaspiceNe Nerd Font Mono"
                 },
@@ -111,7 +111,7 @@
             },
             {
                 "colorScheme": "Tango Dark",
-                "font": 
+                "font":
                 {
                     "face": "DejaVuSansM Nerd Font Mono"
                 },
@@ -125,7 +125,7 @@
             {
                 "colorScheme": "Tango Dark",
                 "experimental.retroTerminalEffect": false,
-                "font": 
+                "font":
                 {
                     "builtinGlyphs": true,
                     "face": "MonaspiceKr Nerd Font Mono"
@@ -139,7 +139,7 @@
             {
                 "colorScheme": "Solarized Light",
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-                "font": 
+                "font":
                 {
                     "face": "DejaVuSansM Nerd Font Mono"
                 },
@@ -149,7 +149,7 @@
             },
             {
                 "commandline": "%SystemRoot%\\System32\\cmd.exe",
-                "font": 
+                "font":
                 {
                     "face": "UbuntuMono Nerd Font Mono"
                 },
@@ -158,7 +158,7 @@
                 "name": "Command Prompt"
             },
             {
-                "font": 
+                "font":
                 {
                     "face": "CaskaydiaCove Nerd Font Mono"
                 },
@@ -168,7 +168,7 @@
                 "source": "Windows.Terminal.VisualStudio"
             },
             {
-                "font": 
+                "font":
                 {
                     "face": "Cascadia Mono"
                 },
@@ -186,7 +186,7 @@
             {
                 "colorScheme": "Dark+",
                 "commandline": "C:\\Program Files\\Git\\git-bash.exe",
-                "font": 
+                "font":
                 {
                     "face": "Agave Nerd Font Mono"
                 },
@@ -195,10 +195,22 @@
                 "icon": "C:\\Program Files\\Git\\mingw64\\share\\git\\git-for-windows.ico",
                 "name": "Git Bash",
                 "startingDirectory": "%USERPROFILE%"
+            },
+            {
+                "guid": "{efd32df9-4a15-515c-98b0-a6bf9e1d6b62}",
+                "hidden": true,
+                "name": "Developer Command Prompt for VS 18",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{d28686cd-641b-52f5-a912-01a52393a829}",
+                "hidden": true,
+                "name": "Developer PowerShell for VS 18",
+                "source": "Windows.Terminal.VisualStudio"
             }
         ]
     },
-    "schemes": 
+    "schemes":
     [
         {
             "background": "#000000",
