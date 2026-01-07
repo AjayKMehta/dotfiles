@@ -248,7 +248,7 @@
         "Ambiguous link to heading",
         {
             "regex": "Context access might be invalid: .+"
-        },
+        }
     ],
     "errorLens.excludeBySource": [
         "Pylance(reportGeneralTypeIssues)"
@@ -741,6 +741,8 @@
     "rest-client.requestNameAsResponseTabTitle": true,
     "rewrap.autoWrap.enabled": false,
     "scm.inputFontSize": 14,
+    "scm.repositories.explorer": true,
+    "scm.repositories.selectionMode": "single",
     "search.exclude": {
         "**/*.code-search": true,
         "**/bin": false,
@@ -992,6 +994,7 @@
         "print.folder.maxLines",
         "projectManager.any.ignoredFolders",
         "projectManager.git.baseFolders",
+        "projectManager.git.ignoredFolders",
         "projectManager.openInNewWindowWhenClickingInStatusBar",
         "projectManager.showParentFolderInfoOnDuplicates",
         "quarto.mathjax.extensions",
@@ -1002,6 +1005,8 @@
         "rest-client.requestNameAsResponseTabTitle",
         "rewrap.autoWrap.enabled",
         "scm.inputFontSize",
+        "scm.repositories.explorer",
+        "scm.repositories.selectionMode",
         "search.exclude",
         "search.showLineNumbers",
         "search.useGlobalIgnoreFiles",
