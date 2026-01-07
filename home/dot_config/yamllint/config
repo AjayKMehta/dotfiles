@@ -3,12 +3,14 @@
 extends: default
 
 rules:
-  # 80 chars should be enough, but don't fail if a line is longer
-  line-length:
-    max: 80
-    level: warning
+  comments:
+    ignore-shebangs: true
+    min-spaces-from-content: 1
+  document-start: disable
+  line-length: disable
   empty-values: enable
   new-lines:
+    type: platform
     level: warning
   quoted-strings:
     quote-type: any
