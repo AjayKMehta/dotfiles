@@ -22,6 +22,18 @@
           "type": "root"
         },
         {
+          "type": "winget",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b0",
+          "foreground": "#ffffff",
+          "background": "#0077c2",
+          "template": "  {{ .UpdateCount }} ",
+          "cache": {
+            "duration": "1h",
+            "strategy": "session"
+          }
+        },
+        {
           "style": "powerline",
           "template": " \ue61f {{ .Full }} ",
           "foreground": "#49eb33",
@@ -35,7 +47,11 @@
           "foreground": "#000000",
           "powerline_symbol": "\ue0b0",
           "background": "#AAEFFF",
-          "type": "dotnet"
+          "type": "dotnet",
+          "cache": {
+            "duration": "3h",
+            "strategy": "session"
+          }
         },
         {
           "style": "powerline",
@@ -43,12 +59,18 @@
           "foreground": "blue",
           "powerline_symbol": "\ue0b0",
           "background": "lightWhite",
-          "type": "r"
+          "type": "r",
+          "cache": {
+            "duration": "3h",
+            "strategy": "session"
+          }
         },
         {
           "options": {
             "display_mode": "context",
-            "tooling": ["uv"]
+            "tooling": [
+              "uv"
+            ]
           },
           "style": "powerline",
           "template": " \ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} ",
@@ -73,8 +95,10 @@
         },
         {
           "options": {
-            "display_mode": "files",
+            "folder_icon": "\uf115",
+            "folder_separator_icon": " \ue0b1 ",
             "home_icon": "\uf015",
+            "max_depth": 3,
             "style": "agnoster"
           },
           "style": "powerline",
@@ -89,7 +113,7 @@
             "fetch_status": true,
             "fetch_push_status": true,
             "fetch_upstream_icon": true,
-            "truncate_symbol": "\u2026",
+            "native_fallback": true,
             "untracked_modes": {
               "*": "all"
             }
@@ -118,7 +142,7 @@
       ]
     }
   ],
-  "version": 3,
+  "version": 4,
   "auto_upgrade": true,
   "shell_integration": true,
   "patch_pwsh_bleed": true,
