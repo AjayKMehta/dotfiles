@@ -68,6 +68,7 @@ Register-ArgumentCompleter -Native -CommandName 'ast-grep' -ScriptBlock {
             [CompletionResult]::new('--interactive', '--interactive', [CompletionResultType]::ParameterName, 'Start interactive edit session')
             [CompletionResult]::new('-U', '-U ', [CompletionResultType]::ParameterName, 'Apply all rewrite without confirmation if true')
             [CompletionResult]::new('--update-all', '--update-all', [CompletionResultType]::ParameterName, 'Apply all rewrite without confirmation if true')
+            [CompletionResult]::new('--files-with-matches', '--files-with-matches', [CompletionResultType]::ParameterName, 'Print only the paths with at least one match and suppress match contents')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
             break
@@ -106,6 +107,7 @@ Register-ArgumentCompleter -Native -CommandName 'ast-grep' -ScriptBlock {
             [CompletionResult]::new('--interactive', '--interactive', [CompletionResultType]::ParameterName, 'Start interactive edit session')
             [CompletionResult]::new('-U', '-U ', [CompletionResultType]::ParameterName, 'Apply all rewrite without confirmation if true')
             [CompletionResult]::new('--update-all', '--update-all', [CompletionResultType]::ParameterName, 'Apply all rewrite without confirmation if true')
+            [CompletionResult]::new('--files-with-matches', '--files-with-matches', [CompletionResultType]::ParameterName, 'Print only the paths with at least one match and suppress match contents')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
             break
