@@ -1,0 +1,71 @@
+[
+	{
+		"name": "OMP",
+		"rootPath": "~/oh-my-posh/",
+		"paths": [],
+		"tags": [],
+		"enabled": true,
+		"profile": "Basic"
+	},
+	{
+		"name": "chezmoi",
+		"rootPath": "C:\\Users\\ajaym\\.local\\share\\chezmoi",
+		"paths": [],
+		"tags": [
+			"chezmoi"
+		],
+		"enabled": true,
+		"profile": "Basic"
+	},
+	{
+		"name": "Setup.hs",
+		"rootPath": "d:\\Sachen\\Tech\\Reference\\FunctionalProgramming\\Courses\\Setup.hs",
+		"paths": [],
+		"tags": [],
+		"enabled": true,
+		"profile": "Haskell"
+	},
+	{
+		"name": "chezmoi (WSL)",
+		"rootPath": "vscode-remote://wsl+ubuntu/home/ajay/.local/share/chezmoi",
+		"paths": [],
+		"tags": [
+			"chezmoi",
+			"wsl"
+		],
+		"enabled": true,
+		"profile": "Basic"
+	},
+	{
+		"name": "nvim (WSL)",
+		"rootPath": "vscode-remote://wsl+ubuntu/home/ajay/.config/nvim",
+		"paths": [],
+		"tags": [
+			"nvim",
+			"wsl"
+		],
+		"enabled": true,
+		"profile": "Basic"
+	},
+	{
+		"name": "home (WSL)",
+		"rootPath": "vscode-remote://wsl+ubuntu/home/ajay",
+		"paths": [],
+		"tags": [
+			"wsl"
+		],
+		"enabled": true,
+		"profile": "Basic"
+	},
+	{
+		"name": "miktex logs (WSL)",
+		"rootPath": "vscode-remote://wsl+ubuntu/home/ajay/.miktex/texmfs/data/miktex/log",
+		"paths": [],
+		"tags": [
+			"miktex",
+			"wsl"
+		],
+		"enabled": true,
+		"profile": "Basic"
+	}
+]
