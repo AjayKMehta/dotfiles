@@ -19,6 +19,8 @@ $GitPromptSettings.EnableStashStatus = $true
 
 #endregion
 
+Import-Module git-completion
+
 $PSStyle.Progress.UseOSCIndicator = $true
 
 if (!(Get-PSDrive -Name 'HKU' -ErrorAction Ignore)) {
@@ -53,11 +55,17 @@ if (Test-Path env:\TERM_PROGRAM) {
 Import-Module -Name pwshEmojiExplorer
 
 # PowerShell parameter completion shim for the dotnet CLI
+$version = [Version](dotnet --version)
+if ($version -and $version.Major -eq 10) {
+    # https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-10/sdk#native-shell-tab-completion-scripts
+    dotnet completions script pwsh | Out-String | Invoke-Expression -ErrorAction SilentlyContinue
+} else {
 Register-ArgumentCompleter -Native -CommandName dotnet -ScriptBlock {
     param($commandName, $wordToComplete, $cursorPosition)
     dotnet complete --position $cursorPosition "$wordToComplete" | ForEach-Object {
         [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
     }
+}
 }
 
 # Parameter completion for CLI apps
