@@ -1,10 +1,10 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions":
+    "actions": 
     [
         {
-            "command":
+            "command": 
             {
                 "action": "copy",
                 "singleLine": false
@@ -20,7 +20,7 @@
             "id": "User.find"
         },
         {
-            "command":
+            "command": 
             {
                 "action": "splitPane",
                 "split": "auto",
@@ -29,7 +29,7 @@
             "id": "User.splitPane.A6751878"
         },
         {
-            "command":
+            "command": 
             {
                 "action": "sendInput",
                 "input": "\u001b[13;2u"
@@ -37,7 +37,7 @@
             "id": "User.sendInput.8882FD6D"
         },
         {
-            "command":
+            "command": 
             {
                 "action": "sendInput",
                 "input": "\u001b[13;5u"
@@ -49,7 +49,7 @@
     "copyFormatting": "none",
     "copyOnSelect": false,
     "defaultProfile": "{01201329-03d9-413b-ba6b-ce86f4862626}",
-    "keybindings":
+    "keybindings": 
     [
         {
             "id": "User.sendInput.8882FD6D",
@@ -76,30 +76,30 @@
             "keys": "ctrl+c"
         }
     ],
-    "newTabMenu":
+    "newTabMenu": 
     [
         {
             "type": "remainingProfiles"
         }
     ],
-    "profiles":
+    "profiles": 
     {
-        "defaults":
+        "defaults": 
         {
-            "font":
+            "font": 
             {
                 "face": "CaskaydiaMono Nerd Font Mono",
                 "size": 14
             }
         },
-        "list":
+        "list": 
         [
             {
                 "colorScheme": "Tango Dark",
                 "commandline": "\"C:\\Program Files\\PowerShell\\7\\pwsh.exe\"",
                 "elevate": true,
                 "experimental.retroTerminalEffect": false,
-                "font":
+                "font": 
                 {
                     "face": "MonaspiceNe Nerd Font Mono"
                 },
@@ -111,7 +111,7 @@
             },
             {
                 "colorScheme": "Tango Dark",
-                "font":
+                "font": 
                 {
                     "face": "DejaVuSansM Nerd Font Mono"
                 },
@@ -125,7 +125,7 @@
             {
                 "colorScheme": "Tango Dark",
                 "experimental.retroTerminalEffect": false,
-                "font":
+                "font": 
                 {
                     "builtinGlyphs": true,
                     "face": "MonaspiceKr Nerd Font Mono"
@@ -139,7 +139,7 @@
             {
                 "colorScheme": "Solarized Light",
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-                "font":
+                "font": 
                 {
                     "face": "DejaVuSansM Nerd Font Mono"
                 },
@@ -149,7 +149,7 @@
             },
             {
                 "commandline": "%SystemRoot%\\System32\\cmd.exe",
-                "font":
+                "font": 
                 {
                     "face": "UbuntuMono Nerd Font Mono"
                 },
@@ -158,35 +158,9 @@
                 "name": "Command Prompt"
             },
             {
-                "font":
-                {
-                    "face": "CaskaydiaCove Nerd Font Mono"
-                },
-                "guid": "{c1aa3eca-e10a-5b31-a157-ab26fd9e5fc9}",
-                "hidden": true,
-                "name": "Developer Command Prompt for VS 2022",
-                "source": "Windows.Terminal.VisualStudio"
-            },
-            {
-                "font":
-                {
-                    "face": "Cascadia Mono"
-                },
-                "guid": "{16208362-94fc-5b1f-a491-5b2624d5ab56}",
-                "hidden": true,
-                "name": "Visual Studio Debug Console",
-                "source": "VSDebugConsole"
-            },
-            {
-                "guid": "{b4cac8fb-7fab-591b-87d7-9439740a962d}",
-                "hidden": true,
-                "name": "Developer PowerShell for VS 2022",
-                "source": "Windows.Terminal.VisualStudio"
-            },
-            {
                 "colorScheme": "Dark+",
                 "commandline": "C:\\Program Files\\Git\\git-bash.exe",
-                "font":
+                "font": 
                 {
                     "face": "Agave Nerd Font Mono"
                 },
@@ -195,22 +169,10 @@
                 "icon": "C:\\Program Files\\Git\\mingw64\\share\\git\\git-for-windows.ico",
                 "name": "Git Bash",
                 "startingDirectory": "%USERPROFILE%"
-            },
-            {
-                "guid": "{efd32df9-4a15-515c-98b0-a6bf9e1d6b62}",
-                "hidden": true,
-                "name": "Developer Command Prompt for VS 18",
-                "source": "Windows.Terminal.VisualStudio"
-            },
-            {
-                "guid": "{d28686cd-641b-52f5-a912-01a52393a829}",
-                "hidden": true,
-                "name": "Developer PowerShell for VS 18",
-                "source": "Windows.Terminal.VisualStudio"
             }
         ]
     },
-    "schemes":
+    "schemes": 
     [
         {
             "background": "#000000",
