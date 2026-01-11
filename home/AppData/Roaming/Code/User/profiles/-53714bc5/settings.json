@@ -157,20 +157,20 @@
     "evenBetterToml.schema.links": true,
     "evenBetterToml.semanticTokens": true,
     "files.exclude": {
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
+        "**/__pycache__": true,
         "**/.DS_Store": true,
-        "**/Thumbs.db": true,
-        "**/*.html": true,
-        "**/*_cache": true,
+        "**/.git": true,
+        "**/.hg": true,
         "**/.history/**": true,
         "**/.hypothesis": true,
+        "**/.svn": true,
         "**/.tmp-projections": true,
         "**/.venv": true,
         "**/.virtual_documents": true,
-        "**/__pycache__": true,
-        "**/History_**": true
+        "**/*_cache": true,
+        "**/*.html": true,
+        "**/History_**": true,
+        "**/Thumbs.db": true
     },
     "files.trimTrailingWhitespace": true,
     "github.copilot.chat.codesearch.enabled": true,
@@ -381,6 +381,11 @@
     "r.session.levelOfObjectDetail": "Normal",
     "r.sessionWatcher": true,
     "remote.autoForwardPortsSource": "hybrid",
+    "remote.extensionKind": {
+        "alefragnani.project-manager": [
+            "workspace"
+        ]
+    },
     "ruff.configurationPreference": "filesystemFirst",
     "ruff.lint.preview": true,
     "ruff.nativeServer": true,

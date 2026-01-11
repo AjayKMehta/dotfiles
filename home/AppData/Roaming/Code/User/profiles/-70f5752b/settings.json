@@ -65,6 +65,9 @@
         "editor.defaultFormatter": "redhat.vscode-yaml",
         "editor.fontLigatures": false
     },
+    "chat.tools.edits.autoApprove": {
+        "**/*.sln*": false
+    },
     "code-runner.executorMap": {
         "haskell": "stack runghc"
     },
@@ -148,14 +151,14 @@
         "**/.DS_Store": true,
         "**/Thumbs.db": true,
         "**/*.html": true,
+        "**/*.pdf": true,
         "**/*_cache": true,
         "**/.history/**": true,
         "**/.vs": true,
         "**/bin": true,
         "**/obj": true,
         "**/TestResults": true,
-        "artifacts": true,
-        "**/*.pdf": true
+        "artifacts": true
     },
     "files.trimTrailingWhitespace": true,
     "git.openRepositoryInParentFolders": "always",
