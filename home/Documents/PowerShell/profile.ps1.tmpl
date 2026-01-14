@@ -60,12 +60,12 @@ if ($version -and $version.Major -eq 10) {
     # https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-10/sdk#native-shell-tab-completion-scripts
     dotnet completions script pwsh | Out-String | Invoke-Expression -ErrorAction SilentlyContinue
 } else {
-Register-ArgumentCompleter -Native -CommandName dotnet -ScriptBlock {
-    param($commandName, $wordToComplete, $cursorPosition)
-    dotnet complete --position $cursorPosition "$wordToComplete" | ForEach-Object {
-        [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
+    Register-ArgumentCompleter -Native -CommandName dotnet -ScriptBlock {
+        param($commandName, $wordToComplete, $cursorPosition)
+        dotnet complete --position $cursorPosition "$wordToComplete" | ForEach-Object {
+            [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
+        }
     }
-}
 }
 
 # Parameter completion for CLI apps
@@ -89,9 +89,9 @@ function Set-EnvVar([bool]$originalStatus) {
         $ansi_escape = [char]27
         $providerPath = $p.ProviderPath -replace '\\', '/'
         $osc7 = ($env:TERM_PROGRAM -eq 'WezTerm') ?
-            "$ansi_escape]7;file://${env:COMPUTERNAME}/${providerPath}${ansi_escape}\" :
-            "$ansi_escape]9;9;`"$p`"${ansi_escape}"
-        }
+        "$ansi_escape]7;file://${env:COMPUTERNAME}/${providerPath}${ansi_escape}\" :
+        "$ansi_escape]9;9;`"$p`"${ansi_escape}"
+    }
     $env:OSC7 = $osc7
 }
 
@@ -125,7 +125,7 @@ function Set-PoshPrompt {
         [String] $Theme
     )
 
-        (@(oh-my-posh init pwsh --config="$Theme" --print) -join "`n") | Invoke-Expression
+    (@(oh-my-posh init pwsh --config="$Theme" --print) -join "`n") | Invoke-Expression
 
     New-Alias -Name 'Set-PoshContext' -Value 'Set-EnvVar' -Scope Global -Force
 }
@@ -169,10 +169,10 @@ function rfv {
         $result | ForEach-Object {
             $parts = $_ -split ':', 4
             [PSCustomObject]@{
-            FileName      = $parts[0]
-            LineNumber    = $parts[1]
-            StartPosition = $parts[2]
-            Match         = $parts[3]
+                FileName      = $parts[0]
+                LineNumber    = $parts[1]
+                StartPosition = $parts[2]
+                Match         = $parts[3]
             }
         }
     }
