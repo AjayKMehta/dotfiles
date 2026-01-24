@@ -8,7 +8,6 @@ rules:
     min-spaces-from-content: 1
   document-start: disable
   line-length: disable
-  empty-values: enable
   new-lines:
     type: platform
     level: warning
@@ -17,3 +16,6 @@ rules:
     required: only-when-needed
     extra-allowed: []
     extra-required: [^http://, ^ftp://]
+  truthy:
+    allowed-values: ['true', 'false']
+    check-keys: false
