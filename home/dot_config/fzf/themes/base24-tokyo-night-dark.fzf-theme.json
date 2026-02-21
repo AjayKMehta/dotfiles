@@ -1,0 +1,18 @@
+{
+    "name": "base24-tokyo-night-dark",
+    "colors": {
+        "bg": "#1a1b26",
+        "fg": "#a9b1d6",
+        "hl": "#a9b1d6",
+        "bg+": "#2f3549",
+        "fg+": "#73daca",
+        "hl+": "#ff9e64",
+        "info": "#bb9af7",
+        "border": "#bb9af7",
+        "prompt": "#9ece6a",
+        "pointer": "#2ac3de",
+        "marker": "#ff7a93",
+        "spinner": "#ff7a93",
+        "header": "#c0caf5"
+    }
+}

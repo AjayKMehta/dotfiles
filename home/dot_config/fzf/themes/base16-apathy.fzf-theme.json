@@ -1,0 +1,17 @@
+{
+    "name": "base16-apathy",
+    "colors": {
+        "bg+": "#0b342d",
+        "bg": "#031a16",
+        "spinner": "#963e4c",
+        "hl": "#96883e",
+        "fg": "#5f9c92",
+        "header": "#96883e",
+        "info": "#3e4c96",
+        "pointer": "#963e4c",
+        "marker": "#963e4c",
+        "fg+": "#a7cec8",
+        "prompt": "#3e4c96",
+        "hl+": "#96883e"
+    }
+}

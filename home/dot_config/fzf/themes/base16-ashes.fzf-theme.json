@@ -1,0 +1,17 @@
+{
+    "name": "base16-ashes",
+    "colors": {
+        "bg+": "#393f45",
+        "bg": "#1c2023",
+        "spinner": "#95aec7",
+        "hl": "#ae95c7",
+        "fg": "#adb3ba",
+        "header": "#ae95c7",
+        "info": " #aec795 ",
+        "pointer": "#95aec7",
+        "marker": "#95aec7",
+        "fg+": "#dfe2e5",
+        "prompt": "#aec795",
+        "hl+": "#ae95c7"
+    }
+}
