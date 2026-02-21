@@ -29,8 +29,8 @@
           "background": "#0077c2",
           "template": "  {{ .UpdateCount }} ",
           "cache": {
-            "duration": "1h",
-            "strategy": "session"
+            "duration": "none",
+            "strategy": "device"
           }
         },
         {
@@ -39,7 +39,11 @@
           "foreground": "#49eb33",
           "powerline_symbol": "\ue0b0",
           "background": "#100e23",
-          "type": "haskell"
+          "type": "haskell",
+          "cache": {
+            "duration": "1h",
+            "strategy": "folder"
+          }
         },
         {
           "style": "powerline",
@@ -49,8 +53,8 @@
           "background": "#AAEFFF",
           "type": "dotnet",
           "cache": {
-            "duration": "3h",
-            "strategy": "session"
+            "duration": "1h",
+            "strategy": "folder"
           }
         },
         {
@@ -61,8 +65,8 @@
           "background": "lightWhite",
           "type": "r",
           "cache": {
-            "duration": "3h",
-            "strategy": "session"
+            "duration": "1h",
+            "strategy": "device"
           }
         },
         {
@@ -77,7 +81,11 @@
           "foreground": "#100e23",
           "powerline_symbol": "\ue0b0",
           "background": "#906cff",
-          "type": "python"
+          "type": "python",
+          "cache": {
+            "duration": "1h",
+            "strategy": "folder"
+          }
         },
         {
           "type": "copilot",
@@ -146,5 +154,13 @@
   "auto_upgrade": true,
   "shell_integration": true,
   "patch_pwsh_bleed": true,
-  "final_space": true
+  "final_space": true,
+  "pwd": "osc99",
+  "upgrade": {
+    "notice": true,
+    "interval": "72h",
+    "auto": false,
+    "source": "github"
+  },
+  "streaming": 100
 }
