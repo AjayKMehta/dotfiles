@@ -1,3 +1,6 @@
+// Rules are evaluated from bottom to top.
+// The first rule that matches both the key and when clause, is accepted.
+// If a rule is found, no more rules are processed.
 [
     {
         "command": "git-graph.view",
@@ -369,5 +372,19 @@
         "key": "ctrl+pageup",
         "command": "-workbench.action.terminal.focusPrevious",
         "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+    },
+    {
+        "key": "ctrl+alt+c",
+        "command": "-rest-client.generate-codesnippet",
+        "when": "editorTextFocus && editorLangId == 'plaintext'"
+    },
+    {
+        "key": "ctrl+alt+c",
+        "command": "breadcrumbs.copyPath",
+        "when": "breadcrumbsPossible && breadcrumbsVisible"
+    },
+    {
+        "key": "ctrl+g d",
+        "command": "git.delete"
     }
 ]
