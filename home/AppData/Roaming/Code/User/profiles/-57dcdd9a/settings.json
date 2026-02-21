@@ -4,6 +4,9 @@
     "[gitattributes]": {
         "editor.defaultFormatter": "hashhar.gitattributes"
     },
+    "[gitconfig]": {
+        "editor.defaultFormatter": "yy0931.gitconfig-lsp"
+    },
     "[github-actions-workflow]": {
         "editor.defaultFormatter": "redhat.vscode-yaml"
     },
@@ -26,7 +29,8 @@
         "editor.defaultFormatter": "sumneko.lua"
     },
     "[markdown]": {
-        "editor.defaultFormatter": "vscode.markdown-language-features",
+        "diffEditor.ignoreTrimWhitespace": true,
+        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
         "editor.fontFamily": "'DejaVuSansM Nerd Font', Consolas, 'Courier New', monospace, 'Lucida Sans'",
         "editor.wordWrap": "on",
         "files.trimTrailingWhitespace": false
@@ -36,12 +40,14 @@
     },
     "[xml]": {
         "editor.defaultFormatter": "redhat.vscode-xml",
-        "editor.fontLigatures": false
+        "editor.fontLigatures": false,
+        "editor.formatOnSaveMode": "modificationsIfAvailable"
     },
     "[xslt]": {
         "editor.semanticHighlighting.enabled": true
     },
     "[yaml]": {
+        "diffEditor.ignoreTrimWhitespace": false,
         "editor.defaultFormatter": "redhat.vscode-yaml",
         "editor.fontLigatures": false
     },
@@ -65,11 +71,7 @@
     "editor.rulers": [
         80
     ],
-    "editor.semanticTokenColorCustomizations": {
-        "[Dark Atom Dark]": {
-            "enabled": true
-        }
-    },
+    "editor.semanticHighlighting.enabled": true,
     "editor.suggest.preview": true,
     "editor.tokenColorCustomizations": {
         "[Ayu Dark Bordered]": {
@@ -77,10 +79,6 @@
         }
     },
     "editor.wordWrap": "on",
-    "evenBetterToml.formatter.indentEntries": true,
-    "evenBetterToml.formatter.indentTables": true,
-    "evenBetterToml.schema.links": true,
-    "evenBetterToml.semanticTokens": true,
     "files.autoSave": "onFocusChange",
     "files.exclude": {
         "**/.git": true,
@@ -90,6 +88,7 @@
         "**/Thumbs.db": true
     },
     "files.trimTrailingWhitespace": true,
+    "github.copilot.chat.codesearch.enabled": true,
     "githubLocalActions.dockerDesktopPath": "C:/Program Files/Docker/Docker/Docker Desktop.exe",
     "haskell.manageHLS": "GHCup",
     "haskell.plugin.ghcide-completions.config.autoExtendOn": true,
@@ -110,10 +109,17 @@
     "notebook.showFoldingControls": "always",
     "print.folder.include": [],
     "print.folder.includeFileList": false,
+    "remote.autoForwardPortsSource": "hybrid",
+    "remote.extensionKind": {
+        "alefragnani.project-manager": [
+            "workspace"
+        ]
+    },
     "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
+    "terminal.integrated.sendKeybindingsToShell": true,
+    "versionlens.suggestions.showOnStartup": true,
     "vsicons.dontShowNewVersionMessage": true,
     "vsicons.presets.foldersAllDefaultIcon": true,
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "window.commandCenter": true,
     "workbench.colorTheme": "Lambda Black",
     "workbench.editor.labelFormat": "short",
