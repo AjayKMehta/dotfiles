@@ -28,6 +28,9 @@
     "[github-actions-workflow]": {
         "editor.defaultFormatter": "redhat.vscode-yaml"
     },
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
     "[json]": {
         "editor.autoClosingBrackets": "always",
         "editor.defaultFormatter": "vscode.json-language-features"
@@ -37,6 +40,7 @@
         "editor.defaultFormatter": "vscode.json-language-features"
     },
     "[markdown]": {
+        "diffEditor.ignoreTrimWhitespace": true,
         "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
         "editor.fontFamily": "'DejaVuSansM Nerd Font', Consolas, 'Courier New', monospace, 'Lucida Sans'",
         "editor.wordWrap": "on",
@@ -53,6 +57,9 @@
     "[shellscript]": {
         "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode"
     },
+    "[toml]": {
+        "editor.defaultFormatter": "tamasfe.even-better-toml"
+    },
     "[xml]": {
         "editor.defaultFormatter": "redhat.vscode-xml",
         "editor.fontLigatures": false,
@@ -62,6 +69,7 @@
         "editor.semanticHighlighting.enabled": true
     },
     "[yaml]": {
+        "diffEditor.ignoreTrimWhitespace": false,
         "editor.defaultFormatter": "redhat.vscode-yaml",
         "editor.fontLigatures": false
     },
@@ -81,7 +89,7 @@
     "debug.inlineValues": "on",
     "diffEditor.codeLens": true,
     "diffEditor.diffAlgorithm": "advanced",
-    "diffEditor.ignoreTrimWhitespace": true,
+    "diffEditor.ignoreTrimWhitespace": false,
     "diffEditor.wordWrap": "on",
     "dotnet.automaticallyCreateSolutionInWorkspace": false,
     "dotnet.backgroundAnalysis.analyzerDiagnosticsScope": "fullSolution",
@@ -128,11 +136,6 @@
         80
     ],
     "editor.semanticHighlighting.enabled": true,
-    "editor.semanticTokenColorCustomizations": {
-        "[Dark Atom Dark]": {
-            "enabled": true
-        }
-    },
     "editor.suggest.preview": true,
     "editor.tokenColorCustomizations": {
         "[Ayu Dark Bordered]": {
@@ -140,10 +143,6 @@
         }
     },
     "editor.wordWrap": "on",
-    "evenBetterToml.formatter.indentEntries": true,
-    "evenBetterToml.formatter.indentTables": true,
-    "evenBetterToml.schema.links": true,
-    "evenBetterToml.semanticTokens": true,
     "files.exclude": {
         "**/.git": true,
         "**/.svn": true,
@@ -162,6 +161,8 @@
     },
     "files.trimTrailingWhitespace": true,
     "git.openRepositoryInParentFolders": "always",
+    "github.copilot.chat.codesearch.enabled": true,
+    "github.copilot.chat.editor.temporalContext.enabled": true,
     "github.copilot.enable": {
         "*": false
     },
@@ -221,7 +222,6 @@
     "versionlens.suggestions.showOnStartup": true,
     "vsicons.dontShowNewVersionMessage": true,
     "vsicons.presets.foldersAllDefaultIcon": true,
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "window.commandCenter": true,
     "workbench.editor.labelFormat": "short",
     "workbench.editorAssociations": {
