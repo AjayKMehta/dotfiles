@@ -495,5 +495,9 @@
     {
         "key": "ctrl+g d",
         "command": "git.delete"
+    },
+    {
+        "key": "ctrl+alt+t",
+        "command": "timeline.focus"
     }
 ]
