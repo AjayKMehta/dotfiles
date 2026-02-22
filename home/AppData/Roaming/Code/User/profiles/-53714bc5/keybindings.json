@@ -340,38 +340,9 @@
         "when": "editorTextFocus && editorLangId == 'rmd'"
     },
     {
-        "args": {
-            "snippet": "$LINE_COMMENT %% "
-        },
-        "command": "editor.action.insertSnippet",
-        "key": "ctrl+shift+i",
-        "label": "input indicative of code chunk",
-        "when": "editorTextFocus && editorLangId == 'r'"
-    },
-    {
         "command": "-editor.action.deleteLines",
         "key": "ctrl+shift+k",
         "when": "textInputFocus && !editorReadonly"
-    },
-    {
-        "command": "-quarto.preview",
-        "key": "ctrl+shift+k",
-        "when": "!quartoRenderScriptActive"
-    },
-    {
-        "command": "-quarto.previewScript",
-        "key": "ctrl+shift+k",
-        "when": "quartoRenderScriptActive"
-    },
-    {
-        "command": "quarto.preview",
-        "key": "ctrl+shift+k",
-        "when": "!quartoRenderScriptActive && editorTextFocus && editorLangId == 'quarto'"
-    },
-    {
-        "command": "quarto.previewScript",
-        "key": "ctrl+shift+k",
-        "when": "quartoRenderScriptActive && editorTextFocus && editorLangId == 'quarto-assist.active'"
     },
     {
         "command": "-editor.action.selectHighlights",
@@ -510,5 +481,19 @@
         "key": "ctrl+pageup",
         "command": "-workbench.action.terminal.focusPrevious",
         "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+    },
+    {
+        "key": "ctrl+alt+c",
+        "command": "-rest-client.generate-codesnippet",
+        "when": "editorTextFocus && editorLangId == 'plaintext'"
+    },
+    {
+        "key": "ctrl+alt+c",
+        "command": "breadcrumbs.copyPath",
+        "when": "breadcrumbsPossible && breadcrumbsVisible"
+    },
+    {
+        "key": "ctrl+g d",
+        "command": "git.delete"
     }
 ]
