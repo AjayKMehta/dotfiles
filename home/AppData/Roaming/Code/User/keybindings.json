@@ -357,26 +357,6 @@
         "when": "textInputFocus && !editorReadonly"
     },
     {
-        "command": "-quarto.preview",
-        "key": "ctrl+shift+k",
-        "when": "!quartoRenderScriptActive"
-    },
-    {
-        "command": "-quarto.previewScript",
-        "key": "ctrl+shift+k",
-        "when": "quartoRenderScriptActive"
-    },
-    {
-        "command": "quarto.preview",
-        "key": "ctrl+shift+k",
-        "when": "!quartoRenderScriptActive && editorTextFocus && editorLangId == 'quarto'"
-    },
-    {
-        "command": "quarto.previewScript",
-        "key": "ctrl+shift+k",
-        "when": "quartoRenderScriptActive && editorTextFocus && editorLangId == 'quarto-assist.active'"
-    },
-    {
         "command": "-editor.action.selectHighlights",
         "key": "ctrl+shift+l",
         "when": "editorFocus"
@@ -424,7 +404,7 @@
     {
         "command": "-markdown.extension.closePreview",
         "key": "ctrl+shift+v",
-        "when": "activeWebviewPanelId == 'markdown.psreview'"
+        "when": "activeWebviewPanelId == 'markdown.preview'"
     },
     {
         "command": "workbench.action.quickOpenPreviousRecentlyUsedEditor",
@@ -518,5 +498,23 @@
         "key": "ctrl+pageup",
         "command": "-workbench.action.terminal.focusPrevious",
         "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+    },
+    {
+        "key": "ctrl+alt+c",
+        "command": "-rest-client.generate-codesnippet",
+        "when": "editorTextFocus && editorLangId == 'plaintext'"
+    },
+    {
+        "key": "ctrl+alt+c",
+        "command": "breadcrumbs.copyPath",
+        "when": "breadcrumbsPossible && breadcrumbsVisible"
+    },
+    {
+        "key": "ctrl+g d",
+        "command": "git.delete"
+    },
+    {
+        "key": "ctrl+alt+t",
+        "command": "timeline.focus"
     }
 ]

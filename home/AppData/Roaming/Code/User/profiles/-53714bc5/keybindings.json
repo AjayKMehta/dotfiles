@@ -11,6 +11,11 @@
         "when": "editorLangId == r && editorTextFocus || editorLangId == rmd && editorTextFocus"
     },
     {
+        "command": "-markdown.extension.checkTaskList",
+        "key": "alt+c",
+        "when": "editorTextFocus && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
+    },
+    {
         "command": "git-graph.view",
         "key": "alt+g"
     },
