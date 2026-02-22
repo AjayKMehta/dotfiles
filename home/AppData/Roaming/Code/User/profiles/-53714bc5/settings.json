@@ -19,6 +19,9 @@
     "[gitattributes]": {
         "editor.defaultFormatter": "hashhar.gitattributes"
     },
+    "[gitconfig]": {
+        "editor.defaultFormatter": "yy0931.gitconfig-lsp"
+    },
     "[github-actions-workflow]": {
         "editor.defaultFormatter": "redhat.vscode-yaml"
     },
@@ -87,7 +90,8 @@
     },
     "[xml]": {
         "editor.defaultFormatter": "redhat.vscode-xml",
-        "editor.fontLigatures": false
+        "editor.fontLigatures": false,
+        "editor.formatOnSaveMode": "modificationsIfAvailable"
     },
     "[xslt]": {
         "editor.semanticHighlighting.enabled": true
@@ -118,7 +122,7 @@
     "debugpy.showPythonInlineValues": true,
     "diffEditor.codeLens": true,
     "diffEditor.diffAlgorithm": "advanced",
-    "diffEditor.ignoreTrimWhitespace": true,
+    "diffEditor.ignoreTrimWhitespace": false,
     "diffEditor.maxComputationTime": 0,
     "diffEditor.wordWrap": "on",
     "editor.defaultColorDecorators": "auto",
@@ -136,11 +140,6 @@
         80
     ],
     "editor.semanticHighlighting.enabled": true,
-    "editor.semanticTokenColorCustomizations": {
-        "[Dark Atom Dark]": {
-            "enabled": true
-        }
-    },
     "editor.suggest.preview": true,
     "editor.tokenColorCustomizations": {
         "[Ayu Dark Bordered]": {
@@ -152,39 +151,39 @@
         "Pylance": "  # type:ignore SAME_LINE",
         "Ruff": "  # noqa: $code SAME_LINE"
     },
-    "evenBetterToml.formatter.indentEntries": true,
-    "evenBetterToml.formatter.indentTables": true,
-    "evenBetterToml.schema.links": true,
-    "evenBetterToml.semanticTokens": true,
     "files.exclude": {
-        "**/__pycache__": true,
-        "**/.DS_Store": true,
         "**/.git": true,
+        "**/.svn": true,
         "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/*.html": true,
+        "**/*_cache": true,
         "**/.history/**": true,
         "**/.hypothesis": true,
-        "**/.svn": true,
         "**/.tmp-projections": true,
         "**/.venv": true,
         "**/.virtual_documents": true,
-        "**/*_cache": true,
-        "**/*.html": true,
-        "**/History_**": true,
-        "**/Thumbs.db": true
+        "**/__pycache__": true,
+        "**/History_**": true
     },
     "files.trimTrailingWhitespace": true,
     "github.copilot.chat.codesearch.enabled": true,
     "github.copilot.chat.editor.temporalContext.enabled": true,
     "github.copilot.enable": {
+        "*": true,
         "markdown": false,
+        "plaintext": false,
         "python": false,
         "quarto": false,
+        "r": false,
         "scminput": false,
         "toml": false,
         "yaml": false
     },
     "githubLocalActions.dockerDesktopPath": "C:/Program Files/Docker/Docker/Docker Desktop.exe",
     "interactiveWindow.executeWithShiftEnter": true,
+    "jarl.executableStrategy": "environment",
     "jupyter.askForKernelRestart": false,
     "jupyter.debugJustMyCode": true,
     "jupyter.exportWithOutputEnabled": true,
@@ -354,7 +353,6 @@
         }
     ],
     "python.analysis.supportAllPythonDocuments": true,
-    "python.languageServer": "Pylance",
     "python.terminal.activateEnvInCurrentTerminal": true,
     "python.terminal.executeInFileDir": true,
     "python.terminal.shellIntegration.enabled": true,
@@ -393,6 +391,8 @@
     "terminal.integrated.enablePersistentSessions": false,
     "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
     "terminal.integrated.sendKeybindingsToShell": true,
+    "ty.inlayHints.callArgumentNames": false,
+    "ty.inlayHints.variableTypes": false,
     "versionlens.suggestions.showOnStartup": true,
     "vsicons.dontShowNewVersionMessage": true,
     "vsicons.presets.foldersAllDefaultIcon": true,
