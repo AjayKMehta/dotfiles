@@ -98,6 +98,7 @@ Register-ArgumentCompleter -Native -CommandName 'ast-grep' -ScriptBlock {
             [CompletionResult]::new('--before', '--before', [CompletionResultType]::ParameterName, 'Show NUM lines before each match')
             [CompletionResult]::new('-C', '-C ', [CompletionResultType]::ParameterName, 'Show NUM lines around each match')
             [CompletionResult]::new('--context', '--context', [CompletionResultType]::ParameterName, 'Show NUM lines around each match')
+            [CompletionResult]::new('--max-results', '--max-results', [CompletionResultType]::ParameterName, 'Show at most NUM results and stop running once the limit is reached')
             [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
             [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
             [CompletionResult]::new('--include-metadata', '--include-metadata', [CompletionResultType]::ParameterName, 'Include rule metadata in the json output')
