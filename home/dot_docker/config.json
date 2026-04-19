@@ -11,6 +11,9 @@
 		"-x-cli-hints": {
 			"enabled": "true"
 		},
+		"ai": {
+			"hooks": "build,buildx build,run,compose"
+		},
 		"debug": {
 			"hooks": "exec"
 		},
