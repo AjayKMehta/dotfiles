@@ -1,0 +1,42 @@
+flavor = "quarto"
+line-width = 120
+line-ending = "lf"
+
+[flavor-overrides]
+"**/README.md" = "gfm"
+
+# https://jolars.github.io/panache/configuration.html#extensions
+[extensions]
+citations = false
+emoji = true
+task-lists = true
+
+[extensions.gfm]
+task-lists = true
+multiline-tables = false
+tex-math-blocks = true # inline $…$ and fenced ``` math blocks
+
+[format]
+wrap = "reflow"  # Options: "reflow", "preserve", "sentence"
+blank-lines = "collapse" # Options: "collapse", "preserve"
+math-delimiter-style = "preserve"
+tab-stops = "normalize"
+tab-width = 4
+
+[formatters]
+python = "ruff"
+r = "air"
+
+[linters]
+python = "ruff"
+r = "jarl"
+yaml = "yamllint"
+
+[lint.rules]
+heading-hierarchy = true
+duplicate-reference-labels = true
+undefined-references = true
+citation-keys = false
+chunk-label-spaces = true
+missing-chunk-labels = true
+unknown-emoji-alias = true
