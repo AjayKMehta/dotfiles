@@ -40,7 +40,6 @@
     difftd = -c core.pager=delta -c diff.external=difft diff
 
     ## Misc
-    it = !git init && git commit -m root --allow-empty
     st = status --short --branch
     so = show --pretty='parent %C(red)%p %C(reset)commit %C(red)%h%C(yellow)%d%C(reset)%n%n%w(72,2,2)%s%n%n%w(72,0,0)%C(cyan)%an %C(green)%ar'
     show-rd = show --remerge-diff
@@ -57,6 +56,7 @@
 
     ## Push to remote
     please = push --force-with-lease
+    pnv = push --no-verify
     pu = !git push origin `git branch --show-current`
     push-origin = push --set-upstream origin
 
@@ -67,7 +67,7 @@
     lg = l --graph
     lgb = lg --branches
     ld = -c core.pager=delta log -p
-    lds = -c 'delta.features=sideways decorations my-line-numbers emph' -c core.pager=delta log -p
+    lds = -c 'delta.features=sideways decorations my-line-numbers emph' ld
     graph = lg --decorate --simplify-by-decoration
     hist = log --graph --oneline --all --decorate --simplify-by-decoration
     # nd = No dependabot. Set --perl-regexp to be safe.
@@ -100,10 +100,12 @@
     fc = !git fetch origin $(git branch --show-current)
     up = !git fetch && git rebase --autostash FETCH_HEAD
     su = submodule update --recursive --remote
-	pclone = clone --filter=blob:limit=100k
+    pclone = clone --filter=blob:limit=100k
 
     ## Merge
     mffo = merge --ff-only
+    conflicts = !git ls-files | rg -l -e '^<{6}' | rg -l -e '^={6}' | rg -l -e '^>{6}'
+	root = rev-parse --show-toplevel
 [blame]
     coloring = highlightRecent
     markIgnoredLines = true
@@ -273,3 +275,9 @@
 	defaultBranch = main
 [sequence]
 	editor = git-interactive-rebase-tool.exe
+[url "https://gitlab.com/"]
+	insteadOf = gl:
+[url "https://github.com/"]
+	insteadOf = gh:
+[url "https://codeberg.org/"]
+	insteadOf = cb:
