@@ -10,14 +10,15 @@
 	"view": {
 		"zoomLevel": 0.9,
 		"windowBounds": {
-			"x": -32,
-			"y": -32,
-			"width": 1080,
-			"height": 636,
+			"x": -160,
+			"y": -160,
+			"width": 1280,
+			"height": 800,
 			"maximized": false
 		},
 		"accessibility": false,
-		"disableRendererAccessibility": false
+		"disableRendererAccessibility": false,
+		"enableSplashScreen": false
 	},
 	"remote_session": {
 		"lastRemoteSessionUrl": "",
