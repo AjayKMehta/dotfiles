@@ -24,10 +24,10 @@
         "editor.defaultFormatter": "James-Yu.latex-workshop"
     },
     "[lua]": {
-        "editor.defaultFormatter": "JohnnyMorganz.stylua"
+        "editor.defaultFormatter": "sumneko.lua"
     },
     "[markdown]": {
-        "diffEditor.ignoreTrimWhitespace": false,
+        "diffEditor.ignoreTrimWhitespace": true,
         "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
         "editor.fontFamily": "'DejaVuSansM Nerd Font', Consolas, 'Courier New', monospace, 'Lucida Sans'",
         "editor.formatOnSave": false,
@@ -37,6 +37,9 @@
     "[powershell]": {
         "editor.defaultFormatter": "ms-vscode.powershell",
         "editor.fontLigatures": false
+    },
+    "[quarto]": {
+        "editor.defaultFormatter": "quarto.quarto"
     },
     "[shellscript]": {
         "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode"
@@ -52,7 +55,7 @@
         "editor.semanticHighlighting.enabled": true
     },
     "[yaml]": {
-        "diffEditor.ignoreTrimWhitespace": true,
+        "diffEditor.ignoreTrimWhitespace": false,
         "editor.defaultFormatter": "redhat.vscode-yaml",
         "editor.fontLigatures": false
     },
@@ -89,11 +92,10 @@
         }
     },
     "editor.wordWrap": "on",
+    "errorLens.disableLineComments": {
+        "markdownlint": "<!-- markdownlint-disable-line $code SAME_LINE -->"
+    },
     "errorLens.enabled": false,
-    "evenBetterToml.formatter.indentEntries": true,
-    "evenBetterToml.formatter.indentTables": true,
-    "evenBetterToml.schema.links": true,
-    "evenBetterToml.semanticTokens": true,
     "files.autoSave": "onFocusChange",
     "files.exclude": {
         "**/.git": true,
@@ -109,8 +111,17 @@
     "fontAwesomeAutocomplete.version": "6",
     "git-graph.customEmojiShortcodeMappings": [],
     "github.copilot.enable": {
-        "*": false
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false,
+        "quarto": false,
+        "yaml": false,
+        "lua": false
     },
+
+    "github.copilot.nextEditSuggestions.eagerness": "low",
+    "github.copilot.nextEditSuggestions.enabled": false,
     "githubLocalActions.dockerDesktopPath": "C:/Program Files/Docker/Docker/Docker Desktop.exe",
     "latex-workshop.formatting.latexindent.path": "D:\\Apps\\CLI\\latexindent.exe",
     "latex-workshop.hover.preview.mathjax.extensions": [
@@ -218,7 +229,7 @@
         },
         {
             "args": [
-                "-f",
+                                "-f",
                 "tex",
                 "%DOC_EXT%"
             ],
@@ -228,7 +239,7 @@
         },
         {
             "args": [
-                "-f",
+                                "-f",
                 "texminted",
                 "%DOC_EXT%"
             ],
@@ -248,7 +259,7 @@
         },
         {
             "args": [
-                "--synctex",
+                                "--synctex",
                 "--pdf",
                 "--tex-option=\"-interaction=nonstopmode\"",
                 "--tex-option=\"-file-line-error\"",
@@ -324,6 +335,7 @@
     "remote.autoForwardPortsSource": "hybrid",
     "terminal.integrated.enableMultiLinePasteWarning": "never",
     "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
+    "terminal.integrated.sendKeybindingsToShell": true,
     "versionlens.dotnet.caching.duration": 3,
     "versionlens.suggestions.showOnStartup": true,
     "vsicons.dontShowNewVersionMessage": true,
