@@ -91,7 +91,6 @@
     "diffEditor.diffAlgorithm": "advanced",
     "diffEditor.ignoreTrimWhitespace": false,
     "diffEditor.wordWrap": "on",
-    "dotnet.automaticallyCreateSolutionInWorkspace": false,
     "dotnet.backgroundAnalysis.analyzerDiagnosticsScope": "fullSolution",
     "dotnet.backgroundAnalysis.compilerDiagnosticsScope": "fullSolution",
     "dotnet.completion.showCompletionItemsFromUnimportedNamespaces": true,
@@ -102,9 +101,7 @@
     "dotnet.inlayHints.enableInlayHintsForLiteralParameters": true,
     "dotnet.inlayHints.enableInlayHintsForObjectCreationParameters": true,
     "dotnet.inlayHints.enableInlayHintsForOtherParameters": true,
-    "dotnet.previewSolution-freeWorkspaceMode": true,
     "dotnet.symbolSearch.searchReferenceAssemblies": false,
-    "dotnet.testWindow.useTestingPlatformProtocol": true,
     "dotnet.typeMembers.memberInsertionLocation": "withOtherMembersOfTheSameKind",
     "dotnet.typeMembers.propertyGenerationBehavior": "preferThrowingProperties",
     "dotnetAcquisitionExtension.enableTelemetry": false,
@@ -162,12 +159,12 @@
     "files.trimTrailingWhitespace": true,
     "git.openRepositoryInParentFolders": "always",
     "github.copilot.chat.codesearch.enabled": true,
-    "github.copilot.chat.editor.temporalContext.enabled": true,
     "github.copilot.enable": {
         "*": false
     },
     "githubLocalActions.dockerDesktopPath": "C:/Program Files/Docker/Docker/Docker Desktop.exe",
     "githubPullRequests.createOnPublishBranch": "never",
+    "markdown-preview-enhanced.breakOnSingleNewLine": false,
     "markdown-preview-enhanced.codeBlockTheme": "pen-paper-coffee.css",
     "markdownlint.config": {
         "commands-show-output": false,
@@ -215,7 +212,7 @@
     "powershell.promptToUpdatePowerShell": false,
     "print.folder.include": [],
     "print.folder.includeFileList": false,
-    "terminal.integrated.enableMultiLinePasteWarning": "auto",
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
     "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
     "testing.coverageToolbarEnabled": true,
     "versionlens.dotnet.caching.duration": 3,
@@ -230,5 +227,6 @@
     "workbench.iconTheme": "vscode-icons",
     "workbench.sideBar.location": "left",
     "workbench.statusBar.visible": true,
-    "workbench.tree.renderIndentGuides": "always"
+    "workbench.tree.renderIndentGuides": "always",
+    "dotrush.roslyn.analyzerDiagnosticsScope": "Project"
 }

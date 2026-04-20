@@ -169,7 +169,6 @@
     },
     "files.trimTrailingWhitespace": true,
     "github.copilot.chat.codesearch.enabled": true,
-    "github.copilot.chat.editor.temporalContext.enabled": true,
     "github.copilot.enable": {
         "*": true,
         "markdown": false,
@@ -353,9 +352,11 @@
         }
     ],
     "python.analysis.supportAllPythonDocuments": true,
+    "python.languageServer": "Pylance",
     "python.terminal.activateEnvInCurrentTerminal": true,
     "python.terminal.executeInFileDir": true,
     "python.terminal.shellIntegration.enabled": true,
+    "python.terminal.useEnvFile": true,
     "python.testing.pytestArgs": [
         "tests"
     ],
@@ -385,8 +386,10 @@
         ]
     },
     "ruff.configurationPreference": "filesystemFirst",
+    "ruff.format.preview": true,
     "ruff.lint.preview": true,
     "ruff.nativeServer": true,
+    "ruff.showSyntaxErrors": true,
     "terminal.integrated.enableMultiLinePasteWarning": "never",
     "terminal.integrated.enablePersistentSessions": false,
     "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
@@ -399,5 +402,14 @@
     "vsicons.presets.jsonOfficial": true,
     "workbench.colorTheme": "Monokai++",
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.tree.renderIndentGuides": "always"
+    "workbench.tree.renderIndentGuides": "always",
+    "versionlens.pypi.dependencyProperties": [
+        "project",
+        "packages",
+        "dev-packages",
+        "tool.poetry.dependencies",
+        "tool.poetry.group.*.dependencies",
+        "project.optional-dependencies",
+        "dependency-groups.*"
+    ]
 }
