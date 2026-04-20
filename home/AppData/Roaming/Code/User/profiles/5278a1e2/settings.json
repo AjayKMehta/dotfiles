@@ -119,7 +119,6 @@
         "yaml": false,
         "lua": false
     },
-
     "github.copilot.nextEditSuggestions.eagerness": "low",
     "github.copilot.nextEditSuggestions.enabled": false,
     "githubLocalActions.dockerDesktopPath": "C:/Program Files/Docker/Docker/Docker Desktop.exe",
