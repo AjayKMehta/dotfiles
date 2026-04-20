@@ -463,11 +463,6 @@
         "when": "inDiffEditor"
     },
     {
-        "key": "alt+s",
-        "command": "-gitlens.showQuickRepoStatus",
-        "when": "!gitlens:disabled && config.gitlens.keymap == 'alternate'"
-    },
-    {
         "key": "ctrl+shift+[",
         "command": "workbench.action.terminal.focusNext",
         "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
@@ -499,7 +494,8 @@
     },
     {
         "key": "ctrl+g d",
-        "command": "git.delete"
+        "command": "git.delete",
+        "when": "(workbench.scm.active || filesExplorerFocus) && !inputFocus"
     },
     {
         "key": "ctrl+alt+t",

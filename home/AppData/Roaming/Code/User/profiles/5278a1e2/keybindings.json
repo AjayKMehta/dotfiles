@@ -133,7 +133,7 @@
     {
         "command": "workbench.action.toggleSidebarVisibility",
         "key": "ctrl+b",
-        "when": "!editorTextFocus && editorLangId != 'markdown' && editorLangId != 'quarto' && editorLangId != 'rmd'"
+        "when": "editorLangId != 'markdown' && editorLangId != 'rmd' && editorLangId != 'quarto' && !editorTextFocus"
     },
     {
         "command": "-editor.action.copyLinesDownAction",
@@ -250,10 +250,6 @@
         "command": "workbench.action.terminal.runRecentCommand",
         "key": "ctrl+r",
         "when": "terminalFocus"
-    },
-    {
-        "command": "csharpsortusings.sortUsings",
-        "key": "ctrl+r ctrl+g"
     },
     {
         "command": "-workbench.action.zoomOut",
@@ -389,11 +385,6 @@
         "when": "editorTextFocus"
     },
     {
-        "command": "PowerShell.ShowAdditionalCommands",
-        "key": "shift+alt+s",
-        "when": "editorTextFocus && editorLangId == 'powershell'"
-    },
-    {
         "command": "-editor.action.insertLineAfter",
         "key": "shift+enter",
         "when": "editorTextFocus && !editorReadonly"
@@ -418,11 +409,6 @@
         "when": "inDiffEditor"
     },
     {
-        "key": "alt+s",
-        "command": "-gitlens.showQuickRepoStatus",
-        "when": "!gitlens:disabled && config.gitlens.keymap == 'alternate'"
-    },
-    {
         "key": "ctrl+shift+[",
         "command": "workbench.action.terminal.focusNext",
         "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
@@ -441,5 +427,24 @@
         "key": "ctrl+pageup",
         "command": "-workbench.action.terminal.focusPrevious",
         "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+    },
+    {
+        "key": "ctrl+alt+c",
+        "command": "-rest-client.generate-codesnippet",
+        "when": "editorTextFocus && editorLangId == 'plaintext'"
+    },
+    {
+        "key": "ctrl+alt+c",
+        "command": "breadcrumbs.copyPath",
+        "when": "breadcrumbsPossible && breadcrumbsVisible"
+    },
+    {
+        "key": "ctrl+g d",
+        "command": "git.delete",
+        "when": "(workbench.scm.active || filesExplorerFocus) && !inputFocus"
+    },
+    {
+        "key": "ctrl+alt+t",
+        "command": "timeline.focus"
     }
 ]

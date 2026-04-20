@@ -175,7 +175,7 @@
     {
         "command": "workbench.action.openGlobalKeybindings",
         "key": "ctrl+k ctrl+s",
-        "when": "!isInDiffEditor"
+        "when": "!inDiffEditor"
     },
     {
         "command": "workbench.action.pinEditor",
@@ -206,10 +206,6 @@
         "command": "workbench.action.terminal.runRecentCommand",
         "key": "ctrl+r",
         "when": "terminalFocus"
-    },
-    {
-        "command": "csharpsortusings.sortUsings",
-        "key": "ctrl+r ctrl+g"
     },
     {
         "command": "-workbench.action.zoomOut",
@@ -349,11 +345,6 @@
         "when": "inDiffEditor"
     },
     {
-        "key": "alt+s",
-        "command": "-gitlens.showQuickRepoStatus",
-        "when": "!gitlens:disabled && config.gitlens.keymap == 'alternate'"
-    },
-    {
         "key": "ctrl+shift+[",
         "command": "workbench.action.terminal.focusNext",
         "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
@@ -385,7 +376,8 @@
     },
     {
         "key": "ctrl+g d",
-        "command": "git.delete"
+        "command": "git.delete",
+        "when": "(workbench.scm.active || filesExplorerFocus) && !inputFocus"
     },
     {
         "key": "ctrl+alt+t",
