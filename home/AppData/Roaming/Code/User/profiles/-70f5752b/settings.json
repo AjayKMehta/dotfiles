@@ -76,6 +76,7 @@
     "chat.tools.edits.autoApprove": {
         "**/*.sln*": false
     },
+    "chat.viewSessions.orientation": "stacked",
     "code-runner.executorMap": {
         "haskell": "stack runghc"
     },
@@ -115,6 +116,7 @@
             "path": "C:\\Program Files\\dotnet\\dotnet.exe"
         }
     ],
+    "dotrush.roslyn.analyzerDiagnosticsScope": "Project",
     "editor.bracketPairColorization.enabled": true,
     "editor.defaultColorDecorators": "auto",
     "editor.definitionLinkOpensInPeek": true,
@@ -227,6 +229,5 @@
     "workbench.iconTheme": "vscode-icons",
     "workbench.sideBar.location": "left",
     "workbench.statusBar.visible": true,
-    "workbench.tree.renderIndentGuides": "always",
-    "dotrush.roslyn.analyzerDiagnosticsScope": "Project"
+    "workbench.tree.renderIndentGuides": "always"
 }
