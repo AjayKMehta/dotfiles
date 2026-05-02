@@ -2258,6 +2258,7 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             break
         }
         'uv;python;pin' {
+            [CompletionResult]::new('--python-downloads-json-url', '--python-downloads-json-url', [CompletionResultType]::ParameterName, 'URL pointing to JSON of custom Python installations')
             [CompletionResult]::new('--cache-dir', '--cache-dir', [CompletionResultType]::ParameterName, 'Path to the cache directory')
             [CompletionResult]::new('--python-preference', '--python-preference', [CompletionResultType]::ParameterName, 'python-preference')
             [CompletionResult]::new('--python-fetch', '--python-fetch', [CompletionResultType]::ParameterName, 'Deprecated version of [`Self::python_downloads`]')
@@ -2853,6 +2854,8 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--break-system-packages', '--break-system-packages', [CompletionResultType]::ParameterName, 'Allow uv to modify an `EXTERNALLY-MANAGED` Python installation')
             [CompletionResult]::new('--no-break-system-packages', '--no-break-system-packages', [CompletionResultType]::ParameterName, 'no-break-system-packages')
             [CompletionResult]::new('--dry-run', '--dry-run', [CompletionResultType]::ParameterName, 'Perform a dry run, i.e., don''t actually uninstall anything but print the resulting plan')
+            [CompletionResult]::new('-y', '-y', [CompletionResultType]::ParameterName, 'Don''t ask for confirmation of uninstall deletions')
+            [CompletionResult]::new('--yes', '--yes', [CompletionResultType]::ParameterName, 'Don''t ask for confirmation of uninstall deletions')
             [CompletionResult]::new('--disable-pip-version-check', '--disable-pip-version-check', [CompletionResultType]::ParameterName, 'disable-pip-version-check')
             [CompletionResult]::new('-n', '-n', [CompletionResultType]::ParameterName, 'Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation')
             [CompletionResult]::new('--no-cache', '--no-cache', [CompletionResultType]::ParameterName, 'Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation')
