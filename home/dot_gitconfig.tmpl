@@ -50,7 +50,8 @@
     cnv = commit --no-verify
     grepd = -c core.pager=delta grep
     first = !git log --reverse --format='%H' | head -n 1
-	# Use fzf to select branch to checkout
+    root = rev-parse --show-toplevel
+    # Use fzf to select branch to checkout
     gcb = !git branch | fzf --bind 'enter:become(git switch {-1})'
     gcbp = !git branch | fzf --preview 'git show --color=always {-1}' --bind 'enter:become(git switch {-1})'
 
@@ -72,6 +73,10 @@
     hist = log --graph --oneline --all --decorate --simplify-by-decoration
     # nd = No dependabot. Set --perl-regexp to be safe.
     lnd = log -P --author='^((?!dependabot).*)$'
+
+    # History
+    hr = history reword
+    hs = history split
 
     ## Refs
     rf = for-each-ref --sort=-committerdate --format='%(color:blue bold)%(refname:short)%(color:reset) %(color:yellow)%(committerdate:relative) %(color:magenta bold)%(authorname) %(color:green)%(objectname:short)%(color:reset) %(contents:subject)'
@@ -105,7 +110,6 @@
     ## Merge
     mffo = merge --ff-only
     conflicts = !git ls-files | rg -l -e '^<{6}' | rg -l -e '^={6}' | rg -l -e '^>{6}'
-	root = rev-parse --show-toplevel
 [blame]
     coloring = highlightRecent
     markIgnoredLines = true
@@ -272,12 +276,15 @@
 [grep]
     patternType = perl
 [init]
-	defaultBranch = main
+    defaultBranch = main
 [sequence]
-	editor = git-interactive-rebase-tool.exe
+    editor = git-interactive-rebase-tool.exe
 [url "https://gitlab.com/"]
-	insteadOf = gl:
+    insteadOf = gl:
 [url "https://github.com/"]
-	insteadOf = gh:
+    insteadOf = gh:
 [url "https://codeberg.org/"]
-	insteadOf = cb:
+    insteadOf = cb:
+[http]
+    retryAfter = 10
+    maxRetries = 5
