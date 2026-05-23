@@ -108,7 +108,7 @@ Register-ArgumentCompleter -Native -CommandName 'uvx' -ScriptBlock {
             [CompletionResult]::new('-v', '-v', [CompletionResultType]::ParameterName, 'Use verbose output')
             [CompletionResult]::new('--verbose', '--verbose', [CompletionResultType]::ParameterName, 'Use verbose output')
             [CompletionResult]::new('--no-color', '--no-color', [CompletionResultType]::ParameterName, 'Disable colors')
-            [CompletionResult]::new('--native-tls', '--native-tls', [CompletionResultType]::ParameterName, 'Whether to load TLS certificates from the platform''s native certificate store [env: UV_NATIVE_TLS=]')
+            [CompletionResult]::new('--native-tls', '--native-tls', [CompletionResultType]::ParameterName, '(Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform''s native certificate store [env: UV_NATIVE_TLS=]')
             [CompletionResult]::new('--no-native-tls', '--no-native-tls', [CompletionResultType]::ParameterName, 'no-native-tls')
             [CompletionResult]::new('--system-certs', '--system-certs', [CompletionResultType]::ParameterName, 'Whether to load TLS certificates from the platform''s native certificate store [env: UV_SYSTEM_CERTS=]')
             [CompletionResult]::new('--no-system-certs', '--no-system-certs', [CompletionResultType]::ParameterName, 'no-system-certs')
