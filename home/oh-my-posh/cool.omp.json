@@ -92,13 +92,13 @@
           "style": "powerline",
           "foreground": "#111111",
           "background": "#fee898",
-          "template": "  {{ .Premium.Percent.Gauge() }} {{ .Premium.Used }}/{{ .Premium.Limit }} ",
+          "template": " 🤖 {{ .Chat.Used }}/{{ .Chat.Limit }} ",
           "cache": {
             "duration": "5m",
             "strategy": "session"
           },
           "options": {
-            "http_timeout": 1000
+            "http_timeout": 5000
           }
         },
         {
