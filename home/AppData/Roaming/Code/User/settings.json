@@ -116,6 +116,8 @@
         "github/awesome-copilot",
         "github/copilot-plugins"
     ],
+    "chat.tools.compressOutput.enabled": true,
+    "chat.tools.riskAssessment.enabled": true,
     "chat.tools.terminal.autoApprove": {
         "dotnet build": true
     },
@@ -172,7 +174,7 @@
     "diffEditor.codeLens": true,
     "diffEditor.diffAlgorithm": "advanced",
     "diffEditor.experimental.showMoves": true,
-    "diffEditor.hideUnchangedRegions.enabled": true,
+    "diffEditor.hideUnchangedRegions.enabled": false,
     "diffEditor.ignoreTrimWhitespace": true,
     "docker.extension.enableComposeLanguageServer": false,
     "dotnet.formatting.organizeImportsOnFormat": true,
@@ -183,7 +185,6 @@
     "editor.definitionLinkOpensInPeek": true,
     "editor.fontFamily": "'FiraCode Nerd Font Mono', 'Cascadia Code', Consolas, 'Courier New', monospace",
     "editor.fontLigatures": true,
-    "editor.fontSize": 12,
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
     "editor.formatOnSaveMode": "modifications",
@@ -282,6 +283,9 @@
     "evenBetterToml.formatter.indentEntries": true,
     "evenBetterToml.formatter.indentTables": true,
     "evenBetterToml.formatter.trailingNewline": true,
+    "evenBetterToml.schema.associations": {
+        "^(.*/)?\\.?panache\\.toml$": "https://panache.bz/reference/panache.schema.json"
+    },
     "evenBetterToml.schema.links": true,
     "evenBetterToml.semanticTokens": true,
     "explorer.confirmDelete": false,
@@ -393,6 +397,14 @@
     "inlineChat.renderMode": "hover",
     "insertDateString.format": "YYYY-MM-DDThh:mm:ssZZZ",
     "jarl.logLevel": "info",
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "pyproject.toml"
+            ],
+            "url": "https://json.schemastore.org/pyproject.json"
+        }
+    ],
     "jupyter.askForKernelRestart": false,
     "jupyter.debugJustMyCode": true,
     "jupyter.exportWithOutputEnabled": true,
@@ -795,12 +807,15 @@
     "workbench.settings.applyToAllProfiles": [
         "breadcrumbs.enabled",
         "chat.agent.enabled",
+        "chat.agent.sandbox.enabled",
         "chat.agent.thinking.terminalTools",
         "chat.editMode.hidden",
         "chat.math.enabled",
         "chat.mcp.gallery.enabled",
         "chat.todoListTool.enabled",
         "chat.tools.autoExpandFailures",
+        "chat.tools.compressOutput.enabled",
+        "chat.tools.riskAssessment.enabled",
         "chat.tools.terminal.autoApprove",
         "chat.tools.terminal.sandbox.enabled",
         "chat.useAgentSkills",
@@ -862,6 +877,7 @@
         "evenBetterToml.formatter.indentEntries",
         "evenBetterToml.formatter.indentTables",
         "evenBetterToml.formatter.trailingNewline",
+        "evenBetterToml.schema.associations",
         "evenBetterToml.schema.links",
         "evenBetterToml.semanticTokens",
         "explorer.confirmDelete",
