@@ -18,7 +18,6 @@ tex-math-blocks = true # inline $…$ and fenced ``` math blocks
 
 [format]
 wrap = "reflow"  # Options: "reflow", "preserve", "sentence"
-blank-lines = "collapse" # Options: "collapse", "preserve"
 math-delimiter-style = "preserve"
 tab-stops = "normalize"
 tab-width = 4

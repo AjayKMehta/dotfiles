@@ -1,9 +1,9 @@
 {
     "files.exclude": {
-        "**/.DS_Store": true,
         "**/.git": true,
-        "**/.hg": true,
         "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
         "**/Thumbs.db": true
     },
     "peacock.color": "#71bfa3",
