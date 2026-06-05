@@ -17,7 +17,8 @@ multiline-tables = false
 tex-math-blocks = true # inline $…$ and fenced ``` math blocks
 
 [format]
-wrap = "reflow"  # Options: "reflow", "preserve", "sentence"
+wrap = "reflow"  # Options: "reflow", "preserve", "sentence", "semantic"
+lang = "en"
 math-delimiter-style = "preserve"
 tab-stops = "normalize"
 tab-width = 4
@@ -30,6 +31,7 @@ r = "air"
 python = "ruff"
 r = "jarl"
 yaml = "yamllint"
+csharp = "csharpier"
 
 [lint.rules]
 heading-hierarchy = true
