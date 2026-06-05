@@ -59,11 +59,12 @@
         "editor.defaultFormatter": "redhat.vscode-yaml",
         "editor.fontLigatures": false
     },
+    "chat.viewSessions.orientation": "stacked",
     "code-runner.showRunIconInEditorTitleMenu": false,
     "debug.inlineValues": "on",
     "diffEditor.codeLens": true,
     "diffEditor.diffAlgorithm": "advanced",
-    "diffEditor.ignoreTrimWhitespace": true,
+    "diffEditor.ignoreTrimWhitespace": false,
     "diffEditor.wordWrap": "on",
     "dotfiles.repository": "https://github.com/AjayKMehta/dotfiles",
     "editor.bracketPairColorization.enabled": true,
@@ -98,26 +99,26 @@
     "errorLens.enabled": false,
     "files.autoSave": "onFocusChange",
     "files.exclude": {
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
         "**/.DS_Store": true,
-        "**/Thumbs.db": true,
-        "**/*.html": true,
+        "**/.git": true,
+        "**/.hg": true,
+        "**/.history/**": true,
+        "**/.svn": true,
         "**/*_cache": true,
-        "**/.history/**": true
+        "**/*.html": true,
+        "**/Thumbs.db": true
     },
     "files.trimTrailingWhitespace": true,
     "fontAwesomeAutocomplete.version": "6",
     "git-graph.customEmojiShortcodeMappings": [],
     "github.copilot.enable": {
         "*": false,
-        "plaintext": false,
+        "lua": false,
         "markdown": false,
-        "scminput": false,
+        "plaintext": false,
         "quarto": false,
-        "yaml": false,
-        "lua": false
+        "scminput": false,
+        "yaml": false
     },
     "github.copilot.nextEditSuggestions.eagerness": "low",
     "github.copilot.nextEditSuggestions.enabled": false,
@@ -228,7 +229,7 @@
         },
         {
             "args": [
-                                "-f",
+                "-f",
                 "tex",
                 "%DOC_EXT%"
             ],
@@ -238,7 +239,7 @@
         },
         {
             "args": [
-                                "-f",
+                "-f",
                 "texminted",
                 "%DOC_EXT%"
             ],
@@ -258,7 +259,7 @@
         },
         {
             "args": [
-                                "--synctex",
+                "--synctex",
                 "--pdf",
                 "--tex-option=\"-interaction=nonstopmode\"",
                 "--tex-option=\"-file-line-error\"",
