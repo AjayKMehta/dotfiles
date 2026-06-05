@@ -29,3 +29,6 @@ OPENAI_API_KEY="{{- (keepassxc "OPENAI_API_KEY").Password }}"
 
 # https://joshuamarie.com/posts/05-pipes/#the-native-pipe-r-v4.1-2021
 _R_USE_PIPEBIND_=true
+
+# https://remlapmot.github.io/post/2026/stan-compile-speedup/
+MAKEFLAGS=-j10
