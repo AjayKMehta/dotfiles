@@ -1,0 +1,8 @@
+# https://remlapmot.github.io/post/2026/stan-compile-speedup/#big-win-2-enable-cc-compiler-cache-using-ccache
+
+# Windows and Linux
+# Most Linux users will be on gcc by default
+# Change to clang if you're using that
+CC = ccache gcc
+CXX = ccache g++
+CXX17 = ccache g++
