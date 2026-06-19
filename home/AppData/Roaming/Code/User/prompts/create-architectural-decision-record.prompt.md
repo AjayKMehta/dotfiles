@@ -1,7 +1,7 @@
 ---
-mode: 'agent'
+agent: 'agent'
 description: 'Create an Architectural Decision Record (ADR) document for AI-optimized decision documentation.'
-tools: ['changes', 'codebase', 'editFiles', 'extensions', 'fetch', 'githubRepo', 'openSimpleBrowser', 'problems', 'runTasks', 'search', 'searchResults', 'terminalLastCommand', 'terminalSelection', 'testFailure', 'usages', 'vscodeAPI']
+tools: ['changes', 'search/codebase', 'edit/editFiles', 'vscode/extensions', 'web/fetch', 'web/githubRepo', 'openSimpleBrowser', 'read/problems', 'execute/createAndRunTask', 'execute/runTask', 'read/getTaskOutput', 'search', 'searchResults', 'read/terminalLastCommand', 'read/terminalSelection', 'execute/testFailure', 'search/usages', 'vscode/vscodeAPI']
 model: Claude Sonnet 3.5
 ---
 
