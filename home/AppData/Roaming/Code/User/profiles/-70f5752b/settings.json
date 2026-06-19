@@ -211,6 +211,7 @@
     "powershell.integratedConsole.forceClearScrollbackBuffer": true,
     "powershell.integratedConsole.suppressStartupBanner": true,
     "powershell.pester.codeLens": false,
+    "powershell.pester.useLegacyCodeLens": false, // Handled by Pester extension
     "powershell.promptToUpdatePowerShell": false,
     "print.folder.include": [],
     "print.folder.includeFileList": false,
@@ -222,6 +223,8 @@
     "vsicons.dontShowNewVersionMessage": true,
     "vsicons.presets.foldersAllDefaultIcon": true,
     "window.commandCenter": true,
+    "workbench.activityBar.location": "top",
+    "workbench.colorTheme": "Dracula Theme",
     "workbench.editor.labelFormat": "short",
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"

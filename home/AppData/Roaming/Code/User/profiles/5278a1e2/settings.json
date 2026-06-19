@@ -20,9 +20,6 @@
         "editor.autoClosingBrackets": "always",
         "editor.defaultFormatter": "vscode.json-language-features"
     },
-    "[latex]": {
-        "editor.defaultFormatter": "James-Yu.latex-workshop"
-    },
     "[lua]": {
         "editor.defaultFormatter": "sumneko.lua"
     },
@@ -99,13 +96,13 @@
     "errorLens.enabled": false,
     "files.autoSave": "onFocusChange",
     "files.exclude": {
+        "**/*.html": true,
+        "**/*_cache": true,
         "**/.DS_Store": true,
         "**/.git": true,
         "**/.hg": true,
         "**/.history/**": true,
         "**/.svn": true,
-        "**/*_cache": true,
-        "**/*.html": true,
         "**/Thumbs.db": true
     },
     "files.trimTrailingWhitespace": true,
@@ -123,165 +120,6 @@
     "github.copilot.nextEditSuggestions.eagerness": "low",
     "github.copilot.nextEditSuggestions.enabled": false,
     "githubLocalActions.dockerDesktopPath": "C:/Program Files/Docker/Docker/Docker Desktop.exe",
-    "latex-workshop.formatting.latexindent.path": "D:\\Apps\\CLI\\latexindent.exe",
-    "latex-workshop.hover.preview.mathjax.extensions": [
-        "amscd",
-        "bbox",
-        "boldsymbol",
-        "braket",
-        "empheq",
-        "html",
-        "mathtools",
-        "textcomp",
-        "textmacros",
-        "unicode",
-        "upgreek"
-    ],
-    "latex-workshop.latex.autoBuild.interval": 2000,
-    "latex-workshop.latex.recipes": [
-        {
-            "name": "xelatex",
-            "tools": [
-                "xelatex"
-            ]
-        },
-        {
-            "name": "pdflatex -> bibtex -> pdflatex * 2",
-            "tools": [
-                "pdflatex",
-                "bibtex",
-                "pdflatex",
-                "pdflatex"
-            ]
-        },
-        {
-            "name": "tectonic",
-            "tools": [
-                "tectonic"
-            ]
-        },
-        {
-            "name": "texify",
-            "tools": [
-                "texify"
-            ]
-        }
-    ],
-    "latex-workshop.latex.tools": [
-        {
-            "args": [
-                "-synctex=1",
-                "-c-style-errors",
-                "-interaction=nonstopmode",
-                "-output-directory=%OUTDIR%",
-                "%DOC_EXT%"
-            ],
-            "command": "xelatex",
-            "env": {},
-            "name": "xelatex"
-        },
-        {
-            "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "-output-directory=%OUTDIR%",
-                "%DOC_EXT%"
-            ],
-            "command": "pdflatex",
-            "env": {},
-            "name": "pdflatex"
-        },
-        {
-            "args": [
-                "%DOCFILE%"
-            ],
-            "command": "bibtex",
-            "env": {},
-            "name": "bibtex"
-        },
-        {
-            "args": [
-                "-e",
-                "knitr::opts_knit$set(concordance = TRUE); knitr::knit('%DOCFILE_EXT%')"
-            ],
-            "command": "Rscript",
-            "env": {},
-            "name": "rnw2tex"
-        },
-        {
-            "args": [
-                "-e",
-                "using Weave; weave(\"%DOC_EXT%\", doctype=\"tex\")"
-            ],
-            "command": "julia",
-            "env": {},
-            "name": "jnw2tex"
-        },
-        {
-            "args": [
-                "-e",
-                "using Weave; weave(\"%DOC_EXT%\", doctype=\"texminted\")"
-            ],
-            "command": "julia",
-            "env": {},
-            "name": "jnw2texminted"
-        },
-        {
-            "args": [
-                "-f",
-                "tex",
-                "%DOC_EXT%"
-            ],
-            "command": "pweave",
-            "env": {},
-            "name": "pnw2tex"
-        },
-        {
-            "args": [
-                "-f",
-                "texminted",
-                "%DOC_EXT%"
-            ],
-            "command": "pweave",
-            "env": {},
-            "name": "pnw2texminted"
-        },
-        {
-            "args": [
-                "--synctex",
-                "--keep-logs",
-                "%DOC%.tex"
-            ],
-            "command": "tectonic",
-            "env": {},
-            "name": "tectonic"
-        },
-        {
-            "args": [
-                "--synctex",
-                "--pdf",
-                "--tex-option=\"-interaction=nonstopmode\"",
-                "--tex-option=\"-file-line-error\"",
-                "%DOC_EXT%"
-            ],
-            "command": "texify",
-            "env": {},
-            "name": "texify"
-        }
-    ],
-    "latex-workshop.linting.chktex.enabled": true,
-    "latex-workshop.linting.chktex.exec.args": [
-        "-wall",
-        "-n22",
-        "-n30",
-        "-e16",
-        "-q",
-        "-n46"
-    ],
-    "latex-workshop.linting.lacheck.enabled": true,
-    "latex-workshop.showContextMenu": true,
-    "latex-workshop.view.pdf.viewer": "tab",
     "Lua.codeLens.enable": true,
     "Lua.hint.enable": true,
     "markdown-preview-enhanced.alwaysShowBacklinksInPreview": true,
@@ -300,8 +138,8 @@
         "rmd"
     ],
     "markdown.extension.list.toggle.candidate-markers": [
-        "-",
         "*",
+        "-",
         "1."
     ],
     "markdown.extension.math.enabled": false,
@@ -341,6 +179,7 @@
     "vsicons.dontShowNewVersionMessage": true,
     "vsicons.presets.foldersAllDefaultIcon": true,
     "window.commandCenter": true,
+    "workbench.activityBar.location": "top",
     "workbench.editor.labelFormat": "default",
     "workbench.iconTheme": "vscode-icons",
     "workbench.tree.renderIndentGuides": "always"

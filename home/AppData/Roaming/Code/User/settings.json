@@ -119,7 +119,8 @@
     "chat.tools.compressOutput.enabled": true,
     "chat.tools.riskAssessment.enabled": true,
     "chat.tools.terminal.autoApprove": {
-        "dotnet build": true
+        "dotnet build": true,
+        "pip-compile": true
     },
     "chat.useAgentSkills": true,
     "code-runner.enableAppInsights": false,
@@ -784,6 +785,7 @@
     "window.restoreWindows": "preserve",
     "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}${separator}${activeRepositoryBranchName}",
     "workbench.browser.enableChatTools": true,
+    "workbench.browser.experimentalUserTools.enabled": true,
     "workbench.colorCustomizations": {
         "diffEditor.insertedTextBackground": "#0d7a5ba8",
         "diffEditor.removedTextBackground": "#703131ec",
@@ -1007,6 +1009,7 @@
         "window.title",
         "window.zoomLevel",
         "workbench.browser.enableChatTools",
+        "workbench.browser.experimentalUserTools.enabled",
         "workbench.colorCustomizations",
         "workbench.editor.doubleClickTabToToggleEditorGroupSizes",
         "workbench.editor.enablePreview",
