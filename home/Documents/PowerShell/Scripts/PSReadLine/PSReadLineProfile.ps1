@@ -7,6 +7,18 @@ $isVsCode = $env:TERM_PROGRAM -eq 'vscode'
 
 #region Options
 
+function OnViModeChange {
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSAvoidUsingWriteHost', '', Justification = 'False positive.')]
+    param()
+    if ($args[0] -eq 'Command') {
+        # VISUAL MODE - Set the cursor to a blinking block.
+        Write-Host -NoNewline "`e[1 q"
+    } else {
+        # INSERT MODE - Set the cursor to a blinking line.
+        Write-Host -NoNewline "`e[5 q"
+    }
+}
+
 $options = @{
     AnsiEscapeTimeout             = 200
     HistoryNoDuplicates           = $true
@@ -15,7 +27,8 @@ $options = @{
     HistorySaveStyle              = $isVsCode ? 'SaveNothing' : 'SaveIncrementally'
     MaximumHistoryCount           = 10000
     # HistorySavePath               = "$PSScriptRoot\PSReadLine_history.txt"
-
+    ViModeIndicator               = 'Script'
+    ViModeChangeHandler           = $Function:OnViModeChange
     PredictionSource              = 'HistoryAndPlugin'
 }
 
