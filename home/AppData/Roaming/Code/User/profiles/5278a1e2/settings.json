@@ -96,14 +96,14 @@
     "errorLens.enabled": false,
     "files.autoSave": "onFocusChange",
     "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
         "**/*.html": true,
         "**/*_cache": true,
-        "**/.DS_Store": true,
-        "**/.git": true,
-        "**/.hg": true,
-        "**/.history/**": true,
-        "**/.svn": true,
-        "**/Thumbs.db": true
+        "**/.history/**": true
     },
     "files.trimTrailingWhitespace": true,
     "fontAwesomeAutocomplete.version": "6",
