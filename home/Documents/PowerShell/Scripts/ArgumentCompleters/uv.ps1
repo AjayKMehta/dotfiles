@@ -1376,6 +1376,7 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             break
         }
         'uv;check' {
+            [CompletionResult]::new('--script', '--script', [CompletionResultType]::ParameterName, 'Run checks for the specified PEP 723 Python script, rather than the current project')
             [CompletionResult]::new('--extra', '--extra', [CompletionResultType]::ParameterName, 'Include optional dependencies from the specified extra name')
             [CompletionResult]::new('--no-extra', '--no-extra', [CompletionResultType]::ParameterName, 'Exclude the specified optional dependencies, if `--all-extras` is supplied')
             [CompletionResult]::new('--group', '--group', [CompletionResultType]::ParameterName, 'Include dependencies from the specified dependency group')
@@ -1431,6 +1432,7 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--frozen', '--frozen', [CompletionResultType]::ParameterName, 'Sync without updating the `uv.lock` file [env: UV_FROZEN=]')
             [CompletionResult]::new('--no-sync', '--no-sync', [CompletionResultType]::ParameterName, 'Avoid syncing the virtual environment [env: UV_NO_SYNC=]')
             [CompletionResult]::new('--isolated', '--isolated', [CompletionResultType]::ParameterName, 'Run checks without mutating project state [env: UV_ISOLATED=]')
+            [CompletionResult]::new('--show-version', '--show-version', [CompletionResultType]::ParameterName, 'Display the version of ty that will be used for type checking')
             [CompletionResult]::new('--no-project', '--no-project', [CompletionResultType]::ParameterName, 'Avoid discovering a project or workspace')
             [CompletionResult]::new('--no-index', '--no-index', [CompletionResultType]::ParameterName, 'Ignore the registry index (e.g., PyPI), instead relying on direct URL dependencies and those provided via `--find-links`')
             [CompletionResult]::new('-U', '-U ', [CompletionResultType]::ParameterName, 'Allow package upgrades, ignoring pinned versions in any existing output file. Implies `--refresh`')
@@ -3623,6 +3625,7 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             break
         }
         'uv;workspace;metadata' {
+            [CompletionResult]::new('--script', '--script', [CompletionResultType]::ParameterName, 'View metadata for the specified PEP 723 Python script, rather than the current workspace')
             [CompletionResult]::new('--index', '--index', [CompletionResultType]::ParameterName, 'The URLs to use when resolving dependencies, in addition to the default index')
             [CompletionResult]::new('--default-index', '--default-index', [CompletionResultType]::ParameterName, 'The URL of the default package index (by default: <https://pypi.org/simple>)')
             [CompletionResult]::new('-i', '-i', [CompletionResultType]::ParameterName, '(Deprecated: use `--default-index` instead) The URL of the Python package index (by default: <https://pypi.org/simple>)')
