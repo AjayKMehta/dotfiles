@@ -1233,6 +1233,7 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             break
         }
         'uv;tree' {
+            [CompletionResult]::new('--format', '--format', [CompletionResultType]::ParameterName, 'The format in which to display the dependency graph')
             [CompletionResult]::new('-d', '-d', [CompletionResultType]::ParameterName, 'Maximum display depth of the dependency tree')
             [CompletionResult]::new('--depth', '--depth', [CompletionResultType]::ParameterName, 'Maximum display depth of the dependency tree')
             [CompletionResult]::new('--prune', '--prune', [CompletionResultType]::ParameterName, 'Prune the given package from the display of the dependency tree')
@@ -3759,6 +3760,7 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--project', '--project', [CompletionResultType]::ParameterName, 'Discover a project in the given directory')
             [CompletionResult]::new('--config-file', '--config-file', [CompletionResultType]::ParameterName, 'The path to a `uv.toml` file to use for configuration')
             [CompletionResult]::new('--paths', '--paths', [CompletionResultType]::ParameterName, 'Show paths instead of names')
+            [CompletionResult]::new('--scripts', '--scripts', [CompletionResultType]::ParameterName, 'List all standalone scripts with inline metadata in the workspace')
             [CompletionResult]::new('-n', '-n', [CompletionResultType]::ParameterName, 'Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation')
             [CompletionResult]::new('--no-cache', '--no-cache', [CompletionResultType]::ParameterName, 'Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation')
             [CompletionResult]::new('--managed-python', '--managed-python', [CompletionResultType]::ParameterName, 'Require use of uv-managed Python versions [env: UV_MANAGED_PYTHON=]')
@@ -4176,7 +4178,7 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Display the concise help for this command')
             [CompletionResult]::new('clean', 'clean', [CompletionResultType]::ParameterValue, 'Clear the cache, removing all entries or those linked to specific packages')
-            [CompletionResult]::new('prune', 'prune', [CompletionResultType]::ParameterValue, 'Prune all unreachable objects from the cache')
+            [CompletionResult]::new('prune', 'prune', [CompletionResultType]::ParameterValue, 'Prune dangling cache entries and cached environments')
             [CompletionResult]::new('dir', 'dir', [CompletionResultType]::ParameterValue, 'Show the cache directory')
             [CompletionResult]::new('size', 'size', [CompletionResultType]::ParameterValue, 'Show the cache size')
             break
