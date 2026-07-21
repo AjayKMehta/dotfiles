@@ -107,8 +107,8 @@
     "breadcrumbs.enabled": true,
     "chat.agent.enabled": true,
     "chat.agent.sandbox.enabled": "on",
+    "chat.customizations.promptMigration.enabled": true,
     "chat.editing.confirmEditRequestRetry": false,
-    "chat.editMode.hidden": false,
     "chat.math.enabled": true,
     "chat.mcp.gallery.enabled": true,
     "chat.plugins.marketplaces": [
@@ -119,8 +119,7 @@
     "chat.tools.compressOutput.enabled": true,
     "chat.tools.riskAssessment.enabled": true,
     "chat.tools.terminal.autoApprove": {
-        "dotnet build": true,
-        "pip-compile": true
+        "Rename-Item": true
     },
     "chat.useAgentSkills": true,
     "code-runner.enableAppInsights": false,
@@ -172,6 +171,7 @@
         "yy0931.gitconfig-lsp",
         "yzhang.dictionary-completion"
     ],
+    "dev.containers.mountWaylandSocket": false,
     "diffEditor.codeLens": true,
     "diffEditor.diffAlgorithm": "advanced",
     "diffEditor.experimental.showMoves": true,
@@ -186,6 +186,7 @@
     "editor.definitionLinkOpensInPeek": true,
     "editor.fontFamily": "'FiraCode Nerd Font Mono', 'Cascadia Code', Consolas, 'Courier New', monospace",
     "editor.fontLigatures": true,
+    "editor.fontSize": 12,
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
     "editor.formatOnSaveMode": "modifications",
@@ -299,24 +300,24 @@
     "files.autoSave": "onFocusChange",
     "files.defaultLanguage": "${activeEditorLanguage}",
     "files.exclude": {
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
+        "**/__pycache__": true,
         "**/.DS_Store": true,
-        "**/Thumbs.db": true,
-        "**/*.html": true,
-        "**/*_cache": true,
+        "**/.git": true,
+        "**/.hg": true,
         "**/.history/**": true,
         "**/.hypothesis": true,
+        "**/.svn": true,
         "**/.tmp-projections": true,
         "**/.venv": true,
         "**/.virtual_documents": true,
         "**/.vs": true,
-        "**/__pycache__": true,
+        "**/*_cache": true,
+        "**/*.html": true,
         "**/bin": true,
         "**/History_**": true,
         "**/obj": true,
         "**/TestResults": true,
+        "**/Thumbs.db": true,
         "artifacts": true
     },
     "files.insertFinalNewline": true,
@@ -736,6 +737,7 @@
     "telemetry.telemetryLevel": "error",
     "terminal.integrated.defaultProfile.windows": "PowerShell",
     "terminal.integrated.enableImages": true,
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
     "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
     "terminal.integrated.fontLigatures.enabled": true,
     "terminal.integrated.fontSize": 12,
@@ -811,6 +813,7 @@
         "chat.agent.enabled",
         "chat.agent.sandbox.enabled",
         "chat.agent.thinking.terminalTools",
+        "chat.customizations.promptMigration.enabled",
         "chat.editMode.hidden",
         "chat.math.enabled",
         "chat.mcp.gallery.enabled",
@@ -1085,6 +1088,14 @@
         "!Split sequence",
         "!Sub",
         "!Sub sequence"
+    ],
+    "yaml.disableSchemaDetection": [
+        "**/.github/workflows/*.yml",
+        "**/.github/workflows/*.yaml",
+        "**/.gitea/workflows/*.yml",
+        "**/.gitea/workflows/*.yaml",
+        "**/.forgejo/workflows/*.yml",
+        "**/.forgejo/workflows/*.yaml"
     ],
     "yaml.maxItemsComputed": 50000,
     "yaml.schemas": {

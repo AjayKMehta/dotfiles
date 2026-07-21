@@ -73,6 +73,7 @@
         "editor.defaultFormatter": "redhat.vscode-yaml",
         "editor.fontLigatures": false
     },
+    "chat.plugins.enabled": true,
     "chat.tools.edits.autoApprove": {
         "**/*.sln*": false
     },
@@ -232,5 +233,13 @@
     "workbench.iconTheme": "vscode-icons",
     "workbench.sideBar.location": "left",
     "workbench.statusBar.visible": true,
-    "workbench.tree.renderIndentGuides": "always"
+    "workbench.tree.renderIndentGuides": "always",
+    "yaml.disableSchemaDetection": [
+        "**/.github/workflows/*.yml",
+        "**/.github/workflows/*.yaml",
+        "**/.gitea/workflows/*.yml",
+        "**/.gitea/workflows/*.yaml",
+        "**/.forgejo/workflows/*.yml",
+        "**/.forgejo/workflows/*.yaml"
+    ]
 }

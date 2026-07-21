@@ -17,7 +17,7 @@
         "editor.tabSize": 2
     },
     "[gitattributes]": {
-        "editor.defaultFormatter": "hashhar.gitattributes"
+        "editor.defaultFormatter": "yy0931.gitconfig-lsp"
     },
     "[gitconfig]": {
         "editor.defaultFormatter": "yy0931.gitconfig-lsp"
@@ -203,8 +203,8 @@
         {
             "name": "pdflatex -> bibtex -> pdflatex * 2",
             "tools": [
-                "bibtex",
                 "pdflatex",
+                "bibtex",
                 "pdflatex",
                 "pdflatex"
             ]
@@ -224,49 +224,49 @@
     ],
     "latex-workshop.latex.tools": [
         {
-            "args": [
-                "%DOC%",
-                "-file-line-error",
-                "-interaction=nonstopmode",
-                "-outdir=%OUTDIR%",
-                "-pdf",
-                "-synctex=1"
-            ],
+            "name": "latexmk",
             "command": "latexmk",
-            "env": {},
-            "name": "latexmk"
-        },
-        {
             "args": [
-                "%DOC_EXT%",
-                "-c-style-errors",
+                "-synctex=1",
                 "-interaction=nonstopmode",
-                "-output-directory=%OUTDIR%",
-                "-synctex=1"
-            ],
-            "command": "xelatex",
-            "env": {},
-            "name": "xelatex"
-        },
-        {
-            "args": [
-                "%DOC_EXT%",
                 "-file-line-error",
-                "-interaction=nonstopmode",
-                "-output-directory=%OUTDIR%",
-                "-synctex=1"
+                "-pdf",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
             ],
-            "command": "pdflatex",
-            "env": {},
-            "name": "pdflatex"
+            "env": {}
         },
         {
+            "name": "xelatexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-xelatex",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
             "args": [
                 "%DOCFILE%"
             ],
-            "command": "bibtex",
-            "env": {},
-            "name": "bibtex"
+            "env": {}
         },
         {
             "args": [
@@ -278,32 +278,38 @@
             "name": "rnw2tex"
         },
         {
-            "args": [
-                "%DOC%.tex",
-                "--keep-logs",
-                "--synctex"
-            ],
+            "name": "tectonic",
             "command": "tectonic",
-            "env": {},
-            "name": "tectonic"
+            "args": [
+                "--synctex",
+                "--keep-logs",
+                "--print",
+                "%DOC%.tex"
+            ],
+            "env": {}
         },
         {
-            "args": [
-                "%DOC_EXT%",
-                "--pdf",
-                "--synctex",
-                "--tex-option=\"-file-line-error\"",
-                "--tex-option=\"-interaction=nonstopmode\""
-            ],
+            "name": "texify",
             "command": "texify",
-            "env": {},
-            "name": "texify"
+            "args": [
+                "--synctex",
+                "--pdf",
+                "--tex-option=\"-interaction=nonstopmode\"",
+                "--tex-option=\"-file-line-error\"",
+                "%DOC_EXT%"
+            ],
+            "env": {}
         }
     ],
     "latex-workshop.showContextMenu": true,
     "latex-workshop.view.pdf.viewer": "tab",
     "markdown-preview-enhanced.codeBlockTheme": "pen-paper-coffee.css",
     "markdown-preview-enhanced.pandocPath": "D:\\Apps\\Quarto\\bin\\tools\\pandoc.exe",
+    "markdown-table-formatter.markdownGrammarScopes": [
+        "markdown",
+        "quarto",
+        "rmd"
+    ],
     "notebook.cellToolbarLocation": {
         "default": "right",
         "jupyter-notebook": "left"
@@ -390,26 +396,36 @@
     "ruff.lint.preview": true,
     "ruff.nativeServer": true,
     "ruff.showSyntaxErrors": true,
+    "sort-json.settings.sortLevel": 1,
+    "terminal.integrated.allowedLinkSchemes": [
+        "docker-desktop",
+        "file",
+        "http",
+        "https",
+        "mailto",
+        "vscode",
+        "vscode-insiders"
+    ],
     "terminal.integrated.enableMultiLinePasteWarning": "never",
     "terminal.integrated.enablePersistentSessions": false,
     "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
     "terminal.integrated.sendKeybindingsToShell": true,
     "ty.inlayHints.callArgumentNames": false,
     "ty.inlayHints.variableTypes": false,
+    "versionlens.pypi.dependencyProperties": [
+        "dependency-groups.*",
+        "dev-packages",
+        "packages",
+        "project",
+        "project.optional-dependencies",
+        "tool.poetry.dependencies",
+        "tool.poetry.group.*.dependencies"
+    ],
     "versionlens.suggestions.showOnStartup": true,
     "vsicons.dontShowNewVersionMessage": true,
     "vsicons.presets.foldersAllDefaultIcon": true,
     "vsicons.presets.jsonOfficial": true,
     "workbench.colorTheme": "Monokai++",
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.tree.renderIndentGuides": "always",
-    "versionlens.pypi.dependencyProperties": [
-        "project",
-        "packages",
-        "dev-packages",
-        "tool.poetry.dependencies",
-        "tool.poetry.group.*.dependencies",
-        "project.optional-dependencies",
-        "dependency-groups.*"
-    ]
+    "workbench.tree.renderIndentGuides": "always"
 }
