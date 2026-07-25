@@ -1377,6 +1377,7 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             break
         }
         'uv;check' {
+            [CompletionResult]::new('--package', '--package', [CompletionResultType]::ParameterName, 'Check specific packages in the workspace')
             [CompletionResult]::new('--script', '--script', [CompletionResultType]::ParameterName, 'Run checks for the specified PEP 723 Python script, rather than the current project')
             [CompletionResult]::new('--extra', '--extra', [CompletionResultType]::ParameterName, 'Include optional dependencies from the specified extra name')
             [CompletionResult]::new('--no-extra', '--no-extra', [CompletionResultType]::ParameterName, 'Exclude the specified optional dependencies, if `--all-extras` is supplied')
@@ -1422,6 +1423,7 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--directory', '--directory', [CompletionResultType]::ParameterName, 'Change to the given directory prior to running the command')
             [CompletionResult]::new('--project', '--project', [CompletionResultType]::ParameterName, 'Discover a project in the given directory')
             [CompletionResult]::new('--config-file', '--config-file', [CompletionResultType]::ParameterName, 'The path to a `uv.toml` file to use for configuration')
+            [CompletionResult]::new('--all-packages', '--all-packages', [CompletionResultType]::ParameterName, 'Check all packages in the workspace')
             [CompletionResult]::new('--all-extras', '--all-extras', [CompletionResultType]::ParameterName, 'Include all optional dependencies')
             [CompletionResult]::new('--no-all-extras', '--no-all-extras', [CompletionResultType]::ParameterName, 'no-all-extras')
             [CompletionResult]::new('--dev', '--dev', [CompletionResultType]::ParameterName, 'Include the development dependency group [env: UV_DEV=]')
@@ -3682,6 +3684,7 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--refresh', '--refresh', [CompletionResultType]::ParameterName, 'Refresh all cached data')
             [CompletionResult]::new('--no-refresh', '--no-refresh', [CompletionResultType]::ParameterName, 'no-refresh')
             [CompletionResult]::new('--sync', '--sync', [CompletionResultType]::ParameterName, 'Sync the environment to include module ownership metadata in the output')
+            [CompletionResult]::new('--active', '--active', [CompletionResultType]::ParameterName, 'Sync dependencies to the active virtual environment')
             [CompletionResult]::new('-n', '-n', [CompletionResultType]::ParameterName, 'Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation')
             [CompletionResult]::new('--no-cache', '--no-cache', [CompletionResultType]::ParameterName, 'Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation')
             [CompletionResult]::new('--managed-python', '--managed-python', [CompletionResultType]::ParameterName, 'Require use of uv-managed Python versions [env: UV_MANAGED_PYTHON=]')
