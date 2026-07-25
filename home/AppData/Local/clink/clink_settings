@@ -1,3 +1,7 @@
+# name: A .clinkprompt file to use for the prompt
+# type: string
+clink.customprompt = C:\Program Files (x86)\clink\themes\oh-my-posh.clinkprompt
+
 # name: Selects default key bindings
 # type: enum
 # options: bash,windows
@@ -94,6 +98,22 @@ color.selected_completion = sgr 7
 # name: Selection color
 # type: color
 color.selection = sgr 38;5;16;48;5;179
+
+# name: Color for dim text in the suggestion list header
+# type: color
+color.suggestionlist_dim = sgr 38;5;242
+
+# name: Color for highlight in the suggestion list
+# type: color
+color.suggestionlist_highlight = sgr 38;5;87
+
+# name: Color for markup in the suggestion list
+# type: color
+color.suggestionlist_markup = sgr 38;2;253;174;31
+
+# name: Color for the current selected suggestion
+# type: color
+color.suggestionlist_selected = sgr 48;5;238
 
 # name: Unexpected argument color
 # type: color
