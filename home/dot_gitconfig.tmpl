@@ -20,6 +20,8 @@
     path = delta.gitconfig
     path = darcubox.gitconfig
     path = maintenance.gitconfig
+    path = cyberdream-light.gitconfig
+    path = cyberdream.gitconfig
 [pretty]
     extended = format:%C(bold blue)%h% C(dim white)- %an %C(bold green)%ad%C(auto)%d%n %C(bold white)%s
     alt = format:%C(yellow)%h %C(green)%ad %C(cyan)[%an] %C(reset)%s %C(auto)%d
@@ -75,6 +77,7 @@
     lnd = log -P --author='^((?!dependabot).*)$'
 
     # History
+    hf = history fixup
     hr = history reword
     hs = history split
 
@@ -110,6 +113,10 @@
     ## Merge
     mffo = merge --ff-only
     conflicts = !git ls-files | rg -l -e '^<{6}' | rg -l -e '^={6}' | rg -l -e '^>{6}'
+
+    # Hunk
+    hdiff = -c core.pager=\"hunk pager\" diff
+    hshow = -c core.pager=\"hunk pager\" show
 [blame]
     coloring = highlightRecent
     markIgnoredLines = true
@@ -259,6 +266,7 @@
     schedule = weekly
 [maintenance "worktree-prune"]
     enabled = true
+    schedule = weekly
 [credential]
     helper = C:/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
 [credential "https://github.com"]
