@@ -1,0 +1,315 @@
+
+using namespace System.Management.Automation
+using namespace System.Management.Automation.Language
+
+Register-ArgumentCompleter -Native -CommandName 'ast-grep.exe' -ScriptBlock {
+    param($wordToComplete, $commandAst, $cursorPosition)
+
+    $commandElements = $commandAst.CommandElements
+    $command = @(
+        'ast-grep.exe'
+        for ($i = 1; $i -lt $commandElements.Count; $i++) {
+            $element = $commandElements[$i]
+            if ($element -isnot [StringConstantExpressionAst] -or
+                $element.StringConstantType -ne [StringConstantType]::BareWord -or
+                $element.Value.StartsWith('-') -or
+                $element.Value -eq $wordToComplete) {
+                break
+        }
+        $element.Value
+    }) -join ';'
+
+    $completions = @(switch ($command) {
+        'ast-grep.exe' {
+            [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
+            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Print version')
+            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Print version')
+            [CompletionResult]::new('run', 'run', [CompletionResultType]::ParameterValue, 'Run one time search or rewrite in command line. (default command)')
+            [CompletionResult]::new('scan', 'scan', [CompletionResultType]::ParameterValue, 'Scan and rewrite code by configuration')
+            [CompletionResult]::new('test', 'test', [CompletionResultType]::ParameterValue, 'Test ast-grep rules')
+            [CompletionResult]::new('new', 'new', [CompletionResultType]::ParameterValue, 'Create new ast-grep project or items like rules/tests')
+            [CompletionResult]::new('lsp', 'lsp', [CompletionResultType]::ParameterValue, 'Start language server')
+            [CompletionResult]::new('outline', 'outline', [CompletionResultType]::ParameterValue, 'Explore code structure for symbols, imports, exports, and members')
+            [CompletionResult]::new('completions', 'completions', [CompletionResultType]::ParameterValue, 'Generate shell completion script')
+            [CompletionResult]::new('help', 'help', [CompletionResultType]::ParameterValue, 'Print this message or the help of the given subcommand(s)')
+            break
+        }
+        'ast-grep.exe;run' {
+            [CompletionResult]::new('-p', '-p', [CompletionResultType]::ParameterName, 'AST pattern to match')
+            [CompletionResult]::new('--pattern', '--pattern', [CompletionResultType]::ParameterName, 'AST pattern to match')
+            [CompletionResult]::new('--selector', '--selector', [CompletionResultType]::ParameterName, 'AST kind to extract sub-part of pattern to match')
+            [CompletionResult]::new('--strictness', '--strictness', [CompletionResultType]::ParameterName, 'The strictness of the pattern')
+            [CompletionResult]::new('-k', '-k', [CompletionResultType]::ParameterName, 'AST kind to match')
+            [CompletionResult]::new('--kind', '--kind', [CompletionResultType]::ParameterName, 'AST kind to match')
+            [CompletionResult]::new('-r', '-r', [CompletionResultType]::ParameterName, 'String to replace the matched AST node')
+            [CompletionResult]::new('--rewrite', '--rewrite', [CompletionResultType]::ParameterName, 'String to replace the matched AST node')
+            [CompletionResult]::new('-l', '-l', [CompletionResultType]::ParameterName, 'The language of the pattern. Supported languages are: [Bash, C, Cpp, CSharp, Css, Dart, Elixir, Go, Haskell, Hcl, Html, Java, JavaScript, Json, Kotlin, Lua, Markdown, Nix, Php, Python, Ruby, Rust, Scala, Solidity, Swift, Tsx, TypeScript, Yaml]')
+            [CompletionResult]::new('--lang', '--lang', [CompletionResultType]::ParameterName, 'The language of the pattern. Supported languages are: [Bash, C, Cpp, CSharp, Css, Dart, Elixir, Go, Haskell, Hcl, Html, Java, JavaScript, Json, Kotlin, Lua, Markdown, Nix, Php, Python, Ruby, Rust, Scala, Solidity, Swift, Tsx, TypeScript, Yaml]')
+            [CompletionResult]::new('--debug-query', '--debug-query', [CompletionResultType]::ParameterName, 'Print query pattern''s tree-sitter AST. Requires lang be set explicitly')
+            [CompletionResult]::new('--no-ignore', '--no-ignore', [CompletionResultType]::ParameterName, 'Do not respect hidden file system or ignore files (.gitignore, .ignore, etc.)')
+            [CompletionResult]::new('--globs', '--globs', [CompletionResultType]::ParameterName, 'Include or exclude file paths')
+            [CompletionResult]::new('-j', '-j', [CompletionResultType]::ParameterName, 'Set the approximate number of threads to use')
+            [CompletionResult]::new('--threads', '--threads', [CompletionResultType]::ParameterName, 'Set the approximate number of threads to use')
+            [CompletionResult]::new('--json', '--json', [CompletionResultType]::ParameterName, 'Output matches in structured JSON')
+            [CompletionResult]::new('--color', '--color', [CompletionResultType]::ParameterName, 'Controls output color')
+            [CompletionResult]::new('--inspect', '--inspect', [CompletionResultType]::ParameterName, 'Inspect information for file/rule discovery and scanning')
+            [CompletionResult]::new('-A', '-A ', [CompletionResultType]::ParameterName, 'Show NUM lines after each match')
+            [CompletionResult]::new('--after', '--after', [CompletionResultType]::ParameterName, 'Show NUM lines after each match')
+            [CompletionResult]::new('-B', '-B ', [CompletionResultType]::ParameterName, 'Show NUM lines before each match')
+            [CompletionResult]::new('--before', '--before', [CompletionResultType]::ParameterName, 'Show NUM lines before each match')
+            [CompletionResult]::new('-C', '-C ', [CompletionResultType]::ParameterName, 'Show NUM lines around each match')
+            [CompletionResult]::new('--context', '--context', [CompletionResultType]::ParameterName, 'Show NUM lines around each match')
+            [CompletionResult]::new('--heading', '--heading', [CompletionResultType]::ParameterName, 'Controls whether to print the file name as heading')
+            [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
+            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
+            [CompletionResult]::new('--follow', '--follow', [CompletionResultType]::ParameterName, 'Follow symbolic links')
+            [CompletionResult]::new('--stdin', '--stdin', [CompletionResultType]::ParameterName, 'Enable search code from StdIn')
+            [CompletionResult]::new('-i', '-i', [CompletionResultType]::ParameterName, 'Start interactive edit session')
+            [CompletionResult]::new('--interactive', '--interactive', [CompletionResultType]::ParameterName, 'Start interactive edit session')
+            [CompletionResult]::new('-U', '-U ', [CompletionResultType]::ParameterName, 'Apply all rewrite without confirmation if true')
+            [CompletionResult]::new('--update-all', '--update-all', [CompletionResultType]::ParameterName, 'Apply all rewrite without confirmation if true')
+            [CompletionResult]::new('--files-with-matches', '--files-with-matches', [CompletionResultType]::ParameterName, 'Print only the paths with at least one match and suppress match contents')
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            break
+        }
+        'ast-grep.exe;scan' {
+            [CompletionResult]::new('-r', '-r', [CompletionResultType]::ParameterName, 'Scan the codebase with the single rule located at the path RULE_FILE')
+            [CompletionResult]::new('--rule', '--rule', [CompletionResultType]::ParameterName, 'Scan the codebase with the single rule located at the path RULE_FILE')
+            [CompletionResult]::new('--inline-rules', '--inline-rules', [CompletionResultType]::ParameterName, 'Scan the codebase with a rule defined by the provided RULE_TEXT')
+            [CompletionResult]::new('--format', '--format', [CompletionResultType]::ParameterName, 'Output warning/error messages in different formats')
+            [CompletionResult]::new('--report-style', '--report-style', [CompletionResultType]::ParameterName, 'report-style')
+            [CompletionResult]::new('--filter', '--filter', [CompletionResultType]::ParameterName, 'Scan the codebase with rules with ids matching REGEX')
+            [CompletionResult]::new('--error', '--error', [CompletionResultType]::ParameterName, 'Set rule severity to error')
+            [CompletionResult]::new('--warning', '--warning', [CompletionResultType]::ParameterName, 'Set rule severity to warning')
+            [CompletionResult]::new('--info', '--info', [CompletionResultType]::ParameterName, 'Set rule severity to info')
+            [CompletionResult]::new('--hint', '--hint', [CompletionResultType]::ParameterName, 'Set rule severity to hint')
+            [CompletionResult]::new('--off', '--off', [CompletionResultType]::ParameterName, 'Turn off rule')
+            [CompletionResult]::new('--no-ignore', '--no-ignore', [CompletionResultType]::ParameterName, 'Do not respect hidden file system or ignore files (.gitignore, .ignore, etc.)')
+            [CompletionResult]::new('--globs', '--globs', [CompletionResultType]::ParameterName, 'Include or exclude file paths')
+            [CompletionResult]::new('-j', '-j', [CompletionResultType]::ParameterName, 'Set the approximate number of threads to use')
+            [CompletionResult]::new('--threads', '--threads', [CompletionResultType]::ParameterName, 'Set the approximate number of threads to use')
+            [CompletionResult]::new('--json', '--json', [CompletionResultType]::ParameterName, 'Output matches in structured JSON')
+            [CompletionResult]::new('--color', '--color', [CompletionResultType]::ParameterName, 'Controls output color')
+            [CompletionResult]::new('--inspect', '--inspect', [CompletionResultType]::ParameterName, 'Inspect information for file/rule discovery and scanning')
+            [CompletionResult]::new('-A', '-A ', [CompletionResultType]::ParameterName, 'Show NUM lines after each match')
+            [CompletionResult]::new('--after', '--after', [CompletionResultType]::ParameterName, 'Show NUM lines after each match')
+            [CompletionResult]::new('-B', '-B ', [CompletionResultType]::ParameterName, 'Show NUM lines before each match')
+            [CompletionResult]::new('--before', '--before', [CompletionResultType]::ParameterName, 'Show NUM lines before each match')
+            [CompletionResult]::new('-C', '-C ', [CompletionResultType]::ParameterName, 'Show NUM lines around each match')
+            [CompletionResult]::new('--context', '--context', [CompletionResultType]::ParameterName, 'Show NUM lines around each match')
+            [CompletionResult]::new('--max-results', '--max-results', [CompletionResultType]::ParameterName, 'Show at most NUM results and stop running once the limit is reached')
+            [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
+            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
+            [CompletionResult]::new('--include-metadata', '--include-metadata', [CompletionResultType]::ParameterName, 'Include rule metadata in the json output')
+            [CompletionResult]::new('--follow', '--follow', [CompletionResultType]::ParameterName, 'Follow symbolic links')
+            [CompletionResult]::new('--stdin', '--stdin', [CompletionResultType]::ParameterName, 'Enable search code from StdIn')
+            [CompletionResult]::new('-i', '-i', [CompletionResultType]::ParameterName, 'Start interactive edit session')
+            [CompletionResult]::new('--interactive', '--interactive', [CompletionResultType]::ParameterName, 'Start interactive edit session')
+            [CompletionResult]::new('-U', '-U ', [CompletionResultType]::ParameterName, 'Apply all rewrite without confirmation if true')
+            [CompletionResult]::new('--update-all', '--update-all', [CompletionResultType]::ParameterName, 'Apply all rewrite without confirmation if true')
+            [CompletionResult]::new('--files-with-matches', '--files-with-matches', [CompletionResultType]::ParameterName, 'Print only the paths with at least one match and suppress match contents')
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            break
+        }
+        'ast-grep.exe;test' {
+            [CompletionResult]::new('-t', '-t', [CompletionResultType]::ParameterName, 'the directories to search test YAML files')
+            [CompletionResult]::new('--test-dir', '--test-dir', [CompletionResultType]::ParameterName, 'the directories to search test YAML files')
+            [CompletionResult]::new('--snapshot-dir', '--snapshot-dir', [CompletionResultType]::ParameterName, 'Specify the directory name storing snapshots. Default to __snapshots__')
+            [CompletionResult]::new('-f', '-f', [CompletionResultType]::ParameterName, 'Only run rule test cases that matches REGEX')
+            [CompletionResult]::new('--filter', '--filter', [CompletionResultType]::ParameterName, 'Only run rule test cases that matches REGEX')
+            [CompletionResult]::new('--color', '--color', [CompletionResultType]::ParameterName, 'Controls output color')
+            [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
+            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
+            [CompletionResult]::new('--skip-snapshot-tests', '--skip-snapshot-tests', [CompletionResultType]::ParameterName, 'Only check if the test code is valid, without checking rule output. Turn it on when you want to ignore the output of rules. Conflicts with --update-all')
+            [CompletionResult]::new('-U', '-U ', [CompletionResultType]::ParameterName, 'Update the content of all snapshots that have changed in test. Conflicts with --skip-snapshot-tests')
+            [CompletionResult]::new('--update-all', '--update-all', [CompletionResultType]::ParameterName, 'Update the content of all snapshots that have changed in test. Conflicts with --skip-snapshot-tests')
+            [CompletionResult]::new('-i', '-i', [CompletionResultType]::ParameterName, 'Start an interactive review to update snapshots selectively')
+            [CompletionResult]::new('--interactive', '--interactive', [CompletionResultType]::ParameterName, 'Start an interactive review to update snapshots selectively')
+            [CompletionResult]::new('--include-off', '--include-off', [CompletionResultType]::ParameterName, 'Include `severity:off` rules in test')
+            [CompletionResult]::new('--follow', '--follow', [CompletionResultType]::ParameterName, 'Follow symbolic links while searching test YAML files')
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            break
+        }
+        'ast-grep.exe;new' {
+            [CompletionResult]::new('-l', '-l', [CompletionResultType]::ParameterName, 'The language of the item to create')
+            [CompletionResult]::new('--lang', '--lang', [CompletionResultType]::ParameterName, 'The language of the item to create')
+            [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
+            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
+            [CompletionResult]::new('-y', '-y', [CompletionResultType]::ParameterName, 'Accept all default options without interactive input during creation')
+            [CompletionResult]::new('--yes', '--yes', [CompletionResultType]::ParameterName, 'Accept all default options without interactive input during creation')
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('project', 'project', [CompletionResultType]::ParameterValue, 'Create an new project by scaffolding')
+            [CompletionResult]::new('rule', 'rule', [CompletionResultType]::ParameterValue, 'Create a new rule')
+            [CompletionResult]::new('test', 'test', [CompletionResultType]::ParameterValue, 'Create a new test case')
+            [CompletionResult]::new('util', 'util', [CompletionResultType]::ParameterValue, 'Create a new global utility rule')
+            [CompletionResult]::new('help', 'help', [CompletionResultType]::ParameterValue, 'Print this message or the help of the given subcommand(s)')
+            break
+        }
+        'ast-grep.exe;new;project' {
+            [CompletionResult]::new('-l', '-l', [CompletionResultType]::ParameterName, 'The language of the item to create')
+            [CompletionResult]::new('--lang', '--lang', [CompletionResultType]::ParameterName, 'The language of the item to create')
+            [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
+            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
+            [CompletionResult]::new('-y', '-y', [CompletionResultType]::ParameterName, 'Accept all default options without interactive input during creation')
+            [CompletionResult]::new('--yes', '--yes', [CompletionResultType]::ParameterName, 'Accept all default options without interactive input during creation')
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            break
+        }
+        'ast-grep.exe;new;rule' {
+            [CompletionResult]::new('-l', '-l', [CompletionResultType]::ParameterName, 'The language of the item to create')
+            [CompletionResult]::new('--lang', '--lang', [CompletionResultType]::ParameterName, 'The language of the item to create')
+            [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
+            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
+            [CompletionResult]::new('-y', '-y', [CompletionResultType]::ParameterName, 'Accept all default options without interactive input during creation')
+            [CompletionResult]::new('--yes', '--yes', [CompletionResultType]::ParameterName, 'Accept all default options without interactive input during creation')
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            break
+        }
+        'ast-grep.exe;new;test' {
+            [CompletionResult]::new('-l', '-l', [CompletionResultType]::ParameterName, 'The language of the item to create')
+            [CompletionResult]::new('--lang', '--lang', [CompletionResultType]::ParameterName, 'The language of the item to create')
+            [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
+            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
+            [CompletionResult]::new('-y', '-y', [CompletionResultType]::ParameterName, 'Accept all default options without interactive input during creation')
+            [CompletionResult]::new('--yes', '--yes', [CompletionResultType]::ParameterName, 'Accept all default options without interactive input during creation')
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            break
+        }
+        'ast-grep.exe;new;util' {
+            [CompletionResult]::new('-l', '-l', [CompletionResultType]::ParameterName, 'The language of the item to create')
+            [CompletionResult]::new('--lang', '--lang', [CompletionResultType]::ParameterName, 'The language of the item to create')
+            [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
+            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
+            [CompletionResult]::new('-y', '-y', [CompletionResultType]::ParameterName, 'Accept all default options without interactive input during creation')
+            [CompletionResult]::new('--yes', '--yes', [CompletionResultType]::ParameterName, 'Accept all default options without interactive input during creation')
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            break
+        }
+        'ast-grep.exe;new;help' {
+            [CompletionResult]::new('project', 'project', [CompletionResultType]::ParameterValue, 'Create an new project by scaffolding')
+            [CompletionResult]::new('rule', 'rule', [CompletionResultType]::ParameterValue, 'Create a new rule')
+            [CompletionResult]::new('test', 'test', [CompletionResultType]::ParameterValue, 'Create a new test case')
+            [CompletionResult]::new('util', 'util', [CompletionResultType]::ParameterValue, 'Create a new global utility rule')
+            [CompletionResult]::new('help', 'help', [CompletionResultType]::ParameterValue, 'Print this message or the help of the given subcommand(s)')
+            break
+        }
+        'ast-grep.exe;new;help;project' {
+            break
+        }
+        'ast-grep.exe;new;help;rule' {
+            break
+        }
+        'ast-grep.exe;new;help;test' {
+            break
+        }
+        'ast-grep.exe;new;help;util' {
+            break
+        }
+        'ast-grep.exe;new;help;help' {
+            break
+        }
+        'ast-grep.exe;lsp' {
+            [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
+            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help')
+            break
+        }
+        'ast-grep.exe;outline' {
+            [CompletionResult]::new('-l', '-l', [CompletionResultType]::ParameterName, 'Specify the input language')
+            [CompletionResult]::new('--lang', '--lang', [CompletionResultType]::ParameterName, 'Specify the input language')
+            [CompletionResult]::new('--json', '--json', [CompletionResultType]::ParameterName, 'Output outline entries in structured JSON')
+            [CompletionResult]::new('--color', '--color', [CompletionResultType]::ParameterName, 'Controls output color')
+            [CompletionResult]::new('--items', '--items', [CompletionResultType]::ParameterName, 'Select which top-level items to include')
+            [CompletionResult]::new('--type', '--type', [CompletionResultType]::ParameterName, 'Keep only top-level items with these comma-separated symbol types')
+            [CompletionResult]::new('--match', '--match', [CompletionResultType]::ParameterName, 'Keep only top-level items matching this regex')
+            [CompletionResult]::new('--view', '--view', [CompletionResultType]::ParameterName, 'Select the text presentation')
+            [CompletionResult]::new('--outline-rules', '--outline-rules', [CompletionResultType]::ParameterName, 'Load additional outline extractor definitions')
+            [CompletionResult]::new('--no-ignore', '--no-ignore', [CompletionResultType]::ParameterName, 'Do not respect hidden file system or ignore files (.gitignore, .ignore, etc.)')
+            [CompletionResult]::new('--globs', '--globs', [CompletionResultType]::ParameterName, 'Include or exclude file paths')
+            [CompletionResult]::new('-j', '-j', [CompletionResultType]::ParameterName, 'Set the approximate number of threads to use')
+            [CompletionResult]::new('--threads', '--threads', [CompletionResultType]::ParameterName, 'Set the approximate number of threads to use')
+            [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
+            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
+            [CompletionResult]::new('--pub-members', '--pub-members', [CompletionResultType]::ParameterName, 'Display only public members in member views')
+            [CompletionResult]::new('--no-default-outline-rules', '--no-default-outline-rules', [CompletionResultType]::ParameterName, 'Do not load bundled outline extractor definitions')
+            [CompletionResult]::new('--follow', '--follow', [CompletionResultType]::ParameterName, 'Follow symbolic links')
+            [CompletionResult]::new('--stdin', '--stdin', [CompletionResultType]::ParameterName, 'Enable search code from StdIn')
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            break
+        }
+        'ast-grep.exe;completions' {
+            [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
+            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help')
+            break
+        }
+        'ast-grep.exe;help' {
+            [CompletionResult]::new('run', 'run', [CompletionResultType]::ParameterValue, 'Run one time search or rewrite in command line. (default command)')
+            [CompletionResult]::new('scan', 'scan', [CompletionResultType]::ParameterValue, 'Scan and rewrite code by configuration')
+            [CompletionResult]::new('test', 'test', [CompletionResultType]::ParameterValue, 'Test ast-grep rules')
+            [CompletionResult]::new('new', 'new', [CompletionResultType]::ParameterValue, 'Create new ast-grep project or items like rules/tests')
+            [CompletionResult]::new('lsp', 'lsp', [CompletionResultType]::ParameterValue, 'Start language server')
+            [CompletionResult]::new('outline', 'outline', [CompletionResultType]::ParameterValue, 'Explore code structure for symbols, imports, exports, and members')
+            [CompletionResult]::new('completions', 'completions', [CompletionResultType]::ParameterValue, 'Generate shell completion script')
+            [CompletionResult]::new('help', 'help', [CompletionResultType]::ParameterValue, 'Print this message or the help of the given subcommand(s)')
+            break
+        }
+        'ast-grep.exe;help;run' {
+            break
+        }
+        'ast-grep.exe;help;scan' {
+            break
+        }
+        'ast-grep.exe;help;test' {
+            break
+        }
+        'ast-grep.exe;help;new' {
+            [CompletionResult]::new('project', 'project', [CompletionResultType]::ParameterValue, 'Create an new project by scaffolding')
+            [CompletionResult]::new('rule', 'rule', [CompletionResultType]::ParameterValue, 'Create a new rule')
+            [CompletionResult]::new('test', 'test', [CompletionResultType]::ParameterValue, 'Create a new test case')
+            [CompletionResult]::new('util', 'util', [CompletionResultType]::ParameterValue, 'Create a new global utility rule')
+            break
+        }
+        'ast-grep.exe;help;new;project' {
+            break
+        }
+        'ast-grep.exe;help;new;rule' {
+            break
+        }
+        'ast-grep.exe;help;new;test' {
+            break
+        }
+        'ast-grep.exe;help;new;util' {
+            break
+        }
+        'ast-grep.exe;help;lsp' {
+            break
+        }
+        'ast-grep.exe;help;outline' {
+            break
+        }
+        'ast-grep.exe;help;completions' {
+            break
+        }
+        'ast-grep.exe;help;help' {
+            break
+        }
+    })
+
+    $completions.Where{ $_.CompletionText -like "$wordToComplete*" } |
+        Sort-Object -Property ListItemText
+}
