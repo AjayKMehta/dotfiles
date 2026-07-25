@@ -1,8 +1,6 @@
 #.schema https://panache.bz/reference/panache.schema.json
 cache = true
 flavor = "quarto"
-line-width = 120
-line-ending = "lf"
 
 [flavor-overrides]
 "**/README.md" = "gfm"
@@ -15,10 +13,12 @@ task-lists = true
 
 [extensions.gfm]
 task-lists = true
-multiline-tables = false
-tex-math-blocks = true # inline $…$ and fenced ``` math blocks
+multiline-tables = true
 
 [format]
+horizontal-rule-style = "preserve"
+line-width = 120
+line-ending = "lf"
 wrap = "reflow"  # Options: "reflow", "preserve", "sentence", "semantic"
 lang = "en"
 math-delimiter-style = "preserve"
