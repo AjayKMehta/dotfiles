@@ -2,12 +2,12 @@
 using namespace System.Management.Automation
 using namespace System.Management.Automation.Language
 
-Register-ArgumentCompleter -Native -CommandName 'ast-grep' -ScriptBlock {
+Register-ArgumentCompleter -Native -CommandName 'sg.exe' -ScriptBlock {
     param($wordToComplete, $commandAst, $cursorPosition)
 
     $commandElements = $commandAst.CommandElements
     $command = @(
-        'ast-grep'
+        'sg.exe'
         for ($i = 1; $i -lt $commandElements.Count; $i++) {
             $element = $commandElements[$i]
             if ($element -isnot [StringConstantExpressionAst] -or
@@ -20,7 +20,7 @@ Register-ArgumentCompleter -Native -CommandName 'ast-grep' -ScriptBlock {
     }) -join ';'
 
     $completions = @(switch ($command) {
-        'ast-grep' {
+        'sg.exe' {
             [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
             [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
@@ -37,7 +37,7 @@ Register-ArgumentCompleter -Native -CommandName 'ast-grep' -ScriptBlock {
             [CompletionResult]::new('help', 'help', [CompletionResultType]::ParameterValue, 'Print this message or the help of the given subcommand(s)')
             break
         }
-        'ast-grep;run' {
+        'sg.exe;run' {
             [CompletionResult]::new('-p', '-p', [CompletionResultType]::ParameterName, 'AST pattern to match')
             [CompletionResult]::new('--pattern', '--pattern', [CompletionResultType]::ParameterName, 'AST pattern to match')
             [CompletionResult]::new('--selector', '--selector', [CompletionResultType]::ParameterName, 'AST kind to extract sub-part of pattern to match')
@@ -76,7 +76,7 @@ Register-ArgumentCompleter -Native -CommandName 'ast-grep' -ScriptBlock {
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
             break
         }
-        'ast-grep;scan' {
+        'sg.exe;scan' {
             [CompletionResult]::new('-r', '-r', [CompletionResultType]::ParameterName, 'Scan the codebase with the single rule located at the path RULE_FILE')
             [CompletionResult]::new('--rule', '--rule', [CompletionResultType]::ParameterName, 'Scan the codebase with the single rule located at the path RULE_FILE')
             [CompletionResult]::new('--inline-rules', '--inline-rules', [CompletionResultType]::ParameterName, 'Scan the codebase with a rule defined by the provided RULE_TEXT')
@@ -116,7 +116,7 @@ Register-ArgumentCompleter -Native -CommandName 'ast-grep' -ScriptBlock {
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
             break
         }
-        'ast-grep;test' {
+        'sg.exe;test' {
             [CompletionResult]::new('-t', '-t', [CompletionResultType]::ParameterName, 'the directories to search test YAML files')
             [CompletionResult]::new('--test-dir', '--test-dir', [CompletionResultType]::ParameterName, 'the directories to search test YAML files')
             [CompletionResult]::new('--snapshot-dir', '--snapshot-dir', [CompletionResultType]::ParameterName, 'Specify the directory name storing snapshots. Default to __snapshots__')
@@ -136,7 +136,7 @@ Register-ArgumentCompleter -Native -CommandName 'ast-grep' -ScriptBlock {
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
             break
         }
-        'ast-grep;new' {
+        'sg.exe;new' {
             [CompletionResult]::new('-l', '-l', [CompletionResultType]::ParameterName, 'The language of the item to create')
             [CompletionResult]::new('--lang', '--lang', [CompletionResultType]::ParameterName, 'The language of the item to create')
             [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
@@ -152,7 +152,7 @@ Register-ArgumentCompleter -Native -CommandName 'ast-grep' -ScriptBlock {
             [CompletionResult]::new('help', 'help', [CompletionResultType]::ParameterValue, 'Print this message or the help of the given subcommand(s)')
             break
         }
-        'ast-grep;new;project' {
+        'sg.exe;new;project' {
             [CompletionResult]::new('-l', '-l', [CompletionResultType]::ParameterName, 'The language of the item to create')
             [CompletionResult]::new('--lang', '--lang', [CompletionResultType]::ParameterName, 'The language of the item to create')
             [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
@@ -163,7 +163,7 @@ Register-ArgumentCompleter -Native -CommandName 'ast-grep' -ScriptBlock {
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
             break
         }
-        'ast-grep;new;rule' {
+        'sg.exe;new;rule' {
             [CompletionResult]::new('-l', '-l', [CompletionResultType]::ParameterName, 'The language of the item to create')
             [CompletionResult]::new('--lang', '--lang', [CompletionResultType]::ParameterName, 'The language of the item to create')
             [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
@@ -174,7 +174,7 @@ Register-ArgumentCompleter -Native -CommandName 'ast-grep' -ScriptBlock {
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
             break
         }
-        'ast-grep;new;test' {
+        'sg.exe;new;test' {
             [CompletionResult]::new('-l', '-l', [CompletionResultType]::ParameterName, 'The language of the item to create')
             [CompletionResult]::new('--lang', '--lang', [CompletionResultType]::ParameterName, 'The language of the item to create')
             [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
@@ -185,7 +185,7 @@ Register-ArgumentCompleter -Native -CommandName 'ast-grep' -ScriptBlock {
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
             break
         }
-        'ast-grep;new;util' {
+        'sg.exe;new;util' {
             [CompletionResult]::new('-l', '-l', [CompletionResultType]::ParameterName, 'The language of the item to create')
             [CompletionResult]::new('--lang', '--lang', [CompletionResultType]::ParameterName, 'The language of the item to create')
             [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
@@ -196,7 +196,7 @@ Register-ArgumentCompleter -Native -CommandName 'ast-grep' -ScriptBlock {
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
             break
         }
-        'ast-grep;new;help' {
+        'sg.exe;new;help' {
             [CompletionResult]::new('project', 'project', [CompletionResultType]::ParameterValue, 'Create an new project by scaffolding')
             [CompletionResult]::new('rule', 'rule', [CompletionResultType]::ParameterValue, 'Create a new rule')
             [CompletionResult]::new('test', 'test', [CompletionResultType]::ParameterValue, 'Create a new test case')
@@ -204,29 +204,29 @@ Register-ArgumentCompleter -Native -CommandName 'ast-grep' -ScriptBlock {
             [CompletionResult]::new('help', 'help', [CompletionResultType]::ParameterValue, 'Print this message or the help of the given subcommand(s)')
             break
         }
-        'ast-grep;new;help;project' {
+        'sg.exe;new;help;project' {
             break
         }
-        'ast-grep;new;help;rule' {
+        'sg.exe;new;help;rule' {
             break
         }
-        'ast-grep;new;help;test' {
+        'sg.exe;new;help;test' {
             break
         }
-        'ast-grep;new;help;util' {
+        'sg.exe;new;help;util' {
             break
         }
-        'ast-grep;new;help;help' {
+        'sg.exe;new;help;help' {
             break
         }
-        'ast-grep;lsp' {
+        'sg.exe;lsp' {
             [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
             [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help')
             break
         }
-        'ast-grep;outline' {
+        'sg.exe;outline' {
             [CompletionResult]::new('-l', '-l', [CompletionResultType]::ParameterName, 'Specify the input language')
             [CompletionResult]::new('--lang', '--lang', [CompletionResultType]::ParameterName, 'Specify the input language')
             [CompletionResult]::new('--json', '--json', [CompletionResultType]::ParameterName, 'Output outline entries in structured JSON')
@@ -250,14 +250,14 @@ Register-ArgumentCompleter -Native -CommandName 'ast-grep' -ScriptBlock {
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
             break
         }
-        'ast-grep;completions' {
+        'sg.exe;completions' {
             [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
             [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Path to ast-grep root config, default is sgconfig.yml')
             [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help')
             [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help')
             break
         }
-        'ast-grep;help' {
+        'sg.exe;help' {
             [CompletionResult]::new('run', 'run', [CompletionResultType]::ParameterValue, 'Run one time search or rewrite in command line. (default command)')
             [CompletionResult]::new('scan', 'scan', [CompletionResultType]::ParameterValue, 'Scan and rewrite code by configuration')
             [CompletionResult]::new('test', 'test', [CompletionResultType]::ParameterValue, 'Test ast-grep rules')
@@ -268,44 +268,44 @@ Register-ArgumentCompleter -Native -CommandName 'ast-grep' -ScriptBlock {
             [CompletionResult]::new('help', 'help', [CompletionResultType]::ParameterValue, 'Print this message or the help of the given subcommand(s)')
             break
         }
-        'ast-grep;help;run' {
+        'sg.exe;help;run' {
             break
         }
-        'ast-grep;help;scan' {
+        'sg.exe;help;scan' {
             break
         }
-        'ast-grep;help;test' {
+        'sg.exe;help;test' {
             break
         }
-        'ast-grep;help;new' {
+        'sg.exe;help;new' {
             [CompletionResult]::new('project', 'project', [CompletionResultType]::ParameterValue, 'Create an new project by scaffolding')
             [CompletionResult]::new('rule', 'rule', [CompletionResultType]::ParameterValue, 'Create a new rule')
             [CompletionResult]::new('test', 'test', [CompletionResultType]::ParameterValue, 'Create a new test case')
             [CompletionResult]::new('util', 'util', [CompletionResultType]::ParameterValue, 'Create a new global utility rule')
             break
         }
-        'ast-grep;help;new;project' {
+        'sg.exe;help;new;project' {
             break
         }
-        'ast-grep;help;new;rule' {
+        'sg.exe;help;new;rule' {
             break
         }
-        'ast-grep;help;new;test' {
+        'sg.exe;help;new;test' {
             break
         }
-        'ast-grep;help;new;util' {
+        'sg.exe;help;new;util' {
             break
         }
-        'ast-grep;help;lsp' {
+        'sg.exe;help;lsp' {
             break
         }
-        'ast-grep;help;outline' {
+        'sg.exe;help;outline' {
             break
         }
-        'ast-grep;help;completions' {
+        'sg.exe;help;completions' {
             break
         }
-        'ast-grep;help;help' {
+        'sg.exe;help;help' {
             break
         }
     })
