@@ -67,16 +67,6 @@
         "when": "view.workbench.views.extensions.installed.visible"
     },
     {
-        "command": "emojisense.quickEmoji",
-        "key": "ctrl+alt+i",
-        "when": "editorTextFocus"
-    },
-    {
-        "command": "emojisense.quickEmojiTerminal",
-        "key": "ctrl+alt+i",
-        "when": "terminalFocus"
-    },
-    {
         "command": "-code-runner.runByLanguage",
         "key": "ctrl+alt+j"
     },
@@ -115,6 +105,15 @@
     {
         "command": "-workbench.debug.viewlet.action.addFunctionBreakpointAction",
         "key": "ctrl+b"
+    },
+    {
+        "command": "-workbench.action.toggleSidebarVisibility",
+        "key": "ctrl+b"
+    },
+    {
+        "command": "workbench.action.toggleSidebarVisibility",
+        "key": "ctrl+b",
+        "when": "editorLangId != 'markdown' && editorLangId != 'rmd' && editorLangId != 'quarto' && !editorTextFocus"
     },
     {
         "command": "-editor.action.copyLinesDownAction",
@@ -292,6 +291,11 @@
         "when": "editorTextFocus && !editorReadonly"
     },
     {
+        "command": "-markdown.extension.closePreview",
+        "key": "ctrl+shift+v",
+        "when": "activeWebviewPanelId == 'markdown.preview'"
+    },
+    {
         "command": "workbench.action.quickOpenPreviousRecentlyUsedEditor",
         "key": "ctrl+tab",
         "when": "!inEditorsPicker"
@@ -382,5 +386,35 @@
     {
         "key": "ctrl+alt+t",
         "command": "timeline.focus"
+    },
+    {
+        "key": "ctrl+alt+d",
+        "command": "insertDateString.insertDateTime",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+alt+i",
+        "command": "-insertDateString.insertOwnFormatDateTime",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+alt+i",
+        "command": "-emojisense.quickEmojitextTerminal",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+i",
+        "command": "-insertDateString.insertDateTime",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+i",
+        "command": "-quarto.insertCodeCell",
+        "when": "editorTextFocus && !findInputFocussed && !replaceInputFocussed && editorLangId == 'quarto'"
+    },
+    {
+        "key": "ctrl+shift+i",
+        "command": "-emojisense.quickEmojitext",
+        "when": "editorTextFocus"
     }
 ]

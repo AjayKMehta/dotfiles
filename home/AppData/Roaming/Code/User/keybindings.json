@@ -90,16 +90,6 @@
         "when": "view.workbench.views.extensions.installed.visible"
     },
     {
-        "command": "emojisense.quickEmoji",
-        "key": "ctrl+alt+i",
-        "when": "editorTextFocus"
-    },
-    {
-        "command": "emojisense.quickEmojiTerminal",
-        "key": "ctrl+alt+i",
-        "when": "terminalFocus"
-    },
-    {
         "command": "-code-runner.runByLanguage",
         "key": "ctrl+alt+j"
     },
@@ -215,7 +205,7 @@
     {
         "command": "workbench.action.openGlobalKeybindings",
         "key": "ctrl+k ctrl+s",
-        "when": "!isInDiffEditor"
+        "when": "!inDiffEditor"
     },
     {
         "command": "workbench.action.pinEditor",
@@ -273,10 +263,6 @@
         "when": "terminalFocus"
     },
     {
-        "command": "csharpsortusings.sortUsings",
-        "key": "ctrl+r ctrl+g"
-    },
-    {
         "command": "-workbench.action.zoomOut",
         "key": "ctrl+shift+-"
     },
@@ -332,24 +318,6 @@
         "command": "git.close",
         "key": "ctrl+shift+g w",
         "when": "view.workbench.scm.visible"
-    },
-    {
-        "args": {
-            "snippet": "```{r}\n${TM_SELECTED_TEXT}$0\n```"
-        },
-        "command": "editor.action.insertSnippet",
-        "key": "ctrl+shift+i",
-        "label": "input indicative of r markdown code chunk",
-        "when": "editorTextFocus && editorLangId == 'rmd'"
-    },
-    {
-        "args": {
-            "snippet": "$LINE_COMMENT %% "
-        },
-        "command": "editor.action.insertSnippet",
-        "key": "ctrl+shift+i",
-        "label": "input indicative of code chunk",
-        "when": "editorTextFocus && editorLangId == 'r'"
     },
     {
         "command": "-editor.action.deleteLines",
@@ -512,5 +480,35 @@
     {
         "key": "ctrl+alt+t",
         "command": "timeline.focus"
+    },
+    {
+        "key": "ctrl+alt+d",
+        "command": "insertDateString.insertDateTime",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+alt+i",
+        "command": "-insertDateString.insertOwnFormatDateTime",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+alt+i",
+        "command": "-emojisense.quickEmojitextTerminal",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+i",
+        "command": "-insertDateString.insertDateTime",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+i",
+        "command": "-quarto.insertCodeCell",
+        "when": "editorTextFocus && !findInputFocussed && !replaceInputFocussed && editorLangId == 'quarto'"
+    },
+    {
+        "key": "ctrl+shift+i",
+        "command": "-emojisense.quickEmojitext",
+        "when": "editorTextFocus"
     }
 ]
