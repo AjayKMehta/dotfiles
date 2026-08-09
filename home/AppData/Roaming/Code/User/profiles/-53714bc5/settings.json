@@ -425,7 +425,7 @@
     "vsicons.dontShowNewVersionMessage": true,
     "vsicons.presets.foldersAllDefaultIcon": true,
     "vsicons.presets.jsonOfficial": true,
-    "workbench.colorTheme": "Monokai++",
+    "workbench.colorTheme": "Evondev Dracula Normal Contrast",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.tree.renderIndentGuides": "always"
 }
