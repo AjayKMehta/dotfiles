@@ -105,13 +105,8 @@ function Set-PoshPrompt {
                     $CommandAst,
                     $FakeBoundParameters
                 )
-                $result = Get-ChildItem $env:POSH_THEMES_PATH -Filter "$WordToComplete*.omp.json" |
-                    ForEach-Object {
-                        $file = "'$($_.FullName)'"
-                        # 9 = ".omp.json".Length
-                        $name = $_.Name.Substring(0, $_.Name.Length - 9)
-                        [System.Management.Automation.CompletionResult]::new($file, $name, 'ParameterValue', $name)
-                    }
+
+                $result = '1_shell', 'm365princess', 'agnoster.minimal', 'agnoster', 'agnosterplus', 'aliens', 'amro','atomic', 'atomicbit', 'avit', 'blue-owl', 'blueish', 'bubbles', 'bubblesextra', 'bubblesline', 'capr4n', 'catppuccin', 'catppuccin_frappe', 'catppuccin_latte', 'catppuccin_macchiato', 'catppuccin_mocha', 'cert', 'chips', 'cinnamon', 'clean-detailed', 'cloud-context', 'cloud-native-azure', 'cobalt2', 'craver', 'darkblood', 'devious-diamonds', 'di4am0nd', 'dracula', 'easy-term', 'emodipt-extend', 'emodipt', 'fish', 'froczh', 'glowsticks', 'gmay', 'grandpa-style', 'gruvbox', 'half-life', 'honukai', 'hotstick.minimal', 'hul10', 'hunk', 'huvix', 'if_tea','illusi0n', 'iterm2', 'jandedobbeleer', 'jblab_2021', 'jonnychipz', 'jtracey93', 'jv_sitecorian', 'kushal',  'lambda', 'lambdageneration', 'larserikfinholt', 'lightgreen', 'marcduiker', 'markbull', 'material','microverse-power', 'mojada', 'montys', 'mt', 'multiverse-neon', 'negligible', 'neko', 'night-owl', 'nordtron', 'nu4a', 'onehalf.minimal', 'paradox', 'pararussel', 'patriksvensson', 'peru', 'pixelrobots', 'plague', 'poshmon', 'powerlevel10k_classic', 'powerlevel10k_lean', 'powerlevel10k_modern', 'powerlevel10k_rainbow', 'powerline', 'pure',  'quick-term', 'remk', 'robbyrussell', 'rudolfs-dark', 'rudolfs-light', 'sim-web', 'slim', 'slimfat', 'smoothie', 'sonicboom_dark', 'sonicboom_light', 'sorin', 'space', 'spaceship', 'star', 'stelbent-compact.minimal', 'stelbent.minimal', 'takuya', 'thecyberden', 'tiwahu', 'tokyo', 'tokyonight_storm', 'tonybaloney', 'unicorn', 'velvet', 'wholespace','wopian', 'xtoys', 'ys', 'zash' | % { [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_) }
 
                 $result += Get-ChildItem ~\oh-my-posh -Filter "$WordToComplete*.omp.*" |
                     ForEach-Object {
@@ -140,7 +135,7 @@ Set-PoshPrompt -Theme '~\oh-my-posh\cool.omp.json'
 
 # $env:FZF_DEFAULT_COMMAND = 'rg --files . 2> nul'
 
-
+# TODO: Add preview and ability to open in VS Code.
 function ifind() {
     fd | fzf --prompt 'All> ' --header 'CTRL-D: Directories / CTRL-F: Files' --bind 'ctrl-d:change-prompt(Directories> )+reload(fd --glob  * --type d)' --bind 'ctrl-f:change-prompt(Files> )+reload(fd --glob * --type f)'
 }
@@ -156,7 +151,7 @@ function rfv {
     $previewCmd = if ($NoPreview ) {
         ''
     } else {
-        " --preview 'bat --style=full --color=always --highlight-line {2} {1}' --preview-window '~4,+{2}+4/3,<80(up)'"
+        " --preview 'bat --style=full --color=always --highlight-line {2} {1}' --preview-window wrap-word '~4,+{2}+4/3,<80(up)'"
     }
 
     $bind = "--bind 'start:$reload' --bind 'change:$reload' --bind 'ctrl-o:execute:code --goto {1}:{2}:{3}'"
@@ -227,8 +222,6 @@ Import-Module -Name DockerCompletion, DockerComposeCompletion, DockerMachineComp
 # Nice formatting
 Import-Module Posh
 
-if ($env:TERM_PROGRAM -eq 'vscode') { . "$(code --locate-shell-integration-path pwsh)" }
-
 Import-Module Microsoft.PowerShell.SecretStore, Microsoft.PowerShell.SecretManagement
 
 $env:Path += ';D:\Apps\Ollama'
@@ -255,7 +248,6 @@ Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
 
 Invoke-Expression (& { zoxide init powershell | Out-String })
 
-# cd + custom logic based on the value of _ZO_ECHO.
 function global:__zoxide_cd {
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSAvoidUsingCmdletAliases', '', Justification = 'Required.')]
     param($dir, [bool] $literal)
@@ -286,6 +278,7 @@ function format-py {
     uvx ruff format $args
 }
 
+# . "$env:APPDATA\tirith\shell\lib\powershell-hook.ps1"
 
 # Add hook to handle changing location and setting .env, etc.
 # Inspired by https://github.com/PowerShell/PowerShell/issues/14484#issuecomment-1731647083
