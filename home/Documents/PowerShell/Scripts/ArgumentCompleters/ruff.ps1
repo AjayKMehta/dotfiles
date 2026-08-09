@@ -21,7 +21,8 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
 
     $completions = @(switch ($command) {
         'ruff' {
-            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option. Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')
+            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option (e.g., `--config "lint.line-length = 100"` or `--config "format.quote-style = ''single''"`). Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')
+            [CompletionResult]::new('--color', '--color', [CompletionResultType]::ParameterName, 'Control when colored output is used')
             [CompletionResult]::new('-v', '-v', [CompletionResultType]::ParameterName, 'Enable verbose logging')
             [CompletionResult]::new('--verbose', '--verbose', [CompletionResultType]::ParameterName, 'Enable verbose logging')
             [CompletionResult]::new('-q', '-q', [CompletionResultType]::ParameterName, 'Print diagnostics, but nothing else')
@@ -29,8 +30,8 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
             [CompletionResult]::new('-s', '-s', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
             [CompletionResult]::new('--silent', '--silent', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
             [CompletionResult]::new('--isolated', '--isolated', [CompletionResultType]::ParameterName, 'Ignore all configuration files')
-            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help')
-            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help')
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
             [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Print version')
             [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Print version')
             [CompletionResult]::new('check', 'check', [CompletionResultType]::ParameterValue, 'Run Ruff on the given files or directories')
@@ -68,7 +69,10 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
             [CompletionResult]::new('--cache-dir', '--cache-dir', [CompletionResultType]::ParameterName, 'Path to the cache directory')
             [CompletionResult]::new('--stdin-filename', '--stdin-filename', [CompletionResultType]::ParameterName, 'The name of the file when passing it through stdin')
             [CompletionResult]::new('--extension', '--extension', [CompletionResultType]::ParameterName, 'List of mappings from file extension to language (one of `python`, `ipynb`, `pyi`). For example, to treat `.ipy` files as IPython notebooks, use `--extension ipy:ipynb`')
-            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option. Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')
+            [CompletionResult]::new('--add-noqa', '--add-noqa', [CompletionResultType]::ParameterName, 'Enable automatic additions of `noqa` directives to failing lines. Optionally provide a reason to append after the codes')
+            [CompletionResult]::new('--add-ignore', '--add-ignore', [CompletionResultType]::ParameterName, 'Enable automatic additions of `ruff:ignore` comments to failing lines. Optionally provide a reason to append after the rule names. Requires preview mode')
+            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option (e.g., `--config "lint.line-length = 100"` or `--config "format.quote-style = ''single''"`). Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')
+            [CompletionResult]::new('--color', '--color', [CompletionResultType]::ParameterName, 'Control when colored output is used')
             [CompletionResult]::new('--fix', '--fix', [CompletionResultType]::ParameterName, 'Apply fixes to resolve lint violations. Use `--no-fix` to disable or `--unsafe-fixes` to include unsafe fixes')
             [CompletionResult]::new('--no-fix', '--no-fix', [CompletionResultType]::ParameterName, 'no-fix')
             [CompletionResult]::new('--unsafe-fixes', '--unsafe-fixes', [CompletionResultType]::ParameterName, 'Include fixes that may not retain the original intent of the code. Use `--no-unsafe-fixes` to disable')
@@ -93,7 +97,6 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
             [CompletionResult]::new('--exit-zero', '--exit-zero', [CompletionResultType]::ParameterName, 'Exit with status code "0", even upon detecting lint violations')
             [CompletionResult]::new('--exit-non-zero-on-fix', '--exit-non-zero-on-fix', [CompletionResultType]::ParameterName, 'Exit with a non-zero status code if any files were modified via fix, even if no lint violations remain')
             [CompletionResult]::new('--statistics', '--statistics', [CompletionResultType]::ParameterName, 'Show counts for every rule with at least one violation')
-            [CompletionResult]::new('--add-noqa', '--add-noqa', [CompletionResultType]::ParameterName, 'Enable automatic additions of `noqa` directives to failing lines')
             [CompletionResult]::new('--show-files', '--show-files', [CompletionResultType]::ParameterName, 'See the files Ruff will be run against with the current settings')
             [CompletionResult]::new('--show-settings', '--show-settings', [CompletionResultType]::ParameterName, 'See the settings Ruff will use to lint a given Python file')
             [CompletionResult]::new('-v', '-v', [CompletionResultType]::ParameterName, 'Enable verbose logging')
@@ -103,13 +106,14 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
             [CompletionResult]::new('-s', '-s', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
             [CompletionResult]::new('--silent', '--silent', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
             [CompletionResult]::new('--isolated', '--isolated', [CompletionResultType]::ParameterName, 'Ignore all configuration files')
-            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help')
-            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help')
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
             break
         }
         'ruff;rule' {
             [CompletionResult]::new('--output-format', '--output-format', [CompletionResultType]::ParameterName, 'Output format')
-            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option. Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')
+            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option (e.g., `--config "lint.line-length = 100"` or `--config "format.quote-style = ''single''"`). Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')
+            [CompletionResult]::new('--color', '--color', [CompletionResultType]::ParameterName, 'Control when colored output is used')
             [CompletionResult]::new('--all', '--all', [CompletionResultType]::ParameterName, 'Explain all rules')
             [CompletionResult]::new('-v', '-v', [CompletionResultType]::ParameterName, 'Enable verbose logging')
             [CompletionResult]::new('--verbose', '--verbose', [CompletionResultType]::ParameterName, 'Enable verbose logging')
@@ -118,13 +122,14 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
             [CompletionResult]::new('-s', '-s', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
             [CompletionResult]::new('--silent', '--silent', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
             [CompletionResult]::new('--isolated', '--isolated', [CompletionResultType]::ParameterName, 'Ignore all configuration files')
-            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help')
-            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help')
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
             break
         }
         'ruff;config' {
             [CompletionResult]::new('--output-format', '--output-format', [CompletionResultType]::ParameterName, 'Output format')
-            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option. Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')
+            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option (e.g., `--config "lint.line-length = 100"` or `--config "format.quote-style = ''single''"`). Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')
+            [CompletionResult]::new('--color', '--color', [CompletionResultType]::ParameterName, 'Control when colored output is used')
             [CompletionResult]::new('-v', '-v', [CompletionResultType]::ParameterName, 'Enable verbose logging')
             [CompletionResult]::new('--verbose', '--verbose', [CompletionResultType]::ParameterName, 'Enable verbose logging')
             [CompletionResult]::new('-q', '-q', [CompletionResultType]::ParameterName, 'Print diagnostics, but nothing else')
@@ -132,13 +137,14 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
             [CompletionResult]::new('-s', '-s', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
             [CompletionResult]::new('--silent', '--silent', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
             [CompletionResult]::new('--isolated', '--isolated', [CompletionResultType]::ParameterName, 'Ignore all configuration files')
-            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help')
-            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help')
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
             break
         }
         'ruff;linter' {
             [CompletionResult]::new('--output-format', '--output-format', [CompletionResultType]::ParameterName, 'Output format')
-            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option. Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')
+            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option (e.g., `--config "lint.line-length = 100"` or `--config "format.quote-style = ''single''"`). Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')
+            [CompletionResult]::new('--color', '--color', [CompletionResultType]::ParameterName, 'Control when colored output is used')
             [CompletionResult]::new('-v', '-v', [CompletionResultType]::ParameterName, 'Enable verbose logging')
             [CompletionResult]::new('--verbose', '--verbose', [CompletionResultType]::ParameterName, 'Enable verbose logging')
             [CompletionResult]::new('-q', '-q', [CompletionResultType]::ParameterName, 'Print diagnostics, but nothing else')
@@ -146,12 +152,13 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
             [CompletionResult]::new('-s', '-s', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
             [CompletionResult]::new('--silent', '--silent', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
             [CompletionResult]::new('--isolated', '--isolated', [CompletionResultType]::ParameterName, 'Ignore all configuration files')
-            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help')
-            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help')
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
             break
         }
         'ruff;clean' {
-            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option. Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')
+            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option (e.g., `--config "lint.line-length = 100"` or `--config "format.quote-style = ''single''"`). Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')
+            [CompletionResult]::new('--color', '--color', [CompletionResultType]::ParameterName, 'Control when colored output is used')
             [CompletionResult]::new('-v', '-v', [CompletionResultType]::ParameterName, 'Enable verbose logging')
             [CompletionResult]::new('--verbose', '--verbose', [CompletionResultType]::ParameterName, 'Enable verbose logging')
             [CompletionResult]::new('-q', '-q', [CompletionResultType]::ParameterName, 'Print diagnostics, but nothing else')
@@ -159,12 +166,13 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
             [CompletionResult]::new('-s', '-s', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
             [CompletionResult]::new('--silent', '--silent', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
             [CompletionResult]::new('--isolated', '--isolated', [CompletionResultType]::ParameterName, 'Ignore all configuration files')
-            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help')
-            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help')
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
             break
         }
         'ruff;generate-shell-completion' {
-            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option. Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')
+            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option (e.g., `--config "lint.line-length = 100"` or `--config "format.quote-style = ''single''"`). Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')
+            [CompletionResult]::new('--color', '--color', [CompletionResultType]::ParameterName, 'Control when colored output is used')
             [CompletionResult]::new('-v', '-v', [CompletionResultType]::ParameterName, 'Enable verbose logging')
             [CompletionResult]::new('--verbose', '--verbose', [CompletionResultType]::ParameterName, 'Enable verbose logging')
             [CompletionResult]::new('-q', '-q', [CompletionResultType]::ParameterName, 'Print diagnostics, but nothing else')
@@ -172,20 +180,22 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
             [CompletionResult]::new('-s', '-s', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
             [CompletionResult]::new('--silent', '--silent', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
             [CompletionResult]::new('--isolated', '--isolated', [CompletionResultType]::ParameterName, 'Ignore all configuration files')
-            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help')
-            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help')
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
             break
         }
         'ruff;format' {
             [CompletionResult]::new('--cache-dir', '--cache-dir', [CompletionResultType]::ParameterName, 'Path to the cache directory')
             [CompletionResult]::new('--exclude', '--exclude', [CompletionResultType]::ParameterName, 'List of paths, used to omit files and/or directories from analysis')
+            [CompletionResult]::new('--extend-exclude', '--extend-exclude', [CompletionResultType]::ParameterName, 'Like --exclude, but adds additional files and directories on top of those already excluded')
             [CompletionResult]::new('--line-length', '--line-length', [CompletionResultType]::ParameterName, 'Set the line-length')
             [CompletionResult]::new('--stdin-filename', '--stdin-filename', [CompletionResultType]::ParameterName, 'The name of the file when passing it through stdin')
             [CompletionResult]::new('--extension', '--extension', [CompletionResultType]::ParameterName, 'List of mappings from file extension to language (one of `python`, `ipynb`, `pyi`). For example, to treat `.ipy` files as IPython notebooks, use `--extension ipy:ipynb`')
             [CompletionResult]::new('--target-version', '--target-version', [CompletionResultType]::ParameterName, 'The minimum Python version that should be supported')
             [CompletionResult]::new('--range', '--range', [CompletionResultType]::ParameterName, 'When specified, Ruff will try to only format the code in the given range. It might be necessary to extend the start backwards or the end forwards, to fully enclose a logical line. The `<RANGE>` uses the format `<start_line>:<start_column>-<end_line>:<end_column>`.')
             [CompletionResult]::new('--output-format', '--output-format', [CompletionResultType]::ParameterName, 'Output serialization format for violations, when used with `--check`. The default serialization format is "full"')
-            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option. Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')
+            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option (e.g., `--config "lint.line-length = 100"` or `--config "format.quote-style = ''single''"`). Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')
+            [CompletionResult]::new('--color', '--color', [CompletionResultType]::ParameterName, 'Control when colored output is used')
             [CompletionResult]::new('--check', '--check', [CompletionResultType]::ParameterName, 'Avoid writing any formatted files back; instead, exit with a non-zero status code if any files would have been modified, and zero otherwise')
             [CompletionResult]::new('--diff', '--diff', [CompletionResultType]::ParameterName, 'Avoid writing any formatted files back; instead, exit with a non-zero status code and the difference between the current file and how the formatted file would look like')
             [CompletionResult]::new('-n', '-n', [CompletionResultType]::ParameterName, 'Disable cache reads')
@@ -209,7 +219,8 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
             break
         }
         'ruff;server' {
-            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option. Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')
+            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option (e.g., `--config "lint.line-length = 100"` or `--config "format.quote-style = ''single''"`). Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')
+            [CompletionResult]::new('--color', '--color', [CompletionResultType]::ParameterName, 'Control when colored output is used')
             [CompletionResult]::new('--preview', '--preview', [CompletionResultType]::ParameterName, 'Enable preview mode. Use `--no-preview` to disable')
             [CompletionResult]::new('--no-preview', '--no-preview', [CompletionResultType]::ParameterName, 'no-preview')
             [CompletionResult]::new('-v', '-v', [CompletionResultType]::ParameterName, 'Enable verbose logging')
@@ -224,7 +235,8 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
             break
         }
         'ruff;analyze' {
-            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option. Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')
+            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option (e.g., `--config "lint.line-length = 100"` or `--config "format.quote-style = ''single''"`). Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')
+            [CompletionResult]::new('--color', '--color', [CompletionResultType]::ParameterName, 'Control when colored output is used')
             [CompletionResult]::new('-v', '-v', [CompletionResultType]::ParameterName, 'Enable verbose logging')
             [CompletionResult]::new('--verbose', '--verbose', [CompletionResultType]::ParameterName, 'Enable verbose logging')
             [CompletionResult]::new('-q', '-q', [CompletionResultType]::ParameterName, 'Print diagnostics, but nothing else')
@@ -232,8 +244,8 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
             [CompletionResult]::new('-s', '-s', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
             [CompletionResult]::new('--silent', '--silent', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
             [CompletionResult]::new('--isolated', '--isolated', [CompletionResultType]::ParameterName, 'Ignore all configuration files')
-            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help')
-            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help')
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
             [CompletionResult]::new('graph', 'graph', [CompletionResultType]::ParameterValue, 'Generate a map of Python file dependencies or dependents')
             [CompletionResult]::new('help', 'help', [CompletionResultType]::ParameterValue, 'Print this message or the help of the given subcommand(s)')
             break
@@ -243,10 +255,13 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
             [CompletionResult]::new('--min-dots', '--min-dots', [CompletionResultType]::ParameterName, 'The minimum number of dots in a string import to consider it a valid import')
             [CompletionResult]::new('--target-version', '--target-version', [CompletionResultType]::ParameterName, 'The minimum Python version that should be supported')
             [CompletionResult]::new('--python', '--python', [CompletionResultType]::ParameterName, 'Path to a virtual environment to use for resolving additional dependencies')
-            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option. Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')
+            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option (e.g., `--config "lint.line-length = 100"` or `--config "format.quote-style = ''single''"`). Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')
+            [CompletionResult]::new('--color', '--color', [CompletionResultType]::ParameterName, 'Control when colored output is used')
             [CompletionResult]::new('--detect-string-imports', '--detect-string-imports', [CompletionResultType]::ParameterName, 'Attempt to detect imports from string literals')
             [CompletionResult]::new('--preview', '--preview', [CompletionResultType]::ParameterName, 'Enable preview mode. Use `--no-preview` to disable')
             [CompletionResult]::new('--no-preview', '--no-preview', [CompletionResultType]::ParameterName, 'no-preview')
+            [CompletionResult]::new('--type-checking-imports', '--type-checking-imports', [CompletionResultType]::ParameterName, 'Include imports that are only used for type checking (i.e., imports within `if TYPE_CHECKING:` blocks). Use `--no-type-checking-imports` to exclude imports that are only used for type checking')
+            [CompletionResult]::new('--no-type-checking-imports', '--no-type-checking-imports', [CompletionResultType]::ParameterName, 'no-type-checking-imports')
             [CompletionResult]::new('-v', '-v', [CompletionResultType]::ParameterName, 'Enable verbose logging')
             [CompletionResult]::new('--verbose', '--verbose', [CompletionResultType]::ParameterName, 'Enable verbose logging')
             [CompletionResult]::new('-q', '-q', [CompletionResultType]::ParameterName, 'Print diagnostics, but nothing else')
@@ -271,7 +286,8 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
         }
         'ruff;version' {
             [CompletionResult]::new('--output-format', '--output-format', [CompletionResultType]::ParameterName, 'output-format')
-            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option. Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')
+            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Either a path to a TOML configuration file (`pyproject.toml` or `ruff.toml`), or a TOML `<KEY> = <VALUE>` pair (such as you might find in a `ruff.toml` configuration file) overriding a specific configuration option (e.g., `--config "lint.line-length = 100"` or `--config "format.quote-style = ''single''"`). Overrides of individual settings using this option always take precedence over all configuration files, including configuration files that were also specified using `--config`')
+            [CompletionResult]::new('--color', '--color', [CompletionResultType]::ParameterName, 'Control when colored output is used')
             [CompletionResult]::new('-v', '-v', [CompletionResultType]::ParameterName, 'Enable verbose logging')
             [CompletionResult]::new('--verbose', '--verbose', [CompletionResultType]::ParameterName, 'Enable verbose logging')
             [CompletionResult]::new('-q', '-q', [CompletionResultType]::ParameterName, 'Print diagnostics, but nothing else')
@@ -279,8 +295,8 @@ Register-ArgumentCompleter -Native -CommandName 'ruff' -ScriptBlock {
             [CompletionResult]::new('-s', '-s', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
             [CompletionResult]::new('--silent', '--silent', [CompletionResultType]::ParameterName, 'Disable all logging (but still exit with status code "1" upon detecting diagnostics)')
             [CompletionResult]::new('--isolated', '--isolated', [CompletionResultType]::ParameterName, 'Ignore all configuration files')
-            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help')
-            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help')
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
             break
         }
         'ruff;help' {
