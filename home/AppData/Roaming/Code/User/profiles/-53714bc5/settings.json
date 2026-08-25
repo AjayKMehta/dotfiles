@@ -427,5 +427,13 @@
     "vsicons.presets.jsonOfficial": true,
     "workbench.colorTheme": "Evondev Dracula Normal Contrast",
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.tree.renderIndentGuides": "always"
+    "workbench.tree.renderIndentGuides": "always",
+    "yaml.disableSchemaDetection": [
+        "**/.github/workflows/*.yml",
+        "**/.github/workflows/*.yaml",
+        "**/.gitea/workflows/*.yml",
+        "**/.gitea/workflows/*.yaml",
+        "**/.forgejo/workflows/*.yml",
+        "**/.forgejo/workflows/*.yaml"
+    ]
 }
