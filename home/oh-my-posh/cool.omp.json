@@ -8,7 +8,7 @@
         {
           "type": "text",
           "style": "plain",
-          "template": "{{ .Env.OSC7 }}"
+          "template": "{{ .Env.OSC99 }}"
         },
         {
           "options": {
