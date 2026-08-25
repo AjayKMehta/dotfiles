@@ -94,16 +94,19 @@
     {
         "defaults": 
         {
+            "colorScheme": "Opaline",
             "font": 
             {
                 "face": "CaskaydiaMono Nerd Font Mono",
                 "size": 14
-            }
+            },
+            "opacity": 100,
+            "useAcrylic": false
         },
         "list": 
         [
             {
-                "colorScheme": "Tango Dark",
+                "colorScheme": "Campbell Powershell",
                 "commandline": "\"C:\\Program Files\\PowerShell\\7\\pwsh.exe\"",
                 "elevate": true,
                 "experimental.retroTerminalEffect": false,
@@ -136,7 +139,7 @@
                 "font": 
                 {
                     "builtinGlyphs": true,
-                    "face": "MonaspiceKr Nerd Font Mono"
+                    "face": "JuliaMono"
                 },
                 "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
                 "hidden": false,
@@ -275,6 +278,29 @@
             "yellow": "#E6A96B"
         },
         {
+            "background": "#0E1116",
+            "black": "#0A0D12",
+            "blue": "#5FB9FF",
+            "brightBlack": "#5C6675",
+            "brightBlue": "#84CCFF",
+            "brightCyan": "#68EAD3",
+            "brightGreen": "#A0EC7E",
+            "brightPurple": "#DDBFFF",
+            "brightRed": "#FF8688",
+            "brightWhite": "#F4F8FD",
+            "brightYellow": "#FAD77C",
+            "cursorColor": "#F6C45F",
+            "cyan": "#3ADDC4",
+            "foreground": "#DCE3ED",
+            "green": "#85DF5E",
+            "name": "Eclipse",
+            "purple": "#CEA5FF",
+            "red": "#FF6366",
+            "selectionBackground": "#25324A",
+            "white": "#B7C0CE",
+            "yellow": "#F1C655"
+        },
+        {
             "background": "#FFFFFF",
             "black": "#FFFFFF",
             "blue": "#0031A9",
@@ -319,6 +345,29 @@
             "selectionBackground": "#7030AF",
             "white": "#FFFFFF",
             "yellow": "#D0BC00"
+        },
+        {
+            "background": "#131121",
+            "black": "#201B33",
+            "blue": "#8FB4FF",
+            "brightBlack": "#6B678F",
+            "brightBlue": "#B79BFF",
+            "brightCyan": "#72E6DD",
+            "brightGreen": "#95E9BD",
+            "brightPurple": "#FF9ED2",
+            "brightRed": "#FF81A2",
+            "brightWhite": "#FFFFFF",
+            "brightYellow": "#F4D27E",
+            "cursorColor": "#FFB3D6",
+            "cyan": "#5FE3D8",
+            "foreground": "#ECE9F7",
+            "green": "#86E6B4",
+            "name": "Opaline",
+            "purple": "#BE9BFF",
+            "red": "#FF6B92",
+            "selectionBackground": "#2C2748",
+            "white": "#ECE9F7",
+            "yellow": "#FFC2AE"
         },
         {
             "background": "#0A0A0F",
