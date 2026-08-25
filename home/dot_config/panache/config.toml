@@ -16,7 +16,7 @@ task-lists = true
 multiline-tables = true
 
 [format]
-horizontal-rule-style = "preserve"
+horizontal-rule-style = "compact"
 line-width = 120
 line-ending = "lf"
 wrap = "reflow"  # Options: "reflow", "preserve", "sentence", "semantic"
