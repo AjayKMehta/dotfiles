@@ -16,6 +16,7 @@ task-lists = true
 multiline-tables = true
 
 [format]
+math = "reflow"
 horizontal-rule-style = "compact"
 line-width = 120
 line-ending = "lf"
