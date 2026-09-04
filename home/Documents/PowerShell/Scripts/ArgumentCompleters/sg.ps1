@@ -83,6 +83,7 @@ Register-ArgumentCompleter -Native -CommandName 'sg.exe' -ScriptBlock {
             [CompletionResult]::new('--format', '--format', [CompletionResultType]::ParameterName, 'Output warning/error messages in different formats')
             [CompletionResult]::new('--report-style', '--report-style', [CompletionResultType]::ParameterName, 'report-style')
             [CompletionResult]::new('--filter', '--filter', [CompletionResultType]::ParameterName, 'Scan the codebase with rules with ids matching REGEX')
+            [CompletionResult]::new('--min-severity', '--min-severity', [CompletionResultType]::ParameterName, 'Set the minimum severity of rules to scan')
             [CompletionResult]::new('--error', '--error', [CompletionResultType]::ParameterName, 'Set rule severity to error')
             [CompletionResult]::new('--warning', '--warning', [CompletionResultType]::ParameterName, 'Set rule severity to warning')
             [CompletionResult]::new('--info', '--info', [CompletionResultType]::ParameterName, 'Set rule severity to info')
