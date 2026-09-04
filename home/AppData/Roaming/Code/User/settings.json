@@ -371,6 +371,10 @@
     },
     "github.copilot.nextEditSuggestions.enabled": false,
     "githubLocalActions.dockerDesktopPath": "C:/Program Files/Docker/Docker/Docker Desktop.exe",
+    "githubPullRequests.defaultMergeMethod": "squash",
+    "githubPullRequests.deleteBranchAfterMerge": true,
+    "githubPullRequests.experimental.notificationsMarkPullRequests": "markAsRead",
+    "githubPullRequests.showPullRequestNumberInTree": true,
     "gitmoji.addCustomEmoji": [
         {
             "code": ":whale:",
@@ -786,6 +790,7 @@
     "window.newWindowProfile": "Default",
     "window.restoreWindows": "preserve",
     "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}${separator}${activeRepositoryBranchName}",
+    "workbench.activityBar.compact": true,
     "workbench.browser.enableChatTools": true,
     "workbench.browser.experimentalUserTools.enabled": true,
     "workbench.colorCustomizations": {
@@ -934,6 +939,10 @@
         "github.copilot.chat.generateTests.codeLens",
         "github.copilot.chat.localIndex.enabled",
         "github.copilot.chat.skillTool.enabled",
+        "githubPullRequests.defaultMergeMethod",
+        "githubPullRequests.deleteBranchAfterMerge",
+        "githubPullRequests.experimental.notificationsMarkPullRequests",
+        "githubPullRequests.showPullRequestNumberInTree",
         "gitmoji.addCustomEmoji",
         "gitmoji.outputType",
         "gitmoji.showEmojiCode",

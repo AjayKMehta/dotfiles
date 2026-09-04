@@ -152,20 +152,20 @@
         "Ruff": "  # noqa: $code SAME_LINE"
     },
     "files.exclude": {
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
+        "**/__pycache__": true,
         "**/.DS_Store": true,
-        "**/Thumbs.db": true,
-        "**/*.html": true,
-        "**/*_cache": true,
+        "**/.git": true,
+        "**/.hg": true,
         "**/.history/**": true,
         "**/.hypothesis": true,
+        "**/.svn": true,
         "**/.tmp-projections": true,
         "**/.venv": true,
         "**/.virtual_documents": true,
-        "**/__pycache__": true,
-        "**/History_**": true
+        "**/*_cache": true,
+        "**/*.html": true,
+        "**/History_**": true,
+        "**/Thumbs.db": true
     },
     "files.trimTrailingWhitespace": true,
     "github.copilot.chat.codesearch.enabled": true,
@@ -183,6 +183,17 @@
     "githubLocalActions.dockerDesktopPath": "C:/Program Files/Docker/Docker/Docker Desktop.exe",
     "interactiveWindow.executeWithShiftEnter": true,
     "jarl.executableStrategy": "environment",
+    "json.schemaDownload.trustedDomains": {
+        "https://developer.microsoft.com/json-schemas/": true,
+        "https://json-schema.org/": true,
+        "https://json.schemastore.org/": true,
+        "https://models.dev/": true,
+        "https://opencode.ai/": true,
+        "https://raw.githubusercontent.com/devcontainers/spec/": true,
+        "https://raw.githubusercontent.com/microsoft/vscode/": true,
+        "https://schemastore.azurewebsites.net/": true,
+        "https://www.schemastore.org/": true
+    },
     "jupyter.askForKernelRestart": false,
     "jupyter.debugJustMyCode": true,
     "jupyter.exportWithOutputEnabled": true,
@@ -224,8 +235,6 @@
     ],
     "latex-workshop.latex.tools": [
         {
-            "name": "latexmk",
-            "command": "latexmk",
             "args": [
                 "-synctex=1",
                 "-interaction=nonstopmode",
@@ -234,11 +243,11 @@
                 "-outdir=%OUTDIR%",
                 "%DOC%"
             ],
-            "env": {}
+            "command": "latexmk",
+            "env": {},
+            "name": "latexmk"
         },
         {
-            "name": "xelatexmk",
-            "command": "latexmk",
             "args": [
                 "-synctex=1",
                 "-interaction=nonstopmode",
@@ -247,26 +256,28 @@
                 "-outdir=%OUTDIR%",
                 "%DOC%"
             ],
-            "env": {}
+            "command": "latexmk",
+            "env": {},
+            "name": "xelatexmk"
         },
         {
-            "name": "pdflatex",
-            "command": "pdflatex",
             "args": [
                 "-synctex=1",
                 "-interaction=nonstopmode",
                 "-file-line-error",
                 "%DOC%"
             ],
-            "env": {}
+            "command": "pdflatex",
+            "env": {},
+            "name": "pdflatex"
         },
         {
-            "name": "bibtex",
-            "command": "bibtex",
             "args": [
                 "%DOCFILE%"
             ],
-            "env": {}
+            "command": "bibtex",
+            "env": {},
+            "name": "bibtex"
         },
         {
             "args": [
@@ -278,19 +289,17 @@
             "name": "rnw2tex"
         },
         {
-            "name": "tectonic",
-            "command": "tectonic",
             "args": [
                 "--synctex",
                 "--keep-logs",
                 "--print",
                 "%DOC%.tex"
             ],
-            "env": {}
+            "command": "tectonic",
+            "env": {},
+            "name": "tectonic"
         },
         {
-            "name": "texify",
-            "command": "texify",
             "args": [
                 "--synctex",
                 "--pdf",
@@ -298,7 +307,9 @@
                 "--tex-option=\"-file-line-error\"",
                 "%DOC_EXT%"
             ],
-            "env": {}
+            "command": "texify",
+            "env": {},
+            "name": "texify"
         }
     ],
     "latex-workshop.showContextMenu": true,
@@ -408,7 +419,7 @@
     ],
     "terminal.integrated.enableMultiLinePasteWarning": "never",
     "terminal.integrated.enablePersistentSessions": false,
-    "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
+    "terminal.integrated.fontFamily": "UbuntuMono nerd Font Mono",
     "terminal.integrated.sendKeybindingsToShell": true,
     "ty.inlayHints.callArgumentNames": false,
     "ty.inlayHints.variableTypes": false,
@@ -425,6 +436,7 @@
     "vsicons.dontShowNewVersionMessage": true,
     "vsicons.presets.foldersAllDefaultIcon": true,
     "vsicons.presets.jsonOfficial": true,
+    "workbench.activityBar.compact": true,
     "workbench.colorTheme": "Evondev Dracula Normal Contrast",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.tree.renderIndentGuides": "always",
