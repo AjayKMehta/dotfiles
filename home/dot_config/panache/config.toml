@@ -2,45 +2,45 @@
 cache = true
 flavor = "quarto"
 
-[flavor-overrides]
-"**/README.md" = "gfm"
+[flavors]
+    "gfm" = [ "**/README.md", "AGENTS.md" ]
 
 # https://jolars.github.io/panache/configuration.html#extensions
 [extensions]
-citations = false
-emoji = true
-task-lists = true
+    citations = false
+    emoji = true
+    task-lists = true
 
-[extensions.gfm]
-task-lists = true
-multiline-tables = true
+    [extensions.gfm]
+        task-lists = true
+        multiline-tables = true
 
 [format]
-math = "reflow"
-horizontal-rule-style = "compact"
-line-width = 120
-line-ending = "lf"
-wrap = "reflow"  # Options: "reflow", "preserve", "sentence", "semantic"
-lang = "en"
-math-delimiter-style = "preserve"
-tab-stops = "normalize"
-tab-width = 4
+    math = "reflow"
+    horizontal-rule-style = "compact"
+    line-width = 120
+    line-ending = "lf"
+    wrap = "reflow"                   # Options: "reflow", "preserve", "sentence", "semantic"
+    lang = "en"
+    math-delimiter-style = "preserve"
+    tab-stops = "normalize"
+    tab-width = 4
 
 [formatters]
-python = "ruff"
-r = "air"
+    python = "ruff"
+    r = "air"
 
 [linters]
-python = "ruff"
-r = "jarl"
-yaml = "yamllint"
-csharp = "csharpier"
+    python = "ruff"
+    r = "jarl"
+    yaml = "yamllint"
+    csharp = "csharpier"
 
 [lint.rules]
-heading-hierarchy = true
-duplicate-reference-labels = true
-undefined-references = true
-citation-keys = false
-chunk-label-spaces = true
-missing-chunk-labels = true
-unknown-emoji-alias = true
+    heading-hierarchy = true
+    duplicate-reference-labels = true
+    undefined-references = true
+    citation-keys = false
+    chunk-label-spaces = true
+    missing-chunk-labels = true
+    unknown-emoji-alias = true
