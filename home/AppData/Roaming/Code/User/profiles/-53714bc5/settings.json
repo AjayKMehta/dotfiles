@@ -45,7 +45,6 @@
     "[markdown]": {
         "diffEditor.ignoreTrimWhitespace": true,
         "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
-        "editor.fontFamily": "'DejaVuSansM Nerd Font', Consolas, 'Courier New', monospace, 'Lucida Sans'",
         "editor.wordWrap": "on",
         "files.trimTrailingWhitespace": false
     },
@@ -152,20 +151,20 @@
         "Ruff": "  # noqa: $code SAME_LINE"
     },
     "files.exclude": {
-        "**/__pycache__": true,
-        "**/.DS_Store": true,
         "**/.git": true,
+        "**/.svn": true,
         "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/__pycache__": true,
         "**/.history/**": true,
         "**/.hypothesis": true,
-        "**/.svn": true,
         "**/.tmp-projections": true,
         "**/.venv": true,
         "**/.virtual_documents": true,
         "**/*_cache": true,
         "**/*.html": true,
-        "**/History_**": true,
-        "**/Thumbs.db": true
+        "**/History_**": true
     },
     "files.trimTrailingWhitespace": true,
     "github.copilot.chat.codesearch.enabled": true,
@@ -407,7 +406,7 @@
     "ruff.lint.preview": true,
     "ruff.nativeServer": true,
     "ruff.showSyntaxErrors": true,
-    "sort-json.settings.sortLevel": 1,
+    "sort-json.settings.sortLevel": 2,
     "terminal.integrated.allowedLinkSchemes": [
         "docker-desktop",
         "file",
@@ -419,7 +418,6 @@
     ],
     "terminal.integrated.enableMultiLinePasteWarning": "never",
     "terminal.integrated.enablePersistentSessions": false,
-    "terminal.integrated.fontFamily": "UbuntuMono nerd Font Mono",
     "terminal.integrated.sendKeybindingsToShell": true,
     "ty.inlayHints.callArgumentNames": false,
     "ty.inlayHints.variableTypes": false,

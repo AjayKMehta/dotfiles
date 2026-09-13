@@ -26,7 +26,6 @@
     "[markdown]": {
         "diffEditor.ignoreTrimWhitespace": true,
         "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
-        "editor.fontFamily": "'DejaVuSansM Nerd Font', Consolas, 'Courier New', monospace, 'Lucida Sans'",
         "editor.formatOnSave": false,
         "editor.wordWrap": "on",
         "files.trimTrailingWhitespace": false
@@ -69,7 +68,6 @@
     "editor.defaultColorDecorators": "auto",
     "editor.definitionLinkOpensInPeek": true,
     "editor.fontFamily": "'FiraCode Nerd Font Mono', 'Cascadia Code', Consolas, 'Courier New', monospace",
-    "editor.fontLigatures": true,
     "editor.largeFileOptimizations": false,
     "editor.minimap.autohide": "mouseover",
     "editor.minimap.renderCharacters": false,
@@ -96,14 +94,14 @@
     "errorLens.enabled": false,
     "files.autoSave": "onFocusChange",
     "files.exclude": {
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
         "**/.DS_Store": true,
-        "**/Thumbs.db": true,
-        "**/*.html": true,
+        "**/.git": true,
+        "**/.hg": true,
+        "**/.history/**": true,
+        "**/.svn": true,
         "**/*_cache": true,
-        "**/.history/**": true
+        "**/*.html": true,
+        "**/Thumbs.db": true
     },
     "files.trimTrailingWhitespace": true,
     "fontAwesomeAutocomplete.version": "6",
@@ -171,8 +169,8 @@
     "print.folder.includeFileList": false,
     "quarto.render.previewReveal": false,
     "remote.autoForwardPortsSource": "hybrid",
+    "sort-json.settings.sortLevel": 2,
     "terminal.integrated.enableMultiLinePasteWarning": "never",
-    "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
     "terminal.integrated.sendKeybindingsToShell": true,
     "versionlens.dotnet.caching.duration": 3,
     "versionlens.suggestions.showOnStartup": true,

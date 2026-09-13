@@ -31,7 +31,6 @@
     "[markdown]": {
         "diffEditor.ignoreTrimWhitespace": true,
         "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
-        "editor.fontFamily": "'DejaVuSansM Nerd Font', Consolas, 'Courier New', monospace, 'Lucida Sans'",
         "editor.wordWrap": "on",
         "files.trimTrailingWhitespace": false
     },
@@ -58,7 +57,7 @@
     "editor.colorDecoratorsLimit": 5000,
     "editor.defaultColorDecorators": "auto",
     "editor.definitionLinkOpensInPeek": true,
-    "editor.fontFamily": "'FiraCode Nerd Font Mono', 'Cascadia Code', Consolas, 'Courier New', monospace",
+    "editor.fontFamily": "'Hasklug Nerd Font Mono', 'Fira Code Retina', 'Cascadia Code', Consolas, 'Courier New', monospace",
     "editor.minimap.autohide": "mouseover",
     "editor.minimap.renderCharacters": false,
     "editor.minimap.scale": 3,
@@ -115,7 +114,6 @@
             "workspace"
         ]
     },
-    "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
     "terminal.integrated.sendKeybindingsToShell": true,
     "versionlens.suggestions.showOnStartup": true,
     "vsicons.dontShowNewVersionMessage": true,

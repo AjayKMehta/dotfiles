@@ -42,7 +42,6 @@
     "[markdown]": {
         "diffEditor.ignoreTrimWhitespace": true,
         "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
-        "editor.fontFamily": "'DejaVuSansM Nerd Font', Consolas, 'Courier New', monospace, 'Lucida Sans'",
         "editor.wordWrap": "on",
         "files.trimTrailingWhitespace": false
     },
@@ -121,7 +120,7 @@
     "editor.bracketPairColorization.enabled": true,
     "editor.defaultColorDecorators": "auto",
     "editor.definitionLinkOpensInPeek": true,
-    "editor.fontFamily": "'FiraCode Nerd Font Mono', 'JuliaMono', Consolas, 'Courier New', monospace",
+    "editor.fontFamily": "'Hasklug Nerd Font Mono', 'Fira Code Retina', 'Cascadia Code', 'DejaVuSansM Nerd Font', 'JuliaMono', monospace",
     "editor.minimap.autohide": "mouseover",
     "editor.minimap.renderCharacters": false,
     "editor.minimap.scale": 3,
@@ -144,11 +143,12 @@
     },
     "editor.wordWrap": "on",
     "files.exclude": {
-        "**/.DS_Store": true,
         "**/.git": true,
-        "**/.hg": true,
-        "**/.history/**": true,
         "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/.history/**": true,
         "**/.vs": true,
         "**/*_cache": true,
         "**/*.html": true,
@@ -156,7 +156,6 @@
         "**/bin": true,
         "**/obj": true,
         "**/TestResults": true,
-        "**/Thumbs.db": true,
         "artifacts": true
     },
     "files.trimTrailingWhitespace": true,
@@ -169,25 +168,6 @@
     "githubPullRequests.createOnPublishBranch": "never",
     "markdown-preview-enhanced.breakOnSingleNewLine": false,
     "markdown-preview-enhanced.codeBlockTheme": "pen-paper-coffee.css",
-    "markdownlint.config": {
-        "commands-show-output": false,
-        "default": true,
-        "first-header-h1": false,
-        "first-line-h1": false,
-        "header-start-left": false,
-        "line-length": false,
-        "list-marker-space": false,
-        "no-alt-text": false,
-        "no-blanks-blockquote": false,
-        "no-duplicate-header": {
-            "siblings_only": true
-        },
-        "no-inline-html": false,
-        "no-trailing-punctuation": false,
-        "single-h1": false,
-        "ul-indent": false,
-        "ul-start-left": false
-    },
     "notebook.cellToolbarLocation": {
         "default": "right",
         "jupyter-notebook": "left"
@@ -216,9 +196,8 @@
     "powershell.promptToUpdatePowerShell": false,
     "print.folder.include": [],
     "print.folder.includeFileList": false,
-    "sort-json.settings.sortLevel": 1,
+    "sort-json.settings.sortLevel": 2,
     "terminal.integrated.enableMultiLinePasteWarning": "never",
-    "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
     "testing.coverageToolbarEnabled": true,
     "versionlens.dotnet.caching.duration": 3,
     "versionlens.suggestions.showOnStartup": true,
