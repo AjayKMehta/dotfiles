@@ -3,6 +3,7 @@
         "**/.git": true,
         "**/.svn": true,
         "**/.hg": true,
+        "**/.jj": true,
         "**/.DS_Store": true,
         "**/Thumbs.db": true
     },
@@ -41,6 +42,7 @@
         "activityBarTop.inactiveForeground": "#15202b99",
         "commandCenter.foreground": "#15202b",
         "activityBar.activeBorder": "#15202b",
-        "activityBarTop.activeBorder": "#15202b"
+        "activityBarTop.activeBorder": "#15202b",
+        "statusBar.inactiveBackground": "#71bfa3"
     }
 }

@@ -106,6 +106,8 @@
     "breadcrumbs.enabled": true,
     "chat.agent.enabled": true,
     "chat.agent.sandbox.enabled": "on",
+    "chat.agentHost.byokModels.enabled": true,
+    "chat.copilot.hydraFusion.enabled": true,
     "chat.customizations.promptMigration.enabled": true,
     "chat.editing.confirmEditRequestRetry": false,
     "chat.math.enabled": true,
@@ -294,14 +296,16 @@
     "explorer.confirmDragAndDrop": false,
     "explorer.excludeGitIgnore": true,
     "extensions.ignoreRecommendations": true,
+    "extensions.supportAgentsWindow": {
+        "ltmoerdani.opencode-copilot-chat": true
+    },
     "files.associations": {
         "*.props": "xml"
     },
     "files.autoSave": "onFocusChange",
     "files.defaultLanguage": "${activeEditorLanguage}",
     "files.exclude": {
-        "**/*.html": true,
-        "**/*_cache": true,
+        "**/__pycache__": true,
         "**/.DS_Store": true,
         "**/.git": true,
         "**/.hg": true,
@@ -312,7 +316,8 @@
         "**/.venv": true,
         "**/.virtual_documents": true,
         "**/.vs": true,
-        "**/__pycache__": true,
+        "**/*_cache": true,
+        "**/*.html": true,
         "**/bin": true,
         "**/History_**": true,
         "**/obj": true,
@@ -513,6 +518,7 @@
     "notebook.output.scrolling": true,
     "notebook.showFoldingControls": "always",
     "omnisharp.projectFilesExcludePattern": "**/node_modules/**,**/.git/**,**/bower_components/**,**/bin/**,**/obj/**",
+    "opencodego.thinking.minimax": "on",
     "path-autocomplete.disableUpOneFolder": false,
     "path-autocomplete.pathMappings": {
         "./": "${folder}",
@@ -968,6 +974,7 @@
         "markdown.validate.unusedLinkDefinitions.enabled",
         "notebook.consolidatedRunButton",
         "notebook.inlineValues",
+        "opencodego.thinking.minimax",
         "partialDiff.enableTelemetry",
         "path-autocomplete.disableUpOneFolder",
         "path-autocomplete.pathMappings",

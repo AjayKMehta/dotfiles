@@ -116,6 +116,7 @@
             "message": "Activate R Terminal."
         }
     ],
+    "chat.agentHost.byokModels.enabled": true,
     "chat.commandCenter.enabled": false,
     "debug.inlineValues": "on",
     "debugpy.showPythonInlineValues": true,
@@ -154,16 +155,17 @@
         "**/.git": true,
         "**/.svn": true,
         "**/.hg": true,
+        "**/.jj": true,
         "**/.DS_Store": true,
         "**/Thumbs.db": true,
-        "**/__pycache__": true,
+        "**/*.html": true,
+        "**/*_cache": true,
         "**/.history/**": true,
         "**/.hypothesis": true,
         "**/.tmp-projections": true,
         "**/.venv": true,
         "**/.virtual_documents": true,
-        "**/*_cache": true,
-        "**/*.html": true,
+        "**/__pycache__": true,
         "**/History_**": true
     },
     "files.trimTrailingWhitespace": true,
@@ -341,7 +343,7 @@
         "generateDocstring": true
     },
     "python.analysis.autoFormatStrings": true,
-    "python.analysis.completeFunctionParens": true,
+    "python.analysis.completeFunctionParens": false,
     "python.analysis.diagnosticMode": "openFilesOnly",
     "python.analysis.fixAll": [
         "source.convertImportFormat",
@@ -439,11 +441,11 @@
     "workbench.iconTheme": "material-icon-theme",
     "workbench.tree.renderIndentGuides": "always",
     "yaml.disableSchemaDetection": [
-        "**/.github/workflows/*.yml",
-        "**/.github/workflows/*.yaml",
-        "**/.gitea/workflows/*.yml",
-        "**/.gitea/workflows/*.yaml",
+        "**/.forgejo/workflows/*.yaml",
         "**/.forgejo/workflows/*.yml",
-        "**/.forgejo/workflows/*.yaml"
+        "**/.gitea/workflows/*.yaml",
+        "**/.gitea/workflows/*.yml",
+        "**/.github/workflows/*.yaml",
+        "**/.github/workflows/*.yml"
     ]
 }
