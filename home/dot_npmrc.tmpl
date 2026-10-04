@@ -1,6 +1,7 @@
 # https://docs.npmjs.com/cli/v8/using-npm/config
-{{ if .npmcache }}cache = {{.npmcache | quote }}{{ end }}
-{{ if .npmprefix }}prefix = {{ .npmprefix | quote }}{{ end }}
-shell = "pwsh.exe"
-unicode = true
+{{ if .npmcache }}cache=.npmcache{{ end }}
+{{ if .npmprefix }}prefix=.npmprefix{{ end }}
+shell=pwsh.exe
+unicode=true
 min-release-age=5
+fund=false
