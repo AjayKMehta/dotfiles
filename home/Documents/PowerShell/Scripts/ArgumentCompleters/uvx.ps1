@@ -67,7 +67,7 @@ Register-ArgumentCompleter -Native -CommandName 'uvx' -ScriptBlock {
             [CompletionResult]::new('--generate-shell-completion', '--generate-shell-completion', [CompletionResultType]::ParameterName, 'generate-shell-completion')
             [CompletionResult]::new('--cache-dir', '--cache-dir', [CompletionResultType]::ParameterName, 'Path to the cache directory')
             [CompletionResult]::new('--python-preference', '--python-preference', [CompletionResultType]::ParameterName, 'python-preference')
-            [CompletionResult]::new('--python-fetch', '--python-fetch', [CompletionResultType]::ParameterName, 'Deprecated version of [`Self::python_downloads`]')
+            [CompletionResult]::new('--python-fetch', '--python-fetch', [CompletionResultType]::ParameterName, 'Deprecated option for configuring automatic Python downloads')
             [CompletionResult]::new('--color', '--color', [CompletionResultType]::ParameterName, 'Control the use of color in output')
             [CompletionResult]::new('--allow-insecure-host', '--allow-insecure-host', [CompletionResultType]::ParameterName, 'Allow insecure connections to a host')
             [CompletionResult]::new('--preview-features', '--preview-features', [CompletionResultType]::ParameterName, 'Enable experimental preview features')
