@@ -107,7 +107,7 @@
             "folder_separator_icon": " \ue0b1 ",
             "home_icon": "\uf015",
             "max_depth": 3,
-            "style": "agnoster"
+            "style": "agnoster_git"
           },
           "style": "powerline",
           "template": " {{ .Path }} ",
