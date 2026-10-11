@@ -56,6 +56,8 @@
     # Use fzf to select branch to checkout
     gcb = !git branch | fzf --bind 'enter:become(git switch {-1})'
     gcbp = !git branch | fzf --preview 'git show --color=always {-1}' --bind 'enter:become(git switch {-1})'
+    # Stage unmerged paths whose merge conflicts have been fixed
+	addr = add --resolved
 
     ## Push to remote
     please = push --force-with-lease
@@ -77,6 +79,7 @@
     lnd = log -P --author='^((?!dependabot).*)$'
 
     # History
+    hd = history drop
     hf = history fixup
     hr = history reword
     hs = history split
@@ -286,7 +289,8 @@
 [init]
     defaultBranch = main
 [sequence]
-    editor = git-interactive-rebase-tool.exe
+# Open issue: https://github.com/MitMaro/git-interactive-rebase-tool/issues/950
+    # editor = git-interactive-rebase-tool.exe
 [url "https://gitlab.com/"]
     insteadOf = gl:
 [url "https://github.com/"]
