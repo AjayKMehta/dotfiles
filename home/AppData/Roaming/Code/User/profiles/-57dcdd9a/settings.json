@@ -1,6 +1,4 @@
 {
-    "Lua.codeLens.enable": true,
-    "Lua.hint.enable": true,
     "[gitattributes]": {
         "editor.defaultFormatter": "hashhar.gitattributes"
     },
@@ -50,6 +48,7 @@
         "editor.defaultFormatter": "redhat.vscode-yaml",
         "editor.fontLigatures": false
     },
+    "chat.tools.terminal.outputDeltas": true,
     "debug.inlineValues": "on",
     "diffEditor.codeLens": true,
     "diffEditor.diffAlgorithm": "advanced",
@@ -80,10 +79,10 @@
     "editor.wordWrap": "on",
     "files.autoSave": "onFocusChange",
     "files.exclude": {
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
         "**/.DS_Store": true,
+        "**/.git": true,
+        "**/.hg": true,
+        "**/.svn": true,
         "**/Thumbs.db": true
     },
     "files.trimTrailingWhitespace": true,
@@ -96,6 +95,8 @@
         "-j4"
     ],
     "haskell.upgradeGHCup": false,
+    "Lua.codeLens.enable": true,
+    "Lua.hint.enable": true,
     "markdown-preview-enhanced.codeBlockTheme": "hopscotch.css",
     "notebook.cellToolbarLocation": {
         "default": "right",
