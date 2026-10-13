@@ -65,7 +65,7 @@ encryption = "gpg"
 [gpg]
     recipient = "{{ $gpgrecipient }}"
 [interpreters.py]
-    command = {{ $top:= env "APPDATA" | replaceAllRegex "\\\\" "/" }}{{ list $top "uv" "python" "cpython-3.12.7-windows-x86_64-none/python.exe" | join "/" | quote}}
+    command = "python3.14.8.exe"
 [interpreters.ps1]
     command = "pwsh"
     args = ["-NoLogo"]
