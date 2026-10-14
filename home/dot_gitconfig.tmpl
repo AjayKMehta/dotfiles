@@ -57,7 +57,7 @@
     gcb = !git branch | fzf --bind 'enter:become(git switch {-1})'
     gcbp = !git branch | fzf --preview 'git show --color=always {-1}' --bind 'enter:become(git switch {-1})'
     # Stage unmerged paths whose merge conflicts have been fixed
-	addr = add --resolved
+    addr = add --resolved
 
     ## Push to remote
     please = push --force-with-lease
