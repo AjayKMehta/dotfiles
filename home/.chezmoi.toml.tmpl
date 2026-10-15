@@ -21,8 +21,6 @@
 
 {{- $cmdstandir := promptStringOnce . "cmdstandir" "Directory where cmdstan is installed." -}}
 
-{{- $kdbxpath := promptStringOnce . "kdbxpath" "Path for Keepass database" -}}
-
 {{- $gpgrecipient := promptStringOnce . "gpgrecipient" "GPG recipient" -}}
 
 {{- $stackpath := promptStringOnce . "stackpath" "Path where `stack install` saves binaries" -}}
@@ -83,7 +81,5 @@ encryption = "gpg"
         '-dr',
         '"Remote"'
     ]
-[keepassxc]
-    database = "{{ $kdbxpath }}"
 [add]
     secrets = 'error'

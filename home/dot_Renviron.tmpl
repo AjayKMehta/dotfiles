@@ -1,18 +1,12 @@
 PATH="${RTOOLS45_HOME}\usr\bin;${RTOOLS45_HOME}\ucrt64\bin;${RTOOLS45_HOME}\mingw64\bin;${PATH}"
 
-plotly_username={{- (keepassxc "PLOTLY").UserName }}
-plotly_api_key={{- (keepassxc "PLOTLY").Password }}
+plotly_username=AjayKMehta
+plotly_api_key={{- (gopass "PLOTLY/AjayKMehta") }}
 
-RETICULATE_PYTHON="${APPDATA}\\uv\\python\\cpython-3.12.12-windows-x86_64-none\\python.exe"
-
-QUANDL_API_KEY={{- (keepassxc "QUANDL").Password }}
-GOOGLE_MAPS_API_KEY={{- (keepassxc "GOOGLE MAPS API").Password }}
-RIINGO_TOKEN={{- (keepassxc "RIINGO").Password }}
-GGMAP_GOOGLE_API_KEY={{- (keepassxc "GOOGLE MAPS API").Password }}
-
-# https://github.com/sonatype-nexus-community/oysteR
-OSSINDEX_USER={{- (keepassxc "OSSINDEX").UserName | quote }}
-OSSINDEX_TOKEN={{- (keepassxc "OSSINDEX").Password }}
+QUANDL_API_KEY={{- (gopass "QUANDL_API_KEY") }}
+GOOGLE_MAPS_API_KEY={{- (gopass "GOOGLE_MAPS_API")}}
+RIINGO_TOKEN={{- (gopass "RIINGO_TOKEN") }}
+GGMAP_GOOGLE_API_KEY={{- (gopass "GOOGLE_MAPS_API")}}
 
 # https://wlandau.github.io/instantiate/#administering-cmdstan
 {{if .cmdstandir }}CMDSTAN="{{- .cmdstandir }}"{{end}}
@@ -24,8 +18,6 @@ LC_MONETARY=English_United States.utf8
 # LC_NUMERIC=C
 LC_NUMERIC=English_United States.utf8
 LC_TIME=English_United States.utf8
-
-OPENAI_API_KEY="{{- (keepassxc "OPENAI_API_KEY").Password }}"
 
 # https://joshuamarie.com/posts/05-pipes/#the-native-pipe-r-v4.1-2021
 _R_USE_PIPEBIND_=true
