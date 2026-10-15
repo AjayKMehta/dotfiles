@@ -1,6 +1,5 @@
-# https://docs.npmjs.com/cli/v8/using-npm/config
-{{ if .npmcache }}cache=.npmcache{{ end }}
-{{ if .npmprefix }}prefix=.npmprefix{{ end }}
+{{ if .npmcache }}cache={{- .npmcache}}{{ end }}
+{{ if .npmprefix }}prefix={{- .npmprefix}}{{ end }}
 shell=pwsh.exe
 unicode=true
 min-release-age=5
