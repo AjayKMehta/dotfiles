@@ -566,7 +566,6 @@
     "ruff.configurationPreference": "filesystemFirst",
     "ruff.format.preview": true,
     "ruff.lint.preview": true,
-    "ruff.nativeServer": true,
     "ruff.showSyntaxErrors": true,
     "sort-json.settings.sortLevel": 2,
     "terminal.integrated.allowedLinkSchemes": [
