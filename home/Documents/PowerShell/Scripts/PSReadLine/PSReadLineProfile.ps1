@@ -113,41 +113,16 @@ Set-PSReadLineKeyHandler -Chord Alt+v `
     }
 }
 
-if (!$isvscode) {
-    Set-PSReadLineKeyHandler -Chord Ctrl+Alt+u -Function InvertCase
+Set-PSReadLineKeyHandler -Chord Ctrl+Alt+u -Function InvertCase
 
-    # Put parentheses around the selection or entire line and move the cursor to after the closing parenthesis.
-    $setPSReadLineKeyHandlerSplat = @{
-        Chord            = 'Ctrl+Shift+('
-        BriefDescription = 'ParenthesizeSelection'
-        Description      = 'Put parentheses around the selection or entire line and move the cursor to after the closing parenthesis.'
-        ScriptBlock      = {
-            param($key, $arg)
+# Put parentheses around the selection or entire line and move the cursor to after the closing parenthesis.
+$setPSReadLineKeyHandlerSplat = @{
+    Chord            = 'Ctrl+Shift+('
+    BriefDescription = 'ParenthesizeSelection'
+    Description      = 'Put parentheses around the selection or entire line and move the cursor to after the closing parenthesis.'
+    ScriptBlock      = {
+        param($key, $arg)
 
-            $selectionStart = $null
-            $selectionLength = $null
-            [PSConsoleReadLine]::GetSelectionState([ref]$selectionStart, [ref]$selectionLength)
-
-            $line = $null
-            $cursor = $null
-            [PSConsoleReadLine]::GetBufferState([ref]$line, [ref]$cursor)
-            if ($selectionStart -ne -1) {
-                $replacement = '(' + $line.SubString($selectionStart, $selectionLength) + ')'
-                [PSConsoleReadLine]::Replace($selectionStart, $selectionLength, $replacement)
-                [PSConsoleReadLine]::SetCursorPosition($selectionStart + $selectionLength + 2)
-            } else {
-                [PSConsoleReadLine]::Replace(0, $line.Length, '(' + $line + ')')
-                [PSConsoleReadLine]::EndOfLine()
-            }
-        }
-    }
-
-    Set-PSReadLineKeyHandler @setPSReadLineKeyHandlerSplat
-
-    Set-PSReadLineKeyHandler -Key Ctrl+Shift+l `
-        -BriefDescription ToggleLowerCase `
-        -LongDescription 'Convert selection to lower case' `
-        -ScriptBlock {
         $selectionStart = $null
         $selectionLength = $null
         [PSConsoleReadLine]::GetSelectionState([ref]$selectionStart, [ref]$selectionLength)
@@ -155,29 +130,53 @@ if (!$isvscode) {
         $line = $null
         $cursor = $null
         [PSConsoleReadLine]::GetBufferState([ref]$line, [ref]$cursor)
-
         if ($selectionStart -ne -1) {
-            [PSConsoleReadLine]::Replace($selectionStart, $selectionLength, $line.SubString($selectionStart, $selectionLength).ToLower())
-        }
-    }
-
-    Set-PSReadLineKeyHandler -Key Ctrl+Shift+u `
-        -BriefDescription ToggleLowerCase `
-        -LongDescription 'Convert selection to upper case' `
-        -ScriptBlock {
-        $selectionStart = $null
-        $selectionLength = $null
-        [PSConsoleReadLine]::GetSelectionState([ref]$selectionStart, [ref]$selectionLength)
-
-        $line = $null
-        $cursor = $null
-        [PSConsoleReadLine]::GetBufferState([ref]$line, [ref]$cursor)
-
-        if ($selectionStart -ne -1) {
-            [PSConsoleReadLine]::Replace($selectionStart, $selectionLength, $line.SubString($selectionStart, $selectionLength).ToUpper())
+            $replacement = '(' + $line.SubString($selectionStart, $selectionLength) + ')'
+            [PSConsoleReadLine]::Replace($selectionStart, $selectionLength, $replacement)
+            [PSConsoleReadLine]::SetCursorPosition($selectionStart + $selectionLength + 2)
+        } else {
+            [PSConsoleReadLine]::Replace(0, $line.Length, '(' + $line + ')')
+            [PSConsoleReadLine]::EndOfLine()
         }
     }
 }
+
+Set-PSReadLineKeyHandler @setPSReadLineKeyHandlerSplat
+
+Set-PSReadLineKeyHandler -Key Ctrl+Shift+l `
+    -BriefDescription ToggleLowerCase `
+    -LongDescription 'Convert selection to lower case' `
+    -ScriptBlock {
+    $selectionStart = $null
+    $selectionLength = $null
+    [PSConsoleReadLine]::GetSelectionState([ref]$selectionStart, [ref]$selectionLength)
+
+    $line = $null
+    $cursor = $null
+    [PSConsoleReadLine]::GetBufferState([ref]$line, [ref]$cursor)
+
+    if ($selectionStart -ne -1) {
+        [PSConsoleReadLine]::Replace($selectionStart, $selectionLength, $line.SubString($selectionStart, $selectionLength).ToLower())
+    }
+}
+
+Set-PSReadLineKeyHandler -Key Ctrl+Shift+u `
+    -BriefDescription ToggleLowerCase `
+    -LongDescription 'Convert selection to upper case' `
+    -ScriptBlock {
+    $selectionStart = $null
+    $selectionLength = $null
+    [PSConsoleReadLine]::GetSelectionState([ref]$selectionStart, [ref]$selectionLength)
+
+    $line = $null
+    $cursor = $null
+    [PSConsoleReadLine]::GetBufferState([ref]$line, [ref]$cursor)
+
+    if ($selectionStart -ne -1) {
+        [PSConsoleReadLine]::Replace($selectionStart, $selectionLength, $line.SubString($selectionStart, $selectionLength).ToUpper())
+    }
+}
+
 
 Set-PSReadLineKeyHandler -Key '"', "'" `
     -BriefDescription SmartInsertQuote `
@@ -308,11 +307,15 @@ Set-PSReadLineKeyHandler -Key 'Alt+%' `
         }
     } }
 
-# Mapped to RevertLine
-Remove-PSReadLineKeyHandler -Key 'Escape'
+# Don't work in VS Code
+if (!$isVsCode) {
 
-# Mapped to BackwardKillWord
-Remove-PSReadLineKeyHandler -Key 'Ctrl+w'
+    # Mapped to RevertLine
+    Remove-PSReadLineKeyHandler -Key 'Escape'
+
+    # Mapped to BackwardKillWord
+    Remove-PSReadLineKeyHandler -Key 'Ctrl+w'
+}
 
 Set-PSReadLineKeyHandler -Key 'Alt+r' -Function RevertLine
 Set-PSReadLineKeyHandler -Key 'Escape,r' -Function RevertLine
@@ -330,7 +333,6 @@ Set-PSReadLineKeyHandler -Key 'Escape,d' -Function KillWord
 Set-PSReadLineKeyHandler -Key 'Alt+u' -Function UpcaseWord
 Set-PSReadLineKeyHandler -Key 'Escape,u' -Function UpcaseWord
 
-Set-PSReadLineKeyHandler -Key 'Ctrl+g' -Function Abort
 Set-PSReadLineKeyHandler -Key 'Ctrl+o' -Function AcceptAndGetNext
 
 Set-PSReadLineKeyHandler -Key 'Ctrl+y' -Function Yank
@@ -372,122 +374,122 @@ Set-PSReadLineKeyHandler -Chord 'Alt+h' `
     [PSConsoleReadLine]::RevertLine()
 }
 
-if (!$isVsCode) {
-    # This key handler shows the entire or filtered history using Out-GridView. The
-    # typed text is used as the substring pattern for filtering. A selected command
-    # is inserted to the command line without invoking. Multiple command selection
-    # is supported, e.g. selected by Ctrl + Click.
-    Set-PSReadLineKeyHandler -Chord 'Alt+F7' `
-        -BriefDescription History `
-        -LongDescription 'Show command history' `
-        -ScriptBlock {
-        $pattern = $null
-        [PSConsoleReadLine]::GetBufferState([ref]$pattern, [ref]$null)
-        if ($pattern) {
-            $pattern = [regex]::Escape($pattern)
-        }
+# This key handler shows the entire or filtered history using Out-GridView. The
+# typed text is used as the substring pattern for filtering. A selected command
+# is inserted to the command line without invoking. Multiple command selection
+# is supported, e.g. selected by Ctrl + Click.
+Set-PSReadLineKeyHandler -Chord 'Alt+F7' `
+    -BriefDescription History `
+    -LongDescription 'Show command history' `
+    -ScriptBlock {
+    $pattern = $null
+    [PSConsoleReadLine]::GetBufferState([ref]$pattern, [ref]$null)
+    if ($pattern) {
+        $pattern = [regex]::Escape($pattern)
+    }
 
-        $history = [System.Collections.ArrayList]@(
-            $last = ''
-            $lines = ''
-            foreach ($line in [System.IO.File]::ReadLines((Get-PSReadLineOption).HistorySavePath)) {
-                if ($line.EndsWith('`')) {
-                    $line = $line.Substring(0, $line.Length - 1)
-                    $lines = if ($lines) {
-                        "$lines`n$line"
-                    } else {
-                        $line
-                    }
-                    continue
-                }
-
-                if ($lines) {
-                    $line = "$lines`n$line"
-                    $lines = ''
-                }
-
-                if (($line -cne $last) -and (!$pattern -or ($line -match $pattern))) {
-                    $last = $line
+    $history = [System.Collections.ArrayList]@(
+        $last = ''
+        $lines = ''
+        foreach ($line in [System.IO.File]::ReadLines((Get-PSReadLineOption).HistorySavePath)) {
+            if ($line.EndsWith('`')) {
+                $line = $line.Substring(0, $line.Length - 1)
+                $lines = if ($lines) {
+                    "$lines`n$line"
+                } else {
                     $line
                 }
+                continue
             }
-        )
-        $history.Reverse()
 
-        $command = $history | Out-GridView -Title History -PassThru
-        if ($command) {
-            [PSConsoleReadLine]::RevertLine()
-            [PSConsoleReadLine]::Insert(($command -join "`n"))
+            if ($lines) {
+                $line = "$lines`n$line"
+                $lines = ''
+            }
+
+            if (($line -cne $last) -and (!$pattern -or ($line -match $pattern))) {
+                $last = $line
+                $line
+            }
         }
+    )
+    $history.Reverse()
+
+    $command = $history | Out-GridView -Title History -PassThru
+    if ($command) {
+        [PSConsoleReadLine]::RevertLine()
+        [PSConsoleReadLine]::Insert(($command -join "`n"))
     }
+}
 
-    function ocgv_history {
-        param(
-            [parameter(Mandatory = $true)]
-            [Boolean]
-            $global
-        )
+function ocgv_history {
+    param(
+        [parameter(Mandatory = $true)]
+        [Boolean]
+        $global
+    )
 
-        $line = $null
-        $cursor = $null
-        [PSConsoleReadLine]::GetBufferState([ref]$line, [ref]$cursor)
-        if ($global) {
-            # Global history
-            $history = [PSConsoleReadLine]::GetHistoryItems().CommandLine
-            # reverse the items so most recent is on top
+    $line = $null
+    $cursor = $null
+    [PSConsoleReadLine]::GetBufferState([ref]$line, [ref]$cursor)
+    if ($global) {
+        # Global history
+        $history = [PSConsoleReadLine]::GetHistoryItems().CommandLine
+        if ($history) {
+            # Reverse the items so most recent is on top
             [array]::Reverse($history)
-            $selection = $history | Select-Object -Unique | Out-ConsoleGridView -OutputMode Single -Filter $line -Title 'Global Command Line History'
+        }
+        $selection = $history | Select-Object -Unique | Out-ConsoleGridView -OutputMode Single -Filter $line -Title 'Global Command Line History'
 
+    } else {
+        # Local history
+        $history = Get-History | Sort-Object -Descending -Property Id -Unique | Select-Object CommandLine -ExpandProperty CommandLine
+        $selection = $history | Out-ConsoleGridView -OutputMode Single -Filter $line -Title 'Command Line History'
+    }
+
+    if ($selection) {
+        [PSConsoleReadLine]::DeleteLine()
+        [PSConsoleReadLine]::Insert($selection)
+        if ($selection.StartsWith($line)) {
+            [PSConsoleReadLine]::SetCursorPosition($cursor)
         } else {
-            # Local history
-            $history = Get-History | Sort-Object -Descending -Property Id -Unique | Select-Object CommandLine -ExpandProperty CommandLine
-            $selection = $history | Out-ConsoleGridView -OutputMode Single -Filter $line -Title 'Command Line History'
-        }
-
-        if ($selection) {
-            [PSConsoleReadLine]::DeleteLine()
-            [PSConsoleReadLine]::Insert($selection)
-            if ($selection.StartsWith($line)) {
-                [PSConsoleReadLine]::SetCursorPosition($cursor)
-            } else {
-                [PSConsoleReadLine]::SetCursorPosition($selection.Length)
-            }
+            [PSConsoleReadLine]::SetCursorPosition($selection.Length)
         }
     }
+}
 
-    # When F7 is pressed, show the local command line history in OCGV
-    $parameters = @{
-        Key              = 'F7'
-        BriefDescription = 'Show Matching History'
-        LongDescription  = 'Show Matching History using Out-ConsoleGridView'
-        ScriptBlock      = {
-            ocgv_history -Global $false
-        }
+# When F7 is pressed, show the local command line history in OCGV
+$parameters = @{
+    Key              = 'F7'
+    BriefDescription = 'Show Matching History'
+    LongDescription  = 'Show Matching History using Out-ConsoleGridView'
+    ScriptBlock      = {
+        ocgv_history -Global $false
     }
-    Set-PSReadLineKeyHandler @parameters
+}
+Set-PSReadLineKeyHandler @parameters
 
-    # When Shift-F7 is pressed, show the local command line history in OCGV
-    $parameters = @{
-        Key              = 'Shift-F7'
-        BriefDescription = 'Show Matching Global History'
-        LongDescription  = 'Show Matching History for all PowerShell instances using Out-ConsoleGridView'
-        ScriptBlock      = {
-            ocgv_history -Global $true
-        }
+# When Shift-F7 is pressed, show the local command line history in OCGV
+$parameters = @{
+    Key              = 'Shift-F7'
+    BriefDescription = 'Show Matching Global History'
+    LongDescription  = 'Show Matching History for all PowerShell instances using Out-ConsoleGridView'
+    ScriptBlock      = {
+        ocgv_history -Global $true
     }
-    Set-PSReadLineKeyHandler @parameters
+}
+Set-PSReadLineKeyHandler @parameters
 
-    Set-PSReadLineKeyHandler -Key Alt+s `
-        -BriefDescription ToggleSaveHistory `
-        -LongDescription 'Toggle saving history' `
-        -ScriptBlock {
-        switch ((Get-PSReadLineOption).HistorySaveStyle) {
-            'SaveIncrementally' {
-                Set-PSReadLineOption -HistorySaveStyle SaveNothing
-            }
-            'SaveNothing' {
-                Set-PSReadLineOption -HistorySaveStyle SaveIncrementally
-            }
+Set-PSReadLineKeyHandler -Key Alt+s `
+    -BriefDescription ToggleSaveHistory `
+    -LongDescription 'Toggle saving history' `
+    -ScriptBlock {
+    switch ((Get-PSReadLineOption).HistorySaveStyle) {
+        'SaveIncrementally' {
+            Set-PSReadLineOption -HistorySaveStyle SaveNothing
+        }
+        'SaveNothing' {
+            Set-PSReadLineOption -HistorySaveStyle SaveIncrementally
         }
     }
 }
@@ -501,10 +503,8 @@ Set-PSReadLineKeyHandler -Chord Ctrl+h -BriefDescription 'Open PSReadlineHistory
 
 #region Predictive IntelliSense functions
 
-if (!$isVsCode) {
-    Set-PSReadLineKeyHandler -Chord Alt+1 -Function AcceptSuggestion
-    Set-PSReadLineKeyHandler -Chord Alt+2 -Function AcceptNextSuggestionWord
-}
+Set-PSReadLineKeyHandler -Chord Alt+1 -Function AcceptSuggestion
+Set-PSReadLineKeyHandler -Chord Alt+2 -Function AcceptNextSuggestionWord
 
 # `ForwardChar` accepts the entire suggestion text when the cursor is at the end of the line.
 # This custom binding makes `RightArrow` behave similarly - accepting the next word instead of the entire suggestion text.
@@ -527,40 +527,41 @@ Set-PSReadLineKeyHandler -Key RightArrow `
 
 #endregion
 
-#region Cmdlet help functions
+Set-PSReadLineKeyHandler -Chord 'Ctrl+k' -Function CaptureScreen
 
-Set-PSReadLineKeyHandler -Key Shift+F1 -BriefDescription 'OnlineCommandHelp' -LongDescription 'Open online help for the current command' -ScriptBlock {
-    param($key, $arg)
+if (!$isVsCode) {
+    #region Cmdlet help functions
+    Set-PSReadLineKeyHandler -Key Shift+F1 -BriefDescription 'OnlineCommandHelp' -LongDescription 'Open online help for the current command' -ScriptBlock {
+        param($key, $arg)
 
-    $ast = $null
-    $tokens = $null
-    $errors = $null
-    $cursor = $null
-    [PSConsoleReadLine]::GetBufferState([ref]$ast, [ref]$tokens, [ref]$errors, [ref]$cursor)
+        $ast = $null
+        $tokens = $null
+        $errors = $null
+        $cursor = $null
+        [PSConsoleReadLine]::GetBufferState([ref]$ast, [ref]$tokens, [ref]$errors, [ref]$cursor)
 
-    $commandAst = $ast.FindAll( {
-            $node = $args[0]
-            $node -is [System.Management.Automation.Language.CommandAst] -and
-            $node.Extent.StartOffset -le $cursor -and
-            $node.Extent.EndOffset -ge $cursor
-        }, $true) | Select-Object -Last 1
+        $commandAst = $ast.FindAll( {
+                $node = $args[0]
+                $node -is [System.Management.Automation.Language.CommandAst] -and
+                $node.Extent.StartOffset -le $cursor -and
+                $node.Extent.EndOffset -ge $cursor
+            }, $true) | Select-Object -Last 1
 
-    if ($commandAst) {
-        $commandName = $commandAst.GetCommandName()
-        if ($commandName) {
-            $command = $ExecutionContext.InvokeCommand.GetCommand($commandName, 'All')
-            if ($command -is [System.Management.Automation.AliasInfo]) {
-                $commandName = $command.ResolvedCommandName
-            }
-
+        if ($commandAst) {
+            $commandName = $commandAst.GetCommandName()
             if ($commandName) {
-                Get-Help $commandName -Online
+                $command = $ExecutionContext.InvokeCommand.GetCommand($commandName, 'All')
+                if ($command -is [System.Management.Automation.AliasInfo]) {
+                    $commandName = $command.ResolvedCommandName
+                }
+
+                if ($commandName) {
+                    Get-Help $commandName -Online
+                }
             }
         }
     }
-}
 
-if (!$isVsCode) {
     Set-PSReadLineKeyHandler -Key Alt+F1 -BriefDescription 'CommandHelp' -LongDescription 'Open the help window for the current command' -ScriptBlock {
         param($key, $arg)
 
@@ -591,24 +592,17 @@ if (!$isVsCode) {
             }
         }
     }
+    #endregion
+
+    #region Selection functions
+    Set-PSReadLineKeyHandler -Key Alt+B -Function SelectShellBackwardWord
+    Set-PSReadLineKeyHandler -Key Alt+F -Function SelectShellForwardWord
+
+    #endregion
+
+    #region Keybindings functions
+    Set-PSReadLineKeyHandler -Function ShowKeyBindings -Chord 'Shift+Ctrl+?'
+    Set-PSReadLineKeyHandler -Function ShowKeyBindings -Chord 'Escape,?'
+    Set-PSReadLineKeyHandler -Function WhatIsKey -Chord 'Escape,/'
+    #endregion
 }
-#endregion
-
-#region Selection functions
-
-Set-PSReadLineKeyHandler -Key Alt+B -Function SelectShellBackwardWord
-Set-PSReadLineKeyHandler -Key Alt+F -Function SelectShellForwardWord
-
-#endregion
-
-#region Miscellaneous functions
-
-Set-PSReadLineKeyHandler -Function ShowKeyBindings -Chord 'Shift+Ctrl+?'
-Set-PSReadLineKeyHandler -Function ShowKeyBindings -Chord 'Escape,?'
-Set-PSReadLineKeyHandler -Function WhatIsKey -Chord 'Escape,/'
-
-if (!$isVsCode) {
-    Set-PSReadLineKeyHandler -Chord 'Ctrl+k' -Function CaptureScreen
-}
-
-#endregion
