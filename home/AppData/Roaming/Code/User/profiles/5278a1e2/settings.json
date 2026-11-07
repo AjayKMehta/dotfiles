@@ -107,7 +107,6 @@
     },
     "files.trimTrailingWhitespace": true,
     "fontAwesomeAutocomplete.version": "6",
-    "git-graph.customEmojiShortcodeMappings": [],
     "github.copilot.enable": {
         "*": false,
         "lua": false,

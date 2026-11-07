@@ -39,6 +39,9 @@
     "editor.autoClosingBrackets": "always",
     "editor.defaultFormatter": "vscode.json-language-features"
   },
+  "[just]": {
+    "editor.defaultFormatter": "nefrob.vscode-just-syntax"
+  },
   "[markdown]": {
     "diffEditor.ignoreTrimWhitespace": true,
     "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
@@ -144,20 +147,20 @@
   },
   "editor.wordWrap": "on",
   "files.exclude": {
-    "**/.git": true,
-    "**/.svn": true,
-    "**/.hg": true,
-    "**/.jj": true,
-    "**/.DS_Store": true,
-    "**/Thumbs.db": true,
     "**/*.html": true,
     "**/*.pdf": true,
     "**/*_cache": true,
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/.hg": true,
     "**/.history/**": true,
+    "**/.jj": true,
+    "**/.svn": true,
     "**/.vs": true,
     "**/bin": true,
     "**/obj": true,
     "**/TestResults": true,
+    "**/Thumbs.db": true,
     "artifacts": true
   },
   "files.trimTrailingWhitespace": true,
