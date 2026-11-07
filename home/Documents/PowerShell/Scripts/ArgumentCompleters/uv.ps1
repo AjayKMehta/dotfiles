@@ -505,7 +505,7 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             [CompletionResult]::new('--name', '--name', [CompletionResultType]::ParameterName, 'The name of the project')
             [CompletionResult]::new('--description', '--description', [CompletionResultType]::ParameterName, 'Set the project description')
             [CompletionResult]::new('--vcs', '--vcs', [CompletionResultType]::ParameterName, 'Initialize a version control system for the project')
-            [CompletionResult]::new('--build-backend', '--build-backend', [CompletionResultType]::ParameterName, 'Initialize a build-backend of choice for the project')
+            [CompletionResult]::new('--build-backend', '--build-backend', [CompletionResultType]::ParameterName, 'Initialize a build-backend of choice for the project [env: UV_INIT_BUILD_BACKEND=]')
             [CompletionResult]::new('--author-from', '--author-from', [CompletionResultType]::ParameterName, 'Fill in the `authors` field in the `pyproject.toml`')
             [CompletionResult]::new('-p', '-p', [CompletionResultType]::ParameterName, 'The Python interpreter to use to determine the minimum supported Python version.')
             [CompletionResult]::new('--python', '--python', [CompletionResultType]::ParameterName, 'The Python interpreter to use to determine the minimum supported Python version.')
@@ -3784,6 +3784,7 @@ Register-ArgumentCompleter -Native -CommandName 'uv' -ScriptBlock {
             break
         }
         'uv;workspace;metadata' {
+            [CompletionResult]::new('--output-version', '--output-version', [CompletionResultType]::ParameterName, 'Request a specific version of the metadata schema')
             [CompletionResult]::new('--script', '--script', [CompletionResultType]::ParameterName, 'View metadata for the specified PEP 723 Python script, rather than the current workspace')
             [CompletionResult]::new('--index', '--index', [CompletionResultType]::ParameterName, 'The indexes to use when resolving dependencies, in addition to the default index')
             [CompletionResult]::new('--default-index', '--default-index', [CompletionResultType]::ParameterName, 'The default package index (by default: <https://pypi.org/simple>)')
