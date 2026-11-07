@@ -16,7 +16,7 @@
         "when": "editorTextFocus && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
     },
     {
-        "command": "git-graph.view",
+        "command": "git-graph-libre.view",
         "key": "alt+g"
     },
     {
@@ -449,18 +449,8 @@
         "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
     },
     {
-        "key": "ctrl+pagedown",
-        "command": "-workbench.action.terminal.focusNext",
-        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
-    },
-    {
         "key": "ctrl+shift+]",
         "command": "workbench.action.terminal.focusPrevious",
-        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
-    },
-    {
-        "key": "ctrl+pageup",
-        "command": "-workbench.action.terminal.focusPrevious",
         "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
     },
     {
@@ -511,5 +501,10 @@
         "key": "ctrl+shift+i",
         "command": "-emojisense.quickEmojitext",
         "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+alt+o",
+        "command": "-workbench.action.output.toggleOutput",
+        "when": "workbench.panel.output.active"
     }
 ]
