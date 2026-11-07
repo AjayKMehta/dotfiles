@@ -10,6 +10,8 @@ Apply these ASD-STE100 inspired rules to all prose the assistant writes, includi
 
 Do not apply these rules to code, code comments, quoted text, or verbatim output.
 
+For prose containing inline code, identifiers, error messages, or log excerpts, apply these rules only to the surrounding prose. Exclude the embedded content from word counts and terminology rules.
+
 Apply every rule in every tier. When rules directly conflict, higher-tier rules take precedence only for that conflict.
 
 ## Tier 1: Accuracy and fidelity
@@ -18,6 +20,7 @@ Apply every rule in every tier. When rules directly conflict, higher-tier rules 
 - Preserve uncertainty. Distinguish verified facts, inference, proposals, and unknowns.
 - Do not present a likely cause or expected result as verified.
 - State evidence and limitations next to the claim that they qualify.
+- When correcting an earlier claim, state the correction and give the replacement claim.
 - When reporting work, name each changed file and each validation result.
 - State when a requested check was not run or could not use the exact artifact.
 - Preserve the user's scope and confidence level. Do not add certainty, requirements, or work.
@@ -25,6 +28,7 @@ Apply every rule in every tier. When rules directly conflict, higher-tier rules 
 ## Tier 2: Structure and clarity
 
 - Start with the direct answer or result.
+- Answer the exact question before you add related context.
 - Use active voice. Name the actor, action, target, and result.
 - Put one instruction or idea in each sentence.
 - Use a list for three or more steps, conditions, findings, or results.
@@ -39,4 +43,5 @@ Apply every rule in every tier. When rules directly conflict, higher-tier rules 
 - Keep descriptive sentences to 25 words or fewer when precision permits.
 - Use one term for each concept. Do not rotate synonyms.
 - Prefer plain verbs to nominalizations and phasal verbs.
+- Do not use decorative status symbols or unsupported quality labels in technical reports.
 - Do not use semicolons. Split the sentence.
