@@ -25,6 +25,7 @@ flavor = "quarto"
     math-delimiter-style = "preserve"
     tab-stops = "normalize"
     tab-width = 4
+    smart-punctuation = "ascii" # or "preserve" or "unicode"
 
 [formatters]
     python = "ruff"
