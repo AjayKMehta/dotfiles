@@ -1,0 +1,527 @@
+
+using namespace System.Management.Automation
+using namespace System.Management.Automation.Language
+
+Register-ArgumentCompleter -Native -CommandName 'arf' -ScriptBlock {
+    param($wordToComplete, $commandAst, $cursorPosition)
+
+    $commandElements = $commandAst.CommandElements
+    $command = @(
+        'arf'
+        for ($i = 1; $i -lt $commandElements.Count; $i++) {
+            $element = $commandElements[$i]
+            if ($element -isnot [StringConstantExpressionAst] -or
+                $element.StringConstantType -ne [StringConstantType]::BareWord -or
+                $element.Value.StartsWith('-') -or
+                $element.Value -eq $wordToComplete) {
+                break
+        }
+        $element.Value
+    }) -join ';'
+
+    $completions = @(switch ($command) {
+        'arf' {
+            [CompletionResult]::new('-e', '-e', [CompletionResultType]::ParameterName, 'Evaluate R expression and exit')
+            [CompletionResult]::new('--eval', '--eval', [CompletionResultType]::ParameterName, 'Evaluate R expression and exit')
+            [CompletionResult]::new('-f', '-f', [CompletionResultType]::ParameterName, '[R] Take input from FILE')
+            [CompletionResult]::new('--file', '--file', [CompletionResultType]::ParameterName, '[R] Take input from FILE')
+            [CompletionResult]::new('--reprex', '--reprex', [CompletionResultType]::ParameterName, 'Set reprex mode (off, on, or format)')
+            [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Path to configuration file')
+            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Path to configuration file')
+            [CompletionResult]::new('--r-home', '--r-home', [CompletionResultType]::ParameterName, 'Highest-priority R source: use this explicit R_HOME path')
+            [CompletionResult]::new('--with-r-version', '--with-r-version', [CompletionResultType]::ParameterName, 'Highest-priority R source: use this R version via rig')
+            [CompletionResult]::new('--r-provider', '--r-provider', [CompletionResultType]::ParameterName, 'Use R from an externally activated provider environment')
+            [CompletionResult]::new('--max-connections', '--max-connections', [CompletionResultType]::ParameterName, '[R] Set max number of connections to N')
+            [CompletionResult]::new('--max-ppsize', '--max-ppsize', [CompletionResultType]::ParameterName, '[R] Set max size of protect stack to N')
+            [CompletionResult]::new('--min-nsize', '--min-nsize', [CompletionResultType]::ParameterName, '[R] Set min number of fixed size obj''s ("cons cells") to N')
+            [CompletionResult]::new('--min-vsize', '--min-vsize', [CompletionResultType]::ParameterName, '[R] Set vector heap minimum to N bytes; ''4M'' = 4 MegaB')
+            [CompletionResult]::new('--encoding', '--encoding', [CompletionResultType]::ParameterName, '[R] Specify encoding to be used for stdin (no-op)')
+            [CompletionResult]::new('-d', '-d', [CompletionResultType]::ParameterName, '[R] Run R through debugger NAME (no-op)')
+            [CompletionResult]::new('--debugger', '--debugger', [CompletionResultType]::ParameterName, '[R] Run R through debugger NAME (no-op)')
+            [CompletionResult]::new('--debugger-args', '--debugger-args', [CompletionResultType]::ParameterName, '[R] Pass ARGS as arguments to the debugger (no-op)')
+            [CompletionResult]::new('-g', '-g', [CompletionResultType]::ParameterName, '[R] Use TYPE as GUI (no-op)')
+            [CompletionResult]::new('--gui', '--gui', [CompletionResultType]::ParameterName, '[R] Use TYPE as GUI (no-op)')
+            [CompletionResult]::new('--arch', '--arch', [CompletionResultType]::ParameterName, '[R] Specify a sub-architecture (no-op)')
+            [CompletionResult]::new('--ipc-expose', '--ipc-expose', [CompletionResultType]::ParameterName, 'Expose a named list of R functions to IPC clients')
+            [CompletionResult]::new('--ipc-bind', '--ipc-bind', [CompletionResultType]::ParameterName, 'Bind IPC socket to a specific path instead of the default (requires --with-ipc)')
+            [CompletionResult]::new('--ipc-pid-file', '--ipc-pid-file', [CompletionResultType]::ParameterName, 'Write server PID to a file on startup (requires --with-ipc)')
+            [CompletionResult]::new('--ipc-eval-allow-function', '--ipc-eval-allow-function', [CompletionResultType]::ParameterName, 'Add an exact function target to the IPC evaluate allowlist. May be repeated; package-qualified targets use `package::function`')
+            [CompletionResult]::new('--history-dir', '--history-dir', [CompletionResultType]::ParameterName, 'Custom history directory (overrides the default location)')
+            [CompletionResult]::new('--no-r-source-overrides', '--no-r-source-overrides', [CompletionResultType]::ParameterName, 'Disable experimental directory-level R source overrides')
+            [CompletionResult]::new('--no-r-auto-discovery', '--no-r-auto-discovery', [CompletionResultType]::ParameterName, 'Test-support flag for reproducing a machine with no R installed')
+            [CompletionResult]::new('--no-banner', '--no-banner', [CompletionResultType]::ParameterName, 'Suppress the startup banner')
+            [CompletionResult]::new('--vanilla', '--vanilla', [CompletionResultType]::ParameterName, 'Start R in vanilla mode (no init files, no save/restore)')
+            [CompletionResult]::new('--no-environ', '--no-environ', [CompletionResultType]::ParameterName, '[R] Don''t read the site and user environment files')
+            [CompletionResult]::new('--no-site-file', '--no-site-file', [CompletionResultType]::ParameterName, '[R] Don''t read the site-wide Rprofile')
+            [CompletionResult]::new('--no-init-file', '--no-init-file', [CompletionResultType]::ParameterName, '[R] Don''t read the user''s .Rprofile')
+            [CompletionResult]::new('-q', '-q', [CompletionResultType]::ParameterName, '[R] Don''t print R startup message')
+            [CompletionResult]::new('--quiet', '--quiet', [CompletionResultType]::ParameterName, '[R] Don''t print R startup message')
+            [CompletionResult]::new('--no-save', '--no-save', [CompletionResultType]::ParameterName, '[R] Don''t save workspace at end of session (default)')
+            [CompletionResult]::new('--save', '--save', [CompletionResultType]::ParameterName, '[R] Save workspace at end of session')
+            [CompletionResult]::new('--no-restore', '--no-restore', [CompletionResultType]::ParameterName, '[R] Don''t restore previously saved objects (default)')
+            [CompletionResult]::new('--no-restore-data', '--no-restore-data', [CompletionResultType]::ParameterName, '[R] Don''t restore previously saved objects')
+            [CompletionResult]::new('--restore-data', '--restore-data', [CompletionResultType]::ParameterName, '[R] Restore previously saved objects')
+            [CompletionResult]::new('--interactive', '--interactive', [CompletionResultType]::ParameterName, '[R] Force R to run interactively (no-op, always interactive)')
+            [CompletionResult]::new('--no-echo', '--no-echo', [CompletionResultType]::ParameterName, '[R] Don''t echo input (no-op, arf controls its own echo)')
+            [CompletionResult]::new('--slave', '--slave', [CompletionResultType]::ParameterName, '[R] Combine --quiet --no-save --no-restore (deprecated in R 4.0, use --no-echo)')
+            [CompletionResult]::new('--restore', '--restore', [CompletionResultType]::ParameterName, '[R] Restore previously saved objects (opposite of --no-restore)')
+            [CompletionResult]::new('--verbose', '--verbose', [CompletionResultType]::ParameterName, '[R] Print more information about progress (no-op)')
+            [CompletionResult]::new('--args', '--args', [CompletionResultType]::ParameterName, '[R] In R, skip the rest of the command line. arf accepts this flag for compatibility but does NOT consume trailing arguments; unknown flags after --args will still cause a parse error')
+            [CompletionResult]::new('--no-readline', '--no-readline', [CompletionResultType]::ParameterName, '[R] Don''t use readline (no-op)')
+            [CompletionResult]::new('--no-restore-history', '--no-restore-history', [CompletionResultType]::ParameterName, '[R] Don''t restore history (no-op)')
+            [CompletionResult]::new('--with-ipc', '--with-ipc', [CompletionResultType]::ParameterName, 'Enable IPC server for external tool access (AI agents, vscode-R, etc.)')
+            [CompletionResult]::new('--ipc-eval-unrestricted', '--ipc-eval-unrestricted', [CompletionResultType]::ParameterName, 'Disable the IPC evaluate allowlist for this server startup only')
+            [CompletionResult]::new('--no-auto-match', '--no-auto-match', [CompletionResultType]::ParameterName, 'Disable auto-matching of brackets and quotes (for testing)')
+            [CompletionResult]::new('--no-completion', '--no-completion', [CompletionResultType]::ParameterName, 'Disable completion menu (for testing)')
+            [CompletionResult]::new('--no-history', '--no-history', [CompletionResultType]::ParameterName, 'Keep history only in memory for this session (no history loaded or saved)')
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('-V', '-V ', [CompletionResultType]::ParameterName, 'Print version')
+            [CompletionResult]::new('--version', '--version', [CompletionResultType]::ParameterName, 'Print version')
+            [CompletionResult]::new('completions', 'completions', [CompletionResultType]::ParameterValue, 'Generate shell completion scripts')
+            [CompletionResult]::new('config', 'config', [CompletionResultType]::ParameterValue, 'Configuration management')
+            [CompletionResult]::new('history', 'history', [CompletionResultType]::ParameterValue, 'History management')
+            [CompletionResult]::new('ipc', 'ipc', [CompletionResultType]::ParameterValue, 'Interact with a running arf session via IPC')
+            [CompletionResult]::new('headless', 'headless', [CompletionResultType]::ParameterValue, 'Run R with IPC server only (no interactive REPL)')
+            [CompletionResult]::new('r', 'r', [CompletionResultType]::ParameterValue, 'R source resolution commands')
+            [CompletionResult]::new('help', 'help', [CompletionResultType]::ParameterValue, 'Print this message or the help of the given subcommand(s)')
+            break
+        }
+        'arf;completions' {
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help')
+            break
+        }
+        'arf;config' {
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help')
+            [CompletionResult]::new('init', 'init', [CompletionResultType]::ParameterValue, 'Generate a default configuration file')
+            [CompletionResult]::new('check', 'check', [CompletionResultType]::ParameterValue, 'Validate the configuration file')
+            [CompletionResult]::new('help', 'help', [CompletionResultType]::ParameterValue, 'Print this message or the help of the given subcommand(s)')
+            break
+        }
+        'arf;config;init' {
+            [CompletionResult]::new('-f', '-f', [CompletionResultType]::ParameterName, 'Overwrite existing configuration file')
+            [CompletionResult]::new('--force', '--force', [CompletionResultType]::ParameterName, 'Overwrite existing configuration file')
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help')
+            break
+        }
+        'arf;config;check' {
+            [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Path to configuration file to check (defaults to XDG config location)')
+            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Path to configuration file to check (defaults to XDG config location)')
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            break
+        }
+        'arf;config;help' {
+            [CompletionResult]::new('init', 'init', [CompletionResultType]::ParameterValue, 'Generate a default configuration file')
+            [CompletionResult]::new('check', 'check', [CompletionResultType]::ParameterValue, 'Validate the configuration file')
+            [CompletionResult]::new('help', 'help', [CompletionResultType]::ParameterValue, 'Print this message or the help of the given subcommand(s)')
+            break
+        }
+        'arf;config;help;init' {
+            break
+        }
+        'arf;config;help;check' {
+            break
+        }
+        'arf;config;help;help' {
+            break
+        }
+        'arf;history' {
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help')
+            [CompletionResult]::new('schema', 'schema', [CompletionResultType]::ParameterValue, 'Display history database schema and example R code')
+            [CompletionResult]::new('import', 'import', [CompletionResultType]::ParameterValue, 'Import history from another source (experimental)')
+            [CompletionResult]::new('migrate', 'migrate', [CompletionResultType]::ParameterValue, 'Copy history from the legacy default location to the current default location')
+            [CompletionResult]::new('export', 'export', [CompletionResultType]::ParameterValue, 'Export history to a unified SQLite file (experimental)')
+            [CompletionResult]::new('help', 'help', [CompletionResultType]::ParameterValue, 'Print this message or the help of the given subcommand(s)')
+            break
+        }
+        'arf;history;schema' {
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help')
+            break
+        }
+        'arf;history;import' {
+            [CompletionResult]::new('--from', '--from', [CompletionResultType]::ParameterName, 'Source format to import from')
+            [CompletionResult]::new('--file', '--file', [CompletionResultType]::ParameterName, 'Path to the history file/database to import. Defaults: radian=~/.radian_history, r=.Rhistory, arf=persistent history `dir`/r.db')
+            [CompletionResult]::new('--hostname', '--hostname', [CompletionResultType]::ParameterName, 'Override hostname for imported entries. Marks entries to distinguish them from native arf history')
+            [CompletionResult]::new('--r-table', '--r-table', [CompletionResultType]::ParameterName, 'Table name for R history when importing from unified export file')
+            [CompletionResult]::new('--shell-table', '--shell-table', [CompletionResultType]::ParameterName, 'Table name for shell history when importing from unified export file')
+            [CompletionResult]::new('--dry-run', '--dry-run', [CompletionResultType]::ParameterName, 'Perform a dry run without actually importing')
+            [CompletionResult]::new('--import-duplicates', '--import-duplicates', [CompletionResultType]::ParameterName, 'Import duplicate entries instead of skipping them. By default, entries that already exist in the target database are skipped (anti-join on command text and timestamp)')
+            [CompletionResult]::new('--unified', '--unified', [CompletionResultType]::ParameterName, 'Force unified mode for metadata-less legacy files (imports both R and shell history)')
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            break
+        }
+        'arf;history;migrate' {
+            [CompletionResult]::new('--dry-run', '--dry-run', [CompletionResultType]::ParameterName, 'Show what would be migrated without changing anything')
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            break
+        }
+        'arf;history;export' {
+            [CompletionResult]::new('--file', '--file', [CompletionResultType]::ParameterName, 'Path to the output SQLite file')
+            [CompletionResult]::new('--r-table', '--r-table', [CompletionResultType]::ParameterName, 'Table name for R history in the output file')
+            [CompletionResult]::new('--shell-table', '--shell-table', [CompletionResultType]::ParameterName, 'Table name for shell history in the output file')
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            break
+        }
+        'arf;history;help' {
+            [CompletionResult]::new('schema', 'schema', [CompletionResultType]::ParameterValue, 'Display history database schema and example R code')
+            [CompletionResult]::new('import', 'import', [CompletionResultType]::ParameterValue, 'Import history from another source (experimental)')
+            [CompletionResult]::new('migrate', 'migrate', [CompletionResultType]::ParameterValue, 'Copy history from the legacy default location to the current default location')
+            [CompletionResult]::new('export', 'export', [CompletionResultType]::ParameterValue, 'Export history to a unified SQLite file (experimental)')
+            [CompletionResult]::new('help', 'help', [CompletionResultType]::ParameterValue, 'Print this message or the help of the given subcommand(s)')
+            break
+        }
+        'arf;history;help;schema' {
+            break
+        }
+        'arf;history;help;import' {
+            break
+        }
+        'arf;history;help;migrate' {
+            break
+        }
+        'arf;history;help;export' {
+            break
+        }
+        'arf;history;help;help' {
+            break
+        }
+        'arf;ipc' {
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('list', 'list', [CompletionResultType]::ParameterValue, 'List active arf sessions as JSON')
+            [CompletionResult]::new('attach', 'attach', [CompletionResultType]::ParameterValue, 'Bridge a long-lived IPC connection over stdin/stdout for editors and agents')
+            [CompletionResult]::new('eval', 'eval', [CompletionResultType]::ParameterValue, 'Evaluate R code and return captured output as JSON')
+            [CompletionResult]::new('send', 'send', [CompletionResultType]::ParameterValue, 'Send code as user input to a running session')
+            [CompletionResult]::new('session', 'session', [CompletionResultType]::ParameterValue, 'Get session information as JSON (arf + R environment)')
+            [CompletionResult]::new('shutdown', 'shutdown', [CompletionResultType]::ParameterValue, 'Shut down a running arf headless session (returns JSON `{"accepted": true}`)')
+            [CompletionResult]::new('interrupt', 'interrupt', [CompletionResultType]::ParameterValue, 'Interrupt the active IPC evaluation in a running session')
+            [CompletionResult]::new('history', 'history', [CompletionResultType]::ParameterValue, 'Query command history from a running session')
+            [CompletionResult]::new('r-help', 'r-help', [CompletionResultType]::ParameterValue, 'Search and retrieve installed R help pages')
+            [CompletionResult]::new('help', 'help', [CompletionResultType]::ParameterValue, 'Print this message or the help of the given subcommand(s)')
+            break
+        }
+        'arf;ipc;list' {
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            break
+        }
+        'arf;ipc;attach' {
+            [CompletionResult]::new('--pid', '--pid', [CompletionResultType]::ParameterName, 'PID of the target arf session (optional if only one session is running)')
+            [CompletionResult]::new('--subscribe', '--subscribe', [CompletionResultType]::ParameterName, 'Initial event subscription pattern (repeat for multiple patterns)')
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            break
+        }
+        'arf;ipc;eval' {
+            [CompletionResult]::new('--pid', '--pid', [CompletionResultType]::ParameterName, 'PID of the target arf session (optional if only one session is running)')
+            [CompletionResult]::new('--timeout', '--timeout', [CompletionResultType]::ParameterName, 'Timeout in milliseconds for waiting for the response (default: 300000 = 5 minutes). This does NOT cancel the R evaluation — long-running code keeps R busy after timeout')
+            [CompletionResult]::new('--visible', '--visible', [CompletionResultType]::ParameterName, 'Also show output in the session (REPL or headless stdout)')
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            break
+        }
+        'arf;ipc;send' {
+            [CompletionResult]::new('--pid', '--pid', [CompletionResultType]::ParameterName, 'PID of the target arf session (optional if only one session is running)')
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            break
+        }
+        'arf;ipc;session' {
+            [CompletionResult]::new('--pid', '--pid', [CompletionResultType]::ParameterName, 'PID of the target arf session (optional if only one session is running)')
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            break
+        }
+        'arf;ipc;shutdown' {
+            [CompletionResult]::new('--pid', '--pid', [CompletionResultType]::ParameterName, 'PID of the target arf session (optional if only one session is running)')
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            break
+        }
+        'arf;ipc;interrupt' {
+            [CompletionResult]::new('--pid', '--pid', [CompletionResultType]::ParameterName, 'PID of the target arf session (optional if only one session is running)')
+            [CompletionResult]::new('--execution-id', '--execution-id', [CompletionResultType]::ParameterName, 'Interrupt only this active execution ID')
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            break
+        }
+        'arf;ipc;history' {
+            [CompletionResult]::new('--limit', '--limit', [CompletionResultType]::ParameterName, 'Maximum number of entries to return (must be positive)')
+            [CompletionResult]::new('--cwd', '--cwd', [CompletionResultType]::ParameterName, 'Filter entries by exact working directory')
+            [CompletionResult]::new('--grep', '--grep', [CompletionResultType]::ParameterName, 'Filter entries whose command contains this substring')
+            [CompletionResult]::new('--since', '--since', [CompletionResultType]::ParameterName, 'Only return entries after this timestamp (RFC 3339 or YYYY-MM-DD)')
+            [CompletionResult]::new('--pid', '--pid', [CompletionResultType]::ParameterName, 'PID of the target arf session (optional if only one session is running)')
+            [CompletionResult]::new('--all-sessions', '--all-sessions', [CompletionResultType]::ParameterName, 'Include entries from all sessions, not just the current one')
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            break
+        }
+        'arf;ipc;r-help' {
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help')
+            [CompletionResult]::new('search', 'search', [CompletionResultType]::ParameterValue, 'Search installed R help topics without evaluating R')
+            [CompletionResult]::new('show', 'show', [CompletionResultType]::ParameterValue, 'Get one R help page as Markdown without evaluating R')
+            [CompletionResult]::new('help', 'help', [CompletionResultType]::ParameterValue, 'Print this message or the help of the given subcommand(s)')
+            break
+        }
+        'arf;ipc;r-help;search' {
+            [CompletionResult]::new('--query', '--query', [CompletionResultType]::ParameterName, 'Fuzzy search topic, aliases, help key, package::name, and title (smart case)')
+            [CompletionResult]::new('--package', '--package', [CompletionResultType]::ParameterName, 'Restrict results to this exact package name')
+            [CompletionResult]::new('--limit', '--limit', [CompletionResultType]::ParameterName, 'Maximum number of results (default 50, maximum 200)')
+            [CompletionResult]::new('--pid', '--pid', [CompletionResultType]::ParameterName, 'PID of the target arf session (optional if only one session is running)')
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            break
+        }
+        'arf;ipc;r-help;show' {
+            [CompletionResult]::new('--package', '--package', [CompletionResultType]::ParameterName, 'Restrict lookup to this exact package name')
+            [CompletionResult]::new('--current-package', '--current-package', [CompletionResultType]::ParameterName, 'Prefer this package for unqualified topic references')
+            [CompletionResult]::new('--help-key', '--help-key', [CompletionResultType]::ParameterName, 'Select a candidate''s help database key (requires --package)')
+            [CompletionResult]::new('--pid', '--pid', [CompletionResultType]::ParameterName, 'PID of the target arf session (optional if only one session is running)')
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            break
+        }
+        'arf;ipc;r-help;help' {
+            [CompletionResult]::new('search', 'search', [CompletionResultType]::ParameterValue, 'Search installed R help topics without evaluating R')
+            [CompletionResult]::new('show', 'show', [CompletionResultType]::ParameterValue, 'Get one R help page as Markdown without evaluating R')
+            [CompletionResult]::new('help', 'help', [CompletionResultType]::ParameterValue, 'Print this message or the help of the given subcommand(s)')
+            break
+        }
+        'arf;ipc;r-help;help;search' {
+            break
+        }
+        'arf;ipc;r-help;help;show' {
+            break
+        }
+        'arf;ipc;r-help;help;help' {
+            break
+        }
+        'arf;ipc;help' {
+            [CompletionResult]::new('list', 'list', [CompletionResultType]::ParameterValue, 'List active arf sessions as JSON')
+            [CompletionResult]::new('attach', 'attach', [CompletionResultType]::ParameterValue, 'Bridge a long-lived IPC connection over stdin/stdout for editors and agents')
+            [CompletionResult]::new('eval', 'eval', [CompletionResultType]::ParameterValue, 'Evaluate R code and return captured output as JSON')
+            [CompletionResult]::new('send', 'send', [CompletionResultType]::ParameterValue, 'Send code as user input to a running session')
+            [CompletionResult]::new('session', 'session', [CompletionResultType]::ParameterValue, 'Get session information as JSON (arf + R environment)')
+            [CompletionResult]::new('shutdown', 'shutdown', [CompletionResultType]::ParameterValue, 'Shut down a running arf headless session (returns JSON `{"accepted": true}`)')
+            [CompletionResult]::new('interrupt', 'interrupt', [CompletionResultType]::ParameterValue, 'Interrupt the active IPC evaluation in a running session')
+            [CompletionResult]::new('history', 'history', [CompletionResultType]::ParameterValue, 'Query command history from a running session')
+            [CompletionResult]::new('r-help', 'r-help', [CompletionResultType]::ParameterValue, 'Search and retrieve installed R help pages')
+            [CompletionResult]::new('help', 'help', [CompletionResultType]::ParameterValue, 'Print this message or the help of the given subcommand(s)')
+            break
+        }
+        'arf;ipc;help;list' {
+            break
+        }
+        'arf;ipc;help;attach' {
+            break
+        }
+        'arf;ipc;help;eval' {
+            break
+        }
+        'arf;ipc;help;send' {
+            break
+        }
+        'arf;ipc;help;session' {
+            break
+        }
+        'arf;ipc;help;shutdown' {
+            break
+        }
+        'arf;ipc;help;interrupt' {
+            break
+        }
+        'arf;ipc;help;history' {
+            break
+        }
+        'arf;ipc;help;r-help' {
+            [CompletionResult]::new('search', 'search', [CompletionResultType]::ParameterValue, 'Search installed R help topics without evaluating R')
+            [CompletionResult]::new('show', 'show', [CompletionResultType]::ParameterValue, 'Get one R help page as Markdown without evaluating R')
+            break
+        }
+        'arf;ipc;help;r-help;search' {
+            break
+        }
+        'arf;ipc;help;r-help;show' {
+            break
+        }
+        'arf;ipc;help;help' {
+            break
+        }
+        'arf;headless' {
+            [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Path to configuration file')
+            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Path to configuration file')
+            [CompletionResult]::new('--r-home', '--r-home', [CompletionResultType]::ParameterName, 'Highest-priority R source: use this explicit R_HOME path')
+            [CompletionResult]::new('--with-r-version', '--with-r-version', [CompletionResultType]::ParameterName, 'Highest-priority R source: use this R version via rig')
+            [CompletionResult]::new('--r-provider', '--r-provider', [CompletionResultType]::ParameterName, 'Use R from an externally activated provider environment')
+            [CompletionResult]::new('--ipc-bind', '--ipc-bind', [CompletionResultType]::ParameterName, 'Bind IPC socket to a specific path instead of the default. On Unix, ensure the parent directory is user-private (mode 0700) to avoid a brief permission window before the socket is restricted')
+            [CompletionResult]::new('--ipc-pid-file', '--ipc-pid-file', [CompletionResultType]::ParameterName, 'Write server PID to a file (removed on shutdown)')
+            [CompletionResult]::new('--ipc-eval-allow-function', '--ipc-eval-allow-function', [CompletionResultType]::ParameterName, 'Add an exact function target to the IPC evaluate allowlist. May be repeated; package-qualified targets use `package::function`')
+            [CompletionResult]::new('--ipc-expose', '--ipc-expose', [CompletionResultType]::ParameterName, 'Expose a named list of R functions to IPC clients')
+            [CompletionResult]::new('--log-file', '--log-file', [CompletionResultType]::ParameterName, 'Redirect log output to a file instead of stderr')
+            [CompletionResult]::new('--max-connections', '--max-connections', [CompletionResultType]::ParameterName, '[R] Set max number of connections to N')
+            [CompletionResult]::new('--max-ppsize', '--max-ppsize', [CompletionResultType]::ParameterName, '[R] Set max size of protect stack to N')
+            [CompletionResult]::new('--min-nsize', '--min-nsize', [CompletionResultType]::ParameterName, '[R] Set min number of fixed size obj''s ("cons cells") to N')
+            [CompletionResult]::new('--min-vsize', '--min-vsize', [CompletionResultType]::ParameterName, '[R] Set vector heap minimum to N bytes; ''4M'' = 4 MegaB')
+            [CompletionResult]::new('--history-dir', '--history-dir', [CompletionResultType]::ParameterName, 'Custom history directory (overrides the default location)')
+            [CompletionResult]::new('--no-r-source-overrides', '--no-r-source-overrides', [CompletionResultType]::ParameterName, 'Disable experimental directory-level R source overrides')
+            [CompletionResult]::new('--no-r-auto-discovery', '--no-r-auto-discovery', [CompletionResultType]::ParameterName, 'Test-support flag for reproducing a machine with no R installed')
+            [CompletionResult]::new('--ipc-eval-unrestricted', '--ipc-eval-unrestricted', [CompletionResultType]::ParameterName, 'Disable the IPC evaluate allowlist for this server startup only')
+            [CompletionResult]::new('--quiet', '--quiet', [CompletionResultType]::ParameterName, 'Suppress status messages on stderr (IPC path, ready, shutdown)')
+            [CompletionResult]::new('--json', '--json', [CompletionResultType]::ParameterName, 'Print session info as JSON to stdout when ready')
+            [CompletionResult]::new('--vanilla', '--vanilla', [CompletionResultType]::ParameterName, 'Start R in vanilla mode (no init files, no save/restore)')
+            [CompletionResult]::new('--no-environ', '--no-environ', [CompletionResultType]::ParameterName, '[R] Don''t read the site and user environment files')
+            [CompletionResult]::new('--no-site-file', '--no-site-file', [CompletionResultType]::ParameterName, '[R] Don''t read the site-wide Rprofile')
+            [CompletionResult]::new('--no-init-file', '--no-init-file', [CompletionResultType]::ParameterName, '[R] Don''t read the user''s .Rprofile')
+            [CompletionResult]::new('--no-history', '--no-history', [CompletionResultType]::ParameterName, 'Keep history only in memory for this session (no history loaded or saved)')
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            break
+        }
+        'arf;r' {
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help')
+            [CompletionResult]::new('resolve', 'resolve', [CompletionResultType]::ParameterValue, 'Resolve the R installation arf would use without starting R')
+            [CompletionResult]::new('help', 'help', [CompletionResultType]::ParameterValue, 'Print this message or the help of the given subcommand(s)')
+            break
+        }
+        'arf;r;resolve' {
+            [CompletionResult]::new('-c', '-c', [CompletionResultType]::ParameterName, 'Path to configuration file')
+            [CompletionResult]::new('--config', '--config', [CompletionResultType]::ParameterName, 'Path to configuration file')
+            [CompletionResult]::new('--r-home', '--r-home', [CompletionResultType]::ParameterName, 'Highest-priority R source: use this explicit R_HOME path')
+            [CompletionResult]::new('--with-r-version', '--with-r-version', [CompletionResultType]::ParameterName, 'Highest-priority R source: use this R version via rig')
+            [CompletionResult]::new('--r-provider', '--r-provider', [CompletionResultType]::ParameterName, 'Use R from an externally activated provider environment')
+            [CompletionResult]::new('--no-r-source-overrides', '--no-r-source-overrides', [CompletionResultType]::ParameterName, 'Disable experimental directory-level R source overrides')
+            [CompletionResult]::new('--no-r-auto-discovery', '--no-r-auto-discovery', [CompletionResultType]::ParameterName, 'Test-support flag for reproducing a machine with no R installed')
+            [CompletionResult]::new('-h', '-h', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            [CompletionResult]::new('--help', '--help', [CompletionResultType]::ParameterName, 'Print help (see more with ''--help'')')
+            break
+        }
+        'arf;r;help' {
+            [CompletionResult]::new('resolve', 'resolve', [CompletionResultType]::ParameterValue, 'Resolve the R installation arf would use without starting R')
+            [CompletionResult]::new('help', 'help', [CompletionResultType]::ParameterValue, 'Print this message or the help of the given subcommand(s)')
+            break
+        }
+        'arf;r;help;resolve' {
+            break
+        }
+        'arf;r;help;help' {
+            break
+        }
+        'arf;help' {
+            [CompletionResult]::new('completions', 'completions', [CompletionResultType]::ParameterValue, 'Generate shell completion scripts')
+            [CompletionResult]::new('config', 'config', [CompletionResultType]::ParameterValue, 'Configuration management')
+            [CompletionResult]::new('history', 'history', [CompletionResultType]::ParameterValue, 'History management')
+            [CompletionResult]::new('ipc', 'ipc', [CompletionResultType]::ParameterValue, 'Interact with a running arf session via IPC')
+            [CompletionResult]::new('headless', 'headless', [CompletionResultType]::ParameterValue, 'Run R with IPC server only (no interactive REPL)')
+            [CompletionResult]::new('r', 'r', [CompletionResultType]::ParameterValue, 'R source resolution commands')
+            [CompletionResult]::new('help', 'help', [CompletionResultType]::ParameterValue, 'Print this message or the help of the given subcommand(s)')
+            break
+        }
+        'arf;help;completions' {
+            break
+        }
+        'arf;help;config' {
+            [CompletionResult]::new('init', 'init', [CompletionResultType]::ParameterValue, 'Generate a default configuration file')
+            [CompletionResult]::new('check', 'check', [CompletionResultType]::ParameterValue, 'Validate the configuration file')
+            break
+        }
+        'arf;help;config;init' {
+            break
+        }
+        'arf;help;config;check' {
+            break
+        }
+        'arf;help;history' {
+            [CompletionResult]::new('schema', 'schema', [CompletionResultType]::ParameterValue, 'Display history database schema and example R code')
+            [CompletionResult]::new('import', 'import', [CompletionResultType]::ParameterValue, 'Import history from another source (experimental)')
+            [CompletionResult]::new('migrate', 'migrate', [CompletionResultType]::ParameterValue, 'Copy history from the legacy default location to the current default location')
+            [CompletionResult]::new('export', 'export', [CompletionResultType]::ParameterValue, 'Export history to a unified SQLite file (experimental)')
+            break
+        }
+        'arf;help;history;schema' {
+            break
+        }
+        'arf;help;history;import' {
+            break
+        }
+        'arf;help;history;migrate' {
+            break
+        }
+        'arf;help;history;export' {
+            break
+        }
+        'arf;help;ipc' {
+            [CompletionResult]::new('list', 'list', [CompletionResultType]::ParameterValue, 'List active arf sessions as JSON')
+            [CompletionResult]::new('attach', 'attach', [CompletionResultType]::ParameterValue, 'Bridge a long-lived IPC connection over stdin/stdout for editors and agents')
+            [CompletionResult]::new('eval', 'eval', [CompletionResultType]::ParameterValue, 'Evaluate R code and return captured output as JSON')
+            [CompletionResult]::new('send', 'send', [CompletionResultType]::ParameterValue, 'Send code as user input to a running session')
+            [CompletionResult]::new('session', 'session', [CompletionResultType]::ParameterValue, 'Get session information as JSON (arf + R environment)')
+            [CompletionResult]::new('shutdown', 'shutdown', [CompletionResultType]::ParameterValue, 'Shut down a running arf headless session (returns JSON `{"accepted": true}`)')
+            [CompletionResult]::new('interrupt', 'interrupt', [CompletionResultType]::ParameterValue, 'Interrupt the active IPC evaluation in a running session')
+            [CompletionResult]::new('history', 'history', [CompletionResultType]::ParameterValue, 'Query command history from a running session')
+            [CompletionResult]::new('r-help', 'r-help', [CompletionResultType]::ParameterValue, 'Search and retrieve installed R help pages')
+            break
+        }
+        'arf;help;ipc;list' {
+            break
+        }
+        'arf;help;ipc;attach' {
+            break
+        }
+        'arf;help;ipc;eval' {
+            break
+        }
+        'arf;help;ipc;send' {
+            break
+        }
+        'arf;help;ipc;session' {
+            break
+        }
+        'arf;help;ipc;shutdown' {
+            break
+        }
+        'arf;help;ipc;interrupt' {
+            break
+        }
+        'arf;help;ipc;history' {
+            break
+        }
+        'arf;help;ipc;r-help' {
+            [CompletionResult]::new('search', 'search', [CompletionResultType]::ParameterValue, 'Search installed R help topics without evaluating R')
+            [CompletionResult]::new('show', 'show', [CompletionResultType]::ParameterValue, 'Get one R help page as Markdown without evaluating R')
+            break
+        }
+        'arf;help;ipc;r-help;search' {
+            break
+        }
+        'arf;help;ipc;r-help;show' {
+            break
+        }
+        'arf;help;headless' {
+            break
+        }
+        'arf;help;r' {
+            [CompletionResult]::new('resolve', 'resolve', [CompletionResultType]::ParameterValue, 'Resolve the R installation arf would use without starting R')
+            break
+        }
+        'arf;help;r;resolve' {
+            break
+        }
+        'arf;help;help' {
+            break
+        }
+    })
+
+    $completions.Where{ $_.CompletionText -like "$wordToComplete*" } |
+        Sort-Object -Property ListItemText
+}
