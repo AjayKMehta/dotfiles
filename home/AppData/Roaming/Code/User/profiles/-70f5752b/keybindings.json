@@ -67,6 +67,22 @@
         "when": "view.workbench.views.extensions.installed.visible"
     },
     {
+        "command": "toggle",
+        "key": "ctrl+alt+h",
+        "when": "editorTextFocus",
+        "args": {
+            "id": "inlayHints",
+            "value": [
+                {
+                    "editor.inlayHints.enabled": "off"
+                },
+                {
+                    "editor.inlayHints.enabled": "on"
+                }
+            ]
+        }
+    },
+    {
         "command": "-code-runner.runByLanguage",
         "key": "ctrl+alt+j"
     },
@@ -369,6 +385,11 @@
         "when": "breadcrumbsPossible && breadcrumbsVisible"
     },
     {
+        "key": "ctrl+alt+o",
+        "command": "-workbench.action.output.toggleOutput",
+        "when": "workbench.panel.output.active"
+    },
+    {
         "key": "ctrl+g d",
         "command": "git.delete",
         "when": "(workbench.scm.active || filesExplorerFocus) && !inputFocus"
@@ -406,10 +427,5 @@
         "key": "ctrl+shift+i",
         "command": "-emojisense.quickEmojitext",
         "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+alt+o",
-        "command": "-workbench.action.output.toggleOutput",
-        "when": "workbench.panel.output.active"
     }
 ]

@@ -90,6 +90,22 @@
         "when": "view.workbench.views.extensions.installed.visible"
     },
     {
+        "command": "toggle",
+        "key": "ctrl+alt+h",
+        "when": "editorTextFocus",
+        "args": {
+            "id": "inlayHints",
+            "value": [
+                {
+                    "editor.inlayHints.enabled": "off"
+                },
+                {
+                    "editor.inlayHints.enabled": "on"
+                }
+            ]
+        }
+    },
+    {
         "command": "-code-runner.runByLanguage",
         "key": "ctrl+alt+j"
     },
@@ -107,6 +123,11 @@
         "command": "editor.action.selectHighlights",
         "key": "ctrl+alt+m",
         "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+alt+o",
+        "command": "-workbench.action.output.toggleOutput",
+        "when": "workbench.panel.output.active"
     },
     {
         "args": {

@@ -90,13 +90,28 @@
         "when": "view.workbench.views.extensions.installed.visible"
     },
     {
+        "command": "-rest-client.switch-environment",
+        "key": "ctrl+alt+e"
+    },
+    {
         "command": "-code-runner.runByLanguage",
         "key": "ctrl+alt+j"
     },
     {
-        "command": "-workbench.view.explorer",
-        "key": "ctrl+alt+l",
-        "when": "viewContainer.workbench.view.explorer.enabled"
+        "command": "toggle",
+        "key": "ctrl+alt+h",
+        "when": "editorTextFocus",
+        "args": {
+            "id": "inlayHints",
+            "value": [
+                {
+                    "editor.inlayHints.enabled": "off"
+                },
+                {
+                    "editor.inlayHints.enabled": "on"
+                }
+            ]
+        }
     },
     {
         "command": "-code-runner.stop",
@@ -107,6 +122,11 @@
         "command": "editor.action.selectHighlights",
         "key": "ctrl+alt+m",
         "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+alt+o",
+        "command": "-workbench.action.output.toggleOutput",
+        "when": "workbench.panel.output.active"
     },
     {
         "args": ".vsc.browser(httpgd::httpgdURL(), viewer = \"Beside\")",
@@ -464,18 +484,18 @@
         "when": "breadcrumbsPossible && breadcrumbsVisible"
     },
     {
-        "key": "ctrl+g d",
-        "command": "git.delete",
-        "when": "(workbench.scm.active || filesExplorerFocus) && !inputFocus"
+        "key": "ctrl+alt+d",
+        "command": "insertDateString.insertDateTime",
+        "when": "editorTextFocus"
     },
     {
         "key": "ctrl+alt+t",
         "command": "timeline.focus"
     },
     {
-        "key": "ctrl+alt+d",
-        "command": "insertDateString.insertDateTime",
-        "when": "editorTextFocus"
+        "key": "ctrl+g d",
+        "command": "git.delete",
+        "when": "(workbench.scm.active || filesExplorerFocus) && !inputFocus"
     },
     {
         "key": "ctrl+shift+alt+i",
@@ -501,10 +521,5 @@
         "key": "ctrl+shift+i",
         "command": "-emojisense.quickEmojitext",
         "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+alt+o",
-        "command": "-workbench.action.output.toggleOutput",
-        "when": "workbench.panel.output.active"
     }
 ]
