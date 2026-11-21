@@ -79,22 +79,24 @@
     "editor.wordWrap": "on",
     "files.autoSave": "onFocusChange",
     "files.exclude": {
-        "**/.DS_Store": true,
         "**/.git": true,
-        "**/.hg": true,
         "**/.svn": true,
+        "**/.hg": true,
+        "**/.jj": true,
+        "**/.DS_Store": true,
         "**/Thumbs.db": true
     },
     "files.trimTrailingWhitespace": true,
     "github.copilot.chat.codesearch.enabled": true,
     "githubLocalActions.dockerDesktopPath": "C:/Program Files/Docker/Docker/Docker Desktop.exe",
-    "haskell.manageHLS": "GHCup",
+    "haskell.manageHLS": "PATH",
     "haskell.plugin.ghcide-completions.config.autoExtendOn": true,
     "haskell.plugin.ghcide-type-lenses.config.mode": "always",
     "haskell.plugin.hlint.config.flags": [
         "-j4"
     ],
     "haskell.upgradeGHCup": false,
+    "haskell.serverExecutablePath": "D:\\Apps\\ghcup\\bin\\haskell-language-server-wrapper.exe",
     "Lua.codeLens.enable": true,
     "Lua.hint.enable": true,
     "markdown-preview-enhanced.codeBlockTheme": "hopscotch.css",
