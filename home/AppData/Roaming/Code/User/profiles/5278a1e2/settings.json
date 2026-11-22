@@ -1,6 +1,6 @@
 {
     "[gitattributes]": {
-        "editor.defaultFormatter": "hashhar.gitattributes"
+        "editor.defaultFormatter": "yy0931.gitconfig-lsp"
     },
     "[gitconfig]": {
         "editor.defaultFormatter": "yy0931.gitconfig-lsp"
@@ -172,7 +172,6 @@
     "remote.autoForwardPortsSource": "hybrid",
     "sort-json.settings.sortLevel": 2,
     "terminal.integrated.enableMultiLinePasteWarning": "never",
-    "terminal.integrated.sendKeybindingsToShell": true,
     "versionlens.dotnet.caching.duration": 3,
     "versionlens.suggestions.showOnStartup": true,
     "vsicons.dontShowNewVersionMessage": true,

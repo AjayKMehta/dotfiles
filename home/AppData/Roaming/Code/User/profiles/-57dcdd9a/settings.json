@@ -1,6 +1,6 @@
 {
     "[gitattributes]": {
-        "editor.defaultFormatter": "hashhar.gitattributes"
+        "editor.defaultFormatter": "yy0931.gitconfig-lsp"
     },
     "[gitconfig]": {
         "editor.defaultFormatter": "yy0931.gitconfig-lsp"

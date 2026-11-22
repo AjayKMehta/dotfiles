@@ -20,7 +20,7 @@
     "editor.tabSize": 2
   },
   "[gitattributes]": {
-    "editor.defaultFormatter": "hashhar.gitattributes"
+    "editor.defaultFormatter": "yy0931.gitconfig-lsp"
   },
   "[gitconfig]": {
     "editor.defaultFormatter": "yy0931.gitconfig-lsp"
@@ -171,6 +171,17 @@
   },
   "githubLocalActions.dockerDesktopPath": "C:/Program Files/Docker/Docker/Docker Desktop.exe",
   "githubPullRequests.createOnPublishBranch": "never",
+  "json.schemaDownload.trustedDomains": {
+    "https://aka.ms/terminal-profiles-schema": true,
+    "https://developer.microsoft.com/json-schemas/": true,
+    "https://json-schema.org/": true,
+    "https://json.schemastore.org/": true,
+    "https://raw.githubusercontent.com/devcontainers/spec/": true,
+    "https://raw.githubusercontent.com/microsoft/vscode/": true,
+    "https://schemastore.azurewebsites.net/": true,
+    "https://spec.openapis.org/": true,
+    "https://www.schemastore.org/": true
+  },
   "markdown-preview-enhanced.breakOnSingleNewLine": false,
   "markdown-preview-enhanced.codeBlockTheme": "pen-paper-coffee.css",
   "notebook.cellToolbarLocation": {

@@ -60,6 +60,7 @@
         "editor.defaultFormatter": "charliermarsh.ruff",
         "editor.formatOnPaste": false,
         "editor.formatOnType": true,
+        "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?_",
         "editor.rulers": [
             80
         ]
@@ -129,7 +130,7 @@
     "diffEditor.wordWrap": "on",
     "editor.defaultColorDecorators": "auto",
     "editor.fontFamily": "'FiraCode Nerd Font Mono', 'Cascadia Code', Consolas, 'Courier New', monospace",
-    "editor.inlayHints.enabled": "on",
+    "editor.inlayHints.enabled": "off",
     "editor.minimap.autohide": "mouseover",
     "editor.minimap.renderCharacters": false,
     "editor.minimap.scale": 3,
@@ -156,21 +157,21 @@
         "ty": "  # ty: ignore[$code] SAME_LINE"
     },
     "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.jj": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
         "**/*.html": true,
         "**/*_cache": true,
-        "**/.DS_Store": true,
-        "**/.git": true,
-        "**/.hg": true,
         "**/.history/**": true,
         "**/.hypothesis": true,
-        "**/.jj": true,
-        "**/.svn": true,
         "**/.tmp-projections": true,
         "**/.venv": true,
         "**/.virtual_documents": true,
         "**/__pycache__": true,
-        "**/History_**": true,
-        "**/Thumbs.db": true
+        "**/History_**": true
     },
     "files.trimTrailingWhitespace": true,
     "github.copilot.chat.codesearch.enabled": true,
@@ -386,10 +387,6 @@
     "python.terminal.activateEnvInCurrentTerminal": true,
     "python.terminal.executeInFileDir": true,
     "python.terminal.shellIntegration.enabled": true,
-    "python.terminal.useEnvFile": true,
-    "python.testing.pytestArgs": [
-        "tests"
-    ],
     "python.testing.pytestEnabled": true,
     "r.alwaysUseActiveTerminal": true,
     "r.bracketedPaste": true,
@@ -447,7 +444,6 @@
     "workbench.activityBar.compact": true,
     "workbench.colorTheme": "Evondev Dracula Normal Contrast",
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.productIconTheme": "viraUIIcons",
     "workbench.tree.renderIndentGuides": "always",
     "yaml.disableSchemaDetection": [
         "**/.forgejo/workflows/*.yaml",
