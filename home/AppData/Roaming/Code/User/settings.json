@@ -792,6 +792,14 @@
     "sort-json.settings.promptCollectionKeys": true,
     "telemetry.telemetryLevel": "error",
     "terminal.integrated.allowChords": false,
+    "terminal.integrated.commandsToSkipShell": [
+        "-workbench.action.terminal.runRecentCommand", // Ctr+R (custom), Ctrl+Alt+R (Windows)
+        "-workbench.action.terminal.scrollToTop", // Ctrl+Home
+        "-workbench.action.terminal.scrollToBottom", // Ctrl+End
+        "-workbench.action.terminal.toggleFindRegex", // Alt+R (Find visible)
+        "-editor.action.accessibleDiffViewer.prev", // Shift + F7
+        "-editor.action.wordHighlight.prev", // Shift + F7
+    ],
     "terminal.integrated.defaultProfile.windows": "PowerShell",
     "terminal.integrated.enableImages": true,
     "terminal.integrated.enableMultiLinePasteWarning": "never",
@@ -1069,6 +1077,7 @@
         "sort-json.settings.objectSortType",
         "sort-json.settings.promptCollectionKeys",
         "terminal.integrated.allowChords",
+        "terminal.integrated.commandsToSkipShell",
         "terminal.integrated.defaultProfile.windows",
         "terminal.integrated.enableImages",
         "terminal.integrated.enableWin32InputMode",
